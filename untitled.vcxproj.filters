@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="addsub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="manage_metro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removesub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subscription.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ticket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="addsub.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="admin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="manage_metro.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="removesub.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="subscription.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ticket.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    
+    
+    
+    
+    
+    
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="addsub.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="admin.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="manage_metro.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="removesub.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="subscription.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ticket.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\149071.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\16041_tn_eg-cairo-metro-line3-train-impression-hyundairotem.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\20221220_CairoMetroMap2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\422833-PE4141-817.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\default_qrcode.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\download.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\entrance.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\health-report.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="hhhh.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="img\home (1).png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="img.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="img\infographic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\left-arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\location.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\man.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\map-point.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\one.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\reject.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\six.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\stations_name.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\subway.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\three.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\ticket.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\train.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

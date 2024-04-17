@@ -1,13 +1,13 @@
 #ifndef SUBSCRIPTION_H
 #define SUBSCRIPTION_H
 
-#include <QDialog>
+#include <QDockWidget>
 
 namespace Ui {
 class Subscription;
 }
 
-class Subscription : public QDialog
+class Subscription : public QDockWidget
 {
     Q_OBJECT
 
@@ -15,27 +15,20 @@ public:
     explicit Subscription(QWidget *parent = nullptr);
     ~Subscription();
 
+
 signals:
-    void SwitchToHome();
-    void SwitchToTicket();
-    void SwitchToState();
-    void SwitchToUser();
-    void SwitchToLogin();
-    void SwitchToVerf();
+    void switchtoAdding();
+    void switchtoremoving();
+    void switchtomanage();
+    void switchtoticket();
+    void switchtoadmin();
 
 private slots:
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_5_clicked();
-
-    void on_pushButton_6_clicked();
-
-    void on_pushButton_clicked();
-
+    void on_pushButton_7_clicked();
+void on_pushButton_6_clicked();
     void on_pushButton_4_clicked();
-
-    void on_code_editingFinished();
-
+    void on_pushButton1_clicked();
+    void on_pushButton_3_clicked();
 private:
     Ui::Subscription *ui;
 };

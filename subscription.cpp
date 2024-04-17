@@ -1,56 +1,38 @@
 #include "subscription.h"
 #include "ui_subscription.h"
-#include <QFile>
-#include <QTextStream>
 
 Subscription::Subscription(QWidget *parent)
-    : QDialog(parent)
+    : QDockWidget(parent)
     , ui(new Ui::Subscription)
 {
     ui->setupUi(this);
-    setWindowTitle("Metro");
-    setWindowIcon(QIcon(":/images/img/download.png"));
 
-    // hashing Card Code
-    ui->code->setEchoMode(QLineEdit::EchoMode::Password);
+    setStyleSheet("background-color:#BDBDBD;");
+    QFont font(" Baxautrial",12);
+    setFont(font);
+    QPixmap i(":/images/img/home (1).png");
+    ui->label_3->setPixmap(i.scaled(ui->label_3->width(), ui->label_3->height(),Qt::KeepAspectRatio));
 
-    // adding pics
-    QPixmap i(":/images/img/map-point.png");
-    ui->searchicon->setPixmap(i.scaled(ui->searchicon->width(), ui->searchicon->height(),Qt::KeepAspectRatio));
+    QPixmap h(":/images/img/train.png");
+    ui->label_5->setPixmap(h.scaled(ui->label_5->width(), ui->label_5->height(),Qt::KeepAspectRatio));
 
-    QPixmap h(":/images/img/home (1).png");
-    ui->home->setPixmap(h.scaled(ui->home->width(), ui->home->height(),Qt::KeepAspectRatio));
+    QPixmap h1(":/images/img/man.png");
+    ui->adminimg->setPixmap(h1.scaled(ui->adminimg->width(), ui->adminimg->height(),Qt::KeepAspectRatio));
 
     QPixmap t(":/images/img/ticket.png");
-    ui->ticket->setPixmap(t.scaled(ui->ticket->width(), ui->ticket->height(),Qt::KeepAspectRatio));
+    ui->label_7->setPixmap(t.scaled(ui->label_7->width(), ui->label_7->height(),Qt::KeepAspectRatio));
 
     QPixmap s(":/images/img/subway.png");
-    ui->sub->setPixmap(s.scaled(ui->sub->width(), ui->sub->height(),Qt::KeepAspectRatio));
+    ui->label_9->setPixmap(s.scaled(ui->label_9->width(), ui->label_9->height(),Qt::KeepAspectRatio));
 
-    QPixmap st(":/images/img/infographic.png");
-    ui->state->setPixmap(st.scaled(ui->state->width(), ui->state->height(),Qt::KeepAspectRatio));
+    //QPixmap st(":/images/img/infographic.png");
+    // ui->state->setPixmap(st.scaled(ui->state->width(), ui->state->height(),Qt::KeepAspectRatio));
 
-    QPixmap u(":/images/img/man.png");
-    ui->user->setPixmap(u.scaled(ui->user->width(), ui->user->height(),Qt::KeepAspectRatio));
+    QPixmap st(":/images/img/entrance.png");
+    ui->label_11->setPixmap(st.scaled(ui->label_11->width(), ui->label_11->height(),Qt::KeepAspectRatio));
 
     QPixmap m(":/images/img/download.png");
-    ui->metro->setPixmap(m.scaled(ui->metro->width(), ui->metro->height(),Qt::KeepAspectRatio));
-
-    QPixmap r(":/images/img/422833-PE4141-817 (2).png");
-    ui->receipt->setPixmap(r.scaled(ui->receipt->width(), ui->receipt->height(),Qt::KeepAspectRatio));
-
-    // adding stations to combomoxes
-    QFile file("E:/QT/trial/proj_trial_3/img/stations_name.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "Failed to open the file:" << file.errorString();
-    }
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString station = in.readLine();
-        ui->start->addItem(station);
-        ui->end->addItem(station);
-    }
-    file.close();
+    ui->metroimg->setPixmap(m.scaled(ui->metroimg->width(), ui->metroimg->height(),Qt::KeepAspectRatio));
 }
 
 Subscription::~Subscription()
@@ -58,40 +40,20 @@ Subscription::~Subscription()
     delete ui;
 }
 
-
-void Subscription::on_pushButton_2_clicked() // home
-{
-    emit SwitchToHome();
+void Subscription::on_pushButton_7_clicked(){
+    emit switchtoAdding();
 }
 
-void Subscription::on_pushButton_4_clicked() // ticket
-{
-    emit SwitchToTicket();
+void Subscription::on_pushButton_6_clicked(){
+    emit switchtoremoving();
 }
 
-
-void Subscription::on_pushButton_5_clicked() // state
-{
-    emit SwitchToState();
+void Subscription::on_pushButton_4_clicked(){
+    emit switchtomanage();
 }
-
-
-void Subscription::on_pushButton_6_clicked() // user
-{
-    emit SwitchToUser();
+void Subscription::on_pushButton1_clicked(){
+    emit switchtoadmin();
 }
-
-
-void Subscription::on_pushButton_clicked() // logout
-{
-    emit SwitchToLogin();
+void Subscription::on_pushButton_3_clicked(){
+    emit switchtoticket();
 }
-
-void Subscription::on_code_editingFinished()
-{
-    if(ui->code->text() == "123")
-    {
-        emit SwitchToVerf();
-    }
-}
-
