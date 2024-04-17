@@ -265,7 +265,7 @@ public:
 
     void retranslateUi(QDialog *AdminManageMetroOtions)
     {
-        AdminManageMetroOtions->setWindowTitle(QCoreApplication::translate("AdminManageMetroOtions", "Metro", nullptr));
+        AdminManageMetroOtions->setWindowTitle(QCoreApplication::translate("AdminManageMetroOtions", "Dialog", nullptr));
         groupBox->setTitle(QString());
         holder_2->setText(QString());
         homepic_2->setText(QString());
