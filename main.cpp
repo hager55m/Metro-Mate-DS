@@ -36,16 +36,17 @@ int main(int argc, char *argv[])
     HistoryPage hs;
     SearchPage sh;
     verfication v;
+   // Admin ad;
     AdminManageMetroOtions admm;
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
 
     adreStation.show();
 
-   /* QObject::connect(&adreStation, &AdminManageMetroRemoveStation::SwitchToAdminHome, [&](){
-        ad.show();
-        adreStation.hide();
-    });*/
+//    QObject::connect(&adreStation, &AdminManageMetroRemoveStation::SwitchToAdminHome, [&](){
+//        ad.show();
+//        adreStation.hide();
+//    });
     QObject::connect(&adreStation, &AdminManageMetroRemoveStation::SwitchToLogin, [&](){
         lp.show();
         adreStation.hide();
@@ -54,10 +55,10 @@ int main(int argc, char *argv[])
         admm.show();
         adreStation.hide();
     });
-   /* QObject::connect(&adStation, &AdminManageMetroAddStation::SwitchToAdminHome, [&](){
-        ad.show();
-        adStation.hide();
-    });*/
+//    QObject::connect(&adStation, &AdminManageMetroAddStation::SwitchToAdminHome, [&](){
+//        ad.show();
+//        adStation.hide();
+//    });
     QObject::connect(&adStation, &AdminManageMetroAddStation::SwitchToLogin, [&](){
         lp.show();
         adStation.hide();
@@ -66,14 +67,14 @@ int main(int argc, char *argv[])
         admm.show();
         adStation.hide();
     });
-   /* QObject::connect(&ad, &Admin::SwitchToMangeMetro, [&](){
-        admm.show();
-        ad.hide();
-    });*/
-    /*QObject::connect(&admm, &AdminManageMetroOtions::SwitchToAdminHome, [&](){
-        ad.show();
-        admm.hide();
-    });*/
+//    QObject::connect(&ad, &Admin::SwitchToMangeMetro, [&](){
+//        admm.show();
+//        ad.hide();
+//    });
+//    QObject::connect(&admm, &AdminManageMetroOtions::SwitchToAdminHome, [&](){
+//        ad.show();
+//        admm.hide();
+//    });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToLogin, [&](){
         lp.show();
         admm.hide();
@@ -82,7 +83,7 @@ int main(int argc, char *argv[])
         adStation.show();
         admm.hide();
     });
-
+/*
     // login page
     QObject::connect(&lp, &LoginPage::SwitchTOSignup, [&](){
         sp.show();
@@ -395,5 +396,7 @@ int main(int argc, char *argv[])
         hs.hide();
     });
 
+    lp.show();
+*/
     return a.exec();
 }

@@ -1,7 +1,9 @@
-﻿  AdminHomeBage.cpp
+﻿  Generate moc_predefs.h
+  AdminHomeBage.cpp
   adminmanagemetroaddstation.cpp
   adminmanagemetrootions.cpp
   adminmanagemetroremovestation.cpp
+  adminstations.cpp
   historypage.cpp
   loginpage.cpp
   main.cpp
@@ -21,6 +23,7 @@
   moc_adminmanagemetroaddstation.cpp
   moc_adminmanagemetrootions.cpp
   moc_adminmanagemetroremovestation.cpp
+  moc_adminstations.cpp
   moc_historypage.cpp
   moc_loginpage.cpp
   moc_mainpage.cpp
@@ -35,4 +38,4 @@
   moc_ticketpage.cpp
   moc_userdata.cpp
   moc_verfication.cpp
-  proj_trial_3.vcxproj -> H:\fourth semester\data structure\Project MetroMate\NewRepo\new\proj_trial_3\debug\proj_trial_3.exe
+  proj_trial_3.vcxproj -> C:\Users\Hager ElSherif\source\repos\new\proj_trial_3\debug\proj_trial_3.exe

@@ -1,9 +1,9 @@
-//
+
 //#ifndef ADMINHOMEBAGE_H
 //#define ADMINHOMEBAGE_H
-//
+
 //#include <QDialog>
-//
+
 //namespace Ui {
 //class Admin;
 //}
@@ -21,10 +21,10 @@
 //private slots:
 //    void on_pushButton_11_clicked();
 //    void on_pushButton_21_clicked();
-//
-//
+
+
 //private:
 //    Ui::Admin *ui;
 //};
-//
+
 //#endif // ADMINHOMEBAGE_H
