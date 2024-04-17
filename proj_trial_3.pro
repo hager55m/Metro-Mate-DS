@@ -13,6 +13,7 @@ SOURCES += \
     adminmanagemetroaddstation.cpp \
     adminmanagemetrootions.cpp \
     adminmanagemetroremovestation.cpp \
+    adminstations.cpp \
     historypage.cpp \
     main.cpp \
     loginpage.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     adminmanagemetroaddstation.h \
     adminmanagemetrootions.h \
     adminmanagemetroremovestation.h \
+    adminstations.h \
     historypage.h \
     loginpage.h \
     mainpage.h \
@@ -54,6 +56,7 @@ FORMS += \
     adminmanagemetroaddstation.ui \
     adminmanagemetrootions.ui \
     adminmanagemetroremovestation.ui \
+    adminstations.ui \
     historypage.ui \
     loginpage.ui \
     mainpage.ui \

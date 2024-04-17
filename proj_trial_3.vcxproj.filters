@@ -69,6 +69,9 @@
     <ClCompile Include="adminmanagemetroremovestation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="adminstations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="historypage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -128,6 +131,9 @@
     <QtMoc Include="adminmanagemetroremovestation.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="adminstations.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="historypage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -172,6 +178,8 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    
+    
     
     
     
@@ -232,6 +240,7 @@
     
     
     
+    
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminHomeBage.ui">
@@ -244,6 +253,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="adminmanagemetroremovestation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="adminstations.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="historypage.ui">
