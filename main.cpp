@@ -20,6 +20,7 @@
 #include"addsub.h"
 #include "removesub.h"
 #include "ticket.h"
+#include "adminstations.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -47,9 +48,17 @@ int main(int argc, char *argv[])
     addsub addsub;
     removesub removesub;
     Ticket ticket;
+<<<<<<< HEAD
 
     //ticket.show();
   admin.show();
+=======
+    AdminStations AdminStation;
+    
+    
+    AdminStation.show();
+
+>>>>>>> main
 
     QObject::connect(&adreStation, &AdminManageMetroRemoveStation::SwitchToLogin, [&](){
         lp.show();
@@ -477,7 +486,33 @@ int main(int argc, char *argv[])
         hs.hide();
     });
 
+<<<<<<< HEAD
     //lp.show();
+=======
+    // adminStation
+    QObject::connect(&AdminStation, &AdminStations::SwitchToHomePage, [&]() {
+        admin.show();
+        AdminStation.hide();
+        });
+
+    QObject::connect(&AdminStation, &AdminStations::SwitchToMangeMetro, [&]() {
+        admm.show();
+        AdminStation.hide();
+        });
+
+    QObject::connect(&AdminStation, &AdminStations::SwitchToTicket, [&]() {
+        ticket.show();
+        AdminStation.hide();
+        });
+
+    QObject::connect(&AdminStation, &AdminStations::SwitchToSupscription, [&]() {
+        addsub.show();
+        AdminStation.hide();
+        });
+
+    
+   
+>>>>>>> main
 
     return a.exec();
 }

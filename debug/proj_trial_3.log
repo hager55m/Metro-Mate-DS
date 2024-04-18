@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  addsub.cpp
   admin.cpp
   adminmanagemetroaddstation.cpp
@@ -38,3 +39,7 @@
   moc_userdata.cpp
   moc_verfication.cpp
 LINK : fatal error LNK1168: cannot open debug\\proj_trial_3.exe for writing
+=======
+﻿  adminstations.cpp
+  proj_trial_3.vcxproj -> C:\Users\Hager ElSherif\source\repos\NewVS\debug\proj_trial_3.exe
+>>>>>>> main
