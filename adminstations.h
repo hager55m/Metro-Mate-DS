@@ -14,7 +14,18 @@ class AdminStations : public QDialog
 public:
     explicit AdminStations(QWidget *parent = nullptr);
     ~AdminStations();
+signals:
+    void SwitchToHomePage();
+    void SwitchToMangeMetro();
+    void SwitchToTicket();
+    void SwitchToSupscription();
 
+
+private slots:
+    void on_pushButton_10_clicked();
+    void on_pushButton_21_clicked();
+    void on_pushButton_22_clicked();
+    void on_pushButton_23_clicked();
 private:
     Ui::AdminStations *ui;
 };
