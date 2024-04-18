@@ -48,17 +48,18 @@ int main(int argc, char *argv[])
     addsub addsub;
     removesub removesub;
     Ticket ticket;
-<<<<<<< HEAD
+    AdminStations AdminStation;
+//<<<<<<< HEAD
 
     //ticket.show();
-  admin.show();
-=======
-    AdminStations AdminStation;
+ // admin.show();
+//=======
+   
     
     
-    AdminStation.show();
+    lp.show();
 
->>>>>>> main
+
 
     QObject::connect(&adreStation, &AdminManageMetroRemoveStation::SwitchToLogin, [&](){
         lp.show();
@@ -92,7 +93,7 @@ int main(int argc, char *argv[])
          });
      
      QObject::connect(&admin, &admin::switchtostation, [&]() {
-        // tp.show();
+        AdminStation.show();
          admin.hide();
          });
 
@@ -103,6 +104,8 @@ int main(int argc, char *argv[])
         admm.show();
         adreStation.hide();
     });
+
+   
 
     QObject::connect(&adStation, &AdminManageMetroAddStation::SwitchToLogin, [&](){
         lp.show();
@@ -131,7 +134,7 @@ int main(int argc, char *argv[])
         });
 
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToStation, [&]() {
-       // admin.show();
+        AdminStation.show();
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToSub, [&]() {
@@ -160,7 +163,7 @@ int main(int argc, char *argv[])
         ticket.hide();
         });
     QObject::connect(&ticket, &Ticket::switshtostation, [&]() {
-        //admm.show();
+        AdminStation.show();
         ticket.hide();
         });
     QObject::connect(&s, &Subscription::SwitchToHome, [&]() {
@@ -485,10 +488,10 @@ int main(int argc, char *argv[])
         lp.show();
         hs.hide();
     });
-
-<<<<<<< HEAD
+//
+//<<<<<<< HEAD
     //lp.show();
-=======
+//=======
     // adminStation
     QObject::connect(&AdminStation, &AdminStations::SwitchToHomePage, [&]() {
         admin.show();
@@ -505,6 +508,11 @@ int main(int argc, char *argv[])
         AdminStation.hide();
         });
 
+
+    QObject::connect(&AdminStation, &AdminStations::SwitchTologin, [&]() {
+        lp.show();
+        AdminStation.hide();
+        });
     QObject::connect(&AdminStation, &AdminStations::SwitchToSupscription, [&]() {
         addsub.show();
         AdminStation.hide();
@@ -512,7 +520,7 @@ int main(int argc, char *argv[])
 
     
    
->>>>>>> main
+//>>>>>>> main
 
     return a.exec();
 }

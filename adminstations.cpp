@@ -50,6 +50,11 @@ void AdminStations::on_pushButton_23_clicked()
 {
     emit SwitchToSupscription();
 }
+
+void AdminStations::on_pushButton_11_clicked()
+{
+    emit SwitchTologin();
+}
 AdminStations::~AdminStations()
 {
     delete ui;
