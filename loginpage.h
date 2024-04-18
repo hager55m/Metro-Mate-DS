@@ -20,6 +20,7 @@ public:
 signals:
     void SwitchTOSignup();
     void SwitchToMainPage();
+    void SwitchToAdminPage();
 
 private slots:
     void on_login_clicked();

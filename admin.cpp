@@ -53,3 +53,10 @@ void admin::on_pushButton_3_clicked(){
 void admin::on_pushButton_5_clicked(){
     emit switchtosubsctiption();
 }
+
+void admin::on_pushButton_11_clicked() {
+    emit switchtologin();
+}
+void admin::on_userhistorybutton_clicked() {
+    emit switchtouserhistory();
+}

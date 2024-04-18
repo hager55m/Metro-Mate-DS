@@ -20,12 +20,16 @@ signals:
     void switshtoadmin();
      void switshtomanage();
      void switshtosub();
+     void switshtostation();
+     void switshtologin();
 
 
 private slots:
     void on_pushButton1_clicked();
     void on_pushButton_4_clicked();
      void on_pushButton_5_clicked();
+     void on_pushButton_2_clicked();
+     void on_pushButton_11_clicked();
 
 
 private:

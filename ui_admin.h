@@ -48,10 +48,12 @@ public:
     QLabel *label_13;
     QLabel *adminimg;
     QLabel *label;
+    QPushButton *pushButton_11;
     QGroupBox *groupBox_3;
     QLabel *label_2;
     QLabel *label_4;
     QGroupBox *groupBox_4;
+    QPushButton *userhistorybutton;
 
     void setupUi(QDockWidget *admin)
     {
@@ -170,6 +172,16 @@ public:
         QFont font2;
         font2.setPointSize(18);
         label->setFont(font2);
+        pushButton_11 = new QPushButton(groupBox);
+        pushButton_11->setObjectName("pushButton_11");
+        pushButton_11->setGeometry(QRect(240, 670, 191, 41));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font3.setPointSize(18);
+        pushButton_11->setFont(font3);
+        pushButton_11->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         groupBox_3 = new QGroupBox(dockWidgetContents);
         groupBox_3->setObjectName("groupBox_3");
         groupBox_3->setGeometry(QRect(480, 90, 471, 211));
@@ -188,6 +200,9 @@ public:
         groupBox_4->setGeometry(QRect(490, 470, 471, 211));
         groupBox_4->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 25;"));
+        userhistorybutton = new QPushButton(groupBox_4);
+        userhistorybutton->setObjectName("userhistorybutton");
+        userhistorybutton->setGeometry(QRect(10, 0, 461, 211));
         admin->setWidget(dockWidgetContents);
 
         retranslateUi(admin);
@@ -223,10 +238,12 @@ public:
         label_13->setText(QCoreApplication::translate("admin", "Egypt Metro", nullptr));
         adminimg->setText(QString());
         label->setText(QCoreApplication::translate("admin", "Admin", nullptr));
+        pushButton_11->setText(QCoreApplication::translate("admin", "Log out", nullptr));
         groupBox_3->setTitle(QString());
         label_2->setText(QCoreApplication::translate("admin", "sign up request", nullptr));
         label_4->setText(QCoreApplication::translate("admin", "user accounts", nullptr));
         groupBox_4->setTitle(QString());
+        userhistorybutton->setText(QString());
     } // retranslateUi
 
 };

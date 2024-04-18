@@ -1,2 +1,1 @@
-﻿  main.cpp
-  proj_trial_3.vcxproj -> C:\Users\Hager ElSherif\source\repos\NewVS\debug\proj_trial_3.exe
+﻿LINK : fatal error LNK1168: cannot open debug\\proj_trial_3.exe for writing

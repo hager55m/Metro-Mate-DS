@@ -21,12 +21,15 @@ signals:
     void switchtoadmin();
     void switchtosubsctiption();
     void switchtostation();
-
+    void switchtouserhistory();
+    void switchtologin();
 private slots:
     void on_pushButton_4_clicked();
     void on_pushButton1_clicked();
     void on_pushButton_3_clicked();
     void on_pushButton_5_clicked();
+    void on_pushButton_11_clicked();
+    void on_userhistorybutton_clicked();
 
 private:
     Ui::admin *ui;
