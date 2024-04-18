@@ -36,6 +36,11 @@ void LoginPage::on_login_clicked()
         QMessageBox::information(this, "Login", "Login Successfully");
         emit SwitchToMainPage();
     }
+    else if (ui->name->text() == "test" && ui->pass->text() == "1")
+    {
+        QMessageBox::information(this, "Login", "Login Successfully");
+        emit SwitchToAdminPage();
+    }
     else
     {
         QMessageBox::information(this, "Login", "Username or password is incorrect");

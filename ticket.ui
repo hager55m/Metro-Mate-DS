@@ -418,6 +418,30 @@ border-radius: 12;</string>
       </property>
      </widget>
     </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>680</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>BAXAUTRIAL</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>Log out</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">

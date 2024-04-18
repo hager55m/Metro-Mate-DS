@@ -38,10 +38,31 @@ void AdminManageMetroOtions::on_pushButton_11_clicked()
 {
     emit SwitchToLogin();
 }
+void AdminManageMetroOtions::on_pushButton_13_clicked()
+{
+    emit SwitchToRemoveStation();
+}
 void AdminManageMetroOtions::on_pushButton_12_clicked()
 {
     emit SwitchToAddStation();
 }
+
+void AdminManageMetroOtions::on_pushButton_22_clicked()
+{
+    emit SwitchToTicket();
+}
+
+void AdminManageMetroOtions::on_pushButton_23_clicked()
+{
+    emit SwitchToSub();
+}
+
+void AdminManageMetroOtions::on_pushButton_25_clicked()
+{
+    emit SwitchToStation();
+}
+
+
 
 AdminManageMetroOtions::~AdminManageMetroOtions()
 {

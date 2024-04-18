@@ -50,6 +50,7 @@ public:
     QPushButton *pushButton_3;
     QLabel *ticimg;
     QLabel *label_7;
+    QPushButton *pushButton_11;
     QLabel *label_2;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
@@ -177,6 +178,16 @@ public:
         label_7->setGeometry(QRect(10, 10, 61, 61));
         label_7->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
+        pushButton_11 = new QPushButton(groupBox);
+        pushButton_11->setObjectName("pushButton_11");
+        pushButton_11->setGeometry(QRect(240, 680, 191, 41));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font3.setPointSize(18);
+        pushButton_11->setFont(font3);
+        pushButton_11->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         label_2 = new QLabel(dockWidgetContents);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(600, 40, 241, 61));
@@ -208,33 +219,30 @@ public:
         mail = new QLineEdit(dockWidgetContents);
         mail->setObjectName("mail");
         mail->setGeometry(QRect(720, 240, 291, 41));
-        QFont font3;
-        font3.setPointSize(18);
-        mail->setFont(font3);
+        QFont font4;
+        font4.setPointSize(18);
+        mail->setFont(font4);
         mail->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         mail_2 = new QLineEdit(dockWidgetContents);
         mail_2->setObjectName("mail_2");
         mail_2->setGeometry(QRect(720, 320, 291, 41));
-        mail_2->setFont(font3);
+        mail_2->setFont(font4);
         mail_2->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         mail_3 = new QLineEdit(dockWidgetContents);
         mail_3->setObjectName("mail_3");
         mail_3->setGeometry(QRect(720, 410, 291, 41));
-        mail_3->setFont(font3);
+        mail_3->setFont(font4);
         mail_3->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         pushButton_6 = new QPushButton(dockWidgetContents);
         pushButton_6->setObjectName("pushButton_6");
         pushButton_6->setGeometry(QRect(590, 560, 261, 41));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
-        font4.setPointSize(18);
-        pushButton_6->setFont(font4);
+        pushButton_6->setFont(font3);
         pushButton_6->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
@@ -273,6 +281,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("Ticket", "Tickets", nullptr));
         ticimg->setText(QString());
         label_7->setText(QString());
+        pushButton_11->setText(QCoreApplication::translate("Ticket", "Log out", nullptr));
         label_2->setText(QCoreApplication::translate("Ticket", "Ticket Cost", nullptr));
         label_4->setText(QCoreApplication::translate("Ticket", "Tire #1 Cost :", nullptr));
         label_6->setText(QCoreApplication::translate("Ticket", "Tire #2 Cost :", nullptr));
