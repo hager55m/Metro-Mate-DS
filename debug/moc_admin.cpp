@@ -52,11 +52,12 @@ constexpr auto qt_meta_stringdata_CLASSadminENDCLASS = QtMocHelpers::stringData(
     "on_pushButton_3_clicked",
     "on_pushButton_5_clicked",
     "on_pushButton_11_clicked",
+    "on_pushButton_2_clicked",
     "on_userhistorybutton_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSadminENDCLASS_t {
-    uint offsetsAndSizes[30];
+    uint offsetsAndSizes[32];
     char stringdata0[6];
     char stringdata1[15];
     char stringdata2[1];
@@ -71,7 +72,8 @@ struct qt_meta_stringdata_CLASSadminENDCLASS_t {
     char stringdata11[24];
     char stringdata12[24];
     char stringdata13[25];
-    char stringdata14[29];
+    char stringdata14[24];
+    char stringdata15[29];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSadminENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -91,7 +93,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSadminENDCLASS_t qt_meta_stringd
         QT_MOC_LITERAL(169, 23),  // "on_pushButton_3_clicked"
         QT_MOC_LITERAL(193, 23),  // "on_pushButton_5_clicked"
         QT_MOC_LITERAL(217, 24),  // "on_pushButton_11_clicked"
-        QT_MOC_LITERAL(242, 28)   // "on_userhistorybutton_clicked"
+        QT_MOC_LITERAL(242, 23),  // "on_pushButton_2_clicked"
+        QT_MOC_LITERAL(266, 28)   // "on_userhistorybutton_clicked"
     },
     "admin",
     "switchtomanage",
@@ -107,6 +110,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSadminENDCLASS_t qt_meta_stringd
     "on_pushButton_3_clicked",
     "on_pushButton_5_clicked",
     "on_pushButton_11_clicked",
+    "on_pushButton_2_clicked",
     "on_userhistorybutton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -119,7 +123,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSadminENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -127,21 +131,22 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSadminENDCLASS[] = {
        7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   92,    2, 0x06,    1 /* Public */,
-       3,    0,   93,    2, 0x06,    2 /* Public */,
-       4,    0,   94,    2, 0x06,    3 /* Public */,
-       5,    0,   95,    2, 0x06,    4 /* Public */,
-       6,    0,   96,    2, 0x06,    5 /* Public */,
-       7,    0,   97,    2, 0x06,    6 /* Public */,
-       8,    0,   98,    2, 0x06,    7 /* Public */,
+       1,    0,   98,    2, 0x06,    1 /* Public */,
+       3,    0,   99,    2, 0x06,    2 /* Public */,
+       4,    0,  100,    2, 0x06,    3 /* Public */,
+       5,    0,  101,    2, 0x06,    4 /* Public */,
+       6,    0,  102,    2, 0x06,    5 /* Public */,
+       7,    0,  103,    2, 0x06,    6 /* Public */,
+       8,    0,  104,    2, 0x06,    7 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       9,    0,   99,    2, 0x08,    8 /* Private */,
-      10,    0,  100,    2, 0x08,    9 /* Private */,
-      11,    0,  101,    2, 0x08,   10 /* Private */,
-      12,    0,  102,    2, 0x08,   11 /* Private */,
-      13,    0,  103,    2, 0x08,   12 /* Private */,
-      14,    0,  104,    2, 0x08,   13 /* Private */,
+       9,    0,  105,    2, 0x08,    8 /* Private */,
+      10,    0,  106,    2, 0x08,    9 /* Private */,
+      11,    0,  107,    2, 0x08,   10 /* Private */,
+      12,    0,  108,    2, 0x08,   11 /* Private */,
+      13,    0,  109,    2, 0x08,   12 /* Private */,
+      14,    0,  110,    2, 0x08,   13 /* Private */,
+      15,    0,  111,    2, 0x08,   14 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -153,6 +158,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSadminENDCLASS[] = {
     QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -196,6 +202,8 @@ Q_CONSTINIT const QMetaObject admin::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_11_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_2_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_userhistorybutton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -220,7 +228,8 @@ void admin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 9: _t->on_pushButton_3_clicked(); break;
         case 10: _t->on_pushButton_5_clicked(); break;
         case 11: _t->on_pushButton_11_clicked(); break;
-        case 12: _t->on_userhistorybutton_clicked(); break;
+        case 12: _t->on_pushButton_2_clicked(); break;
+        case 13: _t->on_userhistorybutton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -297,13 +306,13 @@ int admin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 14)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }
