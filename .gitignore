@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/debug/proj_trial_3.tlog/proj_trial_3.write.1u.tlog
+/.vs/proj_trial_3/v17/Browse.VC.db
