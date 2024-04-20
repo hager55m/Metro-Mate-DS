@@ -129,6 +129,12 @@
     <ClCompile Include="ticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Station.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdminHomeBage.h">
@@ -198,6 +204,12 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="ui_ticket.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Station.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

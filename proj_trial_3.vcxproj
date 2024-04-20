@@ -215,6 +215,7 @@
     <ClCompile Include="adminmanagemetrootions.cpp" />
     <ClCompile Include="adminmanagemetroremovestation.cpp" />
     <ClCompile Include="adminstations.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="historypage.cpp" />
     <ClCompile Include="loginpage.cpp" />
     <ClCompile Include="main.cpp" />
@@ -226,6 +227,7 @@
     <ClCompile Include="stat1month.cpp" />
     <ClCompile Include="stat3months.cpp" />
     <ClCompile Include="stat6months.cpp" />
+    <ClCompile Include="Station.cpp" />
     <ClCompile Include="submanage.cpp" />
     <ClCompile Include="subscription.cpp" />
     <ClCompile Include="ticket.cpp" />
@@ -234,6 +236,8 @@
     <ClCompile Include="verfication.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="Station.h" />
     <ClInclude Include="ui_addsub.h" />
     <ClInclude Include="ui_admin.h" />
     <ClInclude Include="ui_removesub.h" />
