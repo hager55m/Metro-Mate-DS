@@ -52,12 +52,12 @@ int main(int argc, char *argv[])
 //<<<<<<< HEAD
 
     //ticket.show();
- // admin.show();
+ //admin.show();
 //=======
    
     
     
-    lp.show();
+   lp.show();
 
 
 
