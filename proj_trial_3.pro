@@ -10,14 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     AdminHomeBage.cpp \
+    Graph.cpp \
+    Station.cpp \
+    StationClass.cpp \
+    addsub.cpp \
+    admin.cpp \
     adminmanagemetroaddstation.cpp \
     adminmanagemetrootions.cpp \
     adminmanagemetroremovestation.cpp \
     adminstations.cpp \
+    admonmanagemetrooptions.cpp \
     historypage.cpp \
     main.cpp \
     loginpage.cpp \
     mainpage.cpp \
+    manage_metro.cpp \
+    removesub.cpp \
     renewsub.cpp \
     searchpage.cpp \
     signuppage.cpp \
@@ -26,19 +34,28 @@ SOURCES += \
     stat6months.cpp \
     submanage.cpp \
     subscription.cpp \
+    ticket.cpp \
     ticketpage.cpp \
     userdata.cpp \
     verfication.cpp
 
 HEADERS += \
     AdminHomeBage.h \
+    Graph.h \
+    Station.h \
+    StationClass.h \
+    addsub.h \
+    admin.h \
     adminmanagemetroaddstation.h \
     adminmanagemetrootions.h \
     adminmanagemetroremovestation.h \
     adminstations.h \
+    admonmanagemetrooptions.h \
     historypage.h \
     loginpage.h \
     mainpage.h \
+    manage_metro.h \
+    removesub.h \
     renewsub.h \
     searchpage.h \
     signuppage.h \
@@ -47,19 +64,50 @@ HEADERS += \
     stat6months.h \
     submanage.h \
     subscription.h \
+    ticket.h \
     ticketpage.h \
+    ui_AdminHomeBage.h \
+    ui_DialogButtonBottom.h \
+    ui_addsub.h \
+    ui_admin.h \
+    ui_adminmanagemetroaddstation.h \
+    ui_adminmanagemetrootions.h \
+    ui_adminmanagemetroremovestation.h \
+    ui_adminstations.h \
+    ui_historypage.h \
+    ui_loginpage.h \
+    ui_mainpage.h \
+    ui_removesub.h \
+    ui_renewsub.h \
+    ui_searchpage.h \
+    ui_signuppage.h \
+    ui_stat1month.h \
+    ui_stat3months.h \
+    ui_stat6months.h \
+    ui_submanage.h \
+    ui_subscription.h \
+    ui_ticket.h \
+    ui_ticketpage.h \
+    ui_userdata.h \
+    ui_verfication.h \
     userdata.h \
     verfication.h
 
 FORMS += \
     AdminHomeBage.ui \
+    DialogButtonBottom.ui \
+    addsub.ui \
+    admin.ui \
     adminmanagemetroaddstation.ui \
     adminmanagemetrootions.ui \
     adminmanagemetroremovestation.ui \
     adminstations.ui \
+    admonmanagemetrooptions.ui \
     historypage.ui \
     loginpage.ui \
     mainpage.ui \
+    manage_metro.ui \
+    removesub.ui \
     renewsub.ui \
     searchpage.ui \
     signuppage.ui \
@@ -68,6 +116,7 @@ FORMS += \
     stat6months.ui \
     submanage.ui \
     subscription.ui \
+    ticket.ui \
     ticketpage.ui \
     userdata.ui \
     verfication.ui
@@ -81,4 +130,14 @@ RESOURCES += \
     res.qrc
 
 DISTFILES += \
-    img/stations_name.txt
+    img/stations_name.txt \
+    proj_trial_3 - Backup.vcxproj.user \
+    proj_trial_3.pro.user \
+    proj_trial_3.pro.user.271141c \
+    proj_trial_3.pro.user.2ff5dd2 \
+    proj_trial_3.pro.user.4474141 \
+    proj_trial_3.pro.user.b9763a2 \
+    proj_trial_3.sln \
+    proj_trial_3.vcxproj \
+    proj_trial_3.vcxproj.filters \
+    proj_trial_3.vcxproj.user

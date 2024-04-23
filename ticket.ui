@@ -167,7 +167,7 @@ border-radius: 12;</string>
      <property name="title">
       <string/>
      </property>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="station_2">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -418,7 +418,7 @@ border-radius: 12;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_11">
+    <widget class="QPushButton" name="logout">
      <property name="geometry">
       <rect>
        <x>240</x>
