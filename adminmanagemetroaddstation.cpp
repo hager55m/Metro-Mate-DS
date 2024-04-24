@@ -1,11 +1,14 @@
 #include "adminmanagemetroaddstation.h"
 #include "ui_adminmanagemetroaddstation.h"
-
+#include <QMessageBox>
+#include"Graph.h"
 AdminManageMetroAddStation::AdminManageMetroAddStation(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AdminManageMetroAddStation)
 {
     ui->setupUi(this);
+    connect(ui->pushButton_12, &QPushButton::clicked, this, &AdminManageMetroAddStation::on_pushButton_12_clicked);
+
     QPixmap u(":/images/img/man.png");
     ui->userpic_2->setPixmap(u.scaled(ui->userpic_2->width(), ui->userpic_2->height(),Qt::KeepAspectRatio));
 
@@ -51,6 +54,27 @@ void AdminManageMetroAddStation::on_pushButton_21_clicked()
 void AdminManageMetroAddStation::on_pushButton_15_clicked()
 {
     emit SwitchToMnageMetroOption();
+}
+void AdminManageMetroAddStation::on_pushButton_12_clicked()
+{
+    QString stationName = ui->name_19->text();
+    int lines = ui->name_21->text().toInt();
+   
+    Graph g;
+    Station newStation(stationName.toStdString(), lines);
+
+    if (g.stations.find(newStation) != g.stations.end()) {
+        QMessageBox::warning(this, "Duplicate Station", "Station already exists!");
+        return;
+    }
+    else
+    { 
+        g.stations.insert(newStation);
+    }
+        
+    qDebug() << "Saved Station:" << QString::fromStdString(newStation.getName()) << "Lines:" << lines;
+
+    emit saveComplete();
 }
 AdminManageMetroAddStation::~AdminManageMetroAddStation()
 {
