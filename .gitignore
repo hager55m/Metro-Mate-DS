@@ -398,3 +398,34 @@ FodyWeavers.xsd
 *.sln.iml
 /debug/proj_trial_3.tlog/proj_trial_3.write.1u.tlog
 /.vs/proj_trial_3/v17/Browse.VC.db
+# Qt Creator generated files
+debug/*
+proj_trial_3.tlog/*
+
+# User-specific project configuration files
+proj_trial_3*.user
+
+# Generated UI header files
+ui_*.h
+
+# Common build artifacts (adjust based on your build system)
+*.o
+*.obj
+*.moc
+*.so
+*.dll
+*.a
+*.lib
+
+# IDE specific (adjust based on your IDE)
+.idea/*
+.vscode/*
+
+# Temporary or log files
+*.log
+*.err
+*.out
+
+# OS specific (adjust based on your OS)
+Thumbs.db
+.DS_Store
