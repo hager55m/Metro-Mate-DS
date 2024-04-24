@@ -41,6 +41,42 @@ addsub::~addsub()
     delete ui;
 }
 
-void addsub::on_m1_clicked(){
-    emit switchtoSub();
+//void addsub::on_m1_clicked(){
+//    emit switchtoSub();
+//}
+
+
+
+void addsub::on_pushButton_7_clicked()
+{
+    emit addsubscription();
 }
+void addsub::on_pushButton_8_clicked()
+{
+    emit removesubscription();
+
+}
+
+void addsub::on_pushButton_6_clicked()
+{
+    emit SwitchToHomePAGE();
+}
+void addsub::on_pushButton_4_clicked()
+{
+    emit SwitchToMangeMetro();
+}
+void addsub::on_pushButton_3_clicked()
+{
+    emit SwitchToTickets();
+}
+void addsub::on_pushButton_5_clicked()
+{
+    emit SwitchToStation();
+
+}
+void addsub::on_pushButton_2_clicked()
+{
+    emit SwitchTosubscription();
+   
+}
+

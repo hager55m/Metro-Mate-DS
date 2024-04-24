@@ -12,7 +12,7 @@ class Graph
 {
     std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash>adjStation;
     std::unordered_set< Station, StationHash>stations;
-    void allPossiblePathsFunctionality(Station starPoint, Station endPoint);
+    
 public:
 
     void addEdge(Station preStation, Station nextStation);
@@ -21,6 +21,7 @@ public:
     void deleteStation(Station certainStation);
     void AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path);
     void printGraph();
+    void allPossiblePathsFunctionality(Station starPoint, Station endPoint);
 
     std::stack<Station> ShortestPathBFS(Station start, Station end);
 

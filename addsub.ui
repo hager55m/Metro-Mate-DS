@@ -170,27 +170,6 @@ border-radius: 12;</string>
      <property name="title">
       <string/>
      </property>
-     <widget class="QPushButton" name="pushButton1">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>451</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>22</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Home Page</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="imghome">
       <property name="geometry">
        <rect>
@@ -225,6 +204,27 @@ border-radius: 12;
        <string/>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>451</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Home Page</string>
+      </property>
+     </widget>
+     <zorder>pushButton_6</zorder>
+     <zorder>imghome</zorder>
+     <zorder>label_3</zorder>
     </widget>
     <widget class="QLabel" name="metroimg">
      <property name="geometry">
