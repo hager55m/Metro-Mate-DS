@@ -70,6 +70,7 @@ void AdminManageMetroAddStation::on_pushButton_12_clicked()
     else
     { 
         g.stations.insert(newStation);
+       
     }
         
     qDebug() << "Saved Station:" << QString::fromStdString(newStation.getName()) << "Lines:" << lines;

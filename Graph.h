@@ -11,10 +11,9 @@ using namespace std;
 class Graph
 {
     std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash>adjStation;
-    std::unordered_set< Station, StationHash>stations;
     void allPossiblePathsFunctionality(Station starPoint, Station endPoint);
 public:
-
+    std::unordered_set< Station, StationHash>stations;
     void addEdge(Station preStation, Station nextStation);
     void addStation(string name, int line);
     void editStation(Station certainStation);
