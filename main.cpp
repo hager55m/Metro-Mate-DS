@@ -54,10 +54,10 @@ int main(int argc, char *argv[])
     //ticket.show();
  // admin.show();
 //=======
-   
+    addsub.show();
     
     
-    lp.show();
+    //lp.show();
 
 
 
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
          });
 
      QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
-        // s.show();
+         addsub.show();
          admin.hide();
          });
      
@@ -120,6 +120,7 @@ int main(int argc, char *argv[])
         lp.show();
         admm.hide();
     });
+   
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToAddStation, [&](){
         adStation.show();
         admm.hide();
@@ -138,7 +139,7 @@ int main(int argc, char *argv[])
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToSub, [&]() {
-       // s.show();
+        addsub.show();
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToTicket, [&]() {
@@ -159,7 +160,7 @@ int main(int argc, char *argv[])
         ticket.hide();
         });
     QObject::connect(&ticket, &Ticket::switshtosub, [&]() {
-        //s.show();
+        addsub.show();
         ticket.hide();
         });
     QObject::connect(&ticket, &Ticket::switshtostation, [&]() {
@@ -518,7 +519,40 @@ int main(int argc, char *argv[])
         AdminStation.hide();
         });
 
-    
+    /// addsub 
+    QObject::connect(&addsub, &addsub::SwitchToHomePAGE, [&]() {
+            admin.show();
+            addsub.hide();
+        });
+    QObject::connect(&addsub, &addsub::SwitchTosubscription, [&]() {
+        AdminStation.show();
+        addsub.hide();
+        });
+    QObject::connect(&addsub, &addsub::LogoutSub, [&]() {
+        lp.show();
+        addsub.hide();
+        });
+
+    QObject::connect(&addsub, &addsub::addsubscription, [&]() {
+        addsub.show();
+        addsub.hide();
+        });
+
+    QObject::connect(&addsub, &addsub::removesubscription, [&]() {
+        removesub.show();
+        addsub.hide();
+        });
+
+    QObject::connect(&addsub, &addsub::SwitchToMangeMetro, [&]() {
+        admm.show();
+        addsub.hide();
+        });
+
+    QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
+        ticket.show();
+        addsub.hide();
+        });
+
    
 //>>>>>>> main
 

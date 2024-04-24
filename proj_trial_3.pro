@@ -28,7 +28,8 @@ SOURCES += \
     subscription.cpp \
     ticketpage.cpp \
     userdata.cpp \
-    verfication.cpp
+    verfication.cpp\
+    moc_adminmanagemetrootions.cpp
 
 HEADERS += \
     AdminHomeBage.h \

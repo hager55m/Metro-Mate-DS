@@ -53,8 +53,8 @@ public:
     QGroupBox *groupBox_2;
     QLabel *label_21;
     QPushButton *pushButton_12;
-    QPushButton *pushButton_13;
     QTextBrowser *textBrowser;
+    QPushButton *pushButton_13;
 
     void setupUi(QDialog *AdminManageMetroOtions)
     {
@@ -217,18 +217,18 @@ public:
         pushButton_12->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
-        pushButton_13 = new QPushButton(groupBox_2);
-        pushButton_13->setObjectName("pushButton_13");
-        pushButton_13->setGeometry(QRect(430, 580, 231, 41));
-        pushButton_13->setFont(font1);
-        pushButton_13->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
-"border-radius: 12;\n"
-"color: black;"));
         textBrowser = new QTextBrowser(groupBox_2);
         textBrowser->setObjectName("textBrowser");
         textBrowser->setGeometry(QRect(30, 90, 641, 461));
         textBrowser->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
+        pushButton_13 = new QPushButton(groupBox_2);
+        pushButton_13->setObjectName("pushButton_13");
+        pushButton_13->setGeometry(QRect(390, 580, 251, 41));
+        pushButton_13->setFont(font1);
+        pushButton_13->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         pushButton_21->raise();
         label_34->raise();
         pushButton_10->raise();

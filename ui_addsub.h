@@ -34,9 +34,9 @@ public:
     QLabel *ticimg;
     QLabel *label_7;
     QGroupBox *sub;
-    QPushButton *pushButton1;
     QLabel *imghome;
     QLabel *label_3;
+    QPushButton *pushButton_6;
     QLabel *metroimg;
     QLabel *label_13;
     QLabel *adminimg;
@@ -106,11 +106,6 @@ public:
         sub = new QGroupBox(groupBox);
         sub->setObjectName("sub");
         sub->setGeometry(QRect(0, 200, 451, 80));
-        pushButton1 = new QPushButton(sub);
-        pushButton1->setObjectName("pushButton1");
-        pushButton1->setGeometry(QRect(0, 0, 451, 81));
-        pushButton1->setFont(font);
-        pushButton1->setStyleSheet(QString::fromUtf8(""));
         imghome = new QLabel(sub);
         imghome->setObjectName("imghome");
         imghome->setGeometry(QRect(20, 20, 49, 41));
@@ -121,6 +116,13 @@ public:
         label_3->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
 "border-radius: 12;\n"
 ""));
+        pushButton_6 = new QPushButton(sub);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setGeometry(QRect(0, 0, 451, 81));
+        pushButton_6->setFont(font);
+        pushButton_6->raise();
+        imghome->raise();
+        label_3->raise();
         metroimg = new QLabel(groupBox);
         metroimg->setObjectName("metroimg");
         metroimg->setGeometry(QRect(10, 660, 61, 51));
@@ -243,9 +245,9 @@ public:
         ticimg->setText(QString());
         label_7->setText(QString());
         sub->setTitle(QString());
-        pushButton1->setText(QCoreApplication::translate("addsub", "Home Page", nullptr));
         imghome->setText(QString());
         label_3->setText(QString());
+        pushButton_6->setText(QCoreApplication::translate("addsub", "Home Page", nullptr));
         metroimg->setText(QString());
         label_13->setText(QCoreApplication::translate("addsub", "Egypt Metro", nullptr));
         adminimg->setText(QString());
