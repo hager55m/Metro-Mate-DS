@@ -43,8 +43,8 @@ constexpr auto qt_meta_stringdata_CLASSLoginPageENDCLASS = QtMocHelpers::stringD
     "",
     "SwitchToMainPage",
     "SwitchToAdminPage",
-    "on_login_clicked",
-    "on_signup_clicked"
+    "on_signup_clicked",
+    "on_login_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSLoginPageENDCLASS_t {
@@ -54,8 +54,8 @@ struct qt_meta_stringdata_CLASSLoginPageENDCLASS_t {
     char stringdata2[1];
     char stringdata3[17];
     char stringdata4[18];
-    char stringdata5[17];
-    char stringdata6[18];
+    char stringdata5[18];
+    char stringdata6[17];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSLoginPageENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -66,16 +66,16 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSLoginPageENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(25, 0),  // ""
         QT_MOC_LITERAL(26, 16),  // "SwitchToMainPage"
         QT_MOC_LITERAL(43, 17),  // "SwitchToAdminPage"
-        QT_MOC_LITERAL(61, 16),  // "on_login_clicked"
-        QT_MOC_LITERAL(78, 17)   // "on_signup_clicked"
+        QT_MOC_LITERAL(61, 17),  // "on_signup_clicked"
+        QT_MOC_LITERAL(79, 16)   // "on_login_clicked"
     },
     "LoginPage",
     "SwitchTOSignup",
     "",
     "SwitchToMainPage",
     "SwitchToAdminPage",
-    "on_login_clicked",
-    "on_signup_clicked"
+    "on_signup_clicked",
+    "on_login_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -130,9 +130,9 @@ Q_CONSTINIT const QMetaObject LoginPage::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'SwitchToAdminPage'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_login_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_signup_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_login_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -147,8 +147,8 @@ void LoginPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->SwitchTOSignup(); break;
         case 1: _t->SwitchToMainPage(); break;
         case 2: _t->SwitchToAdminPage(); break;
-        case 3: _t->on_login_clicked(); break;
-        case 4: _t->on_signup_clicked(); break;
+        case 3: _t->on_signup_clicked(); break;
+        case 4: _t->on_login_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

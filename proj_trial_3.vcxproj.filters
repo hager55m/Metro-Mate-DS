@@ -60,6 +60,21 @@
     <ClCompile Include="AdminHomeBage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Station.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StationClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addsub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="adminmanagemetroaddstation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -72,6 +87,9 @@
     <ClCompile Include="adminstations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="admonmanagemetrooptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="historypage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -82,6 +100,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mainpage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="manage_metro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removesub.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="renewsub.cpp">
@@ -108,6 +132,9 @@
     <ClCompile Include="subscription.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ticket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ticketpage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -117,29 +144,26 @@
     <ClCompile Include="verfication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="addsub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="admin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="removesub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ticket.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Graph.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Station.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdminHomeBage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Station.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StationClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="addsub.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="admin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="adminmanagemetroaddstation.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -152,6 +176,9 @@
     <QtMoc Include="adminstations.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="admonmanagemetrooptions.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="historypage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -159,6 +186,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="mainpage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="manage_metro.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="removesub.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="renewsub.h">
@@ -185,6 +218,9 @@
     <QtMoc Include="subscription.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ticket.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="ticketpage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -194,24 +230,6 @@
     <QtMoc Include="verfication.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClInclude Include="ui_addsub.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_admin.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_removesub.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_ticket.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Graph.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Station.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -223,6 +241,15 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminHomeBage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="DialogButtonBottom.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="addsub.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="admin.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="adminmanagemetroaddstation.ui">
@@ -237,6 +264,9 @@
     <QtUic Include="adminstations.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="admonmanagemetrooptions.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
     <QtUic Include="historypage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
@@ -244,6 +274,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="mainpage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="manage_metro.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="removesub.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="renewsub.ui">
@@ -270,6 +306,9 @@
     <QtUic Include="subscription.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="ticket.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
     <QtUic Include="ticketpage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
@@ -277,18 +316,6 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="verfication.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="addsub.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="admin.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="removesub.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ticket.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -364,22 +391,44 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="-">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Backup.vcxproj.user">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.pro.user">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.pro.user.271141c">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.pro.user.2ff5dd2">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.pro.user.4474141">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.pro.user.b9763a2">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.sln">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.vcxproj">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.vcxproj.filters">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="proj_trial_3.vcxproj.user">
+      <Filter>Distribution Files</Filter>
+    </None>
     <None Include="img\stations_name.txt">
       <Filter>Distribution Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="addsub.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="admin.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="removesub.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ticket.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
 </Project>
