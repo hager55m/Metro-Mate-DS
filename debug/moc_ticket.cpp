@@ -48,8 +48,8 @@ constexpr auto qt_meta_stringdata_CLASSTicketENDCLASS = QtMocHelpers::stringData
     "on_pushButton1_clicked",
     "on_pushButton_4_clicked",
     "on_pushButton_5_clicked",
-    "on_pushButton_2_clicked",
-    "on_pushButton_11_clicked"
+    "on_station_2_clicked",
+    "on_logout_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSTicketENDCLASS_t {
@@ -64,8 +64,8 @@ struct qt_meta_stringdata_CLASSTicketENDCLASS_t {
     char stringdata7[23];
     char stringdata8[24];
     char stringdata9[24];
-    char stringdata10[24];
-    char stringdata11[25];
+    char stringdata10[21];
+    char stringdata11[18];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSTicketENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -81,8 +81,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSTicketENDCLASS_t qt_meta_string
         QT_MOC_LITERAL(79, 22),  // "on_pushButton1_clicked"
         QT_MOC_LITERAL(102, 23),  // "on_pushButton_4_clicked"
         QT_MOC_LITERAL(126, 23),  // "on_pushButton_5_clicked"
-        QT_MOC_LITERAL(150, 23),  // "on_pushButton_2_clicked"
-        QT_MOC_LITERAL(174, 24)   // "on_pushButton_11_clicked"
+        QT_MOC_LITERAL(150, 20),  // "on_station_2_clicked"
+        QT_MOC_LITERAL(171, 17)   // "on_logout_clicked"
     },
     "Ticket",
     "switshtoadmin",
@@ -94,8 +94,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSTicketENDCLASS_t qt_meta_string
     "on_pushButton1_clicked",
     "on_pushButton_4_clicked",
     "on_pushButton_5_clicked",
-    "on_pushButton_2_clicked",
-    "on_pushButton_11_clicked"
+    "on_station_2_clicked",
+    "on_logout_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -170,9 +170,9 @@ Q_CONSTINIT const QMetaObject Ticket::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_5_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_2_clicked'
+        // method 'on_station_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_11_clicked'
+        // method 'on_logout_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -192,8 +192,8 @@ void Ticket::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 5: _t->on_pushButton1_clicked(); break;
         case 6: _t->on_pushButton_4_clicked(); break;
         case 7: _t->on_pushButton_5_clicked(); break;
-        case 8: _t->on_pushButton_2_clicked(); break;
-        case 9: _t->on_pushButton_11_clicked(); break;
+        case 8: _t->on_station_2_clicked(); break;
+        case 9: _t->on_logout_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
