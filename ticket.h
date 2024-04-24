@@ -28,11 +28,12 @@ private slots:
     void on_pushButton1_clicked();
     void on_pushButton_4_clicked();
      void on_pushButton_5_clicked();
-     void on_pushButton_2_clicked();
-     void on_pushButton_11_clicked();
 
+     void on_station_2_clicked();
 
-private:
+     void on_logout_clicked();
+
+ private:
     Ui::Ticket *ui;
 };
 

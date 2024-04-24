@@ -55,9 +55,14 @@ void Ticket::on_pushButton_4_clicked(){
 void Ticket::on_pushButton_5_clicked(){
     emit switshtosub();
 }
-void Ticket::on_pushButton_2_clicked() {
+
+void Ticket::on_station_2_clicked()
+{
     emit switshtostation();
 }
-void Ticket::on_pushButton_11_clicked() {
+
+void Ticket::on_logout_clicked()
+{
     emit switshtologin();
 }
+

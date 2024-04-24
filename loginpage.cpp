@@ -28,6 +28,11 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
+void LoginPage::on_signup_clicked()
+{
+    emit SwitchTOSignup();
+}
+
 // addjust data to be read from files
 void LoginPage::on_login_clicked()
 {
@@ -45,11 +50,6 @@ void LoginPage::on_login_clicked()
     {
         QMessageBox::information(this, "Login", "Username or password is incorrect");
     }
-}
 
-
-void LoginPage::on_signup_clicked()
-{
-    emit SwitchTOSignup();
 }
 
