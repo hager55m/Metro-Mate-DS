@@ -2,7 +2,7 @@
 #include "ui_addsub.h"
 #include <QFile>
 #include <QTextStream>
-
+#include <QMessageBox>
 
 addsub::addsub(QWidget *parent)
     : QDockWidget(parent)
@@ -86,24 +86,53 @@ void addsub::on_save_clicked()
 
     if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty()) 
     {
+        // putting data into variables
         QString Sub_name = ui->name->text();
         QString Rides_no = ui->rides->text();
         QString Duration = ui->month->text();
-        QFile file("D:/QT/project/Metro-Mate-DS/img/files/Sub.txt");
+        bool to_be_saved = false;
 
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        QFile file("D:/QT/project/Metro-Mate-DS/img/files/Sub.txt");
+        // checking if data is duplicate
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         {
-            qDebug() << "Failed to open file for writing:" << file.errorString();
+            qDebug() << "Failed to open file for reading:" << file.errorString();
             return;
         }
 
-        QTextStream out(&file);
+        QTextStream in(&file);
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+            if (line.toLower() == Sub_name.toLower())
+            {
+                file.close();
+                QMessageBox::information(this, "Add Subscription", "Data Duplicate Detected!\nThis Subscription already exists");
+                to_be_saved = false;
+                break;
+            }
+            else{
+                to_be_saved = true;
+            }
+        }
+        file.close(); // Close the file
 
-        out << Sub_name << "\n";
-        out << Rides_no << "\n";
-        out << Duration << "\n";
-        file.close();
+        if(to_be_saved){
+            // saving data into file
+            if (!file.open(QIODevice::Append | QIODevice::Text))
+            {
+                qDebug() << "Failed to open file for writing:" << file.errorString();
+                return;
+            }
 
+            QTextStream out(&file);
+
+            out << Sub_name << "\n";
+            out << Rides_no << "\n";
+            out << Duration << "\n";
+            file.close();
+            QMessageBox::information(this, "Add Subscription", "Subscription added successfully!");
+        }
     }
 }
 
