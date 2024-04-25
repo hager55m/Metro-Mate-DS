@@ -10,6 +10,11 @@
     <height>700</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Baskerville Old Face</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>DockWidget</string>
   </property>
@@ -17,8 +22,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>0</y>
+      <x>-10</x>
+      <y>-20</y>
       <width>450</width>
       <height>721</height>
      </rect>
@@ -49,6 +54,7 @@
       </property>
       <property name="font">
        <font>
+        <family>Baskerville Old Face</family>
         <pointsize>22</pointsize>
        </font>
       </property>
@@ -114,6 +120,7 @@ border-radius: 12;</string>
       </property>
       <property name="font">
        <font>
+        <family>Baskerville Old Face</family>
         <pointsize>22</pointsize>
        </font>
       </property>
@@ -215,6 +222,7 @@ border-radius: 12;
       </property>
       <property name="font">
        <font>
+        <family>Baskerville Old Face</family>
         <pointsize>22</pointsize>
        </font>
       </property>
@@ -286,6 +294,7 @@ border-radius: 12;</string>
      </property>
      <property name="font">
       <font>
+       <family>Baskerville Old Face</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -383,6 +392,7 @@ border-radius: 12;</string>
       </property>
       <property name="font">
        <font>
+        <family>Baskerville Old Face</family>
         <pointsize>22</pointsize>
        </font>
       </property>
@@ -428,7 +438,7 @@ border-radius: 12;</string>
    <widget class="QLineEdit" name="name">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>810</x>
       <y>220</y>
       <width>291</width>
       <height>41</height>
@@ -451,7 +461,7 @@ color: black;</string>
    <widget class="QLineEdit" name="rides">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>810</x>
       <y>300</y>
       <width>291</width>
       <height>41</height>
@@ -482,11 +492,12 @@ color: black;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <family>Baskerville Old Face</family>
+      <pointsize>26</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Sub Type :</string>
+     <string>Type:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -494,42 +505,44 @@ color: black;</string>
      <rect>
       <x>500</x>
       <y>300</y>
-      <width>161</width>
+      <width>201</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <family>Baskerville Old Face</family>
+      <pointsize>26</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>No_Of_Ride :</string>
+     <string>NO. of Rides:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>690</x>
       <y>50</y>
-      <width>301</width>
-      <height>41</height>
+      <width>311</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <family>Baskerville Old Face</family>
+      <pointsize>32</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Adding subscription........</string>
+     <string>Add Subscription</string>
     </property>
    </widget>
    <widget class="QPushButton" name="save">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>540</y>
+      <x>720</x>
+      <y>550</y>
       <width>231</width>
       <height>41</height>
      </rect>
@@ -552,9 +565,9 @@ color: black;</string>
    <widget class="QLineEdit" name="month">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>810</x>
       <y>380</y>
-      <width>291</width>
+      <width>161</width>
       <height>41</height>
      </rect>
     </property>
@@ -570,6 +583,44 @@ color: black;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>390</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Baskerville Old Face</family>
+      <pointsize>26</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Duration:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>380</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Baskerville Old Face</family>
+      <pointsize>26</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Month(s)</string>
     </property>
    </widget>
   </widget>

@@ -9,11 +9,9 @@ addsub::addsub(QWidget *parent)
     , ui(new Ui::addsub)
 {
     ui->setupUi(this);
+    setWindowTitle("Metro");
+    setWindowIcon(QIcon(":/images/img/download.png"));
     setStyleSheet("background-color:#BDBDBD;");
-    QFont font(" Baxautrial",12);
-    setFont(font);
-    ui->rides->setStyleSheet("background-color:#D9D9D9 ;");
-    ui->name->setStyleSheet("background-color:#D9D9D9 ;");
 
     QPixmap i(":/images/img/home (1).png");
     ui->label_3->setPixmap(i.scaled(ui->label_3->width(), ui->label_3->height(),Qt::KeepAspectRatio));
@@ -85,20 +83,27 @@ void addsub::on_pushButton_2_clicked()
 
 void addsub::on_save_clicked()
 {
-    QPushButton* button = new QPushButton("Save", this);
-    connect(button, &QPushButton::clicked, this, &addsub::on_save_clicked);
-    
+    qDebug("here");
     if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty()) 
     {
         QString Sub_name = ui->name->text();
         QString Rides_no = ui->rides->text();
         QString Duration = ui->month->text();
-        QFile file(":/images/img/Sub.txt");
-        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            QTextStream out(&file);
-            out << Sub_name << "," << Rides_no << "," << Duration;
-            file.close();
+        QFile file("D:/QT/project/Metro-Mate-DS/img/files/Sub.txt");
+
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            qDebug() << "Failed to open file for writing:" << file.errorString();
+            return;
         }
+
+        QTextStream out(&file);
+
+        out << Sub_name << "\n";
+        out << Rides_no << "\n";
+        out << Duration << "\n";
+        file.close();
+
     }
 }
 
