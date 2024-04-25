@@ -1,5 +1,8 @@
 #include "addsub.h"
 #include "ui_addsub.h"
+#include <QFile>
+#include <QTextStream>
+
 
 addsub::addsub(QWidget *parent)
     : QDockWidget(parent)
@@ -9,8 +12,8 @@ addsub::addsub(QWidget *parent)
     setStyleSheet("background-color:#BDBDBD;");
     QFont font(" Baxautrial",12);
     setFont(font);
-    ui->mail_2->setStyleSheet("background-color:#D9D9D9 ;");
-    ui->mail->setStyleSheet("background-color:#D9D9D9 ;");
+    ui->rides->setStyleSheet("background-color:#D9D9D9 ;");
+    ui->name->setStyleSheet("background-color:#D9D9D9 ;");
 
     QPixmap i(":/images/img/home (1).png");
     ui->label_3->setPixmap(i.scaled(ui->label_3->width(), ui->label_3->height(),Qt::KeepAspectRatio));
@@ -79,4 +82,25 @@ void addsub::on_pushButton_2_clicked()
     emit SwitchTosubscription();
    
 }
+
+void addsub::on_save_clicked()
+{
+    QPushButton* button = new QPushButton("Save", this);
+    connect(button, &QPushButton::clicked, this, &addsub::on_save_clicked);
+    
+    if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty()) 
+    {
+        QString Sub_name = ui->name->text();
+        QString Rides_no = ui->rides->text();
+        QString Duration = ui->month->text();
+        QFile file(":/images/img/Sub.txt");
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QTextStream out(&file);
+            out << Sub_name << "," << Rides_no << "," << Duration;
+            file.close();
+        }
+    }
+}
+
+
 

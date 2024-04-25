@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1004</width>
-    <height>767</height>
+    <width>1200</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -425,7 +425,7 @@ border-radius: 12;</string>
      </widget>
     </widget>
    </widget>
-   <widget class="QLineEdit" name="mail">
+   <widget class="QLineEdit" name="name">
     <property name="geometry">
      <rect>
       <x>670</x>
@@ -448,7 +448,7 @@ color: black;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLineEdit" name="mail_2">
+   <widget class="QLineEdit" name="rides">
     <property name="geometry">
      <rect>
       <x>670</x>
@@ -525,11 +525,11 @@ color: black;</string>
      <string>Adding subscription........</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="save">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>550</y>
+      <x>650</x>
+      <y>540</y>
       <width>231</width>
       <height>41</height>
      </rect>
@@ -549,21 +549,24 @@ color: black;</string>
      <string>Save</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="m1">
+   <widget class="QLineEdit" name="month">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>30</y>
-      <width>75</width>
-      <height>71</height>
+      <x>670</x>
+      <y>380</y>
+      <width>291</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
-border-radius: 5;
-border-image: url(:/images/img/left-arrow.png) 0 0 0 0 stretch stretch;
-width: 50px;
-height: 50px;</string>
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
     </property>
     <property name="text">
      <string/>

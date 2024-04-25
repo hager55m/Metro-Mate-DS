@@ -230,6 +230,15 @@
     <QtMoc Include="verfication.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="ui_addsub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetrootions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -430,5 +439,13 @@
     <None Include="img\stations_name.txt">
       <Filter>Distribution Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="proj_trial_3.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="img\files\Sub.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
