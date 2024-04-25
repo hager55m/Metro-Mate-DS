@@ -83,7 +83,7 @@ void addsub::on_pushButton_2_clicked()
 
 void addsub::on_save_clicked()
 {
-    qDebug("here");
+
     if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty()) 
     {
         QString Sub_name = ui->name->text();
