@@ -553,6 +553,11 @@ int main(int argc, char *argv[])
         addsub.hide();
         });
 
+    QObject::connect(&addsub, &addsub::SwitchToLogin, [&]() {
+        lp.show();
+        addsub.hide();
+    });
+
    
 //>>>>>>> main
 

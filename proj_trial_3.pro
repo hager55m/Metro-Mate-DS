@@ -131,6 +131,7 @@ RESOURCES += \
     res.qrc
 
 DISTFILES += \
+    img/files/Sub.txt \
     img/stations_name.txt \
     proj_trial_3 - Backup.vcxproj.user \
     proj_trial_3.pro.user \

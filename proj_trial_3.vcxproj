@@ -85,7 +85,8 @@
       <Optimization>MaxSpeed</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -235,8 +236,11 @@
   <ItemGroup>
     <ClInclude Include="AdminHomeBage.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Station.h" />
     <ClInclude Include="StationClass.h" />
+    <ClInclude Include="ui_addsub.h" />
+    <ClInclude Include="ui_adminmanagemetrootions.h" />
     <QtMoc Include="addsub.h" />
     <QtMoc Include="admin.h" />
     <QtMoc Include="adminmanagemetroaddstation.h" />
@@ -347,6 +351,12 @@
     <None Include="proj_trial_3.vcxproj.filters" />
     <None Include="proj_trial_3.vcxproj.user" />
     <None Include="img\stations_name.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="proj_trial_3.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="img\files\Sub.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
