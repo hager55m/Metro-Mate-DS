@@ -136,5 +136,8 @@ void addsub::on_save_clicked()
     }
 }
 
-
+void addsub::on_logout_clicked()
+{
+    emit SwitchToLogin();
+}
 

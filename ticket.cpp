@@ -7,13 +7,8 @@ Ticket::Ticket(QWidget *parent)
 {
     ui->setupUi(this);
     setStyleSheet("background-color:#BDBDBD;");
-    QFont font(" Baxautrial",12);
-    setFont(font);
-    ui->mail_2->setStyleSheet("background-color:#D9D9D9 ;");
-    ui->mail->setStyleSheet("background-color:#D9D9D9 ;");
-    ui->mail_3->setStyleSheet("background-color:#D9D9D9 ;");
-
-
+    setWindowTitle("Metro");
+    setWindowIcon(QIcon(":/images/img/download.png"));
 
     QPixmap i(":/images/img/home (1).png");
     ui->label_3->setPixmap(i.scaled(ui->label_3->width(), ui->label_3->height(),Qt::KeepAspectRatio));
