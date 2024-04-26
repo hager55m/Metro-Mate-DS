@@ -57,9 +57,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdminHomeBage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -73,6 +70,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="admin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admindatapage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="adminmanagemetroaddstation.cpp">
@@ -161,6 +161,9 @@
     <QtMoc Include="admin.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="admindatapage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="adminmanagemetroaddstation.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -221,24 +224,15 @@
     <QtMoc Include="ticketpage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="ui_AdminHomeBage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <QtMoc Include="userdata.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="verfication.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClInclude Include="ui_addsub.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_adminmanagemetrootions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AdminHomeBage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -249,9 +243,6 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="AdminHomeBage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtUic Include="DialogButtonBottom.ui">
       <Filter>Form Files</Filter>
     </QtUic>
@@ -259,6 +250,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="admin.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="admindatapage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="adminmanagemetroaddstation.ui">
@@ -341,6 +335,9 @@
     <None Include="img\422833-PE4141-817 (2).png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="img\files\Sub.txt">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="img\default_qrcode.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -406,6 +403,9 @@
     <None Include="Backup.vcxproj.user">
       <Filter>Distribution Files</Filter>
     </None>
+    <None Include="img\files\Sub.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
     <None Include="proj_trial_3">
       <Filter>Distribution Files</Filter>
     </None>
@@ -439,13 +439,5 @@
     <None Include="img\stations_name.txt">
       <Filter>Distribution Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="proj_trial_3.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="img\files\Sub.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>

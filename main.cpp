@@ -12,7 +12,7 @@
 #include "historypage.h"
 #include "searchpage.h"
 #include "verfication.h"
-#include"AdminHomeBage.h"
+//#include"AdminHomeBage.h"
 #include"adminmanagemetroaddstation.h"
 #include"adminmanagemetrootions.h"
 #include "adminmanagemetroremovestation.h"
@@ -56,10 +56,10 @@ int main(int argc, char *argv[])
     //ticket.show();
  // admin.show();
 //=======
-    addsub.show();
+    //addsub.show();
     
     
-    //lp.show();
+    lp.show();
 
     QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
         lp.show();
