@@ -36,6 +36,7 @@ SOURCES += \
     subscription.cpp \
     ticket.cpp \
     ticketpage.cpp \
+    userclass.cpp \
     userdata.cpp \
     verfication.cpp
 
@@ -90,6 +91,7 @@ HEADERS += \
     ui_ticketpage.h \
     ui_userdata.h \
     ui_verfication.h \
+    userclass.h \
     userdata.h \
     verfication.h
 
