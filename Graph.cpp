@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+static Graph graph;
 void Graph::addEdge(Station station1, Station station2)
 {
     // check box to make sure that station already exsist
@@ -120,6 +120,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
     }
 
     stack<Station>s{};
+    s.push(end);
     while (end.getName() != start.getName())
     {
         s.push(path[end].first);
@@ -129,6 +130,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
 
     return s;
 }
+
 
 
 

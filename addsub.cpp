@@ -4,6 +4,7 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+
 addsub::addsub(QWidget *parent)
     : QDockWidget(parent)
     , ui(new Ui::addsub)
@@ -138,6 +139,7 @@ void addsub::on_save_clicked()
 
 void addsub::on_logout_clicked()
 {
+    
     emit SwitchToLogin();
 }
 
