@@ -53,19 +53,12 @@ public:
     QLabel *label_43;
     QLabel *label_44;
     QLabel *label_45;
-    QLabel *label_50;
-    QLabel *label_51;
-    QLabel *label_57;
-    QLabel *label_58;
-    QLineEdit *name_16;
-    QLineEdit *name_17;
-    QLineEdit *name_18;
     QLineEdit *name_19;
-    QLineEdit *name_20;
     QLineEdit *name_21;
     QPushButton *pushButton_12;
     QPushButton *pushButton_15;
     QLabel *homepic_3;
+    QPushButton *pushButton_14;
 
     void setupUi(QDialog *AdminManageMetroAddStation)
     {
@@ -219,7 +212,7 @@ public:
         label_43->setFont(font3);
         label_44 = new QLabel(groupBox_2);
         label_44->setObjectName("label_44");
-        label_44->setGeometry(QRect(30, 160, 271, 51));
+        label_44->setGeometry(QRect(40, 210, 271, 51));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Arial")});
         font4.setPointSize(24);
@@ -227,71 +220,27 @@ public:
         label_44->setFont(font4);
         label_45 = new QLabel(groupBox_2);
         label_45->setObjectName("label_45");
-        label_45->setGeometry(QRect(30, 240, 271, 51));
+        label_45->setGeometry(QRect(50, 360, 271, 51));
         label_45->setFont(font4);
-        label_50 = new QLabel(groupBox_2);
-        label_50->setObjectName("label_50");
-        label_50->setGeometry(QRect(30, 400, 281, 41));
-        label_50->setFont(font4);
-        label_51 = new QLabel(groupBox_2);
-        label_51->setObjectName("label_51");
-        label_51->setGeometry(QRect(30, 320, 261, 51));
-        label_51->setFont(font4);
-        label_57 = new QLabel(groupBox_2);
-        label_57->setObjectName("label_57");
-        label_57->setGeometry(QRect(30, 480, 291, 51));
-        label_57->setFont(font4);
-        label_58 = new QLabel(groupBox_2);
-        label_58->setObjectName("label_58");
-        label_58->setGeometry(QRect(30, 560, 281, 51));
-        label_58->setFont(font4);
-        name_16 = new QLineEdit(groupBox_2);
-        name_16->setObjectName("name_16");
-        name_16->setGeometry(QRect(270, 560, 421, 51));
-        QFont font5;
-        font5.setPointSize(18);
-        name_16->setFont(font5);
-        name_16->setStyleSheet(QString::fromUtf8("background-color: white;\n"
-"border-radius: 12;\n"
-"color: black;"));
-        name_17 = new QLineEdit(groupBox_2);
-        name_17->setObjectName("name_17");
-        name_17->setGeometry(QRect(270, 400, 421, 51));
-        name_17->setFont(font5);
-        name_17->setStyleSheet(QString::fromUtf8("background-color: white;\n"
-"border-radius: 12;\n"
-"color: black;"));
-        name_18 = new QLineEdit(groupBox_2);
-        name_18->setObjectName("name_18");
-        name_18->setGeometry(QRect(270, 480, 421, 51));
-        name_18->setFont(font5);
-        name_18->setStyleSheet(QString::fromUtf8("background-color: white;\n"
-"border-radius: 12;\n"
-"color: black;"));
         name_19 = new QLineEdit(groupBox_2);
         name_19->setObjectName("name_19");
-        name_19->setGeometry(QRect(270, 160, 421, 51));
+        name_19->setGeometry(QRect(280, 210, 421, 51));
+        QFont font5;
+        font5.setPointSize(18);
         name_19->setFont(font5);
         name_19->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
-        name_20 = new QLineEdit(groupBox_2);
-        name_20->setObjectName("name_20");
-        name_20->setGeometry(QRect(270, 320, 421, 51));
-        name_20->setFont(font5);
-        name_20->setStyleSheet(QString::fromUtf8("background-color: white;\n"
-"border-radius: 12;\n"
-"color: black;"));
         name_21 = new QLineEdit(groupBox_2);
         name_21->setObjectName("name_21");
-        name_21->setGeometry(QRect(270, 240, 421, 51));
+        name_21->setGeometry(QRect(280, 360, 421, 51));
         name_21->setFont(font5);
         name_21->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         pushButton_12 = new QPushButton(groupBox_2);
         pushButton_12->setObjectName("pushButton_12");
-        pushButton_12->setGeometry(QRect(170, 670, 261, 41));
+        pushButton_12->setGeometry(QRect(60, 540, 261, 41));
         pushButton_12->setFont(font1);
         pushButton_12->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
@@ -305,6 +254,13 @@ public:
         homepic_3->setObjectName("homepic_3");
         homepic_3->setGeometry(QRect(80, 100, 40, 38));
         homepic_3->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
+        pushButton_14 = new QPushButton(groupBox_2);
+        pushButton_14->setObjectName("pushButton_14");
+        pushButton_14->setGeometry(QRect(390, 540, 261, 41));
+        pushButton_14->setFont(font1);
+        pushButton_14->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         pushButton_21->raise();
         label_34->raise();
         pushButton_10->raise();
@@ -372,13 +328,10 @@ public:
         label_43->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Adding Station", nullptr));
         label_44->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Station Name:", nullptr));
         label_45->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Line:", nullptr));
-        label_50->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Line:", nullptr));
-        label_51->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Transition:", nullptr));
-        label_57->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Station Before:", nullptr));
-        label_58->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Station After:", nullptr));
         pushButton_12->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Save", nullptr));
         pushButton_15->setText(QString());
         homepic_3->setText(QString());
+        pushButton_14->setText(QCoreApplication::translate("AdminManageMetroAddStation", "Add Station", nullptr));
     } // retranslateUi
 
 };

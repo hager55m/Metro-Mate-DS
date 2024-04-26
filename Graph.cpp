@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+Graph Graph::graph;
 void Graph::addEdge(Station station1, Station station2)
 {
     // check box to make sure that station already exsist
@@ -40,8 +40,6 @@ void Graph::allPossiblePathsFunctionality(Station starPoint, Station endPoint)
 {
     map<Station, bool> visited;
     vector<string>paths;
-    int pathIndx = 0;
-
     AllPossiblePaths(starPoint, endPoint, visited, paths);
 }
 
