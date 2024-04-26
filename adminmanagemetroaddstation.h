@@ -20,6 +20,7 @@ signals:
     void SwitchToLogin();
     void SwitchToMnageMetroOption();
     void saveComplete();
+    void AddStation();
 private slots:
     void on_pushButton_10_clicked();
     void on_pushButton_11_clicked();
@@ -27,7 +28,7 @@ private slots:
     void on_pushButton_15_clicked();
     void on_pushButton_21_clicked();
     void  on_pushButton_12_clicked(); 
-    
+    void  on_pushButton_14_clicked();
 private:
     Ui::AdminManageMetroAddStation *ui;
 };
