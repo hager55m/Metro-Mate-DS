@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AdminManageMetroOtions</class>
- <widget class="QDialog" name="AdminManageMetroOtions">
+ <class>Admin</class>
+ <widget class="QDialog" name="Admin">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,13 +13,16 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(3, 3, 3);</string>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>700</height>
+     <width>450</width>
+     <height>715</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -55,7 +58,7 @@ border-radius: 12;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
+     <string notr="true">background-color: #D9D9D9;</string>
     </property>
     <property name="text">
      <string/>
@@ -169,7 +172,7 @@ border-radius: 12;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
+     <string notr="true">background-color: #D9D9D9;
 border-radius: 1;</string>
     </property>
     <property name="text">
@@ -181,7 +184,7 @@ border-radius: 1;</string>
      <rect>
       <x>80</x>
       <y>320</y>
-      <width>221</width>
+      <width>211</width>
       <height>41</height>
      </rect>
     </property>
@@ -190,9 +193,6 @@ border-radius: 1;</string>
       <family>BAXAUTRIAL</family>
       <pointsize>22</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;</string>
     </property>
     <property name="text">
      <string>Manage Metro</string>
@@ -227,7 +227,7 @@ border-radius: 1;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;
+     <string notr="true">background-color: #BDBDBD;
 border-radius: 1;</string>
     </property>
     <property name="text">
@@ -278,7 +278,7 @@ border-radius: 1;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
+     <string notr="true">background-color: #D9D9D9;
 border-radius: 1;</string>
     </property>
     <property name="text">
@@ -350,7 +350,7 @@ border-radius: 1;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;
+     <string notr="true">background-color: #BDBDBD;
 border-radius: 12;</string>
     </property>
     <property name="text">
@@ -361,13 +361,13 @@ border-radius: 12;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>330</y>
+      <y>320</y>
       <width>40</width>
       <height>38</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;</string>
+     <string notr="true">background-color: #BDBDBD;</string>
     </property>
     <property name="text">
      <string/>
@@ -377,13 +377,13 @@ border-radius: 12;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>320</y>
+      <y>310</y>
       <width>60</width>
       <height>55</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
+     <string notr="true">background-color: #D9D9D9;
 border-radius: 12;</string>
     </property>
     <property name="text">
@@ -444,7 +444,7 @@ border-radius: 12;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>390</y>
+      <y>380</y>
       <width>60</width>
       <height>55</height>
      </rect>
@@ -452,6 +452,22 @@ border-radius: 12;</string>
     <property name="styleSheet">
      <string notr="true">background-color: #D9D9D9;
 border-radius: 12;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Ticket">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>390</y>
+      <width>40</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #BDBDBD;</string>
     </property>
     <property name="text">
      <string/>
@@ -472,140 +488,6 @@ border-radius: 12;</string>
     <property name="text">
      <string/>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_39">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>140</y>
-      <width>60</width>
-      <height>55</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
-border-radius: 12;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Ticket">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>400</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>459</x>
-      <y>0</y>
-      <width>821</width>
-      <height>751</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <widget class="QLabel" name="label_21">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>40</y>
-       <width>171</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>BAXAUTRIAL</family>
-       <pointsize>22</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #BDBDBD;
-border-radius: 1;</string>
-     </property>
-     <property name="text">
-      <string>Stations :</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_12">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>580</y>
-       <width>251</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>BAXAUTRIAL</family>
-       <pointsize>18</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #FFC200;
-border-radius: 12;
-color: black;</string>
-     </property>
-     <property name="text">
-      <string>Add Station</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_13">
-     <property name="geometry">
-      <rect>
-       <x>430</x>
-       <y>580</y>
-       <width>231</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>BAXAUTRIAL</family>
-       <pointsize>18</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #FFC200;
-border-radius: 12;
-color: black;</string>
-     </property>
-     <property name="text">
-      <string>Remove Station</string>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="textBrowser">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>90</y>
-       <width>641</width>
-       <height>461</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #D9D9D9;
-border-radius: 12;</string>
-     </property>
-    </widget>
    </widget>
    <zorder>pushButton_21</zorder>
    <zorder>label_34</zorder>
@@ -631,10 +513,297 @@ border-radius: 12;</string>
    <zorder>Subscribtion</zorder>
    <zorder>label_38</zorder>
    <zorder>label_35</zorder>
-   <zorder>Station</zorder>
-   <zorder>label_39</zorder>
    <zorder>Ticket</zorder>
-   <zorder>groupBox_2</zorder>
+   <zorder>Station</zorder>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>0</y>
+     <width>751</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #BDBDBD;</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_26">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Username:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_28">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>190</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Email:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_31">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_32">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>350</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>State:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_33">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>430</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Credit Card:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_36">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>36</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>User Data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_12">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>570</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>BAXAUTRIAL</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+    </property>
+    <property name="text">
+     <string>View History</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="homepic_3">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>30</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #BDBDBD;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>110</y>
+      <width>421</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>190</y>
+      <width>421</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>270</y>
+      <width>421</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_4">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>350</y>
+      <width>421</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_5">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>430</y>
+      <width>421</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>0</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

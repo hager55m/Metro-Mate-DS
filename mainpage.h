@@ -1,6 +1,6 @@
 #ifndef MAINPAGE_H
 #define MAINPAGE_H
-
+#include "user.h"
 #include <QDialog>
 
 namespace Ui {
@@ -10,6 +10,7 @@ class MainPage;
 class MainPage : public QDialog
 {
     Q_OBJECT
+    User user;
 
 public:
     explicit MainPage(QWidget *parent = nullptr);

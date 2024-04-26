@@ -72,3 +72,6 @@ Gamal Abd ElNasser
 Maspero
 Safaa Hegazy
 Kit Kat
+
+
+C:\Program Files\JetBrains\PyCharm Community Edition 2024.1

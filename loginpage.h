@@ -20,11 +20,11 @@ public:
 signals:
     void SwitchTOSignup();
     void SwitchToMainPage();
-    void SwitchToAdminPage();
 
 private slots:
-    void on_signup_clicked();
     void on_login_clicked();
+
+    void on_signup_clicked();
 
 private:
     Ui::LoginPage *ui;

@@ -1,17 +1,17 @@
-#include "adminmanagemetroremovestation.h"
-#include "ui_adminmanagemetroremovestation.h"
+#include "AdminHomeBage.h"
+#include "ui_AdminHomeBage.h"
 
-AdminManageMetroRemoveStation::AdminManageMetroRemoveStation(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::AdminManageMetroRemoveStation)
+
+Admin::Admin(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::Admin)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Metro");
+    setWindowIcon(QIcon(":/images/img/download.png"));
+    // adding pics
     QPixmap u(":/images/img/man.png");
     ui->userpic_2->setPixmap(u.scaled(ui->userpic_2->width(), ui->userpic_2->height(),Qt::KeepAspectRatio));
-
-    QPixmap t(":/images/img/left-arrow.png");
-    ui->homepic_3->setPixmap(t.scaled(ui->homepic_3->width(),ui->homepic_3->height(),Qt::KeepAspectRatio));
 
     QPixmap m(":/images/img/download.png");
     ui->Metro_2->setPixmap(m.scaled(ui->Metro_2->width(), ui->Metro_2->height(),Qt::KeepAspectRatio));
@@ -31,30 +31,20 @@ AdminManageMetroRemoveStation::AdminManageMetroRemoveStation(QWidget *parent) :
     QPixmap entrance(":/images/img/entrance.png");
     ui->Station->setPixmap(entrance.scaled(ui->Station->width(), ui->Station->height(),Qt::KeepAspectRatio));
 
+    QPixmap homepic_3(":/images/img/left-arrow.png");
+    ui->homepic_3->setPixmap(homepic_3.scaled(ui->homepic_3->width(), ui->homepic_3->height(),Qt::KeepAspectRatio));
 }
-void AdminManageMetroRemoveStation::on_pushButton_10_clicked()
-{
-    emit SwitchToAdminHome();
-}
-void AdminManageMetroRemoveStation::on_pushButton_11_clicked()
+void Admin::on_pushButton_11_clicked()
 {
     emit SwitchToLogin();
 }
-void AdminManageMetroRemoveStation::on_pushButton_13_clicked()
+void Admin::on_pushButton_21_clicked()
 {
-    emit SwitchToMnageMetroOption();
+   emit SwitchToMangeMetro();
 }
 
-void AdminManageMetroRemoveStation::on_pushButton_21_clicked()
-{
-    emit SwitchToMnageMetroOption();
-}
-void AdminManageMetroRemoveStation::on_pushButton_15_clicked()
-{
-    emit SwitchToMnageMetroOption();
-}
-
-AdminManageMetroRemoveStation::~AdminManageMetroRemoveStation()
+Admin::~Admin()
 {
     delete ui;
 }
+

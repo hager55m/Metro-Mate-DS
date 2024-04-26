@@ -2,11 +2,15 @@
 #include "ui_ticketpage.h"
 #include <QFile>
 #include <QTextStream>
+#include <QDebug>
+#include <chrono>
+#include <ctime>
 
 TicketPage::TicketPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::TicketPage)
 {
+    TicketPage tp;
     ui->setupUi(this);
     setWindowTitle("Metro");
     setWindowIcon(QIcon(":/images/img/download.png"));
@@ -39,18 +43,55 @@ TicketPage::TicketPage(QWidget *parent)
     QPixmap r(":/images/img/422833-PE4141-817 (2).png");
     ui->receipt->setPixmap(r.scaled(ui->receipt->width(), ui->receipt->height(),Qt::KeepAspectRatio));
 
+
+    // to add the date
+    std::time_t currentTime;
+    std::time(&currentTime);
+    QString currentDate2;
+
+    // Convert the current time to a tm structure representing local time
+    std::tm localTime;
+    if (localtime_s(&localTime, &currentTime) == 0) {
+        // Format the tm structure into a string
+        char buffer[80]; // Buffer to hold the formatted string
+        if (std::strftime(buffer, sizeof(buffer),  "%d/%m/%Y", &localTime) > 0) {
+            // Convert the buffer to a std::string
+            std::string currentDate(buffer);
+            currentDate2=QString::fromStdString(currentDate);
+            // Print the current date
+            // std::cout << "Current date: " << currentDate << std::endl;
+        }
+        else {
+            // Error handling if formatting fails
+            // std::cerr << "Failed to format current date" << std::endl;
+        }
+    }
+    else {
+        // Error handling if conversion fails
+        //std::cerr << "Failed to convert current time to local time" << std::endl;
+    }
+
+
+    ui->date->setText( currentDate2);
     // adding stations to combomoxes
-    QFile file("E:/QT/trial/proj_trial_3/img/stations_name.txt");
+
+    QFile file("E:/level 2/DS/mm/Metro-Mate/proj_trial_3/img/stations_name.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open the file:" << file.errorString();
+    } else {
+        QTextStream in(&file);
+        while (!in.atEnd()) {
+            QString station = in.readLine();
+            qDebug() << "Read line:" << station; // Debugging information
+            ui->start->addItem(station);
+            ui->end->addItem(station);
+        }
+        file.close();
     }
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString station = in.readLine();
-        ui->start->addItem(station);
-        ui->end->addItem(station);
-    }
-    file.close();
+
+
+
+
 }
 
 TicketPage::~TicketPage()
@@ -94,4 +135,6 @@ void TicketPage::on_code_editingFinished()
         emit SwitchToVerf();
     }
 }
+
+
 

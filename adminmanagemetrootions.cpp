@@ -6,9 +6,6 @@ AdminManageMetroOtions::AdminManageMetroOtions(QWidget *parent) :
     ui(new Ui::AdminManageMetroOtions)
 {
     ui->setupUi(this);
-    setWindowTitle("Metro");
-    setWindowIcon(QIcon(":/images/img/download.png"));
-
     QPixmap u(":/images/img/man.png");
     ui->userpic_2->setPixmap(u.scaled(ui->userpic_2->width(), ui->userpic_2->height(),Qt::KeepAspectRatio));
 
@@ -41,31 +38,10 @@ void AdminManageMetroOtions::on_pushButton_11_clicked()
 {
     emit SwitchToLogin();
 }
-void AdminManageMetroOtions::on_pushButton_13_clicked()
-{
-    emit SwitchToRemoveStation();
-}
 void AdminManageMetroOtions::on_pushButton_12_clicked()
 {
     emit SwitchToAddStation();
 }
-
-void AdminManageMetroOtions::on_pushButton_22_clicked()
-{
-    emit SwitchToTicket();
-}
-
-void AdminManageMetroOtions::on_pushButton_23_clicked()
-{
-    emit SwitchToSub();
-}
-
-void AdminManageMetroOtions::on_pushButton_25_clicked()
-{
-    emit SwitchToStation();
-}
-
-
 
 AdminManageMetroOtions::~AdminManageMetroOtions()
 {

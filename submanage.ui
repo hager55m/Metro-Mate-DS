@@ -540,7 +540,7 @@ color: black;</string>
     </font>
    </property>
    <property name="text">
-    <string>Remainig Rides</string>
+    <string>Remaining Rides</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="pass_3">

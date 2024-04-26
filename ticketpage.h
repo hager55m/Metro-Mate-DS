@@ -1,6 +1,6 @@
 #ifndef TICKETPAGE_H
 #define TICKETPAGE_H
-
+#include<user.h>
 #include <QDialog>
 
 namespace Ui {
@@ -23,6 +23,9 @@ signals:
     void SwitchToUser();
     void SwitchToVerf();
 
+
+
+
 private slots:
     void on_pushButton_clicked();
 
@@ -35,6 +38,12 @@ private slots:
     void on_pushButton_6_clicked();
 
     void on_code_editingFinished();
+
+    // Gui with code
+  //void on_start_currentIndexChanged(int index);
+
+
+
 
 private:
     Ui::TicketPage *ui;

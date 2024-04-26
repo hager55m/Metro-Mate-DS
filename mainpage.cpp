@@ -1,5 +1,6 @@
 #include "mainpage.h"
 #include "ui_mainpage.h"
+#include "user.h"
 
 MainPage::MainPage(QWidget *parent)
     : QDialog(parent)
@@ -43,9 +44,11 @@ void MainPage::on_pushButton_clicked()
     emit SwitchToLogin();
 }
 
-void MainPage::on_pushButton_2_clicked()
+void MainPage::on_pushButton_2_clicked() //tickets
 {
     emit SwitchToTicket();
+
+
 }
 
 
