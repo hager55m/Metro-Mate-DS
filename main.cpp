@@ -21,6 +21,7 @@
 #include "removesub.h"
 #include "ticket.h"
 #include "adminstations.h"
+#include "admindatapage.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -49,6 +50,7 @@ int main(int argc, char *argv[])
     removesub removesub;
     Ticket ticket;
     AdminStations AdminStation;
+    AdminDataPage adp;
 //<<<<<<< HEAD
 
     //ticket.show();
@@ -59,19 +61,53 @@ int main(int argc, char *argv[])
     
     //lp.show();
 
+    QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
+        lp.show();
+        adp.hide();
+    });
 
+    QObject::connect(&adp, &AdminDataPage::SwitchToHome, [&](){
+        admin.show();
+        adp.hide();
+    });
+
+    QObject::connect(&adp, &AdminDataPage::SwitchToMangeMetro, [&](){
+        admm.show();
+        adp.hide();
+    });
+
+    QObject::connect(&adp, &AdminDataPage::SwitchToStation, [&](){
+        AdminStation.show();
+        adp.hide();
+    });
+
+    QObject::connect(&adp, &AdminDataPage::SwitchToSub, [&](){
+        addsub.show();
+        adp.hide();
+    });
+
+    QObject::connect(&adp, &AdminDataPage::SwitchToTicket, [&](){
+        ticket.show();
+        adp.hide();
+    });
+
+    QObject::connect(&adp, &AdminDataPage::SwitchToUserData, [&](){
+        hs.show();
+        adp.hide();
+    });
 
     QObject::connect(&adreStation, &AdminManageMetroRemoveStation::SwitchToLogin, [&](){
         lp.show();
         adreStation.hide();
     });
 
-     QObject::connect(&admin, &admin::switchtouserhistory, [&](){
-        // hs.show();
+    QObject::connect(&admin, &admin::switchtouserhistory, [&](){
+        adp.show();
         admin.hide();
     });
 
-     //connection between admin
+
+    //connection between admin
      QObject::connect(&admin, &admin::switchtomanage, [&]() {
          admm.show();
          admin.hide();

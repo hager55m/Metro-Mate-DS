@@ -9,12 +9,12 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    AdminHomeBage.cpp \
     Graph.cpp \
     Station.cpp \
     StationClass.cpp \
     addsub.cpp \
     admin.cpp \
+    admindatapage.cpp \
     adminmanagemetroaddstation.cpp \
     adminmanagemetrootions.cpp \
     adminmanagemetroremovestation.cpp \
@@ -40,12 +40,12 @@ SOURCES += \
     verfication.cpp
 
 HEADERS += \
-    AdminHomeBage.h \
     Graph.h \
     Station.h \
     StationClass.h \
     addsub.h \
     admin.h \
+    admindatapage.h \
     adminmanagemetroaddstation.h \
     adminmanagemetrootions.h \
     adminmanagemetroremovestation.h \
@@ -95,10 +95,10 @@ HEADERS += \
 
 
 FORMS += \
-    AdminHomeBage.ui \
     DialogButtonBottom.ui \
     addsub.ui \
     admin.ui \
+    admindatapage.ui \
     adminmanagemetroaddstation.ui \
     adminmanagemetrootions.ui \
     adminmanagemetroremovestation.ui \
