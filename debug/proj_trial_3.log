@@ -1,2 +1,3 @@
-﻿  addsub.cpp
-  proj_trial_3.vcxproj -> D:\QT\project\Metro-Mate-DS\debug\proj_trial_3.exe
+﻿  admin.cpp
+  main.cpp
+LINK : fatal error LNK1168: cannot open debug\\proj_trial_3.exe for writing
