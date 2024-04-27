@@ -20,6 +20,7 @@ SOURCES += \
     adminmanagemetroremovestation.cpp \
     adminstations.cpp \
     admonmanagemetrooptions.cpp \
+    datetime.cpp \
     historypage.cpp \
     main.cpp \
     loginpage.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     adminmanagemetroremovestation.h \
     adminstations.h \
     admonmanagemetrooptions.h \
+    datetime.h \
     historypage.h \
     loginpage.h \
     mainpage.h \

@@ -23,5 +23,6 @@
         <file>img/train.png</file>
         <file>img/entrance.png</file>
         <file>img/files/Sub.txt</file>
+        <file>img/stations_name.txt</file>
     </qresource>
 </RCC>
