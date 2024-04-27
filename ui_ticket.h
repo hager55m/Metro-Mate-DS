@@ -53,12 +53,15 @@ public:
     QLineEdit *mail_2;
     QLineEdit *mail_3;
     QPushButton *pushButton_6;
+    QLabel *label_10;
+    QLineEdit *mail_4;
+    QLineEdit *mail_5;
 
     void setupUi(QDockWidget *Ticket)
     {
         if (Ticket->objectName().isEmpty())
             Ticket->setObjectName("Ticket");
-        Ticket->resize(1200, 700);
+        Ticket->resize(1198, 700);
         QFont font;
         font.setFamilies({QString::fromUtf8("Baskerville Old Face")});
         Ticket->setFont(font);
@@ -217,7 +220,7 @@ public:
 "color: black;"));
         mail_3 = new QLineEdit(dockWidgetContents);
         mail_3->setObjectName("mail_3");
-        mail_3->setGeometry(QRect(830, 410, 291, 41));
+        mail_3->setGeometry(QRect(830, 400, 291, 41));
         mail_3->setFont(font5);
         mail_3->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
@@ -227,6 +230,24 @@ public:
         pushButton_6->setGeometry(QRect(690, 560, 261, 41));
         pushButton_6->setFont(font4);
         pushButton_6->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        label_10 = new QLabel(dockWidgetContents);
+        label_10->setObjectName("label_10");
+        label_10->setGeometry(QRect(491, 464, 214, 76));
+        label_10->setFont(font3);
+        mail_4 = new QLineEdit(dockWidgetContents);
+        mail_4->setObjectName("mail_4");
+        mail_4->setGeometry(QRect(1320, 710, 291, 41));
+        mail_4->setFont(font5);
+        mail_4->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        mail_5 = new QLineEdit(dockWidgetContents);
+        mail_5->setObjectName("mail_5");
+        mail_5->setGeometry(QRect(830, 480, 291, 41));
+        mail_5->setFont(font5);
+        mail_5->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         Ticket->setWidget(dockWidgetContents);
@@ -265,6 +286,9 @@ public:
         mail_2->setText(QString());
         mail_3->setText(QString());
         pushButton_6->setText(QCoreApplication::translate("Ticket", "Change", nullptr));
+        label_10->setText(QCoreApplication::translate("Ticket", "Tire #4 Cost :", nullptr));
+        mail_4->setText(QString());
+        mail_5->setText(QString());
     } // retranslateUi
 
 };

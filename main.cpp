@@ -12,7 +12,6 @@
 #include "historypage.h"
 #include "searchpage.h"
 #include "verfication.h"
-#include"AdminHomeBage.h"
 #include"adminmanagemetroaddstation.h"
 #include"adminmanagemetrootions.h"
 #include "adminmanagemetroremovestation.h"
@@ -22,6 +21,7 @@
 #include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
+
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
     HistoryPage hs;
     SearchPage sh;
     verfication v;
-    //AdminHomeBage adminhome;
     AdminManageMetroOtions admm;
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
@@ -52,13 +51,13 @@ int main(int argc, char *argv[])
     AdminStations AdminStation;
     AdminDataPage adp;
 //<<<<<<< HEAD
-
-    //ticket.show();
+    ticket.DataOfTicketToDisplay();
+    ticket.show();
  // admin.show();
 //=======
-    addsub.show();
+   // addsub.show();
     
-    
+   
     //lp.show();
 
     QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
@@ -87,6 +86,7 @@ int main(int argc, char *argv[])
     });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToTicket, [&](){
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         adp.hide();
     });
@@ -114,6 +114,7 @@ int main(int argc, char *argv[])
          });
 
      QObject::connect(&admin, &admin::switchtoticket, [&]() {
+         ticket.DataOfTicketToDisplay();
          ticket.show();
          admin.hide();
          });
@@ -179,6 +180,7 @@ int main(int argc, char *argv[])
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToTicket, [&]() {
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         admm.hide();
         });
@@ -541,6 +543,7 @@ int main(int argc, char *argv[])
         });
 
     QObject::connect(&AdminStation, &AdminStations::SwitchToTicket, [&]() {
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         AdminStation.hide();
         });
@@ -585,6 +588,7 @@ int main(int argc, char *argv[])
         });
 
     QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         addsub.hide();
         });
