@@ -1,6 +1,7 @@
 #include "ticketpage.h"
 #include "ui_ticketpage.h"
 #include "datetime.h"
+#include "userclass.h"
 #include <QFile>
 #include <QTextStream>
 
@@ -68,8 +69,6 @@ TicketPage::TicketPage(QWidget *parent)
     }
     ui->start->setCurrentText(stations.front());
     ui->end->setCurrentText(stations.front());
-
-    End_station = ui->end->currentText();
 }
 
 TicketPage::~TicketPage()
@@ -110,6 +109,8 @@ void TicketPage::on_code_editingFinished()
 {
     if(ui->code->text() == "123")
     {
+        UserClass::user_tickets.append(QSharedPointer<TicketPage>(new TicketPage(12, ui->start->currentText(), ui->end->currentText())));
+        qDebug() << UserClass::user_tickets.at(0).data()->First_station;
         emit SwitchToVerf();
     }
 }
@@ -118,15 +119,12 @@ void TicketPage::on_code_editingFinished()
 
 void TicketPage::on_start_currentIndexChanged(int index)
 {
-
    First_station= ui->start->currentText();
-    qDebug() << First_station ;
 }
 
 
 void TicketPage::on_end_currentTextChanged(const QString &arg1)
 {
     End_station= ui->end->currentText();
-    qDebug() << End_station ;
 }
 

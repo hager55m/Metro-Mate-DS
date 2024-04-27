@@ -21,7 +21,6 @@ public:
     //  type_subscribtion sub;
     //int Code;
     static QList <QString> stations;
-    //TicketPage();
     TicketPage( float, QString, QString);
     ~TicketPage();
 
