@@ -51,13 +51,13 @@ int main(int argc, char *argv[])
     AdminStations AdminStation;
 //<<<<<<< HEAD
 
-    ticket.show();
-  //admin.show();
+  //  ticket.show();
+ // admin.show();
 //=======
    
     
     
-    //lp.show();
+    lp.show();
 
 
 

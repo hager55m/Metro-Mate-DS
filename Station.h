@@ -4,13 +4,15 @@
 #include<vector>
 class Station
 {
-	std::string name;
-	int lines;
-public:
 
+
+public:
+	std::string name;
+	std::vector<int >lines;
 	Station();
-	Station(std::string name, int lines);
-	int getLines();
+	Station(std::string name, std::vector< int> lines);
+	std::vector<int >getLines();
+	void setName(std::string name);
 	std::string getName() const;
 	bool operator<(const Station& other) const {
 		return(name < other.name);

@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include"Graph.h"
 #include<unordered_map>
+#include<vector>
 unordered_map<std::string, int>stationAdded;
 AdminManageMetroAddStation::AdminManageMetroAddStation(QWidget *parent) :
     QDialog(parent),
@@ -75,21 +76,24 @@ void AdminManageMetroAddStation::on_pushButton_12_clicked()
 void AdminManageMetroAddStation::on_pushButton_14_clicked()
 {
     QString stationName = ui->name_19->text();
-    int lines = ui->name_21->text().toInt();
+    int line = ui->name_21->text().toInt();
    
     if (stationName.isEmpty()) {
         QMessageBox::warning(this, "Empty Station Name", "Please enter a station name.");
         return; 
     }
-    if (lines == 0) {
+    if (line == 0) {
         QMessageBox::warning(this, "Invalid Number of Lines", "Please enter a valid number of lines.");
         return; 
     }
-    Station newStation(stationName.toStdString(), lines);
+    std::vector<int>lines;
+    lines.emplace_back(line);
+    Station newStation(stationName.toStdString(),lines);
+   // newStation.lines.emplace_back(line);
     stationAdded[newStation.getName()]++;
        Graph::graph.stations.insert(newStation);
     QMessageBox::information(this, "Station Added", "Station added successfully!"); 
-    qDebug() << "Saved Station:" << QString::fromStdString(newStation.getName()) << "Lines:" << lines;
+    qDebug() << "Saved Station:" << QString::fromStdString(newStation.getName()) << "Lines:" << line;
 }
 
 AdminManageMetroAddStation::~AdminManageMetroAddStation()
