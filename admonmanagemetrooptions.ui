@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>450</width>
      <height>700</height>
     </rect>
    </property>
@@ -32,7 +32,7 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>7</y>
+      <y>20</y>
       <width>181</width>
       <height>161</height>
      </rect>
@@ -40,22 +40,6 @@
     <property name="styleSheet">
      <string notr="true">background-color: #D9D9D9;
 border-radius: 12;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="homepic_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
     </property>
     <property name="text">
      <string/>
@@ -78,7 +62,7 @@ border-radius: 12;</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>650</y>
+      <y>660</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -139,10 +123,10 @@ color: black;</string>
    <widget class="QLabel" name="userpic_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
-      <width>141</width>
-      <height>121</height>
+      <x>140</x>
+      <y>33</y>
+      <width>161</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -192,7 +176,7 @@ border-radius: 1;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;</string>
+     <string notr="true">background-color: #BDBDBD;</string>
     </property>
     <property name="text">
      <string>Manage Metro</string>
@@ -213,6 +197,10 @@ border-radius: 1;</string>
       <pointsize>22</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #D9D9D9;
+</string>
+    </property>
     <property name="text">
      <string>Subscription</string>
     </property>
@@ -221,13 +209,13 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>310</y>
+      <y>300</y>
       <width>451</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;
+     <string notr="true">background-color: #BDBDBD;
 border-radius: 1;</string>
     </property>
     <property name="text">
@@ -238,7 +226,7 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>380</y>
+      <y>370</y>
       <width>451</width>
       <height>71</height>
      </rect>
@@ -261,7 +249,7 @@ border-radius: 1;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
+     <string notr="true">background-color: #D9D9D9;
 border-radius: 1;</string>
     </property>
     <property name="text">
@@ -289,7 +277,7 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>500</y>
+      <y>510</y>
       <width>451</width>
       <height>71</height>
      </rect>
@@ -306,7 +294,7 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>520</y>
+      <y>530</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -340,7 +328,7 @@ border-radius: 1;</string>
      <string>Tickets</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_13">
+   <widget class="QLabel" name="homepic_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -360,41 +348,8 @@ border-radius: 12;</string>
    <widget class="QLabel" name="ManageMetro">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>330</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_34">
-    <property name="geometry">
-     <rect>
       <x>10</x>
-      <y>320</y>
-      <width>60</width>
-      <height>55</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;
-border-radius: 12;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_37">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>450</y>
+      <y>310</y>
       <width>60</width>
       <height>55</height>
      </rect>
@@ -410,20 +365,21 @@ border-radius: 12;</string>
    <widget class="QLabel" name="Subscribtion">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>460</y>
-      <width>40</width>
-      <height>38</height>
+      <x>10</x>
+      <y>450</y>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
+     <string notr="true">background-color: #BDBDBD;
+border-radius: 12;</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_38">
+   <widget class="QLabel" name="Station">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -440,11 +396,11 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_35">
+   <widget class="QLabel" name="Ticket">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>390</y>
+      <y>380</y>
       <width>60</width>
       <height>55</height>
      </rect>
@@ -452,22 +408,6 @@ border-radius: 12;</string>
     <property name="styleSheet">
      <string notr="true">background-color: #D9D9D9;
 border-radius: 12;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Station">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>530</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
     </property>
     <property name="text">
      <string/>
@@ -490,30 +430,13 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="Ticket">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>400</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <zorder>pushButton_21</zorder>
-   <zorder>label_34</zorder>
+   <zorder>ManageMetro</zorder>
    <zorder>pushButton_10</zorder>
-   <zorder>label_13</zorder>
+   <zorder>homepic_2</zorder>
    <zorder>pushButton_23</zorder>
    <zorder>pushButton_22</zorder>
    <zorder>holder_2</zorder>
-   <zorder>homepic_2</zorder>
    <zorder>Metro_2</zorder>
    <zorder>label_20</zorder>
    <zorder>pushButton_11</zorder>
@@ -525,21 +448,17 @@ border-radius: 12;</string>
    <zorder>pushButton_25</zorder>
    <zorder>label_29</zorder>
    <zorder>label_30</zorder>
-   <zorder>ManageMetro</zorder>
-   <zorder>label_37</zorder>
    <zorder>Subscribtion</zorder>
-   <zorder>label_38</zorder>
-   <zorder>label_35</zorder>
    <zorder>Station</zorder>
-   <zorder>label_39</zorder>
    <zorder>Ticket</zorder>
+   <zorder>label_39</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>499</x>
+     <x>449</x>
      <y>-11</y>
-     <width>801</width>
+     <width>851</width>
      <height>711</height>
     </rect>
    </property>
@@ -552,16 +471,16 @@ border-radius: 12;</string>
    <widget class="QLabel" name="label_21">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>230</x>
       <y>40</y>
-      <width>171</width>
+      <width>271</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>BAXAUTRIAL</family>
-      <pointsize>22</pointsize>
+      <pointsize>34</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -569,7 +488,7 @@ border-radius: 12;</string>
 border-radius: 1;</string>
     </property>
     <property name="text">
-     <string>Stations :</string>
+     <string>Subscriptions</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_12">
@@ -593,7 +512,7 @@ border-radius: 12;
 color: black;</string>
     </property>
     <property name="text">
-     <string>Add Station</string>
+     <string>Add Subscription</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_13">
@@ -617,7 +536,7 @@ border-radius: 12;
 color: black;</string>
     </property>
     <property name="text">
-     <string>Remove Station</string>
+     <string>Remove Supscription</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
