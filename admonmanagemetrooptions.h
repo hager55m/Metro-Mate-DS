@@ -21,6 +21,7 @@ signals:
     void SwitchToAddTicket();
     void SwitchToAddMetro();
     void SwitchToAddRemove();
+    void SwitchToStation();
 private slots:
     void on_pushButton_10_clicked();
     void on_pushButton_11_clicked();
@@ -31,6 +32,8 @@ private slots:
     void on_pushButton_22_clicked();
 
     void on_pushButton_13_clicked();
+
+    void on_pushButton_25_clicked();
 
 private:
     Ui::AdmonManageMetroOptions *ui;

@@ -163,3 +163,9 @@ void addsub::on_logout_clicked()
     emit SwitchToLogin();
 }
 
+
+void addsub::on_m1_clicked()
+{
+    emit SwitchToSub();
+}
+

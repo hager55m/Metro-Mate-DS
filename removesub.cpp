@@ -47,7 +47,7 @@ removesub::~removesub()
 }
 
 void removesub::on_m1_clicked(){
-    emit switchtoSub();
+    emit SwitchTosubscription();
 }
 
 void removesub::on_pushButton_clicked()
@@ -59,5 +59,37 @@ void removesub::on_pushButton_clicked()
         }
     }
 
+}
+
+
+void removesub::on_pushButton1_clicked() // home
+{
+    emit SwitchToHomePAGE();
+}
+
+
+void removesub::on_pushButton_4_clicked() // metro
+{
+    emit SwitchToMangeMetro();
+}
+
+
+void removesub::on_pushButton_3_clicked() // ticket
+{
+    emit SwitchToTickets();
+}
+
+
+
+
+void removesub::on_pushButton_2_clicked() // station
+{
+    emit SwitchToStation();
+}
+
+
+void removesub::on_logout_clicked() // login
+{
+    emit SwitchToLogin();
 }
 

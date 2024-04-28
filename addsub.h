@@ -28,6 +28,7 @@ signals:
     void SwitchToStation();
     void LogoutSub();
     void SwitchToLogin();
+    void SwitchToSub();
 
 private slots:
     void on_pushButton_7_clicked();
@@ -43,6 +44,8 @@ private slots:
     void on_save_clicked();
 
     void on_logout_clicked();
+
+    void on_m1_clicked();
 
 private:
     Ui::addsub *ui;

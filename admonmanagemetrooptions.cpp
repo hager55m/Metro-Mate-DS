@@ -62,3 +62,9 @@ void AdmonManageMetroOptions::on_pushButton_13_clicked() // remove
     emit SwitchToAddRemove();
 }
 
+
+void AdmonManageMetroOptions::on_pushButton_25_clicked()
+{
+    emit SwitchToStation();
+}
+

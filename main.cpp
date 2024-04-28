@@ -66,6 +66,37 @@ int main(int argc, char *argv[])
 
     //lp.show();
 
+    QObject::connect(&removesub, &removesub::SwitchToHomePAGE, [&](){
+        admin.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToLogin, [&](){
+        lp.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToMangeMetro, [&](){
+        admm.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToStation, [&](){
+        AdminStation.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToTickets, [&](){
+        ticket.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchTosubscription, [&](){
+        sub.show();
+        removesub.hide();
+    });
+
+
     QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAddMetro, [&](){
         admm.show();
         sub.hide();
@@ -93,6 +124,11 @@ int main(int argc, char *argv[])
 
     QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToLogin, [&](){
         lp.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToStation, [&](){
+        AdminStation.show();
         sub.hide();
     });
 
@@ -603,6 +639,10 @@ int main(int argc, char *argv[])
         lp.show();
         addsub.hide();
         });
+    QObject::connect(&addsub, &addsub::SwitchToSub, [&]() {
+        sub.show();
+        addsub.hide();
+    });
 
     QObject::connect(&addsub, &addsub::addsubscription, [&]() {
         addsub.show();
