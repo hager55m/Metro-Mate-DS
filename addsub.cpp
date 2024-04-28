@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <subscriptionlist.h>
 
 addsub::addsub(QWidget *parent)
     : QDockWidget(parent)
@@ -78,63 +79,84 @@ void addsub::on_pushButton_5_clicked()
 void addsub::on_pushButton_2_clicked()
 {
     emit SwitchTosubscription();
-   
+
 }
 
 void addsub::on_save_clicked()
 {
 
-    if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty()) 
+    if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty())
     {
         // putting data into variables
         QString Sub_name = ui->name->text();
         QString Rides_no = ui->rides->text();
         QString Duration = ui->month->text();
-        bool to_be_saved = false;
 
-        QFile file("D:/QT/project/Metro-Mate-DS/img/files/Sub.txt");
-        // checking if data is duplicate
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        {
-            qDebug() << "Failed to open file for reading:" << file.errorString();
-            return;
-        }
-
-        QTextStream in(&file);
-        while (!in.atEnd())
-        {
-            QString line = in.readLine();
-            if (line.toLower() == Sub_name.toLower())
-            {
-                file.close();
+        for (SubscriptionList station : SubscriptionList::Stations) {
+            if(Sub_name == station.sub_name && Duration == station.duration){
                 QMessageBox::information(this, "Add Subscription", "Data Duplicate Detected!\nThis Subscription already exists");
-                to_be_saved = false;
                 break;
             }
             else{
-                to_be_saved = true;
+                SubscriptionList::Stations.push_back(SubscriptionList(Sub_name, Rides_no, Duration));
+                QMessageBox::information(this, "Add Subscription", "Subscription added successfully!");
+                break;
             }
         }
-        file.close(); // Close the file
-
-        if(to_be_saved){
-            // saving data into file
-            if (!file.open(QIODevice::Append | QIODevice::Text))
-            {
-                qDebug() << "Failed to open file for writing:" << file.errorString();
-                return;
-            }
-
-            QTextStream out(&file);
-
-            out << Sub_name << "\n";
-            out << Rides_no << "\n";
-            out << Duration << "\n";
-            file.close();
-            QMessageBox::information(this, "Add Subscription", "Subscription added successfully!");
+        for (int var = 0; var < SubscriptionList::Stations.length(); ++var) {
+            qDebug() << SubscriptionList::Stations.at(var).sub_name;
         }
+
+
     }
 }
+/*
+void savedate(){
+    QFile file("D:/QT/project/Metro-Mate-DS/img/files/Sub.txt");
+    // checking if data is duplicate
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file for reading:" << file.errorString();
+        return;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        if (line.toLower() == Sub_name.toLower() && line == Duration)
+        {
+            file.close();
+            QMessageBox::information(this, "Add Subscription", "Data Duplicate Detected!\nThis Subscription already exists");
+            to_be_saved = false;
+            break;
+        }
+        else{
+            to_be_saved = true;
+        }
+    }
+    file.close(); // Close the file
+
+    if(to_be_saved){
+        // saving data into file
+        if (!file.open(QIODevice::Append | QIODevice::Text))
+        {
+            qDebug() << "Failed to open file for writing:" << file.errorString();
+            return;
+        }
+
+        QTextStream out(&file);
+
+        out << Sub_name << "\n";
+        out << Rides_no << "\n";
+        out << Duration << "\n";
+        file.close();
+
+
+        QMessageBox::information(this, "Add Subscription", "Subscription added successfully!");
+    }
+}
+*/
 
 void addsub::on_logout_clicked()
 {

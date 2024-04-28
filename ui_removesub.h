@@ -53,7 +53,7 @@ public:
     QLabel *staimg;
     QLabel *label_11;
     QLabel *label_2;
-    QComboBox *start;
+    QComboBox *subscription;
 
     void setupUi(QDockWidget *removesub)
     {
@@ -199,10 +199,10 @@ public:
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(500, 220, 131, 41));
         label_2->setFont(font1);
-        start = new QComboBox(dockWidgetContents);
-        start->setObjectName("start");
-        start->setGeometry(QRect(640, 230, 261, 41));
-        start->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        subscription = new QComboBox(dockWidgetContents);
+        subscription->setObjectName("start");
+        subscription->setGeometry(QRect(640, 230, 261, 41));
+        subscription->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 10;"));
         removesub->setWidget(dockWidgetContents);
 

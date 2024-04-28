@@ -1,5 +1,6 @@
 #include "removesub.h"
 #include "ui_removesub.h"
+#include "subscriptionlist.h"
 
 removesub::removesub(QWidget *parent)
     : QDockWidget(parent)
@@ -10,7 +11,7 @@ removesub::removesub(QWidget *parent)
     setStyleSheet("background-color:#BDBDBD;");
     QFont font(" Baxautrial",12);
     setFont(font);
-    ui->start->setStyleSheet("background-color:#D9D9D9 ;");
+    ui->subscription->setStyleSheet("background-color:#D9D9D9 ;");
     QPixmap i(":/images/img/home (1).png");
     ui->label_3->setPixmap(i.scaled(ui->label_3->width(), ui->label_3->height(),Qt::KeepAspectRatio));
 
@@ -34,6 +35,10 @@ removesub::removesub(QWidget *parent)
 
     QPixmap m(":/images/img/download.png");
     ui->metroimg->setPixmap(m.scaled(ui->metroimg->width(), ui->metroimg->height(),Qt::KeepAspectRatio));
+
+    for (int var = 0; var < SubscriptionList::Stations.size(); ++var) {
+        ui->start->addItem(SubscriptionList::Stations.at(var));
+    }
 }
 
 removesub::~removesub()
@@ -44,3 +49,14 @@ removesub::~removesub()
 void removesub::on_m1_clicked(){
     emit switchtoSub();
 }
+
+void removesub::on_pushButton_clicked()
+{
+    for (int var = 0; var < SubscriptionList::Stations.size(); ++var) {
+        if(SubscriptionList::Stations.at(var).sub_name ==  ui->start->currentText()){
+            SubscriptionList::Stations.removeAt(var);
+        }
+    }
+
+}
+

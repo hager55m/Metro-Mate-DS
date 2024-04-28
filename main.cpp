@@ -12,7 +12,6 @@
 #include "historypage.h"
 #include "searchpage.h"
 #include "verfication.h"
-#include"AdminHomeBage.h"
 #include"adminmanagemetroaddstation.h"
 #include"adminmanagemetrootions.h"
 #include "adminmanagemetroremovestation.h"
@@ -22,11 +21,16 @@
 #include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
+#include "subscriptionlist.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    SubscriptionList *spl = new SubscriptionList();
+    SubscriptionList::Stations.push_back(*spl);
+
     LoginPage lp;
     SignupPage sp;
     MainPage mp;
@@ -57,8 +61,7 @@ int main(int argc, char *argv[])
  // admin.show();
 //=======
     addsub.show();
-    
-    
+
     //lp.show();
 
     QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
