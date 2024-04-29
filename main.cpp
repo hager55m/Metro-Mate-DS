@@ -1,6 +1,7 @@
 #include "loginpage.h"
 #include "signuppage.h"
 #include "mainpage.h"
+#include "subscriptionlist.h"
 #include "ticketpage.h"
 #include "subscription.h"
 #include "stat1month.h"
@@ -27,6 +28,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    SubscriptionList spl = *new SubscriptionList("student", "120", "3");
+    SubscriptionList::Stations.push_back(spl);
+
     LoginPage lp;
     SignupPage sp;
     MainPage mp;
