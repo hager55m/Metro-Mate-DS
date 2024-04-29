@@ -22,11 +22,16 @@
 #include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
+#include "subscriptionlist.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    SubscriptionList::Stations.push_back("student");
+    SubscriptionList::Stations.push_back("public");
+    SubscriptionList::Stations.push_back("wallet");
+
     LoginPage lp;
     SignupPage sp;
     MainPage mp;
@@ -99,6 +104,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAddRemove, [&](){
         removesub.show();
+        addsub::updateremove();
         sub.hide();
     });
 
@@ -646,6 +652,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(&addsub, &addsub::removesubscription, [&]() {
         removesub.show();
+        addsub::updateremove();
         addsub.hide();
         });
 

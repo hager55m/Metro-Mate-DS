@@ -13,8 +13,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 
 QT_BEGIN_NAMESPACE
@@ -50,6 +52,7 @@ public:
     QPushButton *pushButton_12;
     QPushButton *pushButton_13;
     QTextBrowser *textBrowser;
+    QTableWidget *subs;
 
     void setupUi(QDialog *AdmonManageMetroOptions)
     {
@@ -228,9 +231,22 @@ public:
 "color: black;"));
         textBrowser = new QTextBrowser(groupBox_2);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(30, 90, 641, 461));
+        textBrowser->setGeometry(QRect(30, 90, 691, 461));
         textBrowser->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
+        subs = new QTableWidget(groupBox_2);
+        if (subs->columnCount() < 3)
+            subs->setColumnCount(3);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        subs->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        subs->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        subs->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        subs->setObjectName("subs");
+        subs->setGeometry(QRect(40, 100, 671, 441));
+        subs->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        subs->verticalHeader()->setVisible(false);
 
         retranslateUi(AdmonManageMetroOptions);
 
@@ -267,6 +283,12 @@ public:
         label_21->setText(QCoreApplication::translate("AdmonManageMetroOptions", "Subscriptions", nullptr));
         pushButton_12->setText(QCoreApplication::translate("AdmonManageMetroOptions", "Add Subscription", nullptr));
         pushButton_13->setText(QCoreApplication::translate("AdmonManageMetroOptions", "Remove Supscription", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = subs->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("AdmonManageMetroOptions", "Subscription name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = subs->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("AdmonManageMetroOptions", "No. of Rides", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = subs->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("AdmonManageMetroOptions", "Duration", nullptr));
     } // retranslateUi
 
 };

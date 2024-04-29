@@ -1,11 +1,16 @@
 #include "admonmanagemetrooptions.h"
 #include "ui_admonmanagemetrooptions.h"
+#include "subscriptionlist.h"
+#include <QStringListModel>
 
 AdmonManageMetroOptions::AdmonManageMetroOptions(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AdmonManageMetroOptions)
 {
     ui->setupUi(this);
+    setWindowTitle("Metro");
+    setWindowIcon(QIcon(":/images/img/download.png"));
+
     QPixmap u(":/images/img/man.png");
     ui->userpic_2->setPixmap(u.scaled(ui->userpic_2->width(), ui->userpic_2->height(),Qt::KeepAspectRatio));
 

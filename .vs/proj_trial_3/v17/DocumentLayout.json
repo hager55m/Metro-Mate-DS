@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\QT\\project\\Metro-Mate-DS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|D:\\QT\\project\\Metro-Mate-DS\\admonmanagemetrooptions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|solutionrelative:admonmanagemetrooptions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|D:\\QT\\project\\Metro-Mate-DS\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -27,12 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "admonmanagemetrooptions.cpp",
+              "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\admonmanagemetrooptions.cpp",
+              "RelativeDocumentMoniker": "admonmanagemetrooptions.cpp",
+              "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\admonmanagemetrooptions.cpp",
+              "RelativeToolTip": "admonmanagemetrooptions.cpp",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-29T13:44:49.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABkAAAAXAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-28T21:28:21.572Z",
               "EditorCaption": ""

@@ -23,7 +23,6 @@ signals:
     void SwitchTosubscription();
     void SwitchToStation();
     void SwitchToLogin();
-    void listUpdated();
 
 private slots:
     void on_m1_clicked();

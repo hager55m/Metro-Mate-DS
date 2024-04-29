@@ -1,6 +1,7 @@
 #include "removesub.h"
 #include "ui_removesub.h"
 #include "subscriptionlist.h"
+#include "addsub.h"
 
 removesub::removesub(QWidget *parent)
     : QDockWidget(parent)
@@ -34,10 +35,8 @@ removesub::removesub(QWidget *parent)
     ui->metroimg->setPixmap(m.scaled(ui->metroimg->width(), ui->metroimg->height(),Qt::KeepAspectRatio));
 
     for (const auto& subscription : SubscriptionList::Stations) {
-        ui->start->addItem(subscription.sub_name);
+        ui->start->addItem(subscription);
     }
-
-    connect(this, &removesub::listUpdated, this, &removesub::updateSubscriptions);
 }
 
 removesub::~removesub()
@@ -54,9 +53,8 @@ void removesub::on_pushButton_clicked()
     updateSubscriptions();
     QString selectedSub = ui->start->currentText();
     SubscriptionList::removeSubscription(selectedSub);
-    emit listUpdated();
+    addsub::updateremove();
 }
-
 
 void removesub::on_pushButton1_clicked() // home
 {
@@ -93,6 +91,6 @@ void removesub::on_logout_clicked() // login
 void removesub::updateSubscriptions() {
     ui->start->clear();
     for (const auto& subscription : SubscriptionList::Stations) {
-        ui->start->addItem(subscription.sub_name);
+        ui->start->addItem(subscription);
     }
 }
