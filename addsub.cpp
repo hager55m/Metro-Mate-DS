@@ -4,6 +4,7 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <subscriptionlist.h>
+#include "removesub.h"
 
 addsub::addsub(QWidget *parent)
     : QDockWidget(parent)
@@ -84,32 +85,30 @@ void addsub::on_pushButton_2_clicked()
 
 void addsub::on_save_clicked()
 {
-
     if (!ui->name->text().isEmpty() && !ui->rides->text().isEmpty() && !ui->month->text().isEmpty())
     {
-        // putting data into variables
-        QString Sub_name = ui->name->text();
-        QString Rides_no = ui->rides->text();
-        QString Duration = ui->month->text();
+        QString subName = ui->name->text();
+        QString ridesNo = ui->rides->text();
+        QString duration = ui->month->text();
 
-        for (SubscriptionList station : SubscriptionList::Stations) {
-            if(Sub_name == station.sub_name && Duration == station.duration){
-                QMessageBox::information(this, "Add Subscription", "Data Duplicate Detected!\nThis Subscription already exists");
-                break;
-            }
-            else{
-                SubscriptionList::Stations.push_back(SubscriptionList(Sub_name, Rides_no, Duration));
-                QMessageBox::information(this, "Add Subscription", "Subscription added successfully!");
+        bool exists = false;
+        for (const auto& subscription : SubscriptionList::Stations) {
+            if (subscription.sub_name == subName && subscription.duration == duration) {
+                exists = true;
                 break;
             }
         }
-        for (int var = 0; var < SubscriptionList::Stations.length(); ++var) {
-            qDebug() << SubscriptionList::Stations.at(var).sub_name;
+
+        if (!exists) {
+            SubscriptionList::Stations.push_back(SubscriptionList(subName, ridesNo, duration));
+            QMessageBox::information(this, "Add Subscription", "Subscription added successfully!");
+            emit subscriptionAdded();
+        } else {
+            QMessageBox::information(this, "Add Subscription", "Subscription already exists!");
         }
-
-
     }
 }
+
 /*
 void savedate(){
     QFile file("D:/QT/project/Metro-Mate-DS/img/files/Sub.txt");

@@ -29,6 +29,7 @@ signals:
     void LogoutSub();
     void SwitchToLogin();
     void SwitchToSub();
+    void subscriptionAdded();
 
 private slots:
     void on_pushButton_7_clicked();

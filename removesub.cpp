@@ -27,18 +27,17 @@ removesub::removesub(QWidget *parent)
     QPixmap s(":/images/img/subway.png");
     ui->label_9->setPixmap(s.scaled(ui->label_9->width(), ui->label_9->height(),Qt::KeepAspectRatio));
 
-    //QPixmap st(":/images/img/infographic.png");
-    // ui->state->setPixmap(st.scaled(ui->state->width(), ui->state->height(),Qt::KeepAspectRatio));
-
     QPixmap st(":/images/img/entrance.png");
     ui->label_11->setPixmap(st.scaled(ui->label_11->width(), ui->label_11->height(),Qt::KeepAspectRatio));
 
     QPixmap m(":/images/img/download.png");
     ui->metroimg->setPixmap(m.scaled(ui->metroimg->width(), ui->metroimg->height(),Qt::KeepAspectRatio));
 
-    for (int var = 0; var < SubscriptionList::Stations.size(); ++var) {
-        ui->start->addItem(SubscriptionList::Stations.at(var).sub_name);
+    for (const auto& subscription : SubscriptionList::Stations) {
+        ui->start->addItem(subscription.sub_name);
     }
+
+    connect(this, &removesub::listUpdated, this, &removesub::updateSubscriptions);
 }
 
 removesub::~removesub()
@@ -52,13 +51,10 @@ void removesub::on_m1_clicked(){
 
 void removesub::on_pushButton_clicked()
 {
-    for (int var = 0; var < SubscriptionList::Stations.size(); ++var) {
-        if(SubscriptionList::Stations.at(var).sub_name ==  ui->start->currentText()){
-            SubscriptionList::Stations.removeAt(var);
-            ui->start->removeItem(var);
-        }
-    }
-
+    updateSubscriptions();
+    QString selectedSub = ui->start->currentText();
+    SubscriptionList::removeSubscription(selectedSub);
+    emit listUpdated();
 }
 
 
@@ -93,3 +89,10 @@ void removesub::on_logout_clicked() // login
     emit SwitchToLogin();
 }
 
+
+void removesub::updateSubscriptions() {
+    ui->start->clear();
+    for (const auto& subscription : SubscriptionList::Stations) {
+        ui->start->addItem(subscription.sub_name);
+    }
+}

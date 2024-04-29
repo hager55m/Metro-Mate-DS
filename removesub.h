@@ -23,6 +23,7 @@ signals:
     void SwitchTosubscription();
     void SwitchToStation();
     void SwitchToLogin();
+    void listUpdated();
 
 private slots:
     void on_m1_clicked();
@@ -39,6 +40,7 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_logout_clicked();
+    void updateSubscriptions();
 
 private:
     Ui::removesub *ui;

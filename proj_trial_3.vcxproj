@@ -203,7 +203,6 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AdminHomeBage.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Station.cpp" />
     <ClCompile Include="StationClass.cpp" />
@@ -234,7 +233,6 @@
     <ClCompile Include="verfication.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AdminHomeBage.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Station.h" />
@@ -285,7 +283,6 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="AdminHomeBage.ui" />
     <QtUic Include="DialogButtonBottom.ui" />
     <QtUic Include="addsub.ui" />
     <QtUic Include="admin.ui" />

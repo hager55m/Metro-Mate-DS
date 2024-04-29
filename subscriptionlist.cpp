@@ -15,3 +15,12 @@ SubscriptionList::SubscriptionList(QString Sub_name, QString Rides_no, QString D
     duration = Duration;
 }
 
+
+void SubscriptionList::removeSubscription(const QString &subName) {
+    for (int i = 0; i < Stations.size(); ++i) {
+        if (Stations[i].sub_name == subName) {
+            Stations.removeAt(i);
+            return;
+        }
+    }
+}

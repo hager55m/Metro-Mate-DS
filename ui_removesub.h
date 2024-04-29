@@ -44,6 +44,7 @@ public:
     QLabel *label_9;
     QPushButton *pushButton_2;
     QLabel *label_11;
+    QPushButton *logout;
     QLabel *label_2;
     QComboBox *start;
 
@@ -163,6 +164,13 @@ public:
         label_11->setGeometry(QRect(10, 530, 61, 61));
         label_11->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
+        logout = new QPushButton(groupBox);
+        logout->setObjectName("logout");
+        logout->setGeometry(QRect(240, 630, 171, 41));
+        logout->setFont(font1);
+        logout->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         label_2 = new QLabel(dockWidgetContents);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(500, 220, 271, 41));
@@ -205,6 +213,7 @@ public:
         label_9->setText(QString());
         pushButton_2->setText(QCoreApplication::translate("removesub", "Station", nullptr));
         label_11->setText(QString());
+        logout->setText(QCoreApplication::translate("removesub", "Log out", nullptr));
         label_2->setText(QCoreApplication::translate("removesub", "Subscription name:", nullptr));
     } // retranslateUi
 

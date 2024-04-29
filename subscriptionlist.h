@@ -9,6 +9,7 @@ public:
     SubscriptionList();
     SubscriptionList(QString Sub_name, QString Rides_no, QString Duration);
     static QList<SubscriptionList> Stations;
+    static void removeSubscription(const QString &subName);
 };
 
 #endif // SUBSCRIPTIONLIST_H
