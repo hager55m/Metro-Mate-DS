@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+static Graph graph;
 void Graph::addEdge(Station station1, Station station2)
 {
     // check box to make sure that station already exsist
@@ -22,7 +22,7 @@ void Graph::addEdge(Station station1, Station station2)
     adjStation[station1].insert(station2);
 }
 
-void Graph::addStation(string name, int line)
+void Graph::addStation(string name, vector< int> line)
 {
     Station newStation(name, line);
     // check for the existance of the Station
@@ -36,52 +36,199 @@ void Graph::addStation(string name, int line)
 
 }
 
-void Graph::allPossiblePathsFunctionality(Station starPoint, Station endPoint)
+void Graph::editStation(Station certainStation, int choice)
 {
     map<Station, bool> visited;
     vector<string>paths;
 
-    AllPossiblePaths(starPoint, endPoint, visited, paths);
+    //check number only 1 or 2
+    if (choice == 1)
+    {
+        // check that the name doesn`t exist for any station
+        cout << " New name \n";
+        string newName;
+        cin >> newName;
+        bool found = false;
+        for (auto it1 = Graph::graph.stations.begin(); it1 != Graph::graph.stations.end(); it1++)
+        {
+            if (it1->name == newName)
+            {
+                found = true;
+                break;
+            }
+        }
+        if (found)
+        {
+            //  cout << "this name already exist for another station\n";
+        }
+        else
+        {
+            auto it = stations.find(certainStation);
+            if (it != stations.end())
+            {
+                if (newName != certainStation.getName())
+                {
+                    Station s = *it;
+                    s.setName(newName);
+                    for (int i = 0; i < it->lines.size(); i++)
+                    {
+                        s.lines[i] = it->lines[i];
+                        cout << s.lines[i] << "\n";
+                    }
+                    for (auto it = adjStation[certainStation].begin(); it != adjStation[certainStation].end(); it++)
+                    {
+                        adjStation[s].insert(*it);
+                        adjStation[*it].insert(s);
+                    }
+                    deleteStation(certainStation);
+                    stations.insert(s);
+                    cout << certainStation.name << "\n";
+                }
+                else
+                {
+                    // cout << "this name already exist\n";
+                }
+
+            }
+            else
+            {
+                // cout << "this station doesn`t exist\n";
+            }
+        }
+    }
+    else
+    {
+        //  cout << "delete \n";
+        deleteStation(certainStation);
+    }
 }
 
-void Graph::AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path)
+void Graph::deleteStation(Station certainStation)
+{
+    vector<Station>stl;
+    if (adjStation[certainStation].size() == 1)
+    {
+        auto  temp = adjStation[certainStation].begin();
+        adjStation[*temp].erase(certainStation);
+        adjStation[certainStation].erase(*temp);
+        Graph::graph.stations.erase(certainStation);
+    }
+    else if (adjStation[certainStation].size() == 2)
+    {
+        for (auto it = adjStation[certainStation].begin(); it != adjStation[certainStation].end(); it++)
+        {
+            adjStation[*it].erase(certainStation);
+        }
+
+        auto temp1 = adjStation[certainStation].begin();
+        auto temp2 = std::next(temp1);
+        addEdge(*temp1, *temp2);
+        Graph::graph.stations.erase(certainStation);
+        adjStation[certainStation].clear();
+    }
+    else
+    {
+        for (int i = 0; i < certainStation.getLines().size(); i++)
+        {
+            for (auto it = adjStation[certainStation].begin(); it != adjStation[certainStation].end(); it++)
+            {
+                if (it->lines.size() == 1)
+                {
+                    if (certainStation.getLines().at(i) == it->lines[0])
+                    {
+                        stl.emplace_back(*it);
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < it->lines.size(); j++)
+                    {
+                        if (certainStation.getLines().at(i) == it->lines[j])
+                        {
+                            stl.emplace_back(*it);
+                        }
+                    }
+                }
+            }
+            addEdge(stl.front(), stl.back());
+            adjStation[stl.front()].erase(certainStation);
+            adjStation[stl.back()].erase(certainStation);
+            stl.clear();
+        }
+        Graph::graph.stations.erase(certainStation);
+        adjStation[certainStation].clear();
+    }
+}
+
+vector<vector<string>> Graph::allPossiblePathsFunctionality(Station starPoint, Station endPoint)
+{
+    map<Station, bool> visited;
+    vector<string> path;
+    return AllPossiblePaths(starPoint, endPoint, visited, path);
+}
+vector<vector<string>> Graph::AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path)
 {
     visited[starPoint] = true;
     path.emplace_back(starPoint.getName());
-    vector<vector<string>>paths;
+    vector<vector<string>> allPaths;
+
     if (starPoint.getName() == endPoint.getName())
     {
+        allPaths.emplace_back(path);
      /*   paths.emplace_back(path);
          for (auto x : paths[paths.size() - 1])
              std::cout << x << ' ';
          std::cout << '\n';*/
-
     }
     else
     {
         for (auto i = adjStation[starPoint].begin(); i != adjStation[starPoint].end(); i++)
         {
             if (!visited[*i])
-                AllPossiblePaths(*i, endPoint, visited, path);
+            {
+                vector<vector<string>> morePaths = AllPossiblePaths(*i, endPoint, visited, path);
+                allPaths.insert(allPaths.end(), morePaths.begin(), morePaths.end());
+            }
         }
     }
+
     path.pop_back();
     visited[starPoint] = false;
+
+    return allPaths;
 }
+
+
+
+
+
 // for check only
 void Graph::printGraph() {
-    auto it = adjStation.begin();
-    /* for (; it != adjStation.end(); it++) {
-         Station s = it->first;
-         std::cout << "Station: " << s.getName() << " -> ";
-         auto itForSet = it->second.begin();
-         for (; itForSet!=it->second.end(); itForSet++)
-         {
-             cout << itForSet->getName() << "\t";
-         }
+    /* auto it = adjStation.begin();
+      for (; it != adjStation.end(); it++) {
+          Station s = it->first;
+          std::cout << "Station: " << s.getName() << " -> ";
+          auto itForSet = it->second.begin();
+          for (; itForSet!=it->second.end(); itForSet++)
+          {
+              cout << itForSet->getName() << "\t";
+          }
 
-         cout << "\n";
-     }*/
+          cout << "\n";
+      }*/
+    for (auto it1 = Graph::graph.stations.begin(); it1 != Graph::graph.stations.end(); it1++) {
+        Station currentStation = *it1;
+        std::cout << "Station: " << currentStation.getName() << " -> ";
+
+        auto adjStations = adjStation[currentStation]; // Get the set of adjacent stations for the current station
+
+        for (auto it = adjStations.begin(); it != adjStations.end(); it++) {
+            std::cout << it->getName() << "\t"; // Output the name of each adjacent station
+        }
+
+        std::cout << "\n";
+    }
+
 }
 
 // https://www.youtube.com/watch?v=T_m27bhVQQQ
@@ -120,6 +267,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
     }
 
     stack<Station>s{};
+    s.push(end);
     while (end.getName() != start.getName())
     {
         s.push(path[end].first);
@@ -129,6 +277,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
 
     return s;
 }
+
 
 
 

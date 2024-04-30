@@ -6,6 +6,7 @@
 #include <subscriptionlist.h>
 #include "removesub.h"
 
+
 addsub::addsub(QWidget *parent)
     : QDockWidget(parent)
     , ui(new Ui::addsub)
@@ -159,6 +160,7 @@ void savedate(){
 
 void addsub::on_logout_clicked()
 {
+    
     emit SwitchToLogin();
 }
 

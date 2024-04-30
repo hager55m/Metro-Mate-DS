@@ -23,6 +23,7 @@
 #include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
+
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -45,7 +46,6 @@ int main(int argc, char *argv[])
     HistoryPage hs;
     SearchPage sh;
     verfication v;
-    //AdminHomeBage adminhome;
     AdminManageMetroOtions admm;
     AdmonManageMetroOptions sub;
     AdminManageMetroAddStation adStation;
@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
     Ticket ticket;
     AdminStations AdminStation;
     AdminDataPage adp;
-//<<<<<<< HEAD
 
     //ticket.show();
  // admin.show();
@@ -64,6 +63,8 @@ int main(int argc, char *argv[])
     sub.show();
 
     //lp.show();
+    ticket.DataOfTicketToDisplay();
+    //ticket.show();
 
     QObject::connect(&removesub, &removesub::SwitchToHomePAGE, [&](){
         admin.show();
@@ -157,6 +158,7 @@ int main(int argc, char *argv[])
     });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToTicket, [&](){
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         adp.hide();
     });
@@ -184,6 +186,7 @@ int main(int argc, char *argv[])
          });
 
      QObject::connect(&admin, &admin::switchtoticket, [&]() {
+         ticket.DataOfTicketToDisplay();
          ticket.show();
          admin.hide();
          });
@@ -249,6 +252,7 @@ int main(int argc, char *argv[])
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToTicket, [&]() {
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         admm.hide();
         });
@@ -611,6 +615,7 @@ int main(int argc, char *argv[])
         });
 
     QObject::connect(&AdminStation, &AdminStations::SwitchToTicket, [&]() {
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         AdminStation.hide();
         });
@@ -659,6 +664,7 @@ int main(int argc, char *argv[])
         });
 
     QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
+        ticket.DataOfTicketToDisplay();
         ticket.show();
         addsub.hide();
         });
