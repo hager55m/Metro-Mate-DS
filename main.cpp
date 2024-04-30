@@ -50,15 +50,9 @@ int main(int argc, char *argv[])
     Ticket ticket;
     AdminStations AdminStation;
     AdminDataPage adp;
-//<<<<<<< HEAD
+
     ticket.DataOfTicketToDisplay();
     ticket.show();
- // admin.show();
-//=======
-   // addsub.show();
-    
-   
-    //lp.show();
 
     QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
         lp.show();

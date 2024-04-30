@@ -15,13 +15,12 @@ class Graph
 public:
     static Graph graph;
     void addEdge(Station preStation, Station nextStation);
-    void addStation(string name, int line);
-    void editStation(Station certainStation);
+    void addStation(string name, vector< int> line);
+    void editStation(Station certainStation, int choice);
     void deleteStation(Station certainStation);
-    void AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path);
+    vector<vector<string>> allPossiblePathsFunctionality(Station starPoint, Station endPoint);
+    vector<vector<string>> AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path);
     void printGraph();
-
-    void allPossiblePathsFunctionality(Station starPoint, Station endPoint);
 
     std::stack<Station> ShortestPathBFS(Station start, Station end);
     // all possible shotest path 
