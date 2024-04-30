@@ -1,6 +1,7 @@
 #include "loginpage.h"
 #include "signuppage.h"
 #include "mainpage.h"
+#include "subscriptionlist.h"
 #include "ticketpage.h"
 #include "subscription.h"
 #include "stat1month.h"
@@ -14,6 +15,7 @@
 #include "verfication.h"
 #include"adminmanagemetroaddstation.h"
 #include"adminmanagemetrootions.h"
+#include"admonmanagemetrooptions.h"
 #include "adminmanagemetroremovestation.h"
 #include"admin.h"
 #include"addsub.h"
@@ -27,6 +29,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    SubscriptionList spl = *new SubscriptionList("student", "120", "3");
+    SubscriptionList::Stations.push_back(spl);
+
     LoginPage lp;
     SignupPage sp;
     MainPage mp;
@@ -42,6 +47,7 @@ int main(int argc, char *argv[])
     SearchPage sh;
     verfication v;
     AdminManageMetroOtions admm;
+    AdmonManageMetroOptions sub;
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
     admin admin;
@@ -51,8 +57,80 @@ int main(int argc, char *argv[])
     AdminStations AdminStation;
     AdminDataPage adp;
 
+    //ticket.show();
+ // admin.show();
+//=======
+    sub.show();
+
+    //lp.show();
     ticket.DataOfTicketToDisplay();
-    ticket.show();
+    //ticket.show();
+
+    QObject::connect(&removesub, &removesub::SwitchToHomePAGE, [&](){
+        admin.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToLogin, [&](){
+        lp.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToMangeMetro, [&](){
+        admm.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToStation, [&](){
+        AdminStation.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchToTickets, [&](){
+        ticket.show();
+        removesub.hide();
+    });
+
+    QObject::connect(&removesub, &removesub::SwitchTosubscription, [&](){
+        sub.show();
+        removesub.hide();
+    });
+
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAddMetro, [&](){
+        admm.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAddRemove, [&](){
+        removesub.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAddStation, [&](){
+        addsub.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAddTicket, [&](){
+        ticket.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToAdminHome, [&](){
+        admin.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToLogin, [&](){
+        lp.show();
+        sub.hide();
+    });
+
+    QObject::connect(&sub, &AdmonManageMetroOptions::SwitchToStation, [&](){
+        AdminStation.show();
+        sub.hide();
+    });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
         lp.show();
@@ -75,7 +153,7 @@ int main(int argc, char *argv[])
     });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToSub, [&](){
-        addsub.show();
+        sub.show();
         adp.hide();
     });
 
@@ -119,7 +197,7 @@ int main(int argc, char *argv[])
          });
 
      QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
-         addsub.show();
+         sub.show();
          admin.hide();
          });
      
@@ -170,7 +248,7 @@ int main(int argc, char *argv[])
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToSub, [&]() {
-        addsub.show();
+        sub.show();
         admm.hide();
         });
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToTicket, [&]() {
@@ -192,7 +270,7 @@ int main(int argc, char *argv[])
         ticket.hide();
         });
     QObject::connect(&ticket, &Ticket::switshtosub, [&]() {
-        addsub.show();
+        sub.show();
         ticket.hide();
         });
     QObject::connect(&ticket, &Ticket::switshtostation, [&]() {
@@ -548,7 +626,7 @@ int main(int argc, char *argv[])
         AdminStation.hide();
         });
     QObject::connect(&AdminStation, &AdminStations::SwitchToSupscription, [&]() {
-        addsub.show();
+        sub.show();
         AdminStation.hide();
         });
 
@@ -565,6 +643,10 @@ int main(int argc, char *argv[])
         lp.show();
         addsub.hide();
         });
+    QObject::connect(&addsub, &addsub::SwitchToSub, [&]() {
+        sub.show();
+        addsub.hide();
+    });
 
     QObject::connect(&addsub, &addsub::addsubscription, [&]() {
         addsub.show();

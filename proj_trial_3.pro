@@ -1,4 +1,4 @@
-QT       += core gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -34,6 +34,7 @@ SOURCES += \
     stat6months.cpp \
     submanage.cpp \
     subscription.cpp \
+    subscriptionlist.cpp \
     ticket.cpp \
     ticketpage.cpp \
     userdata.cpp \
@@ -64,6 +65,7 @@ HEADERS += \
     stat6months.h \
     submanage.h \
     subscription.h \
+    subscriptionlist.h \
     ticket.h \
     ticketpage.h \
     ui_AdminHomeBage.h \

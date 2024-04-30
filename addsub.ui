@@ -565,6 +565,26 @@ color: black;</string>
      <string>Month(s)</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="m1">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>50</y>
+      <width>75</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #BDBDBD;
+border-radius: 5;
+border-image: url(:/images/img/left-arrow.png) 0 0 0 0 stretch stretch;
+width: 50px;
+height: 50px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
