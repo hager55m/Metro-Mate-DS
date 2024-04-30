@@ -1,5 +1,5 @@
 #pragma once
-#include <functional>
+
 #include<string>
 #include<vector>
 class Station
@@ -20,7 +20,7 @@ public:
 	bool operator==(const Station& other) const {
 		// Implement comparison logic here
 		// For example, compare relevant data members of Station class
-		return name == other.name && lines == other.lines;
+		return name == other.name ;
 	}
 };
 /*
@@ -37,6 +37,7 @@ and comparison operators implemented as needed.
 
 https://www.geeksforgeeks.org/how-to-create-an-unordered_map-of-user-defined-class-in-cpp/
 */
+
 struct StationHash {
 	std::size_t operator()(const Station& station) const {
 		// You can implement your own hash function here

@@ -1,19 +1,16 @@
 #include "ticket.h"
 #include "ui_ticket.h"
 
+std::vector<float> Ticket::Costs = { 6, 8, 12, 15 };
+
 Ticket::Ticket(QWidget *parent)
     : QDockWidget(parent)
     , ui(new Ui::Ticket)
 {
     ui->setupUi(this);
     setStyleSheet("background-color:#BDBDBD;");
-    QFont font(" Baxautrial",12);
-    setFont(font);
-    ui->mail_2->setStyleSheet("background-color:#D9D9D9 ;");
-    ui->mail->setStyleSheet("background-color:#D9D9D9 ;");
-    ui->mail_3->setStyleSheet("background-color:#D9D9D9 ;");
-
-
+    setWindowTitle("Metro");
+    setWindowIcon(QIcon(":/images/img/download.png"));
 
     QPixmap i(":/images/img/home (1).png");
     ui->label_3->setPixmap(i.scaled(ui->label_3->width(), ui->label_3->height(),Qt::KeepAspectRatio));
@@ -45,6 +42,19 @@ Ticket::~Ticket()
     delete ui;
 }
 
+void Ticket::DataOfTicketToDisplay()
+{
+    
+        QString s = QString::number(Costs[0]);
+        ui->mail->setText(s);
+        s = QString::number(Costs[1]);
+        ui->mail_2->setText(s);
+        s = QString::number(Costs[2]);
+        ui->mail_3->setText(s);
+        s = QString::number(Costs[3]);
+        ui->mail_5->setText(s);
+}
+
 void Ticket::on_pushButton1_clicked(){
     emit switshtoadmin();
 }
@@ -55,9 +65,29 @@ void Ticket::on_pushButton_4_clicked(){
 void Ticket::on_pushButton_5_clicked(){
     emit switshtosub();
 }
-void Ticket::on_pushButton_2_clicked() {
+
+void Ticket::on_station_2_clicked()
+{
     emit switshtostation();
 }
-void Ticket::on_pushButton_11_clicked() {
+
+void Ticket::on_pushButton_6_clicked()
+{
+    std::vector<QString>tempForCosts;
+    tempForCosts.push_back(ui->mail->text());
+    tempForCosts.push_back(ui->mail_2->text());
+    tempForCosts.push_back(ui->mail_3->text());
+    tempForCosts.push_back(ui->mail_5->text());
+    for (int i = 0; i < 4; i++)
+    {
+        if (tempForCosts[i].toFloat()!=0)
+        Costs[i] = tempForCosts[i].toFloat();
+        qDebug() << Costs[i];
+    }
+}
+
+void Ticket::on_logout_clicked()
+{
     emit switshtologin();
 }
+

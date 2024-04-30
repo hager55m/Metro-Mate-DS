@@ -25,7 +25,6 @@ class Ui_AdminStations
 public:
     QGroupBox *groupBox;
     QLabel *holder_2;
-    QLabel *homepic_2;
     QLabel *Metro_2;
     QLabel *label_20;
     QPushButton *pushButton_11;
@@ -41,15 +40,11 @@ public:
     QPushButton *pushButton_25;
     QLabel *label_29;
     QLabel *label_30;
-    QLabel *label_13;
+    QLabel *homepic_2;
     QLabel *ManageMetro;
-    QLabel *label_34;
-    QLabel *label_37;
     QLabel *Subscribtion;
-    QLabel *label_38;
-    QLabel *label_35;
-    QLabel *Ticket;
     QLabel *Station;
+    QLabel *Ticket;
     QLineEdit *pass;
     QLabel *label_3;
     QLabel *label_4;
@@ -75,16 +70,12 @@ public:
         holder_2->setGeometry(QRect(130, 7, 181, 161));
         holder_2->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
-        homepic_2 = new QLabel(groupBox);
-        homepic_2->setObjectName("homepic_2");
-        homepic_2->setGeometry(QRect(20, 250, 40, 38));
-        homepic_2->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
         Metro_2 = new QLabel(groupBox);
         Metro_2->setObjectName("Metro_2");
         Metro_2->setGeometry(QRect(10, 640, 61, 51));
         label_20 = new QLabel(groupBox);
         label_20->setObjectName("label_20");
-        label_20->setGeometry(QRect(70, 650, 121, 31));
+        label_20->setGeometry(QRect(70, 660, 121, 31));
         QFont font;
         font.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font.setPointSize(16);
@@ -127,12 +118,12 @@ public:
         label_27->setFont(font2);
         pushButton_21 = new QPushButton(groupBox);
         pushButton_21->setObjectName("pushButton_21");
-        pushButton_21->setGeometry(QRect(0, 310, 451, 71));
+        pushButton_21->setGeometry(QRect(0, 300, 451, 71));
         pushButton_21->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
 "border-radius: 1;"));
         pushButton_22 = new QPushButton(groupBox);
         pushButton_22->setObjectName("pushButton_22");
-        pushButton_22->setGeometry(QRect(0, 380, 451, 71));
+        pushButton_22->setGeometry(QRect(0, 370, 451, 71));
         pushButton_22->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
 "border-radius: 1;"));
         pushButton_23 = new QPushButton(groupBox);
@@ -142,7 +133,7 @@ public:
 "border-radius: 1;"));
         pushButton_10 = new QPushButton(groupBox);
         pushButton_10->setObjectName("pushButton_10");
-        pushButton_10->setGeometry(QRect(0, 230, 451, 71));
+        pushButton_10->setGeometry(QRect(0, 220, 451, 71));
         pushButton_10->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
 "border-radius: 1;"));
         pushButton_25 = new QPushButton(groupBox);
@@ -160,55 +151,38 @@ public:
         label_30->setObjectName("label_30");
         label_30->setGeometry(QRect(80, 390, 171, 41));
         label_30->setFont(font2);
-        label_13 = new QLabel(groupBox);
-        label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(10, 240, 60, 55));
-        label_13->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+        homepic_2 = new QLabel(groupBox);
+        homepic_2->setObjectName("homepic_2");
+        homepic_2->setGeometry(QRect(10, 240, 60, 55));
+        homepic_2->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
         ManageMetro = new QLabel(groupBox);
         ManageMetro->setObjectName("ManageMetro");
-        ManageMetro->setGeometry(QRect(20, 320, 40, 38));
-        ManageMetro->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
-        label_34 = new QLabel(groupBox);
-        label_34->setObjectName("label_34");
-        label_34->setGeometry(QRect(10, 310, 60, 55));
-        label_34->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 12;"));
-        label_37 = new QLabel(groupBox);
-        label_37->setObjectName("label_37");
-        label_37->setGeometry(QRect(10, 450, 60, 55));
-        label_37->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+        ManageMetro->setGeometry(QRect(10, 310, 60, 55));
+        ManageMetro->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
         Subscribtion = new QLabel(groupBox);
         Subscribtion->setObjectName("Subscribtion");
-        Subscribtion->setGeometry(QRect(20, 460, 40, 38));
-        Subscribtion->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
-        label_38 = new QLabel(groupBox);
-        label_38->setObjectName("label_38");
-        label_38->setGeometry(QRect(10, 520, 60, 55));
-        label_38->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
+        Subscribtion->setGeometry(QRect(10, 450, 60, 55));
+        Subscribtion->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
-        label_35 = new QLabel(groupBox);
-        label_35->setObjectName("label_35");
-        label_35->setGeometry(QRect(10, 380, 60, 55));
-        label_35->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+        Station = new QLabel(groupBox);
+        Station->setObjectName("Station");
+        Station->setGeometry(QRect(10, 520, 60, 55));
+        Station->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
 "border-radius: 12;"));
         Ticket = new QLabel(groupBox);
         Ticket->setObjectName("Ticket");
-        Ticket->setGeometry(QRect(20, 390, 40, 38));
-        Ticket->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
-        Station = new QLabel(groupBox);
-        Station->setObjectName("Station");
-        Station->setGeometry(QRect(20, 530, 40, 38));
-        Station->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
+        Ticket->setGeometry(QRect(10, 380, 60, 55));
+        Ticket->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
         pushButton_21->raise();
-        label_34->raise();
+        ManageMetro->raise();
         pushButton_10->raise();
-        label_13->raise();
+        homepic_2->raise();
         pushButton_23->raise();
         pushButton_22->raise();
         holder_2->raise();
-        homepic_2->raise();
         Metro_2->raise();
         label_20->raise();
         pushButton_11->raise();
@@ -220,13 +194,9 @@ public:
         pushButton_25->raise();
         label_29->raise();
         label_30->raise();
-        ManageMetro->raise();
-        label_37->raise();
         Subscribtion->raise();
-        label_38->raise();
-        label_35->raise();
-        Ticket->raise();
         Station->raise();
+        Ticket->raise();
         pass = new QLineEdit(AdminStations);
         pass->setObjectName("pass");
         pass->setGeometry(QRect(730, 330, 291, 51));
@@ -287,7 +257,6 @@ public:
         AdminStations->setWindowTitle(QCoreApplication::translate("AdminStations", "Dialog", nullptr));
         groupBox->setTitle(QString());
         holder_2->setText(QString());
-        homepic_2->setText(QString());
         Metro_2->setText(QString());
         label_20->setText(QCoreApplication::translate("AdminStations", "Egypt Metro", nullptr));
         pushButton_11->setText(QCoreApplication::translate("AdminStations", "Log out", nullptr));
@@ -303,15 +272,11 @@ public:
         pushButton_25->setText(QString());
         label_29->setText(QCoreApplication::translate("AdminStations", "Stations", nullptr));
         label_30->setText(QCoreApplication::translate("AdminStations", "Tickets", nullptr));
-        label_13->setText(QString());
+        homepic_2->setText(QString());
         ManageMetro->setText(QString());
-        label_34->setText(QString());
-        label_37->setText(QString());
         Subscribtion->setText(QString());
-        label_38->setText(QString());
-        label_35->setText(QString());
-        Ticket->setText(QString());
         Station->setText(QString());
+        Ticket->setText(QString());
         label_3->setText(QCoreApplication::translate("AdminStations", "Ticket bought:", nullptr));
         label_4->setText(QCoreApplication::translate("AdminStations", "Arrives:", nullptr));
         label_2->setText(QCoreApplication::translate("AdminStations", "Stations", nullptr));
