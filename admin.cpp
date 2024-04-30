@@ -6,7 +6,7 @@ admin::admin(QWidget *parent) :
     ui(new Ui::admin)
 {
     ui->setupUi(this);
-    setWindowTitle("Admin");
+    setWindowTitle("Metro");
     setWindowIcon(QIcon(":/images/img/download.png"));
     setStyleSheet("background-color:#BDBDBD;");
     QFont font(" Baxautrial",12);

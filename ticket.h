@@ -12,10 +12,11 @@ class Ticket : public QDockWidget
     Q_OBJECT
 
 public:
+    static std::vector<float>Costs;
     explicit Ticket(QWidget *parent = nullptr);
     ~Ticket();
 
-
+    void DataOfTicketToDisplay();
 signals:
     void switshtoadmin();
      void switshtomanage();
@@ -28,11 +29,12 @@ private slots:
     void on_pushButton1_clicked();
     void on_pushButton_4_clicked();
      void on_pushButton_5_clicked();
-     void on_pushButton_2_clicked();
-     void on_pushButton_11_clicked();
 
+     void on_station_2_clicked();
+     void on_pushButton_6_clicked();
+     void on_logout_clicked();
 
-private:
+ private:
     Ui::Ticket *ui;
 };
 

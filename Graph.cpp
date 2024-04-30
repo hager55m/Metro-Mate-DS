@@ -3,6 +3,8 @@
 using namespace std;
 
 Graph Graph::graph;
+static Graph graph;
+
 void Graph::addEdge(Station station1, Station station2)
 {
     // check box to make sure that station already exsist
@@ -18,7 +20,7 @@ void Graph::addEdge(Station station1, Station station2)
 
     // unique because of unordered_set and We need single element access ,O(1) worst case O(N)
 
-    adjStation[station2].insert(station1);
+    adjStation[station2].insert(station1); // 
     adjStation[station1].insert(station2);
 }
 
@@ -50,8 +52,8 @@ void Graph::AllPossiblePaths(Station starPoint, Station endPoint, map<Station, b
     vector<vector<string>>paths;
     if (starPoint.getName() == endPoint.getName())
     {
-        paths.emplace_back(path);
-        /* for (auto x : paths[paths.size() - 1])
+     /*   paths.emplace_back(path);
+         for (auto x : paths[paths.size() - 1])
              std::cout << x << ' ';
          std::cout << '\n';*/
 
@@ -83,6 +85,7 @@ void Graph::printGraph() {
      }*/
 }
 
+// https://www.youtube.com/watch?v=T_m27bhVQQQ
 std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
 
 
@@ -118,6 +121,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
     }
 
     stack<Station>s{};
+    s.push(end);
     while (end.getName() != start.getName())
     {
         s.push(path[end].first);
@@ -127,6 +131,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
 
     return s;
 }
+
 
 
 

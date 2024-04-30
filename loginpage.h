@@ -23,9 +23,8 @@ signals:
     void SwitchToAdminPage();
 
 private slots:
-    void on_login_clicked();
-
     void on_signup_clicked();
+    void on_login_clicked();
 
 private:
     Ui::LoginPage *ui;
