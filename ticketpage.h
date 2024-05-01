@@ -1,6 +1,7 @@
 #ifndef TICKETPAGE_H
 #define TICKETPAGE_H
-
+#include "datetime.h"
+#include <QString>
 #include <QDialog>
 
 namespace Ui {
@@ -13,6 +14,14 @@ class TicketPage : public QDialog
 
 public:
     explicit TicketPage(QWidget *parent = nullptr);
+    DateTime date;
+    float Cost;
+    QString First_station;
+    QString End_station;
+    //  type_subscribtion sub;
+    //int Code;
+    static QList <QString> stations;
+    TicketPage( float, QString, QString);
     ~TicketPage();
 
 signals:
@@ -38,6 +47,13 @@ private slots:
     void on_code_editingFinished();
 
     void on_pushButton_7_clicked();
+    void on_start_currentTextChanged(const QString &arg1);
+
+    void on_start_editTextChanged(const QString &arg1);
+
+    void on_start_currentIndexChanged(int index);
+
+    void on_end_currentTextChanged(const QString &arg1);
 
 private:
     Ui::TicketPage *ui;

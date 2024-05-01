@@ -26,18 +26,6 @@ class Ui_Ticket
 public:
     QWidget *dockWidgetContents;
     QGroupBox *groupBox;
-    QGroupBox *manage;
-    QPushButton *pushButton_4;
-    QLabel *manimg;
-    QLabel *label_5;
-    QGroupBox *sub;
-    QPushButton *pushButton_5;
-    QLabel *subimg;
-    QLabel *label_9;
-    QGroupBox *station;
-    QPushButton *pushButton_2;
-    QLabel *staimg;
-    QLabel *label_11;
     QLabel *metroimg;
     QLabel *label_13;
     QLabel *adminimg;
@@ -46,11 +34,15 @@ public:
     QPushButton *pushButton1;
     QLabel *imghome;
     QLabel *label_3;
-    QGroupBox *groupBox_2;
+    QPushButton *logout;
+    QLabel *label_5;
+    QPushButton *pushButton_4;
     QPushButton *pushButton_3;
-    QLabel *ticimg;
     QLabel *label_7;
-    QPushButton *pushButton_11;
+    QPushButton *pushButton_5;
+    QLabel *label_9;
+    QPushButton *station_2;
+    QLabel *label_11;
     QLabel *label_2;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
@@ -66,83 +58,36 @@ public:
     {
         if (Ticket->objectName().isEmpty())
             Ticket->setObjectName("Ticket");
-        Ticket->resize(1038, 735);
+        Ticket->resize(1200, 700);
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Baskerville Old Face")});
+        Ticket->setFont(font);
         dockWidgetContents = new QWidget();
         dockWidgetContents->setObjectName("dockWidgetContents");
         groupBox = new QGroupBox(dockWidgetContents);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(0, -20, 450, 731));
-        manage = new QGroupBox(groupBox);
-        manage->setObjectName("manage");
-        manage->setGeometry(QRect(0, 290, 451, 80));
-        pushButton_4 = new QPushButton(manage);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(0, 0, 451, 81));
-        QFont font;
-        font.setPointSize(22);
-        pushButton_4->setFont(font);
-        manimg = new QLabel(manage);
-        manimg->setObjectName("manimg");
-        manimg->setGeometry(QRect(10, 30, 61, 41));
-        manimg->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-""));
-        label_5 = new QLabel(manage);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(10, 20, 61, 61));
-        label_5->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 12;"));
-        sub = new QGroupBox(groupBox);
-        sub->setObjectName("sub");
-        sub->setGeometry(QRect(0, 470, 451, 80));
-        pushButton_5 = new QPushButton(sub);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(0, 0, 451, 81));
-        pushButton_5->setFont(font);
-        subimg = new QLabel(sub);
-        subimg->setObjectName("subimg");
-        subimg->setGeometry(QRect(10, 20, 49, 41));
-        subimg->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
-        label_9 = new QLabel(sub);
-        label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(10, 10, 61, 61));
-        label_9->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 12;"));
-        station = new QGroupBox(groupBox);
-        station->setObjectName("station");
-        station->setGeometry(QRect(0, 560, 451, 80));
-        pushButton_2 = new QPushButton(station);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(0, 0, 451, 81));
-        pushButton_2->setFont(font);
-        staimg = new QLabel(station);
-        staimg->setObjectName("staimg");
-        staimg->setGeometry(QRect(20, 20, 49, 41));
-        staimg->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
-        label_11 = new QLabel(station);
-        label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(10, 10, 61, 61));
-        label_11->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 12;"));
         metroimg = new QLabel(groupBox);
         metroimg->setObjectName("metroimg");
-        metroimg->setGeometry(QRect(10, 670, 61, 51));
+        metroimg->setGeometry(QRect(10, 640, 61, 51));
         label_13 = new QLabel(groupBox);
         label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(80, 690, 131, 31));
+        label_13->setGeometry(QRect(80, 660, 131, 31));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font1.setPointSize(16);
         label_13->setFont(font1);
         adminimg = new QLabel(groupBox);
         adminimg->setObjectName("adminimg");
-        adminimg->setGeometry(QRect(130, 10, 151, 141));
+        adminimg->setGeometry(QRect(130, 20, 151, 141));
         adminimg->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
         label = new QLabel(groupBox);
         label->setObjectName("label");
-        label->setGeometry(QRect(150, 160, 101, 21));
+        label->setGeometry(QRect(150, 160, 101, 41));
         QFont font2;
-        font2.setPointSize(14);
+        font2.setFamilies({QString::fromUtf8("Baskerville Old Face")});
+        font2.setPointSize(26);
         label->setFont(font2);
         manage_2 = new QGroupBox(groupBox);
         manage_2->setObjectName("manage_2");
@@ -150,7 +95,10 @@ public:
         pushButton1 = new QPushButton(manage_2);
         pushButton1->setObjectName("pushButton1");
         pushButton1->setGeometry(QRect(0, 0, 451, 81));
-        pushButton1->setFont(font);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Baskerville Old Face")});
+        font3.setPointSize(22);
+        pushButton1->setFont(font3);
         imghome = new QLabel(manage_2);
         imghome->setObjectName("imghome");
         imghome->setGeometry(QRect(20, 20, 49, 41));
@@ -158,40 +106,74 @@ public:
         label_3 = new QLabel(manage_2);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(10, 10, 61, 61));
-        label_3->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
+        label_3->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;\n"
 ""));
-        groupBox_2 = new QGroupBox(groupBox);
-        groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(0, 380, 451, 80));
-        groupBox_2->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
-        pushButton_3 = new QPushButton(groupBox_2);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(0, 0, 451, 81));
-        pushButton_3->setFont(font);
-        ticimg = new QLabel(groupBox_2);
-        ticimg->setObjectName("ticimg");
-        ticimg->setGeometry(QRect(10, 20, 49, 41));
-        ticimg->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
-        label_7 = new QLabel(groupBox_2);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(10, 10, 61, 61));
-        label_7->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 12;"));
-        pushButton_11 = new QPushButton(groupBox);
-        pushButton_11->setObjectName("pushButton_11");
-        pushButton_11->setGeometry(QRect(240, 680, 191, 41));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
-        font3.setPointSize(18);
-        pushButton_11->setFont(font3);
-        pushButton_11->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+        logout = new QPushButton(groupBox);
+        logout->setObjectName("logout");
+        logout->setGeometry(QRect(240, 640, 191, 41));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font4.setPointSize(18);
+        logout->setFont(font4);
+        logout->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
+        label_5 = new QLabel(groupBox);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(10, 290, 61, 61));
+        label_5->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
+        pushButton_4 = new QPushButton(groupBox);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setGeometry(QRect(0, 280, 451, 81));
+        pushButton_4->setFont(font3);
+        pushButton_3 = new QPushButton(groupBox);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setGeometry(QRect(0, 360, 451, 81));
+        pushButton_3->setFont(font3);
+        pushButton_3->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
+        label_7 = new QLabel(groupBox);
+        label_7->setObjectName("label_7");
+        label_7->setGeometry(QRect(10, 370, 61, 61));
+        label_7->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
+"border-radius: 12;"));
+        pushButton_5 = new QPushButton(groupBox);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setGeometry(QRect(0, 440, 451, 81));
+        pushButton_5->setFont(font3);
+        label_9 = new QLabel(groupBox);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(10, 450, 61, 61));
+        label_9->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
+        station_2 = new QPushButton(groupBox);
+        station_2->setObjectName("station_2");
+        station_2->setGeometry(QRect(0, 520, 451, 81));
+        station_2->setFont(font3);
+        label_11 = new QLabel(groupBox);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(10, 530, 61, 61));
+        label_11->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
+        pushButton_4->raise();
+        metroimg->raise();
+        label_13->raise();
+        adminimg->raise();
+        label->raise();
+        manage_2->raise();
+        logout->raise();
+        label_5->raise();
+        pushButton_3->raise();
+        label_7->raise();
+        pushButton_5->raise();
+        label_9->raise();
+        station_2->raise();
+        label_11->raise();
         label_2 = new QLabel(dockWidgetContents);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(600, 40, 241, 61));
-        label_2->setFont(font);
+        label_2->setGeometry(QRect(750, 70, 241, 61));
+        label_2->setFont(font3);
         layoutWidget = new QWidget(dockWidgetContents);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(490, 220, 216, 241));
@@ -200,49 +182,50 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         label_4 = new QLabel(layoutWidget);
         label_4->setObjectName("label_4");
-        label_4->setFont(font);
+        label_4->setFont(font3);
 
         verticalLayout->addWidget(label_4);
 
         label_6 = new QLabel(layoutWidget);
         label_6->setObjectName("label_6");
-        label_6->setFont(font);
+        label_6->setFont(font3);
 
         verticalLayout->addWidget(label_6);
 
         label_8 = new QLabel(layoutWidget);
         label_8->setObjectName("label_8");
-        label_8->setFont(font);
+        label_8->setFont(font3);
 
         verticalLayout->addWidget(label_8);
 
         mail = new QLineEdit(dockWidgetContents);
         mail->setObjectName("mail");
-        mail->setGeometry(QRect(720, 240, 291, 41));
-        QFont font4;
-        font4.setPointSize(18);
-        mail->setFont(font4);
+        mail->setGeometry(QRect(830, 240, 291, 41));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Baskerville Old Face")});
+        font5.setPointSize(18);
+        mail->setFont(font5);
         mail->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         mail_2 = new QLineEdit(dockWidgetContents);
         mail_2->setObjectName("mail_2");
-        mail_2->setGeometry(QRect(720, 320, 291, 41));
-        mail_2->setFont(font4);
+        mail_2->setGeometry(QRect(830, 320, 291, 41));
+        mail_2->setFont(font5);
         mail_2->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         mail_3 = new QLineEdit(dockWidgetContents);
         mail_3->setObjectName("mail_3");
-        mail_3->setGeometry(QRect(720, 410, 291, 41));
-        mail_3->setFont(font4);
+        mail_3->setGeometry(QRect(830, 410, 291, 41));
+        mail_3->setFont(font5);
         mail_3->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         pushButton_6 = new QPushButton(dockWidgetContents);
         pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(590, 560, 261, 41));
-        pushButton_6->setFont(font3);
+        pushButton_6->setGeometry(QRect(690, 560, 261, 41));
+        pushButton_6->setFont(font4);
         pushButton_6->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
@@ -257,18 +240,6 @@ public:
     {
         Ticket->setWindowTitle(QCoreApplication::translate("Ticket", "DockWidget", nullptr));
         groupBox->setTitle(QString());
-        manage->setTitle(QString());
-        pushButton_4->setText(QCoreApplication::translate("Ticket", "Manage Matro", nullptr));
-        manimg->setText(QString());
-        label_5->setText(QString());
-        sub->setTitle(QString());
-        pushButton_5->setText(QCoreApplication::translate("Ticket", "Subsctiption", nullptr));
-        subimg->setText(QString());
-        label_9->setText(QString());
-        station->setTitle(QString());
-        pushButton_2->setText(QCoreApplication::translate("Ticket", "Station", nullptr));
-        staimg->setText(QString());
-        label_11->setText(QString());
         metroimg->setText(QString());
         label_13->setText(QCoreApplication::translate("Ticket", "Egypt Metro", nullptr));
         adminimg->setText(QString());
@@ -277,11 +248,15 @@ public:
         pushButton1->setText(QCoreApplication::translate("Ticket", "Home Page", nullptr));
         imghome->setText(QString());
         label_3->setText(QString());
-        groupBox_2->setTitle(QString());
+        logout->setText(QCoreApplication::translate("Ticket", "Log out", nullptr));
+        label_5->setText(QString());
+        pushButton_4->setText(QCoreApplication::translate("Ticket", "Manage Matro", nullptr));
         pushButton_3->setText(QCoreApplication::translate("Ticket", "Tickets", nullptr));
-        ticimg->setText(QString());
         label_7->setText(QString());
-        pushButton_11->setText(QCoreApplication::translate("Ticket", "Log out", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("Ticket", "Subsctiption", nullptr));
+        label_9->setText(QString());
+        station_2->setText(QCoreApplication::translate("Ticket", "Station", nullptr));
+        label_11->setText(QString());
         label_2->setText(QCoreApplication::translate("Ticket", "Ticket Cost", nullptr));
         label_4->setText(QCoreApplication::translate("Ticket", "Tire #1 Cost :", nullptr));
         label_6->setText(QCoreApplication::translate("Ticket", "Tire #2 Cost :", nullptr));

@@ -1,5 +1,6 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
+#include "userclass.h"
 #include <QPixmap>
 #include <QMessageBox>
 
@@ -28,28 +29,33 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
-// addjust data to be read from files
-void LoginPage::on_login_clicked()
-{
-    if(ui->name->text() == "test" && ui->pass->text() == "123456")
-    {
-        QMessageBox::information(this, "Login", "Login Successfully");
-        emit SwitchToMainPage();
-    }
-    else if (ui->name->text() == "test" && ui->pass->text() == "1")
-    {
-        QMessageBox::information(this, "Login", "Login Successfully");
-        emit SwitchToAdminPage();
-    }
-    else
-    {
-        QMessageBox::information(this, "Login", "Username or password is incorrect");
-    }
-}
-
-
 void LoginPage::on_signup_clicked()
 {
     emit SwitchTOSignup();
+}
+
+// addjust data to be read from files
+void LoginPage::on_login_clicked()
+{
+    //UserClass user = UserClass();
+    for (UserClass var : UserClass::users) {
+        if(ui->name->text() == var.Username && ui->pass->text() == var.Password)
+        {
+            var.thisuser = var;
+            QMessageBox::information(this, "Login", "Login Successfully");
+            emit SwitchToMainPage();
+            break;
+        }
+        else if (ui->name->text() == "test" && ui->pass->text() == "1")
+        {
+            QMessageBox::information(this, "Login", "Login Successfully");
+            emit SwitchToAdminPage();
+        }
+        else
+        {
+            QMessageBox::information(this, "Login", "Username or password is incorrect");
+        }
+    }
+
 }
 

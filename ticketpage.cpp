@@ -1,7 +1,16 @@
 #include "ticketpage.h"
 #include "ui_ticketpage.h"
+#include "datetime.h"
+#include "userclass.h"
 #include <QFile>
 #include <QTextStream>
+
+QList <QString> TicketPage::stations;
+
+TicketPage::TicketPage( float c, QString start, QString end)
+{
+    date=DateTime();
+}
 
 TicketPage::TicketPage(QWidget *parent)
     : QDialog(parent)
@@ -39,18 +48,27 @@ TicketPage::TicketPage(QWidget *parent)
     QPixmap r(":/images/img/422833-PE4141-817 (2).png");
     ui->receipt->setPixmap(r.scaled(ui->receipt->width(), ui->receipt->height(),Qt::KeepAspectRatio));
 
+    std::string dateandtime = std::to_string(date.day) + "/" + std::to_string(date.month) + "/" + std::to_string(date.year) + " " + std::to_string(date.hour) + ":" + std::to_string(date.minute);
+    ui->date->setText(QString::fromStdString(dateandtime));
+
     // adding stations to combomoxes
-    QFile file("E:/QT/trial/proj_trial_3/img/stations_name.txt");
+    QFile file(":/images/img/stations_name.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open the file:" << file.errorString();
     }
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString station = in.readLine();
+        stations.push_back(station);
+    }
+    file.close();
+
+    foreach (QString station, stations) {
         ui->start->addItem(station);
         ui->end->addItem(station);
     }
-    file.close();
+    ui->start->setCurrentText(stations.front());
+    ui->end->setCurrentText(stations.front());
 }
 
 TicketPage::~TicketPage()
@@ -95,7 +113,22 @@ void TicketPage::on_code_editingFinished()
 {
     if(ui->code->text() == "123")
     {
+        UserClass::user_tickets.append(QSharedPointer<TicketPage>(new TicketPage(12, ui->start->currentText(), ui->end->currentText())));
+        qDebug() << UserClass::user_tickets.at(0).data()->First_station;
         emit SwitchToVerf();
     }
+}
+
+
+
+void TicketPage::on_start_currentIndexChanged(int index)
+{
+   First_station= ui->start->currentText();
+}
+
+
+void TicketPage::on_end_currentTextChanged(const QString &arg1)
+{
+    End_station= ui->end->currentText();
 }
 

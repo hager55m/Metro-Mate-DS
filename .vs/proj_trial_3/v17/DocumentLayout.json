@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Hager ElSherif\\source\\repos\\NewVS\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\QT\\project\\Metro-Mate-DS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\QT\\project\\Metro-Mate-DS\\ui_admin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ui_admin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|solutionrelative:AdminHomeBage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82825260-0F20-39AE-B471-1C47EA7A8305}|proj_trial_3.vcxproj|solutionrelative:AdminHomeBage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -20,8 +33,41 @@
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminHomeBage.h",
+              "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.h",
+              "RelativeDocumentMoniker": "AdminHomeBage.h",
+              "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.h",
+              "RelativeToolTip": "AdminHomeBage.h",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBwAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-26T10:39:24.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ui_admin.h",
+              "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\ui_admin.h",
+              "RelativeDocumentMoniker": "ui_admin.h",
+              "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\ui_admin.h",
+              "RelativeToolTip": "ui_admin.h",
+              "ViewState": "AQIAAMoAAAAAAAAAAAAQwNgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-26T10:37:56.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminHomeBage.cpp",
+              "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.cpp",
+              "RelativeDocumentMoniker": "AdminHomeBage.cpp",
+              "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.cpp",
+              "RelativeToolTip": "AdminHomeBage.cpp",
+              "ViewState": "AQIAABsAAAAAAAAAAAAQwDIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-26T10:35:46.621Z"
             }
           ]
         }

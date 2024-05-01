@@ -48,22 +48,6 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="homepic_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="Metro_2">
     <property name="geometry">
      <rect>
@@ -81,7 +65,7 @@ border-radius: 12;</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>650</y>
+      <y>660</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -221,7 +205,7 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>310</y>
+      <y>300</y>
       <width>451</width>
       <height>71</height>
      </rect>
@@ -238,7 +222,7 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>380</y>
+      <y>370</y>
       <width>451</width>
       <height>71</height>
      </rect>
@@ -272,7 +256,7 @@ border-radius: 1;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>230</y>
+      <y>220</y>
       <width>451</width>
       <height>71</height>
      </rect>
@@ -344,7 +328,7 @@ border-radius: 1;</string>
      <string>Tickets</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_13">
+   <widget class="QLabel" name="homepic_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -364,22 +348,6 @@ border-radius: 12;</string>
    <widget class="QLabel" name="ManageMetro">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>320</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_34">
-    <property name="geometry">
-     <rect>
       <x>10</x>
       <y>310</y>
       <width>60</width>
@@ -394,7 +362,7 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_37">
+   <widget class="QLabel" name="Subscribtion">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -411,23 +379,7 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="Subscribtion">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>460</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_38">
+   <widget class="QLabel" name="Station">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -444,7 +396,7 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_35">
+   <widget class="QLabel" name="Ticket">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -461,46 +413,13 @@ border-radius: 12;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="Ticket">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>390</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #BDBDBD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Station">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>530</y>
-      <width>40</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <zorder>pushButton_21</zorder>
-   <zorder>label_34</zorder>
+   <zorder>ManageMetro</zorder>
    <zorder>pushButton_10</zorder>
-   <zorder>label_13</zorder>
+   <zorder>homepic_2</zorder>
    <zorder>pushButton_23</zorder>
    <zorder>pushButton_22</zorder>
    <zorder>holder_2</zorder>
-   <zorder>homepic_2</zorder>
    <zorder>Metro_2</zorder>
    <zorder>label_20</zorder>
    <zorder>pushButton_11</zorder>
@@ -512,13 +431,9 @@ border-radius: 12;</string>
    <zorder>pushButton_25</zorder>
    <zorder>label_29</zorder>
    <zorder>label_30</zorder>
-   <zorder>ManageMetro</zorder>
-   <zorder>label_37</zorder>
    <zorder>Subscribtion</zorder>
-   <zorder>label_38</zorder>
-   <zorder>label_35</zorder>
-   <zorder>Ticket</zorder>
    <zorder>Station</zorder>
+   <zorder>Ticket</zorder>
   </widget>
   <widget class="QLineEdit" name="pass">
    <property name="geometry">

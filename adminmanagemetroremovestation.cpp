@@ -6,12 +6,11 @@ AdminManageMetroRemoveStation::AdminManageMetroRemoveStation(QWidget *parent) :
     ui(new Ui::AdminManageMetroRemoveStation)
 {
     ui->setupUi(this);
+    setWindowTitle("Metro");
+    setWindowIcon(QIcon(":/images/img/download.png"));
 
     QPixmap u(":/images/img/man.png");
     ui->userpic_2->setPixmap(u.scaled(ui->userpic_2->width(), ui->userpic_2->height(),Qt::KeepAspectRatio));
-
-    QPixmap t(":/images/img/left-arrow.png");
-    ui->homepic_3->setPixmap(t.scaled(ui->homepic_3->width(),ui->homepic_3->height(),Qt::KeepAspectRatio));
 
     QPixmap m(":/images/img/download.png");
     ui->Metro_2->setPixmap(m.scaled(ui->Metro_2->width(), ui->Metro_2->height(),Qt::KeepAspectRatio));
