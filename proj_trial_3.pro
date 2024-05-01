@@ -27,6 +27,7 @@ SOURCES += \
     submanage.cpp \
     subscription.cpp \
     ticketpage.cpp \
+    types_sub.cpp \
     userdata.cpp \
     verfication.cpp
 
@@ -48,6 +49,7 @@ HEADERS += \
     submanage.h \
     subscription.h \
     ticketpage.h \
+    types_sub.h \
     userdata.h \
     verfication.h
 
@@ -69,6 +71,7 @@ FORMS += \
     submanage.ui \
     subscription.ui \
     ticketpage.ui \
+    types_sub.ui \
     userdata.ui \
     verfication.ui
 

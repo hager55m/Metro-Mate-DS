@@ -46,16 +46,18 @@ constexpr auto qt_meta_stringdata_CLASSTicketPageENDCLASS = QtMocHelpers::string
     "SwitchToState",
     "SwitchToUser",
     "SwitchToVerf",
+    "SwitchToSearch",
     "on_pushButton_clicked",
     "on_pushButton_2_clicked",
     "on_pushButton_4_clicked",
     "on_pushButton_5_clicked",
     "on_pushButton_6_clicked",
-    "on_code_editingFinished"
+    "on_code_editingFinished",
+    "on_pushButton_7_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSTicketPageENDCLASS_t {
-    uint offsetsAndSizes[28];
+    uint offsetsAndSizes[32];
     char stringdata0[11];
     char stringdata1[14];
     char stringdata2[1];
@@ -64,12 +66,14 @@ struct qt_meta_stringdata_CLASSTicketPageENDCLASS_t {
     char stringdata5[14];
     char stringdata6[13];
     char stringdata7[13];
-    char stringdata8[22];
-    char stringdata9[24];
+    char stringdata8[15];
+    char stringdata9[22];
     char stringdata10[24];
     char stringdata11[24];
     char stringdata12[24];
     char stringdata13[24];
+    char stringdata14[24];
+    char stringdata15[24];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSTicketPageENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -83,12 +87,14 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSTicketPageENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(51, 13),  // "SwitchToState"
         QT_MOC_LITERAL(65, 12),  // "SwitchToUser"
         QT_MOC_LITERAL(78, 12),  // "SwitchToVerf"
-        QT_MOC_LITERAL(91, 21),  // "on_pushButton_clicked"
-        QT_MOC_LITERAL(113, 23),  // "on_pushButton_2_clicked"
-        QT_MOC_LITERAL(137, 23),  // "on_pushButton_4_clicked"
-        QT_MOC_LITERAL(161, 23),  // "on_pushButton_5_clicked"
-        QT_MOC_LITERAL(185, 23),  // "on_pushButton_6_clicked"
-        QT_MOC_LITERAL(209, 23)   // "on_code_editingFinished"
+        QT_MOC_LITERAL(91, 14),  // "SwitchToSearch"
+        QT_MOC_LITERAL(106, 21),  // "on_pushButton_clicked"
+        QT_MOC_LITERAL(128, 23),  // "on_pushButton_2_clicked"
+        QT_MOC_LITERAL(152, 23),  // "on_pushButton_4_clicked"
+        QT_MOC_LITERAL(176, 23),  // "on_pushButton_5_clicked"
+        QT_MOC_LITERAL(200, 23),  // "on_pushButton_6_clicked"
+        QT_MOC_LITERAL(224, 23),  // "on_code_editingFinished"
+        QT_MOC_LITERAL(248, 23)   // "on_pushButton_7_clicked"
     },
     "TicketPage",
     "SwitchToLogin",
@@ -98,12 +104,14 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSTicketPageENDCLASS_t qt_meta_st
     "SwitchToState",
     "SwitchToUser",
     "SwitchToVerf",
+    "SwitchToSearch",
     "on_pushButton_clicked",
     "on_pushButton_2_clicked",
     "on_pushButton_4_clicked",
     "on_pushButton_5_clicked",
     "on_pushButton_6_clicked",
-    "on_code_editingFinished"
+    "on_code_editingFinished",
+    "on_pushButton_7_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -115,28 +123,30 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSTicketPageENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   86,    2, 0x06,    1 /* Public */,
-       3,    0,   87,    2, 0x06,    2 /* Public */,
-       4,    0,   88,    2, 0x06,    3 /* Public */,
-       5,    0,   89,    2, 0x06,    4 /* Public */,
-       6,    0,   90,    2, 0x06,    5 /* Public */,
-       7,    0,   91,    2, 0x06,    6 /* Public */,
+       1,    0,   98,    2, 0x06,    1 /* Public */,
+       3,    0,   99,    2, 0x06,    2 /* Public */,
+       4,    0,  100,    2, 0x06,    3 /* Public */,
+       5,    0,  101,    2, 0x06,    4 /* Public */,
+       6,    0,  102,    2, 0x06,    5 /* Public */,
+       7,    0,  103,    2, 0x06,    6 /* Public */,
+       8,    0,  104,    2, 0x06,    7 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       8,    0,   92,    2, 0x08,    7 /* Private */,
-       9,    0,   93,    2, 0x08,    8 /* Private */,
-      10,    0,   94,    2, 0x08,    9 /* Private */,
-      11,    0,   95,    2, 0x08,   10 /* Private */,
-      12,    0,   96,    2, 0x08,   11 /* Private */,
-      13,    0,   97,    2, 0x08,   12 /* Private */,
+       9,    0,  105,    2, 0x08,    8 /* Private */,
+      10,    0,  106,    2, 0x08,    9 /* Private */,
+      11,    0,  107,    2, 0x08,   10 /* Private */,
+      12,    0,  108,    2, 0x08,   11 /* Private */,
+      13,    0,  109,    2, 0x08,   12 /* Private */,
+      14,    0,  110,    2, 0x08,   13 /* Private */,
+      15,    0,  111,    2, 0x08,   14 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -145,8 +155,10 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSTicketPageENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -178,6 +190,8 @@ Q_CONSTINIT const QMetaObject TicketPage::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'SwitchToVerf'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'SwitchToSearch'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_2_clicked'
@@ -189,6 +203,8 @@ Q_CONSTINIT const QMetaObject TicketPage::staticMetaObject = { {
         // method 'on_pushButton_6_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_code_editingFinished'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_7_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -206,12 +222,14 @@ void TicketPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->SwitchToState(); break;
         case 4: _t->SwitchToUser(); break;
         case 5: _t->SwitchToVerf(); break;
-        case 6: _t->on_pushButton_clicked(); break;
-        case 7: _t->on_pushButton_2_clicked(); break;
-        case 8: _t->on_pushButton_4_clicked(); break;
-        case 9: _t->on_pushButton_5_clicked(); break;
-        case 10: _t->on_pushButton_6_clicked(); break;
-        case 11: _t->on_code_editingFinished(); break;
+        case 6: _t->SwitchToSearch(); break;
+        case 7: _t->on_pushButton_clicked(); break;
+        case 8: _t->on_pushButton_2_clicked(); break;
+        case 9: _t->on_pushButton_4_clicked(); break;
+        case 10: _t->on_pushButton_5_clicked(); break;
+        case 11: _t->on_pushButton_6_clicked(); break;
+        case 12: _t->on_code_editingFinished(); break;
+        case 13: _t->on_pushButton_7_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -258,6 +276,13 @@ void TicketPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
                 return;
             }
         }
+        {
+            using _t = void (TicketPage::*)();
+            if (_t _q_method = &TicketPage::SwitchToSearch; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 6;
+                return;
+            }
+        }
     }
     (void)_a;
 }
@@ -281,13 +306,13 @@ int TicketPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 14)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 12;
+        _id -= 14;
     }
     return _id;
 }
@@ -326,5 +351,11 @@ void TicketPage::SwitchToUser()
 void TicketPage::SwitchToVerf()
 {
     QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
+}
+
+// SIGNAL 6
+void TicketPage::SwitchToSearch()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 QT_WARNING_POP

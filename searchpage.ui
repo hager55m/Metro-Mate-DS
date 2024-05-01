@@ -168,8 +168,8 @@ height: 50px;</string>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>360</y>
+     <x>60</x>
+     <y>390</y>
      <width>1061</width>
      <height>301</height>
     </rect>
@@ -197,6 +197,54 @@ border-radius: 35;</string>
      </rect>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="buy">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>340</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string>Buy Ticket</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_2">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>340</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
   </widget>
  </widget>
  <resources/>

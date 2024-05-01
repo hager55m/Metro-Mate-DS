@@ -78,3 +78,9 @@ void stat1month::on_m6_clicked() // 6 months
     emit SwitchTo6Months();
 }
 
+void stat1month::on_pushButton_7_clicked() // search
+{
+    emit SwitchToSearch();
+}
+
+

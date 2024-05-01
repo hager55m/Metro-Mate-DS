@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>700</height>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -368,49 +368,6 @@ border-radius: 12;</string>
     <string>User Data</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="stud">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>470</y>
-     <width>201</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>BAXAUTRIAL</family>
-     <pointsize>32</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Student</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="login">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>630</y>
-     <width>291</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>BAXAUTRIAL</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #FFC200;
-border-radius: 12;
-color: black;</string>
-   </property>
-   <property name="text">
-    <string>Manage Subscription</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
@@ -452,6 +409,9 @@ color: black;</string>
    <property name="text">
     <string/>
    </property>
+   <property name="placeholderText">
+    <string>Enter Your Email</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="name">
    <property name="geometry">
@@ -472,24 +432,8 @@ color: black;</string>
 border-radius: 12;
 color: black;</string>
    </property>
-  </widget>
-  <widget class="QRadioButton" name="non">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>470</y>
-     <width>291</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>BAXAUTRIAL</family>
-     <pointsize>32</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Non-Student</string>
+   <property name="placeholderText">
+    <string>Enter Username</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="pass">
@@ -510,6 +454,9 @@ color: black;</string>
     <string notr="true">background-color: white;
 border-radius: 12;
 color: black;</string>
+   </property>
+   <property name="placeholderText">
+    <string>Enter Password</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -554,7 +501,7 @@ color: black;</string>
    <property name="geometry">
     <rect>
      <x>640</x>
-     <y>560</y>
+     <y>620</y>
      <width>361</width>
      <height>51</height>
     </rect>
@@ -593,7 +540,7 @@ color: black;</string>
     <string>Credit Card</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="mail_2">
+  <widget class="QLineEdit" name="card">
    <property name="geometry">
     <rect>
      <x>820</x>
@@ -614,6 +561,99 @@ color: black;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Enter Your Credit Card</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>530</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Subscription</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sub">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>540</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>460</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Balance</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="card_2">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>470</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Enter balance</string>
    </property>
   </widget>
  </widget>

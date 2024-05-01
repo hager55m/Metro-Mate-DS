@@ -78,3 +78,8 @@ void stat3months::on_m6_clicked() // 6M
     emit SwitchTo6Months();
 }
 
+void stat3months::on_pushButton_7_clicked() // search
+{
+    emit SwitchToSearch();
+}
+

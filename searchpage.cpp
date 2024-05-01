@@ -35,3 +35,9 @@ void SearchPage::on_m1_clicked()
     emit SwitchToHome();
 }
 
+void SearchPage::on_buy_clicked()
+{
+    emit SwitchToTicket();
+}
+
+

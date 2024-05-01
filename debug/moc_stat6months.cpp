@@ -47,17 +47,19 @@ constexpr auto qt_meta_stringdata_CLASSstat6monthsENDCLASS = QtMocHelpers::strin
     "SwitchToLogin",
     "SwitchTo1Months",
     "SwitchTo3Months",
+    "SwitchToSearch",
     "on_pushButton_2_clicked",
     "on_pushButton_5_clicked",
     "on_pushButton_4_clicked",
     "on_pushButton_6_clicked",
     "on_pushButton_clicked",
     "on_m1_clicked",
-    "on_m3_clicked"
+    "on_m3_clicked",
+    "on_pushButton_7_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSstat6monthsENDCLASS_t {
-    uint offsetsAndSizes[32];
+    uint offsetsAndSizes[36];
     char stringdata0[12];
     char stringdata1[13];
     char stringdata2[1];
@@ -67,13 +69,15 @@ struct qt_meta_stringdata_CLASSstat6monthsENDCLASS_t {
     char stringdata6[14];
     char stringdata7[16];
     char stringdata8[16];
-    char stringdata9[24];
+    char stringdata9[15];
     char stringdata10[24];
     char stringdata11[24];
     char stringdata12[24];
-    char stringdata13[22];
-    char stringdata14[14];
+    char stringdata13[24];
+    char stringdata14[22];
     char stringdata15[14];
+    char stringdata16[14];
+    char stringdata17[24];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSstat6monthsENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -88,13 +92,15 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSstat6monthsENDCLASS_t qt_meta_s
         QT_MOC_LITERAL(66, 13),  // "SwitchToLogin"
         QT_MOC_LITERAL(80, 15),  // "SwitchTo1Months"
         QT_MOC_LITERAL(96, 15),  // "SwitchTo3Months"
-        QT_MOC_LITERAL(112, 23),  // "on_pushButton_2_clicked"
-        QT_MOC_LITERAL(136, 23),  // "on_pushButton_5_clicked"
-        QT_MOC_LITERAL(160, 23),  // "on_pushButton_4_clicked"
-        QT_MOC_LITERAL(184, 23),  // "on_pushButton_6_clicked"
-        QT_MOC_LITERAL(208, 21),  // "on_pushButton_clicked"
-        QT_MOC_LITERAL(230, 13),  // "on_m1_clicked"
-        QT_MOC_LITERAL(244, 13)   // "on_m3_clicked"
+        QT_MOC_LITERAL(112, 14),  // "SwitchToSearch"
+        QT_MOC_LITERAL(127, 23),  // "on_pushButton_2_clicked"
+        QT_MOC_LITERAL(151, 23),  // "on_pushButton_5_clicked"
+        QT_MOC_LITERAL(175, 23),  // "on_pushButton_4_clicked"
+        QT_MOC_LITERAL(199, 23),  // "on_pushButton_6_clicked"
+        QT_MOC_LITERAL(223, 21),  // "on_pushButton_clicked"
+        QT_MOC_LITERAL(245, 13),  // "on_m1_clicked"
+        QT_MOC_LITERAL(259, 13),  // "on_m3_clicked"
+        QT_MOC_LITERAL(273, 23)   // "on_pushButton_7_clicked"
     },
     "stat6months",
     "SwitchToHome",
@@ -105,13 +111,15 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSstat6monthsENDCLASS_t qt_meta_s
     "SwitchToLogin",
     "SwitchTo1Months",
     "SwitchTo3Months",
+    "SwitchToSearch",
     "on_pushButton_2_clicked",
     "on_pushButton_5_clicked",
     "on_pushButton_4_clicked",
     "on_pushButton_6_clicked",
     "on_pushButton_clicked",
     "on_m1_clicked",
-    "on_m3_clicked"
+    "on_m3_clicked",
+    "on_pushButton_7_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -123,30 +131,32 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSstat6monthsENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       7,       // signalCount
+       8,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   98,    2, 0x06,    1 /* Public */,
-       3,    0,   99,    2, 0x06,    2 /* Public */,
-       4,    0,  100,    2, 0x06,    3 /* Public */,
-       5,    0,  101,    2, 0x06,    4 /* Public */,
-       6,    0,  102,    2, 0x06,    5 /* Public */,
-       7,    0,  103,    2, 0x06,    6 /* Public */,
-       8,    0,  104,    2, 0x06,    7 /* Public */,
+       1,    0,  110,    2, 0x06,    1 /* Public */,
+       3,    0,  111,    2, 0x06,    2 /* Public */,
+       4,    0,  112,    2, 0x06,    3 /* Public */,
+       5,    0,  113,    2, 0x06,    4 /* Public */,
+       6,    0,  114,    2, 0x06,    5 /* Public */,
+       7,    0,  115,    2, 0x06,    6 /* Public */,
+       8,    0,  116,    2, 0x06,    7 /* Public */,
+       9,    0,  117,    2, 0x06,    8 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       9,    0,  105,    2, 0x08,    8 /* Private */,
-      10,    0,  106,    2, 0x08,    9 /* Private */,
-      11,    0,  107,    2, 0x08,   10 /* Private */,
-      12,    0,  108,    2, 0x08,   11 /* Private */,
-      13,    0,  109,    2, 0x08,   12 /* Private */,
-      14,    0,  110,    2, 0x08,   13 /* Private */,
-      15,    0,  111,    2, 0x08,   14 /* Private */,
+      10,    0,  118,    2, 0x08,    9 /* Private */,
+      11,    0,  119,    2, 0x08,   10 /* Private */,
+      12,    0,  120,    2, 0x08,   11 /* Private */,
+      13,    0,  121,    2, 0x08,   12 /* Private */,
+      14,    0,  122,    2, 0x08,   13 /* Private */,
+      15,    0,  123,    2, 0x08,   14 /* Private */,
+      16,    0,  124,    2, 0x08,   15 /* Private */,
+      17,    0,  125,    2, 0x08,   16 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -156,8 +166,10 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSstat6monthsENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -192,6 +204,8 @@ Q_CONSTINIT const QMetaObject stat6months::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'SwitchTo3Months'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'SwitchToSearch'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_5_clicked'
@@ -205,6 +219,8 @@ Q_CONSTINIT const QMetaObject stat6months::staticMetaObject = { {
         // method 'on_m1_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_m3_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_7_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -223,13 +239,15 @@ void stat6months::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 4: _t->SwitchToLogin(); break;
         case 5: _t->SwitchTo1Months(); break;
         case 6: _t->SwitchTo3Months(); break;
-        case 7: _t->on_pushButton_2_clicked(); break;
-        case 8: _t->on_pushButton_5_clicked(); break;
-        case 9: _t->on_pushButton_4_clicked(); break;
-        case 10: _t->on_pushButton_6_clicked(); break;
-        case 11: _t->on_pushButton_clicked(); break;
-        case 12: _t->on_m1_clicked(); break;
-        case 13: _t->on_m3_clicked(); break;
+        case 7: _t->SwitchToSearch(); break;
+        case 8: _t->on_pushButton_2_clicked(); break;
+        case 9: _t->on_pushButton_5_clicked(); break;
+        case 10: _t->on_pushButton_4_clicked(); break;
+        case 11: _t->on_pushButton_6_clicked(); break;
+        case 12: _t->on_pushButton_clicked(); break;
+        case 13: _t->on_m1_clicked(); break;
+        case 14: _t->on_m3_clicked(); break;
+        case 15: _t->on_pushButton_7_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -283,6 +301,13 @@ void stat6months::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
                 return;
             }
         }
+        {
+            using _t = void (stat6months::*)();
+            if (_t _q_method = &stat6months::SwitchToSearch; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 7;
+                return;
+            }
+        }
     }
     (void)_a;
 }
@@ -306,13 +331,13 @@ int stat6months::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 14;
+        _id -= 16;
     }
     return _id;
 }
@@ -357,5 +382,11 @@ void stat6months::SwitchTo1Months()
 void stat6months::SwitchTo3Months()
 {
     QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
+}
+
+// SIGNAL 7
+void stat6months::SwitchToSearch()
+{
+    QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
 }
 QT_WARNING_POP

@@ -86,6 +86,10 @@ void TicketPage::on_pushButton_6_clicked() //user
     emit SwitchToUser();
 }
 
+void TicketPage::on_pushButton_7_clicked() // search
+{
+    emit SwitchToSearch();
+}
 
 void TicketPage::on_code_editingFinished()
 {

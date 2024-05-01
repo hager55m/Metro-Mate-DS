@@ -1,6 +1,9 @@
 #include "signuppage.h"
 #include "ui_signuppage.h"
 #include <QMessageBox>
+#include <QIntValidator>
+#include <QString>
+
 
 SignupPage::SignupPage(QWidget *parent)
     : QDialog(parent)
@@ -9,6 +12,11 @@ SignupPage::SignupPage(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Metro");
     setWindowIcon(QIcon(":/images/img/download.png"));
+
+    QIntValidator* validator = new QIntValidator(ui->card);
+    ui->card->setValidator(validator);
+    QIntValidator* validatorr = new QIntValidator(ui->balance);
+    ui->balance->setValidator(validatorr);
 
     // hashing password
     ui->pass->setEchoMode(QLineEdit::EchoMode::Password);
@@ -26,19 +34,20 @@ SignupPage::~SignupPage()
 {
     delete ui;
 }
-
+ 
 // addjust data to be saved to files
 void SignupPage::on_signup_clicked()
 {
-    if(!ui->name->text().isEmpty() && !ui->pass->text().isEmpty() && !ui->mail->text().isEmpty())
+    bool isInteger = false; 
+    if(!ui->name->text().isEmpty() && !ui->pass->text().isEmpty() && !ui->mail->text().isEmpty() && !ui->card->text().isEmpty() && !ui->balance->text().isEmpty() && ui->card->text().toInt(&isInteger) && ui->balance->text().toInt(&isInteger))
     {
-        if(ui->stud->isChecked() || ui->non->isChecked())
+        if(check == true)
         {
             emit SwitchToLogin();
         }
         else
         {
-            QMessageBox::information(this, "Sign up", "Data is Missing");
+            QMessageBox::information(this, "Sign up", "Please choose Subscription ");
         }
     }
     else
@@ -51,4 +60,13 @@ void SignupPage::on_login_clicked()
 {
     emit SwitchToLogin();
 }
+
+
+bool SignupPage::on_choose_clicked()
+{
+    emit SwitchTotypes_sub();
+    check = true;
+    return true;
+}
+
 

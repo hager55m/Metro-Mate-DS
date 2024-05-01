@@ -1,12 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'addsub.h'
+** Meta object code from reading C++ file 'types_sub.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.6.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../addsub.h"
+#include "../types_sub.h"
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -19,7 +19,7 @@ QT_BEGIN_MOC_NAMESPACE
 #include <memory>
 
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'addsub.h' doesn't include <QObject>."
+#error "The header file 'types_sub.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.6.3. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -36,40 +36,40 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSaddsubENDCLASS_t {};
-constexpr auto qt_meta_stringdata_CLASSaddsubENDCLASS = QtMocHelpers::stringData(
-    "addsub",
-    "switchtoSub",
+struct qt_meta_stringdata_CLASStypes_subENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASStypes_subENDCLASS = QtMocHelpers::stringData(
+    "types_sub",
+    "SwitchToSignup",
     "",
-    "on_m1_clicked"
+    "on_ok_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSaddsubENDCLASS_t {
+struct qt_meta_stringdata_CLASStypes_subENDCLASS_t {
     uint offsetsAndSizes[8];
-    char stringdata0[7];
-    char stringdata1[12];
+    char stringdata0[10];
+    char stringdata1[15];
     char stringdata2[1];
     char stringdata3[14];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSaddsubENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSaddsubENDCLASS_t qt_meta_stringdata_CLASSaddsubENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASStypes_subENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASStypes_subENDCLASS_t qt_meta_stringdata_CLASStypes_subENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 6),  // "addsub"
-        QT_MOC_LITERAL(7, 11),  // "switchtoSub"
-        QT_MOC_LITERAL(19, 0),  // ""
-        QT_MOC_LITERAL(20, 13)   // "on_m1_clicked"
+        QT_MOC_LITERAL(0, 9),  // "types_sub"
+        QT_MOC_LITERAL(10, 14),  // "SwitchToSignup"
+        QT_MOC_LITERAL(25, 0),  // ""
+        QT_MOC_LITERAL(26, 13)   // "on_ok_clicked"
     },
-    "addsub",
-    "switchtoSub",
+    "types_sub",
+    "SwitchToSignup",
     "",
-    "on_m1_clicked"
+    "on_ok_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSaddsubENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASStypes_subENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -97,38 +97,38 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSaddsubENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject addsub::staticMetaObject = { {
-    QMetaObject::SuperData::link<QDockWidget::staticMetaObject>(),
-    qt_meta_stringdata_CLASSaddsubENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSaddsubENDCLASS,
+Q_CONSTINIT const QMetaObject types_sub::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    qt_meta_stringdata_CLASStypes_subENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASStypes_subENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSaddsubENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASStypes_subENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<addsub, std::true_type>,
-        // method 'switchtoSub'
+        QtPrivate::TypeAndForceComplete<types_sub, std::true_type>,
+        // method 'SwitchToSignup'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_m1_clicked'
+        // method 'on_ok_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
-void addsub::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void types_sub::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<addsub *>(_o);
+        auto *_t = static_cast<types_sub *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->switchtoSub(); break;
-        case 1: _t->on_m1_clicked(); break;
+        case 0: _t->SwitchToSignup(); break;
+        case 1: _t->on_ok_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (addsub::*)();
-            if (_t _q_method = &addsub::switchtoSub; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            using _t = void (types_sub::*)();
+            if (_t _q_method = &types_sub::SwitchToSignup; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -137,22 +137,22 @@ void addsub::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     (void)_a;
 }
 
-const QMetaObject *addsub::metaObject() const
+const QMetaObject *types_sub::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *addsub::qt_metacast(const char *_clname)
+void *types_sub::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSaddsubENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASStypes_subENDCLASS.stringdata0))
         return static_cast<void*>(this);
-    return QDockWidget::qt_metacast(_clname);
+    return QDialog::qt_metacast(_clname);
 }
 
-int addsub::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int types_sub::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QDockWidget::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -168,7 +168,7 @@ int addsub::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void addsub::switchtoSub()
+void types_sub::SwitchToSignup()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }

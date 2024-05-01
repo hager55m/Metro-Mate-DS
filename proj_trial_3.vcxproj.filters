@@ -111,22 +111,13 @@
     <ClCompile Include="ticketpage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="types_sub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="userdata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="verfication.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="addsub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="admin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="removesub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -173,13 +164,16 @@
     <QtMoc Include="stat6months.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="submanage.h">
+    <ClInclude Include="submanage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </ClInclude>
     <QtMoc Include="subscription.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ticketpage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="types_sub.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="userdata.h">
@@ -188,18 +182,6 @@
     <QtMoc Include="verfication.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClInclude Include="ui_addsub.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_admin.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_removesub.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_ticket.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -261,22 +243,13 @@
     <QtUic Include="ticketpage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="types_sub.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
     <QtUic Include="userdata.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="verfication.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="addsub.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="admin.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="removesub.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ticket.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -355,19 +328,5 @@
     <None Include="img\stations_name.txt">
       <Filter>Distribution Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="addsub.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="admin.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="removesub.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ticket.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
 </Project>

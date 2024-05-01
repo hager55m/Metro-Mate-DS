@@ -22,6 +22,7 @@ signals:
     void SwitchToState();
     void SwitchToUser();
     void SwitchToVerf();
+    void SwitchToSearch();
 
 private slots:
     void on_pushButton_clicked();
@@ -35,6 +36,8 @@ private slots:
     void on_pushButton_6_clicked();
 
     void on_code_editingFinished();
+
+    void on_pushButton_7_clicked();
 
 private:
     Ui::TicketPage *ui;

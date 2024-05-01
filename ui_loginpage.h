@@ -38,14 +38,14 @@ public:
     {
         if (LoginPage->objectName().isEmpty())
             LoginPage->setObjectName("LoginPage");
-        LoginPage->resize(1200, 700);
+        LoginPage->resize(1196, 700);
         LoginPage->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
         pic = new QLabel(LoginPage);
         pic->setObjectName("pic");
-        pic->setGeometry(QRect(-2, 0, 561, 701));
+        pic->setGeometry(QRect(0, 0, 561, 701));
         groupBox = new QGroupBox(LoginPage);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(559, -1, 641, 701));
+        groupBox->setGeometry(QRect(561, -1, 641, 711));
         user = new QLabel(groupBox);
         user->setObjectName("user");
         user->setGeometry(QRect(250, 70, 151, 131));
@@ -122,6 +122,8 @@ public:
         label_2->setText(QCoreApplication::translate("LoginPage", "Login Page", nullptr));
         label_3->setText(QCoreApplication::translate("LoginPage", "Username", nullptr));
         label_4->setText(QCoreApplication::translate("LoginPage", "Password", nullptr));
+        name->setPlaceholderText(QCoreApplication::translate("LoginPage", "Enter Username", nullptr));
+        pass->setPlaceholderText(QCoreApplication::translate("LoginPage", "Enter Password", nullptr));
         login->setText(QCoreApplication::translate("LoginPage", "Login", nullptr));
         label_5->setText(QCoreApplication::translate("LoginPage", "Don't have an account?", nullptr));
         signup->setText(QCoreApplication::translate("LoginPage", "Sign up", nullptr));

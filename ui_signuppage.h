@@ -16,7 +16,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,15 +27,18 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QLabel *label_4;
-    QLineEdit *name;
+    QLineEdit *mail;
     QLineEdit *pass;
     QPushButton *signup;
     QLabel *label_5;
     QPushButton *login;
     QLabel *label_6;
-    QLineEdit *mail;
-    QRadioButton *stud;
-    QRadioButton *non;
+    QLineEdit *name;
+    QPushButton *choose;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLineEdit *card;
+    QLineEdit *balance;
     QLabel *pic;
 
     void setupUi(QDialog *SignupPage)
@@ -50,41 +52,41 @@ public:
         groupBox->setGeometry(QRect(561, -1, 641, 711));
         user = new QLabel(groupBox);
         user->setObjectName("user");
-        user->setGeometry(QRect(250, 70, 151, 131));
+        user->setGeometry(QRect(240, 30, 151, 131));
         label_2 = new QLabel(groupBox);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(240, 210, 171, 51));
+        label_2->setGeometry(QRect(230, 180, 171, 51));
         QFont font;
         font.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font.setPointSize(22);
         label_2->setFont(font);
         label_3 = new QLabel(groupBox);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(60, 330, 151, 51));
+        label_3->setGeometry(QRect(50, 300, 151, 51));
         label_3->setFont(font);
         label_4 = new QLabel(groupBox);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(60, 390, 151, 51));
+        label_4->setGeometry(QRect(50, 350, 151, 51));
         label_4->setFont(font);
-        name = new QLineEdit(groupBox);
-        name->setObjectName("name");
-        name->setGeometry(QRect(250, 340, 291, 41));
+        mail = new QLineEdit(groupBox);
+        mail->setObjectName("mail");
+        mail->setGeometry(QRect(240, 250, 291, 41));
         QFont font1;
         font1.setPointSize(18);
-        name->setFont(font1);
-        name->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        mail->setFont(font1);
+        mail->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         pass = new QLineEdit(groupBox);
         pass->setObjectName("pass");
-        pass->setGeometry(QRect(250, 400, 291, 41));
+        pass->setGeometry(QRect(240, 350, 291, 41));
         pass->setFont(font1);
         pass->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         signup = new QPushButton(groupBox);
         signup->setObjectName("signup");
-        signup->setGeometry(QRect(120, 520, 361, 51));
+        signup->setGeometry(QRect(120, 570, 361, 51));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font2.setPointSize(18);
@@ -94,14 +96,14 @@ public:
 "color: black;"));
         label_5 = new QLabel(groupBox);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(90, 610, 221, 51));
+        label_5->setGeometry(QRect(80, 630, 221, 51));
         QFont font3;
         font3.setFamilies({QString::fromUtf8("Baskerville Old Face")});
         font3.setPointSize(16);
         label_5->setFont(font3);
         login = new QPushButton(groupBox);
         login->setObjectName("login");
-        login->setGeometry(QRect(310, 610, 191, 41));
+        login->setGeometry(QRect(310, 640, 191, 41));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font4.setPointSize(16);
@@ -111,23 +113,45 @@ public:
 "color: black;"));
         label_6 = new QLabel(groupBox);
         label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(60, 270, 151, 51));
+        label_6->setGeometry(QRect(50, 250, 151, 51));
         label_6->setFont(font);
-        mail = new QLineEdit(groupBox);
-        mail->setObjectName("mail");
-        mail->setGeometry(QRect(250, 280, 291, 41));
-        mail->setFont(font1);
-        mail->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        name = new QLineEdit(groupBox);
+        name->setObjectName("name");
+        name->setGeometry(QRect(240, 300, 291, 41));
+        name->setFont(font1);
+        name->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
-        stud = new QRadioButton(groupBox);
-        stud->setObjectName("stud");
-        stud->setGeometry(QRect(90, 460, 131, 41));
-        stud->setFont(font);
-        non = new QRadioButton(groupBox);
-        non->setObjectName("non");
-        non->setGeometry(QRect(290, 460, 201, 41));
-        non->setFont(font);
+        choose = new QPushButton(groupBox);
+        choose->setObjectName("choose");
+        choose->setGeometry(QRect(190, 520, 221, 41));
+        choose->setFont(font2);
+        choose->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        label_7 = new QLabel(groupBox);
+        label_7->setObjectName("label_7");
+        label_7->setGeometry(QRect(50, 400, 151, 51));
+        label_7->setFont(font);
+        label_8 = new QLabel(groupBox);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(50, 450, 151, 51));
+        label_8->setFont(font);
+        card = new QLineEdit(groupBox);
+        card->setObjectName("card");
+        card->setGeometry(QRect(240, 400, 291, 41));
+        card->setFont(font1);
+        card->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        card->setMaxLength(22);
+        balance = new QLineEdit(groupBox);
+        balance->setObjectName("balance");
+        balance->setGeometry(QRect(240, 450, 291, 41));
+        balance->setFont(font1);
+        balance->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+"border-radius: 12;\n"
+"color: black;"));
         pic = new QLabel(SignupPage);
         pic->setObjectName("pic");
         pic->setGeometry(QRect(0, 0, 561, 701));
@@ -145,13 +169,19 @@ public:
         label_2->setText(QCoreApplication::translate("SignupPage", "Signup Page", nullptr));
         label_3->setText(QCoreApplication::translate("SignupPage", "Username", nullptr));
         label_4->setText(QCoreApplication::translate("SignupPage", "Password", nullptr));
+        mail->setPlaceholderText(QCoreApplication::translate("SignupPage", "Enter Your Emial", nullptr));
+        pass->setPlaceholderText(QCoreApplication::translate("SignupPage", "Enter Password", nullptr));
         signup->setText(QCoreApplication::translate("SignupPage", "Sign up", nullptr));
         label_5->setText(QCoreApplication::translate("SignupPage", "Already a member?", nullptr));
         login->setText(QCoreApplication::translate("SignupPage", "Login", nullptr));
         label_6->setText(QCoreApplication::translate("SignupPage", "Emial", nullptr));
-        mail->setText(QString());
-        stud->setText(QCoreApplication::translate("SignupPage", "Student", nullptr));
-        non->setText(QCoreApplication::translate("SignupPage", "Non-Student", nullptr));
+        name->setText(QString());
+        name->setPlaceholderText(QCoreApplication::translate("SignupPage", "Enter Username", nullptr));
+        choose->setText(QCoreApplication::translate("SignupPage", "Choose Subscription", nullptr));
+        label_7->setText(QCoreApplication::translate("SignupPage", "Credt Card", nullptr));
+        label_8->setText(QCoreApplication::translate("SignupPage", "Balance", nullptr));
+        card->setPlaceholderText(QCoreApplication::translate("SignupPage", "Enter Your Credt Card", nullptr));
+        balance->setPlaceholderText(QCoreApplication::translate("SignupPage", "Enter Your Balance", nullptr));
         pic->setText(QString());
     } // retranslateUi
 
