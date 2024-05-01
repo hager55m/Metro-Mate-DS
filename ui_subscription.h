@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'subscription.ui'
 **
@@ -389,7 +388,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_SUBSCRIPTION_H
-=======
 /********************************************************************************
 ** Form generated from reading UI file 'subscription.ui'
 **
@@ -696,4 +694,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_SUBSCRIPTION_H
->>>>>>> UserLink

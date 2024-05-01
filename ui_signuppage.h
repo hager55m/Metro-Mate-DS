@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'signuppage.ui'
 **
@@ -195,7 +194,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_SIGNUPPAGE_H
-=======
 /********************************************************************************
 ** Form generated from reading UI file 'signuppage.ui'
 **
@@ -362,4 +360,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_SIGNUPPAGE_H
->>>>>>> UserLink

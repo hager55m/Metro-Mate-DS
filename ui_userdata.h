@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'userdata.ui'
 **
@@ -304,7 +303,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_USERDATA_H
-=======
 /********************************************************************************
 ** Form generated from reading UI file 'userdata.ui'
 **
@@ -599,4 +597,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_USERDATA_H
->>>>>>> UserLink

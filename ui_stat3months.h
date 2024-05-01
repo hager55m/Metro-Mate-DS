@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'stat3months.ui'
 **
@@ -384,7 +383,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_STAT3MONTHS_H
-=======
 /********************************************************************************
 ** Form generated from reading UI file 'stat3months.ui'
 **
@@ -771,4 +769,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_STAT3MONTHS_H
->>>>>>> UserLink

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'ticketpage.ui'
 **
@@ -303,7 +302,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_TICKETPAGE_H
-=======
 /********************************************************************************
 ** Form generated from reading UI file 'ticketpage.ui'
 **
@@ -608,4 +606,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_TICKETPAGE_H
->>>>>>> UserLink

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'searchpage.ui'
 **
@@ -150,7 +149,7 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_SEARCHPAGE_H
-=======
+
 /********************************************************************************
 ** Form generated from reading UI file 'searchpage.ui'
 **
@@ -281,4 +280,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_SEARCHPAGE_H
->>>>>>> UserLink

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /********************************************************************************
 ** Form generated from reading UI file 'renewsub.ui'
 **
@@ -379,7 +378,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_RENEWSUB_H
-=======
 /********************************************************************************
 ** Form generated from reading UI file 'renewsub.ui'
 **
@@ -667,4 +665,3 @@ namespace Ui {
 QT_END_NAMESPACE
 
 #endif // UI_RENEWSUB_H
->>>>>>> UserLink

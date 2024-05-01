@@ -66,10 +66,10 @@ int main(int argc, char *argv[])
         adp.hide();
     });
 
-    QObject::connect(&adp, &AdminDataPage::SwitchToHome, [&](){
-        admin.show();
-        adp.hide();
-    });
+    // QObject::connect(&adp, &AdminDataPage::SwitchToHome, [&](){
+    //     admin.show();
+    //     adp.hide();
+    // });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToMangeMetro, [&](){
         admm.show();
@@ -81,15 +81,15 @@ int main(int argc, char *argv[])
         adp.hide();
     });
 
-    QObject::connect(&adp, &AdminDataPage::SwitchToSub, [&](){
-        addsub.show();
-        adp.hide();
-    });
+    // QObject::connect(&adp, &AdminDataPage::SwitchToSub, [&](){
+    //     addsub.show();
+    //     adp.hide();
+    // });
 
-    QObject::connect(&adp, &AdminDataPage::SwitchToTicket, [&](){
-        ticket.show();
-        adp.hide();
-    });
+    // QObject::connect(&adp, &AdminDataPage::SwitchToTicket, [&](){
+    //     ticket.show();
+    //     adp.hide();
+    // });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToUserData, [&](){
         hs.show();
@@ -110,17 +110,17 @@ int main(int argc, char *argv[])
     //     admm.show();
     //     admin.hide();
     //     });
-    QObject::connect(&admin, &admin::switchtouserhistory, [&](){
-        adp.show();
-        admin.hide();
-    });
+    // QObject::connect(&admin, &admin::switchtouserhistory, [&](){
+    //     adp.show();
+    //     admin.hide();
+    // });
 
 
     //connection between admin
-     QObject::connect(&admin, &admin::switchtomanage, [&]() {
-         admm.show();
-         admin.hide();
-         });
+     // QObject::connect(&admin, &admin::switchtomanage, [&]() {
+     //     admm.show();
+     //     admin.hide();
+     //     });
 
     // QObject::connect(&admin, &admin::switchtoticket, [&]() {
     //     ticket.show();
@@ -142,15 +142,15 @@ int main(int argc, char *argv[])
     //     admin.hide();
     //     });
 
-     QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
-         addsub.show();
-         admin.hide();
-         });
+     // QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
+     //     addsub.show();
+     //     admin.hide();
+     //     });
      
-     QObject::connect(&admin, &admin::switchtostation, [&]() {
-        AdminStation.show();
-         admin.hide();
-         });
+     // QObject::connect(&admin, &admin::switchtostation, [&]() {
+     //    AdminStation.show();
+     //     admin.hide();
+     //     });
     
 
      //final
@@ -192,10 +192,10 @@ int main(int argc, char *argv[])
         AdminStation.show();
         admm.hide();
         });
-    QObject::connect(&admm, &AdminManageMetroOtions::SwitchToSub, [&]() {
-        addsub.show();
-        admm.hide();
-        });
+    // QObject::connect(&admm, &AdminManageMetroOtions::SwitchToSub, [&]() {
+    //     addsub.show();
+    //     admm.hide();
+    //     });
     //QObject::connect(&admm, &AdminManageMetroOtions::SwitchToTicket, [&]() {
     //    ticket.show();
     //    admm.hide();
@@ -227,22 +227,22 @@ int main(int argc, char *argv[])
     //    s.hide();
     //    });
 
-    QObject::connect(&ticket, &Ticket::switshtologin, [&]() {
-        lp.show();
-        ticket.hide();
-        });
-    QObject::connect(&ticket, &Ticket::switshtosub, [&]() {
-        addsub.show();
-        ticket.hide();
-        });
-    QObject::connect(&ticket, &Ticket::switshtostation, [&]() {
-        AdminStation.show();
-        ticket.hide();
-        });
-    QObject::connect(&s, &Subscription::SwitchToHome, [&]() {
-        admin.show();
-        s.hide();
-        });
+    // QObject::connect(&ticket, &Ticket::switshtologin, [&]() {
+    //     lp.show();
+    //     ticket.hide();
+    //     });
+    // QObject::connect(&ticket, &Ticket::switshtosub, [&]() {
+    //     addsub.show();
+    //     ticket.hide();
+    //     });
+    // QObject::connect(&ticket, &Ticket::switshtostation, [&]() {
+    //     AdminStation.show();
+    //     ticket.hide();
+    //     });
+    // QObject::connect(&s, &Subscription::SwitchToHome, [&]() {
+    //     admin.show();
+    //     s.hide();
+    //     });
     
 
     // login page
@@ -623,44 +623,44 @@ int main(int argc, char *argv[])
         AdminStation.hide();
         });*/
 
-    /// addsub 
-    QObject::connect(&addsub, &addsub::SwitchToHomePAGE, [&]() {
-            admin.show();
-            addsub.hide();
-        });
-    QObject::connect(&addsub, &addsub::SwitchTosubscription, [&]() {
-        AdminStation.show();
-        addsub.hide();
-        });
-    QObject::connect(&addsub, &addsub::LogoutSub, [&]() {
-        lp.show();
-        addsub.hide();
-        });
+   //  /// addsub
+   //  QObject::connect(&addsub, &addsub::SwitchToHomePAGE, [&]() {
+   //          admin.show();
+   //          addsub.hide();
+   //      });
+   //  QObject::connect(&addsub, &addsub::SwitchTosubscription, [&]() {
+   //      AdminStation.show();
+   //      addsub.hide();
+   //      });
+   //  QObject::connect(&addsub, &addsub::LogoutSub, [&]() {
+   //      lp.show();
+   //      addsub.hide();
+   //      });
 
-    QObject::connect(&addsub, &addsub::addsubscription, [&]() {
-        addsub.show();
-        addsub.hide();
-        });
+   //  QObject::connect(&addsub, &addsub::addsubscription, [&]() {
+   //      addsub.show();
+   //      addsub.hide();
+   //      });
 
-    QObject::connect(&addsub, &addsub::removesubscription, [&]() {
-        removesub.show();
-        addsub.hide();
-        });
+   //  QObject::connect(&addsub, &addsub::removesubscription, [&]() {
+   //      removesub.show();
+   //      addsub.hide();
+   //      });
 
-    QObject::connect(&addsub, &addsub::SwitchToMangeMetro, [&]() {
-        admm.show();
-        addsub.hide();
-        });
+   //  QObject::connect(&addsub, &addsub::SwitchToMangeMetro, [&]() {
+   //      admm.show();
+   //      addsub.hide();
+   //      });
 
-    QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
-        ticket.show();
-        addsub.hide();
-        });
+   //  QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
+   //      ticket.show();
+   //      addsub.hide();
+   //      });
 
-    QObject::connect(&addsub, &addsub::SwitchToLogin, [&]() {
-        lp.show();
-        addsub.hide();
-    });
+   //  QObject::connect(&addsub, &addsub::SwitchToLogin, [&]() {
+   //      lp.show();
+   //      addsub.hide();
+   //  });
 
    
 //>>>>>>> main
