@@ -1,6 +1,6 @@
 #ifndef USERCLASS_H
 #define USRCLASS_H
-#include "ticketpage.h"
+#include "userticket.h"
 #include <QString>
 #include <QVector>
 #include <QList>
@@ -11,10 +11,12 @@ public:
     QString Password;
     QString UserSub;
     static QVector<UserClass> users;
+    int index_in_vector;
+    int balance;
     UserClass();
-    UserClass(QString,QString,QString);
+    UserClass(QString,QString,QString,int);
     static UserClass thisuser;
-    static QList<QSharedPointer<TicketPage>> user_tickets;
+     QList<UserTicket> user_tickets;
      void Add_Ticket(QString ,QString);
 };
 

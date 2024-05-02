@@ -4,18 +4,16 @@
 #include "userclass.h"
 #include <QFile>
 #include <QTextStream>
-
+#include "userticket.h"
 QList <QString> TicketPage::stations;
 
-TicketPage::TicketPage( float c, QString start, QString end)
-{
-    date=DateTime();
-}
+    UserTicket ticket= UserTicket();
 
 TicketPage::TicketPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::TicketPage)
 {
+
     ui->setupUi(this);
     setWindowTitle("Metro");
     setWindowIcon(QIcon(":/images/img/download.png"));
@@ -48,7 +46,7 @@ TicketPage::TicketPage(QWidget *parent)
     QPixmap r(":/images/img/422833-PE4141-817 (2).png");
     ui->receipt->setPixmap(r.scaled(ui->receipt->width(), ui->receipt->height(),Qt::KeepAspectRatio));
 
-    std::string dateandtime = std::to_string(date.day) + "/" + std::to_string(date.month) + "/" + std::to_string(date.year) + " " + std::to_string(date.hour) + ":" + std::to_string(date.minute);
+    std::string dateandtime = std::to_string(ticket.date.day) + "/" + std::to_string(ticket.date.month) + "/" + std::to_string(ticket.date.year) + " " + std::to_string(ticket.date.hour) + ":" + std::to_string(ticket.date.minute);
     ui->date->setText(QString::fromStdString(dateandtime));
 
     // adding stations to combomoxes
@@ -69,6 +67,7 @@ TicketPage::TicketPage(QWidget *parent)
     }
     ui->start->setCurrentText(stations.front());
     ui->end->setCurrentText(stations.front());
+
 }
 
 TicketPage::~TicketPage()
@@ -113,8 +112,10 @@ void TicketPage::on_code_editingFinished()
 {
     if(ui->code->text() == "123")
     {
-        UserClass::user_tickets.append(QSharedPointer<TicketPage>(new TicketPage(12, ui->start->currentText(), ui->end->currentText())));
-        qDebug() << UserClass::user_tickets.at(0).data()->First_station;
+       // UserClass::user_tickets.append(QSharedPointer<TicketPage>(new TicketPage(12, ui->start->currentText(), ui->end->currentText())));
+
+        //qDebug() << UserClass::user_tickets.at(0).data()->First_station;
+       //is going to be editted after finshing sign up--> needs index of user in vector
         emit SwitchToVerf();
     }
 }
@@ -123,12 +124,14 @@ void TicketPage::on_code_editingFinished()
 
 void TicketPage::on_start_currentIndexChanged(int index)
 {
-   First_station= ui->start->currentText();
+  ticket.Start_station=ui->start->currentText();
+    qDebug()<<"start station"<<ui->start->currentText();
 }
 
 
 void TicketPage::on_end_currentTextChanged(const QString &arg1)
 {
-    End_station= ui->end->currentText();
+   ticket. End_station= ui->end->currentText();
+    qDebug()<<"end station"<<ui->end->currentText();
 }
 

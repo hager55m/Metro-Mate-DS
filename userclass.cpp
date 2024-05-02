@@ -1,8 +1,9 @@
 #include "userclass.h"
+#include "ticketpage.h"
 
 QVector<UserClass> UserClass::users;
 UserClass UserClass::thisuser;
-QList<QSharedPointer<TicketPage>> UserClass::user_tickets;
+QList<UserTicket> user_tickets;
 
 UserClass::UserClass(){
     Username = "tester";
@@ -11,10 +12,11 @@ UserClass::UserClass(){
     users.push_back(*this);
 }
 
-UserClass::UserClass(QString name,QString pass,QString type) {
+UserClass::UserClass(QString name,QString pass,QString type,int b) {
     Username=name;
     Password = pass;
     UserSub = type;
+    balance =b;
 }
 /*void Add_Ticket(QString ,QString){
 

@@ -38,8 +38,10 @@ SOURCES += \
     ticket.cpp \
     ticketpage.cpp \
     types_sub.cpp \
+    user_subscribtion.cpp \
     userclass.cpp \
     userdata.cpp \
+    userticket.cpp \
     verfication.cpp
 
 HEADERS += \
@@ -95,8 +97,10 @@ HEADERS += \
     ui_ticketpage.h \
     ui_userdata.h \
     ui_verfication.h \
+    user_subscribtion.h \
     userclass.h \
     userdata.h \
+    userticket.h \
     verfication.h
 
 
