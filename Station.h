@@ -2,24 +2,26 @@
 
 #include<string>
 #include<vector>
+
 class Station
 {
-	std::string name;
-	int lines;
+    std::string name;
+    int lines;
 public:
-
-	Station();
-	Station(std::string name, int lines);
-	int getLines();
-	std::string getName() const;
-	bool operator<(const Station& other) const {
-		return(name < other.name);
-	}
-	bool operator==(const Station& other) const {
-		// Implement comparison logic here
-		// For example, compare relevant data members of Station class
-		return name == other.name ;
-	}
+    static std::vector<Station> stations;
+    Station();
+    Station(std::string name, int lines);
+    int getLines();
+    std::string getName() const;
+    bool operator<(const Station& other) const {
+        return(name < other.name);
+    }
+    bool operator==(const Station& other) const {
+        // Implement comparison logic here
+        // For example, compare relevant data members of Station class
+        return name == other.name;
+    }
+    static void readstations();
 };
 /*
 This error typically occurs when you're trying to use a type as a key
@@ -37,13 +39,10 @@ https://www.geeksforgeeks.org/how-to-create-an-unordered_map-of-user-defined-cla
 */
 
 struct StationHash {
-	std::size_t operator()(const Station& station) const {
-		// You can implement your own hash function here
-		return std::hash<std::string>()(station.getName());
-		//return std::hash<std::string>{}(station.getName());
+    std::size_t operator()(const Station& station) const {
+        // You can implement your own hash function here
+        return std::hash<std::string>()(station.getName());
+        //return std::hash<std::string>{}(station.getName());
 
-	}
+    }
 };
-
-
-
