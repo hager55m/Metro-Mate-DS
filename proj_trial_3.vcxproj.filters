@@ -1,335 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
-    </Filter>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
-      <Extensions>qrc;*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
-      <Extensions>qrc;*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Distribution Files">
-      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
-      <Extensions>*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Distribution Files">
-      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
-      <Extensions>*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="AdminHomeBage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="adminmanagemetroaddstation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="adminmanagemetrootions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="adminmanagemetroremovestation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="adminstations.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="historypage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="loginpage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mainpage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="renewsub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="searchpage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="signuppage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stat1month.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stat3months.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stat6months.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="submanage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="subscription.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ticketpage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="types_sub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="userdata.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="verfication.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AdminHomeBage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <QtMoc Include="adminmanagemetroaddstation.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminmanagemetrootions.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminmanagemetroremovestation.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminstations.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="historypage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="loginpage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="mainpage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="renewsub.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="searchpage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="signuppage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="stat1month.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="stat3months.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="stat6months.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClInclude Include="submanage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <QtMoc Include="subscription.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ticketpage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="types_sub.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="userdata.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="verfication.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="debug\moc_predefs.h.cbt">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="release\moc_predefs.h.cbt">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="AdminHomeBage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminmanagemetroaddstation.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminmanagemetrootions.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminmanagemetroremovestation.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminstations.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="historypage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="loginpage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="mainpage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="renewsub.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="searchpage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="signuppage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="stat1month.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="stat3months.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="stat6months.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="submanage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="subscription.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ticketpage.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="types_sub.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="userdata.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="verfication.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\149071.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\16041_tn_eg-cairo-metro-line3-train-impression-hyundairotem.jpg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\20221220_CairoMetroMap2.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\422833-PE4141-817 (2).png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\default_qrcode.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\down.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\download.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\entrance.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\health-report.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\home (1).png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\infographic.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\left-arrow.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\location.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\man.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\map-point.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\one.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\reject.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <QtRcc Include="res.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <None Include="img\six.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\subway.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\three.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\ticket.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\train.png">
-      <Filter>Resource Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\stations_name.txt">
-      <Filter>Distribution Files</Filter>
-    </None>
-  </ItemGroup>
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Form Files">
@@ -421,6 +90,9 @@
     <ClCompile Include="admonmanagemetrooptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="datetime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="historypage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -469,6 +141,12 @@
     <ClCompile Include="ticketpage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="types_sub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="userdata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -486,172 +164,490 @@
     <ClInclude Include="StationClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <QtMoc Include="addsub.h">
+    <CustomBuild Include="addsub.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="admin.h">
+    </CustomBuild>
+    <CustomBuild Include="admin.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="admindatapage.h">
+    </CustomBuild>
+    <CustomBuild Include="admindatapage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminmanagemetroaddstation.h">
+    </CustomBuild>
+    <CustomBuild Include="adminmanagemetroaddstation.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminmanagemetrootions.h">
+    </CustomBuild>
+    <CustomBuild Include="adminmanagemetrootions.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminmanagemetroremovestation.h">
+    </CustomBuild>
+    <CustomBuild Include="adminmanagemetroremovestation.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="adminstations.h">
+    </CustomBuild>
+    <CustomBuild Include="adminstations.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="admonmanagemetrooptions.h">
+    </CustomBuild>
+    <CustomBuild Include="admonmanagemetrooptions.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="historypage.h">
+    </CustomBuild>
+    <ClInclude Include="datetime.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="loginpage.h">
+    </ClInclude>
+    <CustomBuild Include="historypage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="mainpage.h">
+    </CustomBuild>
+    <CustomBuild Include="loginpage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="manage_metro.h">
+    </CustomBuild>
+    <CustomBuild Include="mainpage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="removesub.h">
+    </CustomBuild>
+    <CustomBuild Include="manage_metro.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="renewsub.h">
+    </CustomBuild>
+    <CustomBuild Include="removesub.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="searchpage.h">
+    </CustomBuild>
+    <CustomBuild Include="renewsub.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="signuppage.h">
+    </CustomBuild>
+    <CustomBuild Include="searchpage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="stat1month.h">
+    </CustomBuild>
+    <CustomBuild Include="signuppage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="stat3months.h">
+    </CustomBuild>
+    <CustomBuild Include="stat1month.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="stat6months.h">
+    </CustomBuild>
+    <CustomBuild Include="stat3months.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="submanage.h">
+    </CustomBuild>
+    <CustomBuild Include="stat6months.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="subscription.h">
+    </CustomBuild>
+    <ClInclude Include="submanage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ticket.h">
+    </ClInclude>
+    <CustomBuild Include="subscription.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ticketpage.h">
+    </CustomBuild>
+    <CustomBuild Include="ticket.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </CustomBuild>
+    <CustomBuild Include="ticketpage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="types_sub.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <ClInclude Include="ui_AdminHomeBage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <QtMoc Include="userdata.h">
+    <ClInclude Include="ui_DialogButtonBottom.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="verfication.h">
+    </ClInclude>
+    <ClInclude Include="ui_addsub.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </ClInclude>
+    <ClInclude Include="ui_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetroaddstation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetrootions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetroremovestation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminstations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_historypage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_loginpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_mainpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_removesub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_renewsub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_searchpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_signuppage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stat1month.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stat3months.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stat6months.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_submanage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_subscription.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_ticket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_ticketpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_userdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_verfication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="userdata.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="verfication.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="debug\moc_addsub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_addsub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_admin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_admin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_admindatapage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_admindatapage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_adminmanagemetroaddstation.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_adminmanagemetroaddstation.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_adminmanagemetrootions.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_adminmanagemetrootions.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_adminmanagemetroremovestation.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_adminmanagemetroremovestation.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_adminstations.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_adminstations.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_admonmanagemetrooptions.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_admonmanagemetrooptions.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_historypage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_historypage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_loginpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_loginpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_mainpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_mainpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_manage_metro.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_manage_metro.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+    <ClCompile Include="debug\moc_removesub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_removesub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_renewsub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_renewsub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_searchpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_searchpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_signuppage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_signuppage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_stat1month.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_stat1month.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_stat3months.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_stat3months.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_stat6months.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_stat6months.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_subscription.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_subscription.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ticket.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_ticket.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ticketpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_ticketpage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_types_sub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_types_sub.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_userdata.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_userdata.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_verfication.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_verfication.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_res.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\qrc_res.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClInclude Include="ui_DialogButtonBottom.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_addsub.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_admin.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_admindatapage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetroaddstation.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetrootions.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminmanagemetroremovestation.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_adminstations.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_admonmanagemetrooptions.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_historypage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_loginpage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_mainpage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_manage_metro.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_removesub.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_renewsub.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_searchpage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_signuppage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stat1month.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stat3months.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stat6months.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_submanage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_subscription.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_ticket.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_ticketpage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_types_sub.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_userdata.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_verfication.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="DialogButtonBottom.ui">
+    <CustomBuild Include="DialogButtonBottom.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="addsub.ui">
+    </CustomBuild>
+    <CustomBuild Include="addsub.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="admin.ui">
+    </CustomBuild>
+    <CustomBuild Include="admin.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="admindatapage.ui">
+    </CustomBuild>
+    <CustomBuild Include="admindatapage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminmanagemetroaddstation.ui">
+    </CustomBuild>
+    <CustomBuild Include="adminmanagemetroaddstation.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminmanagemetrootions.ui">
+    </CustomBuild>
+    <CustomBuild Include="adminmanagemetrootions.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminmanagemetroremovestation.ui">
+    </CustomBuild>
+    <CustomBuild Include="adminmanagemetroremovestation.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="adminstations.ui">
+    </CustomBuild>
+    <CustomBuild Include="adminstations.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="admonmanagemetrooptions.ui">
+    </CustomBuild>
+    <CustomBuild Include="admonmanagemetrooptions.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="historypage.ui">
+    </CustomBuild>
+    <CustomBuild Include="historypage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="loginpage.ui">
+    </CustomBuild>
+    <CustomBuild Include="loginpage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="mainpage.ui">
+    </CustomBuild>
+    <CustomBuild Include="mainpage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="manage_metro.ui">
+    </CustomBuild>
+    <CustomBuild Include="manage_metro.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="removesub.ui">
+    </CustomBuild>
+    <CustomBuild Include="removesub.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="renewsub.ui">
+    </CustomBuild>
+    <CustomBuild Include="renewsub.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="searchpage.ui">
+    </CustomBuild>
+    <CustomBuild Include="searchpage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="signuppage.ui">
+    </CustomBuild>
+    <CustomBuild Include="signuppage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="stat1month.ui">
+    </CustomBuild>
+    <CustomBuild Include="stat1month.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="stat3months.ui">
+    </CustomBuild>
+    <CustomBuild Include="stat3months.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="stat6months.ui">
+    </CustomBuild>
+    <CustomBuild Include="stat6months.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="submanage.ui">
+    </CustomBuild>
+    <CustomBuild Include="submanage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="subscription.ui">
+    </CustomBuild>
+    <CustomBuild Include="subscription.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ticket.ui">
+    </CustomBuild>
+    <CustomBuild Include="ticket.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ticketpage.ui">
+    </CustomBuild>
+    <CustomBuild Include="ticketpage.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="userdata.ui">
+    </CustomBuild>
+    <CustomBuild Include="types_sub.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="verfication.ui">
+    </CustomBuild>
+    <CustomBuild Include="userdata.ui">
       <Filter>Form Files</Filter>
-    </QtUic>
+    </CustomBuild>
+    <CustomBuild Include="verfication.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <None Include="img\149071.png">
@@ -708,10 +704,13 @@
     <None Include="img\reject.png">
       <Filter>Resource Files</Filter>
     </None>
-    <QtRcc Include="res.qrc">
+    <CustomBuild Include="res.qrc">
       <Filter>Resource Files</Filter>
-    </QtRcc>
+    </CustomBuild>
     <None Include="img\six.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\stations_name.txt">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\subway.png">

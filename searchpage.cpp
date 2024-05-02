@@ -40,24 +40,19 @@ void SearchPage::on_buy_clicked()
 
 void SearchPage::on_buy_2_clicked()
 {
-    qInfo() << "Log: " << ui->data->toPlainText();
     vector<vector<string>> bfs;
     bool found = false;
     for (int i = 0; i < Station::stations.size(); i++) {
         Graph::addStation(Station::stations[i].getName(), i);
     }
-    qDebug("in");
     for(int i = 0; i < Station::stations.size(); i++) {
         if(ui->start->currentText() == QString::fromStdString(Station::stations[i].getName())) {
             for(int j = 0; j < Station::stations.size(); j++) {
                 if(ui->end->currentText() == QString::fromStdString(Station::stations[j].getName())) {
-                    ui->data->insertPlainText("Start: " + QString::fromStdString(Station::stations[i].getName()));
-                    qDebug() << "Start: " << QString::fromStdString(Station::stations[i].getName());
-                    ui->data->insertPlainText("End: " + QString::fromStdString(Station::stations[j].getName()));
-                    qDebug() << "End: " << QString::fromStdString(Station::stations[j].getName());
                     bfs = Graph::allPossiblePathsFunctionality(Station::stations[i].getName(), Station::stations[j].getName());
-                    qDebug() << "Paths: " << bfs.size();
-                    ui->data->insertPlainText("Paths: " + bfs.size());
+                   QString sz = QString::number(bfs.size());
+                    ui->data->insertPlainText("Paths: " + sz);
+                    ui->data->insertPlainText("\n");
                     found = true;
                     break;
                 }
@@ -69,12 +64,11 @@ void SearchPage::on_buy_2_clicked()
     }
     if(bfs.empty()) qDebug("empty");
     for(const auto& path : bfs) {
-        qDebug() << "Path: ";
-        ui->data->insertPlainText("Paths: ");
+        ui->data->insertPlainText("Path: \n" );
         for(const auto& station : path) {
-            qDebug() << QString::fromStdString(station);
-            ui->data->insertPlainText(QString::fromStdString(station));
+            ui->data->insertPlainText(QString::fromStdString(station) + " - ");
         }
+        ui->data->insertPlainText("\n");
     }
 }
 
