@@ -25,4 +25,5 @@
         <file>img/files/Sub.txt</file>
         <file>img/stations_name.txt</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

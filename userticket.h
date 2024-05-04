@@ -2,6 +2,9 @@
 #define USERTICKET_H
 #include"datetime.h"
 #include"QString"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 class UserTicket
 {
 public:
@@ -13,7 +16,9 @@ public:
     //int Code;
 
     UserTicket();
-     UserTicket( float, QString, QString);
+    UserTicket( float, QString, QString);
+    static void Read_History();
+    static void Write_History();
 };
 
 #endif // USERTICKET_H

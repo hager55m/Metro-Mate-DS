@@ -2,16 +2,21 @@
 
 #include<string>
 #include<vector>
+#include<QVector>
 class Station
 {
+    public:
 	std::string name;
 	int lines;
-public:
+
 
 	Station();
 	Station(std::string name, int lines);
+    static QVector<Station> All_stations;
 	int getLines();
 	std::string getName() const;
+    static void Read_Staion();
+    static void Write_Staion();
 	bool operator<(const Station& other) const {
 		return(name < other.name);
 	}

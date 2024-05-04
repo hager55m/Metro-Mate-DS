@@ -3,8 +3,12 @@
 #include <QMessageBox>
 #include <QIntValidator>
 #include <QString>
+#include <userclass.h>
+#include <QFile>
 
+#include <user_subscribtion.h>
 using namespace std;
+QList <QString> types_sub::stations;
 
 types_sub::types_sub(QWidget *parent)
     : QDialog(parent)
@@ -15,10 +19,27 @@ types_sub::types_sub(QWidget *parent)
     setWindowIcon(QIcon(":/images/img/download.png"));
     
     //read from file
-    ui->start->addItem("Start");
+    /*ui->start->addItem("Start");
     ui->end->addItem("end");
     ui->start->addItem("marvel");
-    ui->end->addItem("marvel");
+    ui->end->addItem("marvel");*/
+    //adding stations to combomoxes
+    QFile file(":/images/img/stations_name.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open the file:" << file.errorString();
+    }
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString station = in.readLine();
+        stations.push_back(station);
+    }
+    file.close();
+    foreach (QString station, stations) {
+        ui->start->addItem(station);
+        ui->end->addItem(station);
+    }
+    ui->start->setCurrentText(stations.front());
+    ui->end->setCurrentText(stations.front());
 
    
     QIntValidator* validatorr = new QIntValidator(ui->money);
@@ -42,7 +63,16 @@ void types_sub::on_ok_clicked()
     {
         if (ui->start->currentIndex() != 0 && ui->end->currentIndex() != 0 && ui->month3->isChecked() && ui->money->text().isEmpty())
         {
+            // stage eh w a7taha b eh
+            User_subscribtion sub_of_user(student,1,ui->start->currentText(),ui->end->currentText());
+            UserClass::thisuser.UserSub=sub_of_user;
+            qDebug()<<"student adding done";
+            qDebug()<< UserClass::thisuser.Username;
+            //UserClass::users_sign_up.push_back( UserClass::thisuser);
+
+
             emit SwitchToSignup();
+
         }
         else
         {
@@ -56,6 +86,9 @@ void types_sub::on_ok_clicked()
         {
             if (ui->month1->isChecked() || ui->year->isChecked())
             {
+                User_subscribtion sub_of_user(pub,1,ui->month1->isChecked(),ui->start->currentText(),ui->end->currentText());
+                UserClass::thisuser.UserSub=sub_of_user;
+                qDebug()<<"public adding done";
                 emit SwitchToSignup();
             }
             else
@@ -79,11 +112,17 @@ void types_sub::on_ok_clicked()
 
             if (ui->money->text() == "50" || ui->money->text() == "60" || ui->money->text() == "70" || ui->money->text() == "80" || ui->money->text() == "90")
             {
+                User_subscribtion sub_of_user(wallet,rem);
+                UserClass::thisuser.UserSub=sub_of_user;
+                qDebug()<<"wallet adding done";
                 emit SwitchToSignup();
             }
 
             else if (ui->money->text() <= "400" && rem % 10 == 0)
             {
+                User_subscribtion sub_of_user(wallet,rem);
+                qDebug()<<"wallet adding done";
+
                 emit SwitchToSignup();
             }
             
