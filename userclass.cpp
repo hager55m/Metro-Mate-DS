@@ -4,6 +4,7 @@
 QVector<UserClass> UserClass::users;
 QVector<UserClass> UserClass::users_sign_up;
 UserClass UserClass::thisuser;
+User_subscribtion UserClass::thissub;
 QList<UserTicket> user_tickets;
 
 UserClass::UserClass(){
@@ -126,7 +127,7 @@ void UserClass::Write_users()
     for(const auto& it:users){
         if(it.UserSub.type_of_sub==student){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
-            qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
+            //qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
         }
         else if(it.UserSub.type_of_sub==pub){
@@ -157,10 +158,12 @@ void UserClass::Write_users_Signed()
         if(it.UserSub.type_of_sub==student){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
+            qDebug()<<"user student adding done";
+            qDebug()<<it.Username;
         }
         else if(it.UserSub.type_of_sub==pub){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
+            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
 
         }
         else{
@@ -168,9 +171,7 @@ void UserClass::Write_users_Signed()
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.wallet<<endl;
 
         }
-        if(it.Username=="ali"){
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<endl;
-        }
+
 
     }
 
@@ -235,7 +236,7 @@ void UserClass::Write_users_Signed()
 
             User_subscribtion s1(type,stage,qstart,qend);
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
-            qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
+            //qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
             users.push_back(user);
 
         }

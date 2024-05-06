@@ -48,7 +48,7 @@ void SignupPage::on_signup_clicked()
                 //sub
             int cardValue = ui->card->text().toInt(&isInteger);
             int balanceValue = ui->balance->text().toInt(&isInteger);// ageb el type of sub mnen?????
-            UserClass usersignin(ui->mail->text(),ui->name->text(),ui->pass->text(),cardValue, balanceValue);
+            UserClass usersignin(ui->mail->text(),ui->name->text(),ui->pass->text(),UserClass::thissub,cardValue, balanceValue);
 
             //UserClass::set_this_user(usersignin);
             // equal thisuser = suersigned
@@ -58,6 +58,7 @@ void SignupPage::on_signup_clicked()
 
             UserClass::users_sign_up.push_back(usersignin);
             qDebug()<<"user adding done"<<UserClass::thisuser.Username;
+            qDebug()<<"user adding done in sign in "<<UserClass::thissub.type_of_sub;
            // usersignin.index_in_vector=std::distance(UserClass::users.begin(),usersignin);
            // qDebug()<<"///////////////////////"<<index_user; // index start from 1
             emit SwitchToLogin();

@@ -25,6 +25,7 @@ public:
     UserClass(QString,QString,QString,User_subscribtion,int,int);
     UserClass(QString,QString,QString,int,int);
     static UserClass thisuser;
+    static User_subscribtion thissub;
     static void set_this_user(UserClass);
     QList<UserTicket> user_tickets;
     void Add_Ticket(QString ,QString);
