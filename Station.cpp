@@ -6,16 +6,19 @@
 std::vector <Station> stations;
 Station::Station()
 {
-    lines = 0;
+	lines;
 }
 
-Station::Station(std::string name, int line)
-    : name(name), lines(line) {}
+Station::Station(std::string name, std::vector< int>line)
+	: name(name), lines(line) {}
 
-int Station::getLines()
+std::vector<int >Station::getLines() {
+	return lines;
+}
+
+void Station::setName(std::string Nname)
 {
-
-    return lines;
+	name = Nname;
 }
 
 std::string Station::getName()const

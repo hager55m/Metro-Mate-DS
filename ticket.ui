@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1198</width>
     <height>700</height>
    </rect>
   </property>
@@ -473,7 +473,7 @@ color: black;</string>
     <property name="geometry">
      <rect>
       <x>830</x>
-      <y>410</y>
+      <y>400</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -515,6 +515,73 @@ color: black;</string>
     </property>
     <property name="text">
      <string>Change</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>491</x>
+      <y>464</y>
+      <width>214</width>
+      <height>76</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Baskerville Old Face</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tire #4 Cost :</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="mail_4">
+    <property name="geometry">
+     <rect>
+      <x>1320</x>
+      <y>710</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Baskerville Old Face</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="mail_5">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>480</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Baskerville Old Face</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

@@ -9,12 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Graph.cpp \
-    Station.cpp \
-    StationClass.cpp \
-    addsub.cpp \
-    admin.cpp \
-    admindatapage.cpp \
+    AdminHomeBage.cpp \
     adminmanagemetroaddstation.cpp \
     adminmanagemetrootions.cpp \
     adminmanagemetroremovestation.cpp \
@@ -25,30 +20,30 @@ SOURCES += \
     main.cpp \
     loginpage.cpp \
     mainpage.cpp \
-    manage_metro.cpp \
-    removesub.cpp \
+    publicclass.cpp \
     renewsub.cpp \
+    rides.cpp \
     searchpage.cpp \
     signuppage.cpp \
     stat1month.cpp \
     stat3months.cpp \
     stat6months.cpp \
+    student.cpp \
     submanage.cpp \
     subscription.cpp \
-    ticket.cpp \
+    subscriptionclass.cpp \
     ticketpage.cpp \
     types_sub.cpp \
     userclass.cpp \
+    type_subscribtion.cpp \
+    user.cpp \
     userdata.cpp \
-    verfication.cpp
+    verfication.cpp \
+    wallet.cpp
 
 HEADERS += \
-    Graph.h \
-    Station.h \
-    StationClass.h \
-    addsub.h \
-    admin.h \
-    admindatapage.h \
+    AdminHomeBage.h \
+    Time_Adn_Date.h \
     adminmanagemetroaddstation.h \
     adminmanagemetrootions.h \
     adminmanagemetroremovestation.h \
@@ -58,17 +53,18 @@ HEADERS += \
     historypage.h \
     loginpage.h \
     mainpage.h \
-    manage_metro.h \
-    removesub.h \
+    publicclass.h \
     renewsub.h \
+    rides.h \
     searchpage.h \
     signuppage.h \
     stat1month.h \
     stat3months.h \
     stat6months.h \
+    student.h \
     submanage.h \
     subscription.h \
-    ticket.h \
+    subscriptionclass.h \
     ticketpage.h \
     types_sub.h \
     ui_AdminHomeBage.h \
@@ -96,25 +92,20 @@ HEADERS += \
     ui_userdata.h \
     ui_verfication.h \
     userclass.h \
+    type_subscribtion.h \
+    user.h \
     userdata.h \
-    verfication.h
-
+    verfication.h \
+    wallet.h
 
 FORMS += \
-    DialogButtonBottom.ui \
-    addsub.ui \
-    admin.ui \
-    admindatapage.ui \
+    AdminHomeBage.ui \
     adminmanagemetroaddstation.ui \
     adminmanagemetrootions.ui \
     adminmanagemetroremovestation.ui \
-    adminstations.ui \
-    admonmanagemetrooptions.ui \
     historypage.ui \
     loginpage.ui \
     mainpage.ui \
-    manage_metro.ui \
-    removesub.ui \
     renewsub.ui \
     searchpage.ui \
     signuppage.ui \
@@ -123,7 +114,6 @@ FORMS += \
     stat6months.ui \
     submanage.ui \
     subscription.ui \
-    ticket.ui \
     ticketpage.ui \
     types_sub.ui \
     userdata.ui \
@@ -138,15 +128,6 @@ RESOURCES += \
     res.qrc
 
 DISTFILES += \
-    img/files/Sub.txt \
+    files/file country.txt \
     img/stations_name.txt \
-    proj_trial_3 - Backup.vcxproj.user \
-    proj_trial_3.pro.user \
-    proj_trial_3.pro.user.271141c \
-    proj_trial_3.pro.user.2ff5dd2 \
-    proj_trial_3.pro.user.4474141 \
-    proj_trial_3.pro.user.b9763a2 \
-    proj_trial_3.sln \
-    proj_trial_3.vcxproj \
-    proj_trial_3.vcxproj.filters \
-    proj_trial_3.vcxproj.user
+    img/testing.txt

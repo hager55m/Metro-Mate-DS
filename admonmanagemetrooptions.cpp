@@ -44,3 +44,27 @@ AdmonManageMetroOptions::~AdmonManageMetroOptions()
 {
     delete ui;
 }
+
+void AdmonManageMetroOptions::on_pushButton_21_clicked() // metro
+{
+    emit SwitchToAddMetro();
+}
+
+
+void AdmonManageMetroOptions::on_pushButton_22_clicked() // ticket
+{
+    emit SwitchToAddTicket();
+}
+
+
+void AdmonManageMetroOptions::on_pushButton_13_clicked() // remove
+{
+    emit SwitchToAddRemove();
+}
+
+
+void AdmonManageMetroOptions::on_pushButton_25_clicked()
+{
+    emit SwitchToStation();
+}
+
