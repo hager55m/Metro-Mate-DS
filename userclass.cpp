@@ -4,6 +4,7 @@
 QVector<UserClass> UserClass::users;
 QVector<UserClass> UserClass::users_sign_up;
 UserClass UserClass::thisuser;
+User_subscribtion UserClass::thissub;
 QList<UserTicket> user_tickets;
 QString Username;
 QString Password;
@@ -46,7 +47,7 @@ void UserClass::Read_User_Signed(){
     while (getline(file, line)) {
         stringstream ss(line);
 
-        string email, name, password, card_number_str, balance_str,type_sub,start_str,end_srt,stage_str,boolean_is_mounth_str,mouny_str;
+        string email, name, password, card_number_str, balance_str,type_sub,start_str,end_srt,stage_str,boolean_is_mounth_str,mouny_str,sac_str,min_str,hou_str,day_str,month_str,year_str;;
         //User_subscribtion subscription;
 
         // Read each comma-separated value from the line
@@ -69,10 +70,29 @@ void UserClass::Read_User_Signed(){
             getline(ss, stage_str, ',');
             getline(ss, start_str, ',');
             getline(ss, end_srt, ',');
+            getline(ss, sac_str, ',');
+            getline(ss, min_str, ',');
+            getline(ss, hou_str, ',');
+            getline(ss, day_str, ',');
+            getline(ss, month_str, ',');
+            getline(ss, year_str, ',');
+
             QString qstart = QString::fromStdString(start_str);
             QString qend = QString::fromStdString(end_srt);
             int stage = stoi(stage_str);
+            int sac_int = stoi(sac_str);
+            int min_int = stoi(min_str);
+            int hou_int = stoi(hou_str);
+            int day_int = stoi(day_str);
+            int month_int = stoi(month_str);
+            int year_int = stoi(year_str);
             User_subscribtion s1(type,stage,qstart,qend);
+            s1.Start_of_sub.second=sac_int;
+            s1.Start_of_sub.minute=min_int;
+            s1.Start_of_sub.hour=hou_int;
+            s1.Start_of_sub.day=day_int;
+            s1.Start_of_sub.month=month_int;
+            s1.Start_of_sub.year=year_int;
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
             users_sign_up.push_back(user);
 
@@ -83,11 +103,31 @@ void UserClass::Read_User_Signed(){
             getline(ss, boolean_is_mounth_str, ',');
             getline(ss, start_str, ',');
             getline(ss, end_srt, ',');
+            getline(ss, sac_str, ',');
+            getline(ss, min_str, ',');
+            getline(ss, hou_str, ',');
+            getline(ss, day_str, ',');
+            getline(ss, month_str, ',');
+            getline(ss, year_str, ',');
+
             QString qstart = QString::fromStdString(start_str);
             QString qend = QString::fromStdString(end_srt);
             int stage = stoi(stage_str);
+
             int boolean_is_mounth = stoi(boolean_is_mounth_str);
+            int sac_int = stoi(sac_str);
+            int min_int = stoi(min_str);
+            int hou_int = stoi(hou_str);
+            int day_int = stoi(day_str);
+            int month_int = stoi(month_str);
+            int year_int = stoi(year_str);
             User_subscribtion s2(type,stage,boolean_is_mounth,qstart,qend);
+            s2.Start_of_sub.second=sac_int;
+            s2.Start_of_sub.minute=min_int;
+            s2.Start_of_sub.hour=hou_int;
+            s2.Start_of_sub.day=day_int;
+            s2.Start_of_sub.month=month_int;
+            s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
             users_sign_up.push_back(user2);
         }
@@ -130,12 +170,14 @@ void UserClass::Write_users()
     for(const auto& it:users){
         if(it.UserSub.type_of_sub==student){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
-            qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
+            //qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
+            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
+                    <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
         }
         else if(it.UserSub.type_of_sub==pub){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
+            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
+                <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
 
         }
         else{
@@ -160,11 +202,17 @@ void UserClass::Write_users_Signed()
     for(const auto& it:users_sign_up){
         if(it.UserSub.type_of_sub==student){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
+            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
+            <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
+
+            qDebug()<<"user student adding done";
+            qDebug()<<it.Username;
         }
         else if(it.UserSub.type_of_sub==pub){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()<<endl;
+            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
+                    <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
+
 
         }
         else{
@@ -172,9 +220,7 @@ void UserClass::Write_users_Signed()
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.wallet<<endl;
 
         }
-        if(it.Username=="ali"){
-            outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<endl;
-        }
+
 
     }
 
@@ -202,7 +248,7 @@ void UserClass::Write_users_Signed()
     string line;
     while (getline(file, line)) {
         stringstream ss(line);
-        string email, name, password, card_number_str, balance_str,type_sub,start_str,end_srt,stage_str,boolean_is_mounth_str,mouny_str;
+        string email, name, password, card_number_str, balance_str,type_sub,start_str,end_srt,stage_str,boolean_is_mounth_str,mouny_str,sac_str,min_str,hou_str,day_str,month_str,year_str;
         User_subscribtion subscription;
 
         // Read each comma-separated value from the line
@@ -226,20 +272,42 @@ void UserClass::Write_users_Signed()
             getline(ss, stage_str, ',');
             getline(ss, start_str, ',');
             getline(ss, end_srt, ',');
+            getline(ss, sac_str, ',');
+            getline(ss, min_str, ',');
+            getline(ss, hou_str, ',');
+            getline(ss, day_str, ',');
+            getline(ss, month_str, ',');
+            getline(ss, year_str, ',');
+
             QString qEmail = QString::fromStdString(email);
             QString qName = QString::fromStdString(name);
             QString qPassword = QString::fromStdString(password);
             //QString qSubscription = QString::fromStdString(subscription);
             int card_number = stoi(card_number_str);
             int balance = stoi(balance_str);
+
+            int sac_int = stoi(sac_str);
+            int min_int = stoi(min_str);
+            int hou_int = stoi(hou_str);
+            int day_int = stoi(day_str);
+            int month_int = stoi(month_str);
+            int year_int = stoi(year_str);
             //qDebug() << "stage: " << QString::fromStdString(stage_str);
             QString qstart = QString::fromStdString(start_str);
             QString qend = QString::fromStdString(end_srt);
             int stage = stoi(stage_str);
 
             User_subscribtion s1(type,stage,qstart,qend);
+            s1.Start_of_sub.second=sac_int;
+            s1.Start_of_sub.minute=min_int;
+            s1.Start_of_sub.hour=hou_int;
+            s1.Start_of_sub.day=day_int;
+            s1.Start_of_sub.month=month_int;
+            s1.Start_of_sub.year=year_int;
+
+
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
-            qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
+            //qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
             users.push_back(user);
 
         }
@@ -249,6 +317,13 @@ void UserClass::Write_users_Signed()
             getline(ss, boolean_is_mounth_str, ',');
             getline(ss, start_str, ',');
             getline(ss, end_srt, ',');
+            getline(ss, sac_str, ',');
+            getline(ss, min_str, ',');
+            getline(ss, hou_str, ',');
+            getline(ss, day_str, ',');
+            getline(ss, month_str, ',');
+            getline(ss, year_str, ',');
+
             //subType type=User_subscribtion::stringToEnum(type_sub);
             QString qEmail = QString::fromStdString(email);
             QString qName = QString::fromStdString(name);
@@ -260,7 +335,19 @@ void UserClass::Write_users_Signed()
             QString qend = QString::fromStdString(end_srt);
             int stage = stoi(stage_str);
             int boolean_is_mounth = stoi(boolean_is_mounth_str);
+            int sac_int = stoi(sac_str);
+            int min_int = stoi(min_str);
+            int hou_int = stoi(hou_str);
+            int day_int = stoi(day_str);
+            int month_int = stoi(month_str);
+            int year_int = stoi(year_str);
             User_subscribtion s2(type,stage,boolean_is_mounth,qstart,qend);
+            s2.Start_of_sub.second=sac_int;
+            s2.Start_of_sub.minute=min_int;
+            s2.Start_of_sub.hour=hou_int;
+            s2.Start_of_sub.day=day_int;
+            s2.Start_of_sub.month=month_int;
+            s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
             qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
             users.push_back(user2);

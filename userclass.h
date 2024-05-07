@@ -8,6 +8,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "datetime.h"
+
 using namespace std;
 class UserClass
 {
@@ -25,6 +27,7 @@ public:
     UserClass(QString,QString,QString,User_subscribtion,int,int);
     UserClass(QString,QString,QString,int,int);
     static UserClass thisuser;
+    static User_subscribtion thissub;
     static void set_this_user(UserClass);
     QList<UserTicket> user_tickets;
     float Calc_cost(QString,QString);

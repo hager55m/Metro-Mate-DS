@@ -678,15 +678,15 @@ int main(int argc, char *argv[])
 
    
 //>>>>>>> main
-    atexit(Write_all);
+   atexit(Write_all);
 
     return a.exec();
 
 }
 void Write_all(){
 
-    UserClass::Write_users();
-    //UserClass::Write_users_Signed();
+   UserClass::Write_users();
+   UserClass::Write_users_Signed();
     Station::Write_Staion();
     UserTicket::Write_History();
 

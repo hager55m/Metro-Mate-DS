@@ -65,9 +65,10 @@ void types_sub::on_ok_clicked()
         {
             // stage eh w a7taha b eh
             User_subscribtion sub_of_user(student,1,ui->start->currentText(),ui->end->currentText());
-            UserClass::thisuser.UserSub=sub_of_user;
+            //UserClass::thisuser.UserSub=sub_of_user;
+            UserClass::thissub=sub_of_user;
             qDebug()<<"student adding done";
-            qDebug()<< UserClass::thisuser.Username;
+            qDebug()<< UserClass::thissub.type_of_sub;
             //UserClass::users_sign_up.push_back( UserClass::thisuser);
 
 
@@ -87,8 +88,10 @@ void types_sub::on_ok_clicked()
             if (ui->month1->isChecked() || ui->year->isChecked())
             {
                 User_subscribtion sub_of_user(pub,1,ui->month1->isChecked(),ui->start->currentText(),ui->end->currentText());
-                UserClass::thisuser.UserSub=sub_of_user;
+                UserClass::thissub=sub_of_user;
+                //UserClass::thisuser.UserSub=sub_of_user;
                 qDebug()<<"public adding done";
+                qDebug()<< UserClass::thissub.type_of_sub;
                 emit SwitchToSignup();
             }
             else
@@ -113,16 +116,18 @@ void types_sub::on_ok_clicked()
             if (ui->money->text() == "50" || ui->money->text() == "60" || ui->money->text() == "70" || ui->money->text() == "80" || ui->money->text() == "90")
             {
                 User_subscribtion sub_of_user(wallet,rem);
-                UserClass::thisuser.UserSub=sub_of_user;
+                UserClass::thissub=sub_of_user;
                 qDebug()<<"wallet adding done";
+                qDebug()<< UserClass::thissub.type_of_sub;
                 emit SwitchToSignup();
             }
 
             else if (ui->money->text() <= "400" && rem % 10 == 0)
             {
                 User_subscribtion sub_of_user(wallet,rem);
+                UserClass::thissub=sub_of_user;
                 qDebug()<<"wallet adding done";
-
+                qDebug()<< UserClass::thissub.type_of_sub;
                 emit SwitchToSignup();
             }
             
