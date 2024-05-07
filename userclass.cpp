@@ -5,7 +5,10 @@ QVector<UserClass> UserClass::users;
 QVector<UserClass> UserClass::users_sign_up;
 UserClass UserClass::thisuser;
 QList<UserTicket> user_tickets;
-
+QString Username;
+QString Password;
+User_subscribtion UserSub;// elmafrod yb2a instant not just name
+int Credit;
 UserClass::UserClass(){
 
 }
@@ -17,6 +20,7 @@ UserClass::UserClass(QString email ,QString name,QString pass,User_subscribtion 
     UserSub = type;
     Credit=card;
     balance =b;
+
 
 }
 
@@ -297,53 +301,95 @@ for(const auto& it :users){
 
     }
 }
+float UserClass:: Calc_cost(QString,QString){
+    return 11;
+}
 
-/*void Add_Ticket(QString ,QString){
+bool  UserClass:: Check_No_Of_Rides_left(){
 
-    DateTime currentDateTime = DateTime() ;
-
-
-    // Use localtime_s instead of localtime
-
-
-    //bool Flag_Of_wallet=Check_Wallet( Wallet);
-    //if 3 booleans alleast 1 is true;
-    /* if (UserSub.type_of_sub ==NULL) { ask hager about it ??????/
-        UserSub = Add_Sub();
+    if(UserSub.no_of_trips==0){
+        return false;
+    }else{
+        return true;
     }
-    bool flag_Of_Rides = Check_No_Of_Rides();
-    //wallet Wallet=Add_Wallet();
+}
 
-    float c = Calc_cost(start_Sta, end_sta);
+bool UserClass:: Check_Of_Duration_Of_Subscription()
+{
+
+    DateTime currentDateTime;
+    if (UserSub.type_of_sub == 0 || UserSub.type_of_sub == 1) {
+        if (UserSub.end_of_sub.compare(currentDateTime)<=0) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+    else {
+        return 1;
+    }
+    return 1;
+}
+// 1 = done 2 = no of rides are 0 3= subscribtion ended 4 = wallet is not enough
+int  UserClass:: Add_Ticket(float c,UserTicket t ){
+    t.Cost=c;
+
+     bool  flag_Of_Rides=Check_No_Of_Rides_left();
+   bool flag_sub= Check_Of_Duration_Of_Subscription();
     // check 3la type el sub
-    if (UserSub==0) {
+
+    if ( UserSub.type_of_sub==0) {
+       if (flag_sub){
         if (flag_Of_Rides) {
-            Rides r = *new Rides (currentDateTime, c, start_Sta, end_sta);
-            No_Of_Rides.push_back(r);
+           // UserTicket t =UserTicket(c,start, end);
+            user_tickets.push_back(t);
+
+            UserSub.no_of_trips--;
+            return 1;
+
+        }else{
+            return 2;
+        }
+       }else{
+           return 3;
+       }
+    }
+    else if (UserSub.type_of_sub == 1) {
+        if(flag_sub){
+        if (flag_Of_Rides) {
+            //UserTicket t =UserTicket(c,start, end);
+            user_tickets.push_back(t);
+
+            UserSub.no_of_trips--;
+            return 1;
+        }else{
+            return 2;
+        }
+        }else{
+            return 3;
+        }
+    }
+    //check 3la lw wallet
+    else if (UserSub.type_of_sub == 2) {
+        if (UserSub.wallet>c) {
+            //UserTicket t =UserTicket(c,start, end);
+            user_tickets.push_back(t);
             // in case if is a sub of student
             UserSub.no_of_trips--;
+           UserSub.wallet-=c;
+            return 1;
         }
-    }
-    else if (UserSub == 1) {
-        if (flag_Of_Rides) {
-            Rides r = *new Rides(currentDateTime, c, start_Sta, end_sta);
-            No_Of_Rides.push_back(r);
-            //check 3la el duraion
-            // in case if is a sub of public
-            UserSub.no_of_trips--;
+        else{
+            qDebug()<<"wallet not enough";
+            return 4;
         }
+
     }
-    // check 3la lw wallet
-    else if (UserSub.type_of_sub == 2) {
-        if (flag_Of_Rides) {
-            Rides r = *new Rides(currentDateTime, c, start_Sta, end_sta);
-            No_Of_Rides.push_back(r);
-            //in case if is wallet
-            //will handel of amount in sub
-            UserSub.amount_money-=c;
-            //Wallet.Amount=Wallet.Amount-c;
-        }
-    }
-}*/
+   // return true;
+
+     // return false;
+
+}
 
 

@@ -88,3 +88,4 @@ subType User_subscribtion::stringToEnum(const std::string& str) {
 
      }
  }
+

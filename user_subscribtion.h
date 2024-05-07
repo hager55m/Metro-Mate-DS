@@ -33,6 +33,7 @@ public:
     static subType stringToEnum(const std::string& str);
     static std::string enumToString(subType type);
     static void Read_subscription();
+
 };
 
 #endif // USER_SUBSCRIBTION_H

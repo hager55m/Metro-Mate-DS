@@ -112,9 +112,19 @@ void TicketPage::on_code_editingFinished()
 {
     if(ui->code->text() == "123")
     {
-       // UserClass::user_tickets.append(QSharedPointer<TicketPage>(new TicketPage(12, ui->start->currentText(), ui->end->currentText())));
-
-        //qDebug() << UserClass::user_tickets.at(0).data()->First_station;
+        float c = UserClass::thisuser.Calc_cost(ticket.Start_station,ticket.End_station);
+        bool ticket_can_be_add=  UserClass::thisuser.Add_Ticket(c,ticket);
+        if(ticket_can_be_add==1){
+        UserTicket t= UserClass::thisuser.user_tickets.back();
+         qDebug()<<"cost:"<< t.Cost<<t.Start_station;
+        }else if(ticket_can_be_add==2){
+            //message that no of trips has ended
+        }
+        else if (ticket_can_be_add==3){
+            // message that subs has ended
+        }else if(ticket_can_be_add==4){
+            //message that wallet is zero
+        }
        //is going to be editted after finshing sign up--> needs index of user in vector
         emit SwitchToVerf();
     }
@@ -124,6 +134,7 @@ void TicketPage::on_code_editingFinished()
 
 void TicketPage::on_start_currentIndexChanged(int index)
 {
+
   ticket.Start_station=ui->start->currentText();
     qDebug()<<"start station"<<ui->start->currentText();
 }
@@ -131,7 +142,7 @@ void TicketPage::on_start_currentIndexChanged(int index)
 
 void TicketPage::on_end_currentTextChanged(const QString &arg1)
 {
-   ticket. End_station= ui->end->currentText();
+   ticket.End_station= ui->end->currentText();
     qDebug()<<"end station"<<ui->end->currentText();
 }
 

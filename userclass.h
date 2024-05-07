@@ -27,11 +27,16 @@ public:
     static UserClass thisuser;
     static void set_this_user(UserClass);
     QList<UserTicket> user_tickets;
-    void Add_Ticket(QString ,QString);
+    float Calc_cost(QString,QString);
+    bool Check_No_Of_Rides_left();
+    bool  Check_Of_Duration_Of_Subscription();
+   int Add_Ticket(float c,UserTicket t );
     static void Read_File();
     static void Read_User_Signed();
     static void Write_users();
      static void Write_users_Signed();
+
+
 };
 
 #endif // USERCLASS_H
