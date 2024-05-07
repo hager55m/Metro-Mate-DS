@@ -10,9 +10,9 @@
 using namespace std;
 class Graph
 {
+public:
     std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash>adjStation;
     std::unordered_set< Station, StationHash>stations;
-public:
     static Graph graph;
     void addEdge(Station preStation, Station nextStation);
     void addStation(string name, vector< int> line);

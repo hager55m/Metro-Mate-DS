@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-static Graph graph;
+Graph Graph::graph;
 void Graph::addEdge(Station station1, Station station2)
 {
     // check box to make sure that station already exsist
