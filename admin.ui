@@ -445,6 +445,19 @@ border-radius: 25;</string>
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>20</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>hallo allllll</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
