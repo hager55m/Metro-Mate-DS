@@ -27,7 +27,7 @@ std::string Station::getName()const
 
 void Station::Read_Staion()
 {
-    ifstream file ("E:\\Stations.txt");
+    ifstream file ("C:/Users/user/Downloads/data_staion.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -42,18 +42,11 @@ void Station::Read_Staion()
         All_stations.push_back(Station(Name_str,line_int));
     }
     file.close();
-
-    for(const auto& it : All_stations){
-        qDebug()<<"stations ";
-        qDebug()<<it.getName();
-        qDebug()<<it.lines<<"\n";
-
-    }
 }
 
 void Station::Write_Staion()
 {
-    ofstream outFile("E:\\Stations.txt");
+    ofstream outFile("C:/Users/user/Downloads/data_staion.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {

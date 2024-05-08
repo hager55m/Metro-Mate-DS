@@ -39,7 +39,7 @@ void UserClass::set_this_user(UserClass s1)
     thisuser=s1;
 }
 void UserClass::Read_User_Signed(){
-    ifstream file("E:\\testing_signed.txt");
+    ifstream file("C:/Users/user/Downloads/testing_signed.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -133,12 +133,12 @@ void UserClass::Read_User_Signed(){
         }
         else{
             getline(ss, mouny_str, ',');
-            qDebug()<< "before";
+            //qDebug()<< "before";
             int mouny = stoi(mouny_str);
-            qDebug()<< "before"<<mouny;
+            //qDebug()<< "before"<<mouny;
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
-            qDebug()<<" wallet mony"<<user3.UserSub.wallet;
+            //qDebug()<<" wallet mony"<<user3.UserSub.wallet;
             users_sign_up.push_back(user3);
 
         }
@@ -146,20 +146,12 @@ void UserClass::Read_User_Signed(){
         //users_sign_up.push_back(UserClass(qEmail, qName, qPassword, qSubscription, card_number, balance));
     }
     file.close();
-    qDebug()<<"the users sighed but not login";
-
-    for(const auto& it :users_sign_up){
-        qDebug()<<it.Username;
-        qDebug()<<it.Password;
-        qDebug()<<it.Email;
-        qDebug()<<it.balance;
-        qDebug()<<it.UserSub.type_of_sub<<"\n";
-    }
+    //qDebug()<<"the users sighed but not login";
 }
 
 void UserClass::Write_users()
 {
-    ofstream outFile("E:\\testing.txt");
+    ofstream outFile("C:/Users/user/Downloads/testing.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -191,7 +183,7 @@ void UserClass::Write_users()
 
 void UserClass::Write_users_Signed()
 {
-    ofstream outFile("E:\\testing_signed.txt");
+    ofstream outFile("C:/Users/user/Downloads/testing_signed.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -204,9 +196,6 @@ void UserClass::Write_users_Signed()
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
             <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
-
-            qDebug()<<"user student adding done";
-            qDebug()<<it.Username;
         }
         else if(it.UserSub.type_of_sub==pub){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
@@ -225,22 +214,12 @@ void UserClass::Write_users_Signed()
     }
 
     outFile.close();
-    qDebug()<<"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ after write";
-    for(const auto& it :users_sign_up){
-
-        qDebug()<<it.Username;
-        qDebug()<<it.Password;
-        qDebug()<<it.Email;
-        qDebug()<<it.balance;
-        qDebug()<<it.UserSub.type_of_sub<<"\n";
-    }
-
 }
 
 
  void UserClass::Read_File()
 {
-    ifstream file("E:\\testing.txt");
+    ifstream file("C:/Users/user/Downloads/testing.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -349,7 +328,7 @@ void UserClass::Write_users_Signed()
             s2.Start_of_sub.month=month_int;
             s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
-            qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
+            //qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
             users.push_back(user2);
         }
         else{
@@ -369,25 +348,11 @@ void UserClass::Write_users_Signed()
             users.push_back(user3);
 
         }
-
-
-
-
-}
-    file.close();
-qDebug()<<"the users  login";
-for(const auto& it :users){
-
-
-        qDebug()<<it.Username;
-        qDebug()<<it.Password;
-        qDebug()<<it.Email;
-        qDebug()<<it.balance;
-        //qDebug()<<it.UserSub<<"\n";
-
-
     }
+    file.close();
 }
+
+
 float UserClass:: Calc_cost(QString,QString){
     return 11;
 }
@@ -468,7 +433,7 @@ int  UserClass:: Add_Ticket(float c,UserTicket t ){
             return 1;
         }
         else{
-            qDebug()<<"wallet not enough";
+            //qDebug()<<"wallet not enough";
             return 4;
         }
 

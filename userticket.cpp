@@ -18,7 +18,7 @@ UserTicket::UserTicket( float c, QString start, QString end)
 
 void UserTicket::Read_History()
 {
-    ifstream file ("E:\\User_history.txt");
+    ifstream file ("C:/Users/user/Downloads/data_History.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -47,20 +47,11 @@ void UserTicket::Read_History()
 
     }
     file.close();
-    for(const auto& it :UserClass::users){
-        for(auto i =it.user_tickets.begin();i!= it.user_tickets.end();++i){
-            qDebug()<<it.Username;
-            qDebug()<<(*i).Cost;
-            qDebug()<<(*i).Start_station;
-            qDebug()<<(*i).End_station;
-
-        }
-    }
 }
 
 void UserTicket::Write_History()
 {
-    ofstream outFile("E:\\User_history.txt");
+    ofstream outFile("C:/Users/user/Downloads/data_History.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {

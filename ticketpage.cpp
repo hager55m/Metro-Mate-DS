@@ -136,13 +136,13 @@ void TicketPage::on_start_currentIndexChanged(int index)
 {
 
   ticket.Start_station=ui->start->currentText();
-    qDebug()<<"start station"<<ui->start->currentText();
+    //qDebug()<<"start station"<<ui->start->currentText();
 }
 
 
 void TicketPage::on_end_currentTextChanged(const QString &arg1)
 {
    ticket.End_station= ui->end->currentText();
-    qDebug()<<"end station"<<ui->end->currentText();
+    //qDebug()<<"end station"<<ui->end->currentText();
 }
 

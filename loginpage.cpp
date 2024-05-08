@@ -43,7 +43,7 @@ void LoginPage::on_login_clicked()
     QVector<UserClass>::iterator it =UserClass::users.begin();
     QVector<UserClass>::iterator it_sign =UserClass::users_sign_up.begin();
     //UserClass user = UserClass();
-    for (it ;it != UserClass::users.end();++it) {
+    for (it; it != UserClass::users.end();++it) {
         if(ui->name->text() == it->Username)// && ui->pass->text() == it->Password)
         {
             if(ui->pass->text() == it->Password){
@@ -51,10 +51,10 @@ void LoginPage::on_login_clicked()
                 //var.thisuser = var;// ehhhh???
                 //auto index=std::find(UserClass::users.begin(),UserClass::users.end(),it);
                 index_user=std::distance(UserClass::users.begin(),it);
-                qDebug()<<"///////////////////////"<<index_user; // index start from 1
+                //qDebug()<<"///////////////////////"<<index_user; // index start from 1
                 it->index_in_vector=index_user;
                 UserClass::thisuser=*it;
-                qDebug()<<"/////////////////////// in user"<<it->index_in_vector;
+                //qDebug()<<"/////////////////////// in user"<<it->index_in_vector;
                 QMessageBox::information(this, "Login", "Login Successfully");
                 emit SwitchToMainPage();
                 break;
@@ -109,7 +109,7 @@ void LoginPage::on_login_clicked()
                 QMessageBox::information(this, "Login"," password is incorrect");
             }
 
-    }
+        }
     }
 
     if(!IsFound){

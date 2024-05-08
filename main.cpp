@@ -607,77 +607,7 @@ int main(int argc, char *argv[])
         ud.show();
         hs.hide();
     });
-//
-//<<<<<<< HEAD
-    //lp.show();
-//=======
-    // adminStation
-   /* QObject::connect(&AdminStation, &AdminStations::SwitchToHomePage, [&]() {
-        admin.show();
-        AdminStation.hide();
-        });*/
 
-    QObject::connect(&AdminStation, &AdminStations::SwitchToMangeMetro, [&]() {
-        admm.show();
-        AdminStation.hide();
-        });
-
-    /*QObject::connect(&AdminStation, &AdminStations::SwitchToTicket, [&]() {
-        ticket.show();
-        AdminStation.hide();
-        });*/
-
-
-    QObject::connect(&AdminStation, &AdminStations::SwitchTologin, [&]() {
-        lp.show();
-        AdminStation.hide();
-        });
-    /*QObject::connect(&AdminStation, &AdminStations::SwitchToSupscription, [&]() {
-        addsub.show();
-        AdminStation.hide();
-        });*/
-
-   //  /// addsub
-   //  QObject::connect(&addsub, &addsub::SwitchToHomePAGE, [&]() {
-   //          admin.show();
-   //          addsub.hide();
-   //      });
-   //  QObject::connect(&addsub, &addsub::SwitchTosubscription, [&]() {
-   //      AdminStation.show();
-   //      addsub.hide();
-   //      });
-   //  QObject::connect(&addsub, &addsub::LogoutSub, [&]() {
-   //      lp.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::addsubscription, [&]() {
-   //      addsub.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::removesubscription, [&]() {
-   //      removesub.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::SwitchToMangeMetro, [&]() {
-   //      admm.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
-   //      ticket.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::SwitchToLogin, [&]() {
-   //      lp.show();
-   //      addsub.hide();
-   //  });
-
-   
-//>>>>>>> main
    atexit(Write_all);
 
     return a.exec();
@@ -685,8 +615,8 @@ int main(int argc, char *argv[])
 }
 void Write_all(){
 
-   UserClass::Write_users();
-   UserClass::Write_users_Signed();
+    UserClass::Write_users();
+    UserClass::Write_users_Signed();
     Station::Write_Staion();
     UserTicket::Write_History();
 

@@ -24,6 +24,11 @@
         <file>img/entrance.png</file>
         <file>img/files/Sub.txt</file>
         <file>img/stations_name.txt</file>
+        <file>img/files/data_History.txt</file>
+        <file>img/files/data_staion.txt</file>
+        <file>img/files/testing.txt</file>
+        <file>img/files/testing_signed.txt</file>
+        <file>img/files/User_history.txt</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>
