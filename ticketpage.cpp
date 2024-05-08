@@ -5,9 +5,10 @@
 #include <QFile>
 #include <QTextStream>
 #include "userticket.h"
-QList <QString> TicketPage::stations;
+#include "Station.h"
+//QList <QString> TicketPage::stations;
 
-    UserTicket ticket= UserTicket();
+UserTicket ticket= UserTicket();
 
 TicketPage::TicketPage(QWidget *parent)
     : QDialog(parent)
@@ -48,7 +49,7 @@ TicketPage::TicketPage(QWidget *parent)
 
     std::string dateandtime = std::to_string(ticket.date.day) + "/" + std::to_string(ticket.date.month) + "/" + std::to_string(ticket.date.year) + " " + std::to_string(ticket.date.hour) + ":" + std::to_string(ticket.date.minute);
     ui->date->setText(QString::fromStdString(dateandtime));
-
+/*
     // adding stations to combomoxes
     QFile file(":/images/img/stations_name.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -60,13 +61,13 @@ TicketPage::TicketPage(QWidget *parent)
         stations.push_back(station);
     }
     file.close();
-
-    foreach (QString station, stations) {
-        ui->start->addItem(station);
-        ui->end->addItem(station);
+*/
+    for (const auto& st : Station::stations) {
+        ui->start->addItem(QString::fromStdString(st.getName()));
+        ui->end->addItem(QString::fromStdString(st.getName()));
     }
-    ui->start->setCurrentText(stations.front());
-    ui->end->setCurrentText(stations.front());
+    ui->start->setCurrentText(QString::fromStdString(Station::stations.front().getName()));
+    ui->end->setCurrentText(QString::fromStdString(Station::stations.front().getName()));
 
 }
 

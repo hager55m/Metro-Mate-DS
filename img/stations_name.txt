@@ -86,3 +86,91 @@ Tawfikia,3
 Wadi El-Nile,3
 Gamet El-Dowel,3
 Boulak El-Dakrour,3
+Helwan,1
+Ain Helwan,1
+Helwan University,1
+Wadi Hof,1
+Hadayek Helwan,1
+El-Maasara,1
+Tora El-Asmant,1
+Kozzika,1
+Tora El-Balad,1
+Sakanat El-Maadi,1
+Maadi,1
+Hadayek El-Maadi,1
+Dar El-Salam,1
+El-Zahraa',1
+Mar Girgis,1
+El-Malek El-Saleh,1
+Al-Sayeda Zeinab,1
+Saad Zaghloul,1
+El-Sadat,1
+Nasser,1
+Orabi,1
+El-Shohada,1
+Ghamra,1
+El-Demerdash,1
+Manshiet El-Sadr,1
+Kobri El-Qobba,1
+Hammamat El-Qobba,1
+Saray El-Qobba,1
+Hadayeq El-Zaitoun,1
+Helmeyet El-Zaitoun,1
+El-Matareyya,1
+Ain Shams,1
+Ezbet El-Nakhl,1
+El-Marg,1
+New El-Marg,1
+El-Mounib,2
+Sakiat Mekky,2
+Omm El-Masryeen,2
+Giza,2
+Faisal,2
+Cairo University,2
+El Bohoth,2
+Dokki,2
+Opera,2
+El-Sadat,2
+Mohamed Naguib,2
+Attaba,2
+El-Shohada,2
+Masarra,2
+Rod El-Farag,2
+St. Teresa,2
+Khalafawy,2
+Mezallat,2
+Kolleyyet El-Zeraa,2
+Shubra El-Kheima,2
+Adly Mansour,3
+El Haykestep,3
+Omar Ibn El-Khattab,3
+Qobaa,3
+Hesham Barakat,3
+El-Nozha,3
+Nadi El-Shams,3
+Alf Maskan,3
+Heliopolis,3
+Haroun,3
+Al-Ahram,3
+Koleyet El-Banat,3
+Stadium,3
+Fair Zone,3
+Abbassiya,3
+Abdou Pasha,3
+El-Geish,3
+Bab El-Shaaria,3
+Attaba,3
+Nasser,3
+Maspero,3
+Safaa Hegazy,3
+Kit Kat,3
+Sudan,3
+Imbaba,3
+El-Bohy,3
+El-Qawmia,3
+Ring Road,3
+Rod El-Farag Corridor,3
+Tawfikia,3
+Wadi El-Nile,3
+Gamet El-Dowel,3
+Boulak El-Dakrour,3

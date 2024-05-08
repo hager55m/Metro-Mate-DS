@@ -1,30 +1,9 @@
 #pragma once
 
 #include<string>
-#include<vector>
 #include<QVector>
 
-/*
-class Station
-{
-    std::string name;
-    int lines;
-public:
-    static std::vector<Station> stations;
-    Station();
-    Station(std::string name, int lines);
-    int getLines();
-    std::string getName() const;
-    bool operator<(const Station& other) const {
-        return(name < other.name);
-    }
-    bool operator==(const Station& other) const {
-        // Implement comparison logic here
-        // For example, compare relevant data members of Station class
-        return name == other.name;
-    }
-    static void readstations();
-*/
+static void readstations();
 
 class Station
 {
@@ -35,7 +14,7 @@ class Station
 
 	Station();
 	Station(std::string name, int lines);
-    static QVector<Station> All_stations;
+    static QVector<Station> stations;
 	int getLines();
 	std::string getName() const;
     static void Read_Staion();
@@ -48,6 +27,7 @@ class Station
 		// For example, compare relevant data members of Station class
 		return name == other.name ;
 	}
+    static void readstations();
 };
 
 struct StationHash {

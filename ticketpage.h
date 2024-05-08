@@ -16,7 +16,7 @@ class TicketPage : public QDialog
 public:
     explicit TicketPage(QWidget *parent = nullptr);
 
-  static QList <QString> stations;
+  //static QList <QString> stations;
     ~TicketPage();
 
 signals:

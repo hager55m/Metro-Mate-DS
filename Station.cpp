@@ -6,10 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include <QDebug>
-
 using namespace std;
-//std::vector <Station> stations;
-QVector<Station> Station::All_stations;
+
+QVector<Station> Station::stations;
 Station::Station()
 {
     lines = 0;
@@ -31,7 +30,7 @@ std::string Station::getName()const
 
 void Station::Read_Staion()
 {
-    ifstream file ("C:/Users/user/Downloads/data_staion.txt");
+    ifstream file ("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -43,21 +42,21 @@ void Station::Read_Staion()
         getline(ss, Name_str, ',');
         getline(ss, Line_str, ',');
         int line_int=std::stoi(Line_str);
-        All_stations.push_back(Station(Name_str,line_int));
+        stations.push_back(Station(Name_str,line_int));
     }
     file.close();
 }
 
 void Station::Write_Staion()
 {
-    ofstream outFile("C:/Users/user/Downloads/data_staion.txt");
+    ofstream outFile("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
         std::cerr << "Error opening file for writing!" << std::endl;
         //return 1; // Return an error code
     }
-    for(const auto& it :All_stations){
+    for(const auto& it :stations){
 
         outFile<<it.name<<','<<it.lines<<endl;
     }
@@ -65,9 +64,9 @@ outFile.close();
 }
 
 void Station::readstations(){
-    QFile file(":/images/img/stations_name.txt");
+    QFile file("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        //qDebug() << "Failed to open the file:" << file.errorString();
+        qDebug() << "Failed to open the file:" << file.errorString();
         return;
     }
 
@@ -88,10 +87,10 @@ void Station::readstations(){
     }
     file.close();
 
-    for(const auto& path : Station::stations){
+    for(const auto& path : stations){
         Graph::addStation(path.name, path.lines);
     }
-    for (int i = 0; i < Station::stations.size() -1; ++i) {
+    for (int i = 0; i < stations.size() -1; ++i) {
         if(Station::stations[i].lines == Station::stations[i+1].lines)
         Graph::addEdge(Station::stations[i], Station::stations[i+1]);
     }

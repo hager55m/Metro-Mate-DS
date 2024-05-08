@@ -1,12 +1,11 @@
 #include "Graph.h"
 #include "Station.h"
-#include <iostream>
 #include <algorithm>
 using namespace std;
 
 static Graph graph;
 std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash> Graph::adjStation;
-std::vector<Station> Station::stations;
+//std::vector<Station> Station::stations;
 std::unordered_set<Station, StationHash> Graph::stations;
 
 void Graph::addEdge(Station station1, Station station2)
