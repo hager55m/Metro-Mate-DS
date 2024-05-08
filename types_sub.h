@@ -13,6 +13,7 @@ class types_sub : public QDialog
 
 public:
     explicit types_sub(QWidget *parent = nullptr);
+    static QList <QString> stations;
     ~types_sub();
     
 signals:

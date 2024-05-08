@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QIntValidator>
 #include <QString>
+#include <userclass.h>
+
 
 
 SignupPage::SignupPage(QWidget *parent)
@@ -43,6 +45,22 @@ void SignupPage::on_signup_clicked()
     {
         if(check == true)
         {
+                //sub
+            int cardValue = ui->card->text().toInt(&isInteger);
+            int balanceValue = ui->balance->text().toInt(&isInteger);// ageb el type of sub mnen?????
+            UserClass usersignin(ui->mail->text(),ui->name->text(),ui->pass->text(),UserClass::thissub,cardValue, balanceValue);
+
+            //UserClass::set_this_user(usersignin);
+            // equal thisuser = suersigned
+            UserClass::thisuser=usersignin;
+
+            //qDebug()<<UserClass::thisuser.Username;
+
+            UserClass::users_sign_up.push_back(usersignin);
+            qDebug()<<"user adding done"<<UserClass::thisuser.Username;
+            qDebug()<<"user adding done in sign in "<<UserClass::thissub.type_of_sub;
+           // usersignin.index_in_vector=std::distance(UserClass::users.begin(),usersignin);
+           // qDebug()<<"///////////////////////"<<index_user; // index start from 1
             emit SwitchToLogin();
         }
         else
@@ -64,8 +82,11 @@ void SignupPage::on_login_clicked()
 
 bool SignupPage::on_choose_clicked()
 {
+
+   //on_signup_clicked();
     emit SwitchTotypes_sub();
     check = true;
+
     return true;
 }
 

@@ -38,6 +38,8 @@ admin::admin(QWidget *parent) :
     for(const auto& it:UserClass::users){
         ui->userhistorybutton->setText(it.Username);
         //ui->userhistorybutton->setText(it.Email);
+        
+        
 }
 }
 
@@ -66,4 +68,22 @@ void admin::on_pushButton_2_clicked() {
 }
 void admin::on_userhistorybutton_clicked() {
     emit switchtouserhistory();
+}
+void admin_profile(){
+    for(const auto& it :UserClass::users_sign_up){
+        //cout 3la label in admin
+        
+    }
+    for(const auto& it :UserClass::users){
+        //cout 3la label in admin
+        
+    }
+}
+void on_approval(string Name_of_user_which_ap){
+    UserClass user_approved;
+    for(const auto& it :UserClass::users_sign_up){
+        
+        
+    }
+    
 }

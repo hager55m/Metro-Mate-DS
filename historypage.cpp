@@ -1,6 +1,7 @@
 #include "historypage.h"
 #include "ui_historypage.h"
-
+#include "userclass.h"
+#include "QDebug"
 HistoryPage::HistoryPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::HistoryPage)
@@ -24,6 +25,7 @@ HistoryPage::HistoryPage(QWidget *parent)
 
     QPixmap m(":/images/img/download.png");
     ui->Metro->setPixmap(m.scaled(ui->Metro->width(), ui->Metro->height(),Qt::KeepAspectRatio));
+
 }
 
 HistoryPage::~HistoryPage()

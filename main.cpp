@@ -16,16 +16,30 @@
 #include"adminmanagemetroaddstation.h"
 #include"adminmanagemetrootions.h"
 #include "adminmanagemetroremovestation.h"
-//#include"admin.h"
+#include"admin.h"
 //#include"addsub.h"
 //#include "removesub.h"
 //#include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
 #include <QApplication>
+#include <userclass.h>
+#include <Station.h>
+#include <cstdlib>
+
+void Write_all();
 
 int main(int argc, char *argv[])
 {
+
+    //UserClass::users.push_back(UserClass("hager.com@gmail","hager","3333",User_subscribtion(pub,5,1,"3atba","ain shams"),123,500));
+    //UserClass::users.push_back(UserClass("nour.com@gmail","nour","1111",User_subscribtion(student,1,"cairo","ain shams"),111,1000));
+    //UserClass::users.push_back(UserClass("hagora.com@gmail","hagora","1010",User_subscribtion(student,5,"3atba","ain shams"),000,300));
+    //UserClass::users.push_back(UserClass("hanan.com@gmail","hanan","2000",User_subscribtion(wallet,300),147,100));
+    UserClass::Read_File();
+    UserTicket::Read_History();
+    UserClass::Read_User_Signed();
+    Station::Read_Staion();
     QApplication a(argc, argv);
     LoginPage lp;
     SignupPage sp;
@@ -45,8 +59,8 @@ int main(int argc, char *argv[])
     AdminManageMetroOtions admm;
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
-   /* admin admin;
-    addsub addsub;
+    admin admin;
+    /*addsub addsub;
     removesub removesub;
     Ticket ticket;*/
     AdminStations AdminStation;
@@ -251,10 +265,10 @@ int main(int argc, char *argv[])
         lp.hide();
     });
 
-    /*QObject::connect(&lp, &LoginPage::SwitchToAdminPage, [&]() {
+    QObject::connect(&lp, &LoginPage::SwitchToAdminPage, [&]() {
         admin.show();
         lp.hide();
-        });*/
+        });
 
     QObject::connect(&lp, &LoginPage::SwitchToMainPage, [&](){
         mp.show();
@@ -593,77 +607,17 @@ int main(int argc, char *argv[])
         ud.show();
         hs.hide();
     });
-//
-//<<<<<<< HEAD
-    //lp.show();
-//=======
-    // adminStation
-   /* QObject::connect(&AdminStation, &AdminStations::SwitchToHomePage, [&]() {
-        admin.show();
-        AdminStation.hide();
-        });*/
 
-    QObject::connect(&AdminStation, &AdminStations::SwitchToMangeMetro, [&]() {
-        admm.show();
-        AdminStation.hide();
-        });
-
-    /*QObject::connect(&AdminStation, &AdminStations::SwitchToTicket, [&]() {
-        ticket.show();
-        AdminStation.hide();
-        });*/
-
-
-    QObject::connect(&AdminStation, &AdminStations::SwitchTologin, [&]() {
-        lp.show();
-        AdminStation.hide();
-        });
-    /*QObject::connect(&AdminStation, &AdminStations::SwitchToSupscription, [&]() {
-        addsub.show();
-        AdminStation.hide();
-        });*/
-
-   //  /// addsub
-   //  QObject::connect(&addsub, &addsub::SwitchToHomePAGE, [&]() {
-   //          admin.show();
-   //          addsub.hide();
-   //      });
-   //  QObject::connect(&addsub, &addsub::SwitchTosubscription, [&]() {
-   //      AdminStation.show();
-   //      addsub.hide();
-   //      });
-   //  QObject::connect(&addsub, &addsub::LogoutSub, [&]() {
-   //      lp.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::addsubscription, [&]() {
-   //      addsub.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::removesubscription, [&]() {
-   //      removesub.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::SwitchToMangeMetro, [&]() {
-   //      admm.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::SwitchToTickets, [&]() {
-   //      ticket.show();
-   //      addsub.hide();
-   //      });
-
-   //  QObject::connect(&addsub, &addsub::SwitchToLogin, [&]() {
-   //      lp.show();
-   //      addsub.hide();
-   //  });
-
-   
-//>>>>>>> main
+   atexit(Write_all);
 
     return a.exec();
+
+}
+void Write_all(){
+
+    UserClass::Write_users();
+    UserClass::Write_users_Signed();
+    Station::Write_Staion();
+    UserTicket::Write_History();
+
 }

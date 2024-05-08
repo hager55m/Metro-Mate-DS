@@ -4,6 +4,7 @@
 #include <QString>
 #include <QDialog>
 
+
 namespace Ui {
 class TicketPage;
 }
@@ -14,14 +15,8 @@ class TicketPage : public QDialog
 
 public:
     explicit TicketPage(QWidget *parent = nullptr);
-    DateTime date;
-    float Cost;
-    QString First_station;
-    QString End_station;
-    //  type_subscribtion sub;
-    //int Code;
-    static QList <QString> stations;
-    TicketPage( float, QString, QString);
+
+  static QList <QString> stations;
     ~TicketPage();
 
 signals:
