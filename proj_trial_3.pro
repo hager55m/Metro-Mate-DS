@@ -20,6 +20,7 @@ SOURCES += \
     adminmanagemetroremovestation.cpp \
     adminstations.cpp \
     admonmanagemetrooptions.cpp \
+    datetime.cpp \
     historypage.cpp \
     main.cpp \
     loginpage.cpp \
@@ -37,7 +38,11 @@ SOURCES += \
     subscriptionlist.cpp \
     ticket.cpp \
     ticketpage.cpp \
+    types_sub.cpp \
+    user_subscribtion.cpp \
+    userclass.cpp \
     userdata.cpp \
+    userticket.cpp \
     verfication.cpp
 
 HEADERS += \
@@ -52,6 +57,7 @@ HEADERS += \
     adminmanagemetroremovestation.h \
     adminstations.h \
     admonmanagemetrooptions.h \
+    datetime.h \
     historypage.h \
     loginpage.h \
     mainpage.h \
@@ -68,6 +74,7 @@ HEADERS += \
     subscriptionlist.h \
     ticket.h \
     ticketpage.h \
+    types_sub.h \
     ui_AdminHomeBage.h \
     ui_DialogButtonBottom.h \
     ui_addsub.h \
@@ -92,7 +99,10 @@ HEADERS += \
     ui_ticketpage.h \
     ui_userdata.h \
     ui_verfication.h \
+    user_subscribtion.h \
+    userclass.h \
     userdata.h \
+    userticket.h \
     verfication.h
 
 
@@ -121,6 +131,7 @@ FORMS += \
     subscription.ui \
     ticket.ui \
     ticketpage.ui \
+    types_sub.ui \
     userdata.ui \
     verfication.ui
 

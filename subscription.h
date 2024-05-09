@@ -21,7 +21,9 @@ signals:
     void SwitchToState();
     void SwitchToUser();
     void SwitchToLogin();
-    void SwitchToVerf();
+    void SwitchToRenew();
+    void SwitchToSearch();
+    
 
 private slots:
     void on_pushButton_2_clicked();
@@ -34,7 +36,9 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_code_editingFinished();
+    void on_pushButton_7_clicked();
+
+    void on_change_clicked();
 
 private:
     Ui::Subscription *ui;

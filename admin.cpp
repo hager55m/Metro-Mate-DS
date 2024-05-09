@@ -1,6 +1,6 @@
 #include "admin.h"
 #include "ui_admin.h"
-
+#include<userclass.h>
 admin::admin(QWidget *parent) :
     QDockWidget(parent),
     ui(new Ui::admin)
@@ -35,6 +35,10 @@ admin::admin(QWidget *parent) :
 
     QPixmap m(":/images/img/download.png");
     ui->metroimg->setPixmap(m.scaled(ui->metroimg->width(), ui->metroimg->height(),Qt::KeepAspectRatio));
+    for(const auto& it:UserClass::users){
+        ui->userhistorybutton->setText(it.Username);
+        //ui->userhistorybutton->setText(it.Email);
+}
 }
 
 admin::~admin()

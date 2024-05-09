@@ -15,6 +15,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
@@ -34,6 +35,9 @@ public:
     QPushButton *m1;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
+    QPlainTextEdit *data;
+    QPushButton *buy;
+    QPushButton *buy_2;
 
     void setupUi(QDialog *SearchPage)
     {
@@ -90,7 +94,7 @@ public:
 "height: 50px;"));
         scrollArea = new QScrollArea(SearchPage);
         scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(70, 360, 1061, 301));
+        scrollArea->setGeometry(QRect(60, 390, 1061, 291));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Baskerville Old Face")});
         font2.setPointSize(24);
@@ -100,8 +104,29 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1061, 301));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1061, 291));
+        data = new QPlainTextEdit(scrollAreaWidgetContents);
+        data->setObjectName("data");
+        data->setGeometry(QRect(10, 10, 1041, 271));
+        data->setReadOnly(true);
         scrollArea->setWidget(scrollAreaWidgetContents);
+        buy = new QPushButton(SearchPage);
+        buy->setObjectName("buy");
+        buy->setGeometry(QRect(160, 340, 271, 41));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font3.setPointSize(18);
+        buy->setFont(font3);
+        buy->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        buy_2 = new QPushButton(SearchPage);
+        buy_2->setObjectName("buy_2");
+        buy_2->setGeometry(QRect(770, 340, 271, 41));
+        buy_2->setFont(font3);
+        buy_2->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
 
         retranslateUi(SearchPage);
 
@@ -117,6 +142,8 @@ public:
         label_3->setText(QCoreApplication::translate("SearchPage", "End Station", nullptr));
         label_4->setText(QCoreApplication::translate("SearchPage", "Where To", nullptr));
         m1->setText(QString());
+        buy->setText(QCoreApplication::translate("SearchPage", "Buy Ticket", nullptr));
+        buy_2->setText(QCoreApplication::translate("SearchPage", "Search", nullptr));
     } // retranslateUi
 
 };

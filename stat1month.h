@@ -23,6 +23,7 @@ signals:
     void SwitchToLogin();
     void SwitchTo3Months();
     void SwitchTo6Months();
+    void SwitchToSearch();
 
 private slots:
     void on_pushButton_2_clicked();
@@ -34,6 +35,8 @@ private slots:
     void on_pushButton_6_clicked();
 
     void on_pushButton_clicked();
+
+    void on_pushButton_7_clicked();
 
     void on_m3_clicked();
 

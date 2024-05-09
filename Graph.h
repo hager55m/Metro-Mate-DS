@@ -1,29 +1,31 @@
 #pragma once
-#include<map>
-#include<vector>
+#include <map>
+#include <vector>
 #include <unordered_set>
-#include<unordered_map>
-#include"Station.h"
+#include <unordered_map>
+#include <string>
+#include "Station.h"
 #include <stack>
-#include <queue>
-#include <iostream>
+
 using namespace std;
+
 class Graph
 {
-public:
-    std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash>adjStation;
-    std::unordered_set< Station, StationHash>stations;
-    static Graph graph;
-    void addEdge(Station preStation, Station nextStation);
-    void addStation(string name, vector< int> line);
-    void editStation(Station certainStation, int choice);
-    void deleteStation(Station certainStation);
-    vector<vector<string>> allPossiblePathsFunctionality(Station starPoint, Station endPoint);
-    vector<vector<string>> AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path);
-    void printGraph();
+    static std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash> adjStation;
+    static std::unordered_set<Station, StationHash> stations;
 
+public:
+    static Graph graph;
+    static void addEdge(Station preStation, Station nextStation);
+    static void addStation(string name, int line);
+    void editStation(Station certainStation);
+    void deleteStation(Station certainStation);
+    static vector<vector<string>> AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path);
+    void printGraph();
+    static vector<vector<string>> allPossiblePathsFunctionality(string starPoint, string endPoint); // Modify function signature
     std::stack<Station> ShortestPathBFS(Station start, Station end);
-    // all possible shotest path 
+    bool isInSubscriptionArea(string startSub, string endSub, Station startRide, Station endRide);
+// all possible shotest path 
     vector<vector<Station>> dijkstra(Station start, Station end) {
         vector<vector<Station>> allPaths;
         vector<Station>path;
@@ -66,7 +68,5 @@ public:
         }
         return allPaths;
     }
-
-
 
 };

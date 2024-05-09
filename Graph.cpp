@@ -1,15 +1,20 @@
 #include "Graph.h"
-#include <iostream>
+#include "Station.h"
+#include <algorithm>
 using namespace std;
 
 Graph Graph::graph;
+std::unordered_map<Station, std::unordered_set<Station, StationHash>, StationHash> Graph::adjStation;
+//std::vector<Station> Station::stations;
+std::unordered_set<Station, StationHash> Graph::stations;
+
 void Graph::addEdge(Station station1, Station station2)
 {
     // check box to make sure that station already exsist
     stations.insert(station1);
     stations.insert(station2);
 
-    // check for the existance of the Edge 
+    // check for the existance of the Edge
     if (adjStation[station1].find(station2) != adjStation[station1].end())
     {
 
@@ -18,7 +23,7 @@ void Graph::addEdge(Station station1, Station station2)
 
     // unique because of unordered_set and We need single element access ,O(1) worst case O(N)
 
-    adjStation[station2].insert(station1); // 
+    adjStation[station2].insert(station1); //
     adjStation[station1].insert(station2);
 }
 
@@ -26,7 +31,7 @@ void Graph::addStation(string name, vector< int> line)
 {
     Station newStation(name, line);
     // check for the existance of the Station
-    // if he didnot find it he will return it points to end  
+    // if he didnot find it he will return it points to end
     if (stations.find(newStation) != stations.end())
     {
 
@@ -37,7 +42,10 @@ void Graph::addStation(string name, vector< int> line)
 }
 
 void Graph::editStation(Station certainStation, int choice)
+vector<vector<string>> Graph::allPossiblePathsFunctionality(string starPoint, string endPoint)
 {
+    Station start(starPoint, 0); // Assuming line number is not used in the comparison
+    Station end(endPoint, 0); // Assuming line number is not used in the comparison
     map<Station, bool> visited;
     vector<string>paths;
 
@@ -165,7 +173,9 @@ vector<vector<string>> Graph::allPossiblePathsFunctionality(Station starPoint, S
     map<Station, bool> visited;
     vector<string> path;
     return AllPossiblePaths(starPoint, endPoint, visited, path);
+    //return AllPossiblePaths(start, end, visited, path);
 }
+
 vector<vector<string>> Graph::AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path)
 {
     visited[starPoint] = true;
@@ -175,10 +185,6 @@ vector<vector<string>> Graph::AllPossiblePaths(Station starPoint, Station endPoi
     if (starPoint.getName() == endPoint.getName())
     {
         allPaths.emplace_back(path);
-     /*   paths.emplace_back(path);
-         for (auto x : paths[paths.size() - 1])
-             std::cout << x << ' ';
-         std::cout << '\n';*/
     }
     else
     {
@@ -230,8 +236,6 @@ void Graph::printGraph() {
     }
 
 }
-
-// https://www.youtube.com/watch?v=T_m27bhVQQQ
 std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
 
 
@@ -273,11 +277,31 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
         s.push(path[end].first);
         end = path[end].first;
     }
+    path.pop_back();
+    visited[starPoint] = false;
 
-
-    return s;
+    return allPaths;
 }
 
+bool Graph::isInSubscriptionArea(string startSub, string endSub, Station startRide, Station endRide)
+{
+    // Find all possible paths between startSub and endSub
+    //  allPossiblePathsFunctionality(startRide, endRide);
+
+    // Check if startRide and endRide are on any of these paths
+    vector<vector<string>>Tpaths = allPossiblePathsFunctionality(startRide.getName(), endRide.getName());
 
 
+    for (const auto& path : Tpaths)
+    {
+        if (std::find(path.begin(), path.end(), startRide.getName()) != path.end() &&
+            std::find(path.begin(), path.end(), endRide.getName()) != path.end())
+        {
+            // Both startRide and endRide are on this path
+            return true;
+        }
+    }
 
+    // If no path contains both startRide and endRide, return false
+    return false;
+}

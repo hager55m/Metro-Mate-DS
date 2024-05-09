@@ -17,9 +17,13 @@ public:
 
 signals:
     void SwitchToHome();
+    void SwitchToTicket();
 
 private slots:
     void on_m1_clicked();
+    void on_buy_clicked();
+
+    void on_buy_2_clicked();
 
 private:
     Ui::SearchPage *ui;

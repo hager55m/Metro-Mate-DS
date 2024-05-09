@@ -168,10 +168,10 @@ height: 50px;</string>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>360</y>
+     <x>60</x>
+     <y>390</y>
      <width>1061</width>
-     <height>301</height>
+     <height>291</height>
     </rect>
    </property>
    <property name="font">
@@ -193,10 +193,71 @@ border-radius: 35;</string>
       <x>0</x>
       <y>0</y>
       <width>1061</width>
-      <height>301</height>
+      <height>291</height>
      </rect>
     </property>
+    <widget class="QPlainTextEdit" name="data">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1041</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="buy">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>340</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string>Buy Ticket</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_2">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>340</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
   </widget>
  </widget>
  <resources/>

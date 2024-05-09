@@ -14,6 +14,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -40,6 +41,11 @@ public:
     QLabel *label_13;
     QLabel *userdata;
     QLabel *label_15;
+    QLineEdit *lineEdit;
+    QLabel *label_8;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
 
     void setupUi(QDialog *HistoryPage)
     {
@@ -144,6 +150,26 @@ public:
         label_15->setGeometry(QRect(90, 480, 171, 41));
         label_15->setFont(font);
         label_15->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
+        lineEdit = new QLineEdit(HistoryPage);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(450, 0, 751, 701));
+        lineEdit->setReadOnly(true);
+        label_8 = new QLabel(HistoryPage);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(700, 40, 101, 31));
+        label_8->setFont(font);
+        label_5 = new QLabel(HistoryPage);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(510, 40, 141, 31));
+        label_5->setFont(font);
+        label_6 = new QLabel(HistoryPage);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(1000, 40, 101, 31));
+        label_6->setFont(font);
+        label_7 = new QLabel(HistoryPage);
+        label_7->setObjectName("label_7");
+        label_7->setGeometry(QRect(840, 40, 101, 31));
+        label_7->setFont(font);
 
         retranslateUi(HistoryPage);
 
@@ -172,6 +198,11 @@ public:
         label_13->setText(QString());
         userdata->setText(QString());
         label_15->setText(QCoreApplication::translate("HistoryPage", "History", nullptr));
+        lineEdit->setText(QCoreApplication::translate("HistoryPage", "Hi ana marvel ", nullptr));
+        label_8->setText(QCoreApplication::translate("HistoryPage", "End To", nullptr));
+        label_5->setText(QCoreApplication::translate("HistoryPage", "Start From", nullptr));
+        label_6->setText(QCoreApplication::translate("HistoryPage", "Cost", nullptr));
+        label_7->setText(QCoreApplication::translate("HistoryPage", "Date", nullptr));
     } // retranslateUi
 
 };

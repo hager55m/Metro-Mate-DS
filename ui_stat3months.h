@@ -15,7 +15,6 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -37,8 +36,6 @@ public:
     QLabel *label_25;
     QLabel *label_13;
     QGroupBox *groupBox;
-    QLineEdit *search;
-    QLabel *searchicon;
     QGroupBox *groupBox_3;
     QPushButton *pushButton_5;
     QLabel *label_4;
@@ -70,6 +67,8 @@ public:
     QPushButton *m1;
     QPushButton *m3;
     QPushButton *m6;
+    QPushButton *pushButton_7;
+    QLabel *searchicon;
 
     void setupUi(QDialog *stat3months)
     {
@@ -144,20 +143,6 @@ public:
         groupBox = new QGroupBox(stat3months);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(0, 0, 450, 711));
-        search = new QLineEdit(groupBox);
-        search->setObjectName("search");
-        search->setGeometry(QRect(22, 41, 401, 41));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Baskerville Old Face")});
-        font2.setPointSize(18);
-        search->setFont(font2);
-        search->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 12;\n"
-"color: black;"));
-        searchicon = new QLabel(groupBox);
-        searchicon->setObjectName("searchicon");
-        searchicon->setGeometry(QRect(360, 40, 51, 41));
-        searchicon->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
         groupBox_3 = new QGroupBox(groupBox);
         groupBox_3->setObjectName("groupBox_3");
         groupBox_3->setGeometry(QRect(0, 190, 451, 80));
@@ -170,10 +155,10 @@ public:
         label_4 = new QLabel(groupBox_3);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(100, 30, 171, 41));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
-        font3.setPointSize(22);
-        label_4->setFont(font3);
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font2.setPointSize(22);
+        label_4->setFont(font2);
         label_4->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
         label_3 = new QLabel(groupBox_3);
         label_3->setObjectName("label_3");
@@ -196,7 +181,7 @@ public:
         label_6 = new QLabel(groupBox_4);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(100, 20, 251, 41));
-        label_6->setFont(font3);
+        label_6->setFont(font2);
         label_5 = new QLabel(groupBox_4);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(20, 10, 61, 61));
@@ -213,7 +198,7 @@ public:
         label_8 = new QLabel(groupBox_5);
         label_8->setObjectName("label_8");
         label_8->setGeometry(QRect(100, 20, 171, 41));
-        label_8->setFont(font3);
+        label_8->setFont(font2);
         label_7 = new QLabel(groupBox_5);
         label_7->setObjectName("label_7");
         label_7->setGeometry(QRect(20, 10, 61, 61));
@@ -235,7 +220,7 @@ public:
         label_10 = new QLabel(groupBox_6);
         label_10->setObjectName("label_10");
         label_10->setGeometry(QRect(100, 20, 171, 41));
-        label_10->setFont(font3);
+        label_10->setFont(font2);
         label_9 = new QLabel(groupBox_6);
         label_9->setObjectName("label_9");
         label_9->setGeometry(QRect(20, 10, 61, 61));
@@ -253,10 +238,10 @@ public:
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(100, 570, 231, 41));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
-        font4.setPointSize(18);
-        pushButton->setFont(font4);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font3.setPointSize(18);
+        pushButton->setFont(font3);
         pushButton->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
@@ -266,10 +251,10 @@ public:
         label_12 = new QLabel(groupBox);
         label_12->setObjectName("label_12");
         label_12->setGeometry(QRect(80, 660, 131, 31));
-        QFont font5;
-        font5.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
-        font5.setPointSize(16);
-        label_12->setFont(font5);
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
+        font4.setPointSize(16);
+        label_12->setFont(font4);
         pushButton_2 = new QPushButton(groupBox);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(0, 110, 451, 81));
@@ -288,7 +273,7 @@ public:
         label_2 = new QLabel(groupBox);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(100, 150, 171, 41));
-        label_2->setFont(font3);
+        label_2->setFont(font2);
         label_11 = new QLabel(stat3months);
         label_11->setObjectName("label_11");
         label_11->setGeometry(QRect(478, 620, 691, 51));
@@ -318,6 +303,20 @@ public:
 "border-image: url(:/images/img/six.png) 0 0 0 0 stretch stretch;\n"
 "width: 50px;\n"
 "height: 50px;"));
+        pushButton_7 = new QPushButton(stat3months);
+        pushButton_7->setObjectName("pushButton_7");
+        pushButton_7->setGeometry(QRect(20, 40, 411, 41));
+        QFont font5;
+        font5.setPointSize(20);
+        pushButton_7->setFont(font5);
+        pushButton_7->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;\n"
+"color: black;\n"
+"text-align: left;"));
+        searchicon = new QLabel(stat3months);
+        searchicon->setObjectName("searchicon");
+        searchicon->setGeometry(QRect(370, 40, 51, 41));
+        searchicon->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;"));
 
         retranslateUi(stat3months);
 
@@ -341,8 +340,6 @@ public:
         label_25->setText(QString());
         label_13->setText(QCoreApplication::translate("stat3months", "Statistics In Three Month", nullptr));
         groupBox->setTitle(QString());
-        search->setText(QCoreApplication::translate("stat3months", "Search.....", nullptr));
-        searchicon->setText(QString());
         groupBox_3->setTitle(QString());
         pushButton_5->setText(QString());
         label_4->setText(QCoreApplication::translate("stat3months", "Buy Ticket", nullptr));
@@ -373,6 +370,8 @@ public:
         m1->setText(QString());
         m3->setText(QString());
         m6->setText(QString());
+        pushButton_7->setText(QCoreApplication::translate("stat3months", " Search......", nullptr));
+        searchicon->setText(QString());
     } // retranslateUi
 
 };

@@ -1,5 +1,6 @@
 #include "loginpage.h"
 #include "signuppage.h"
+#include "types_sub.h"
 #include "mainpage.h"
 #include "subscriptionlist.h"
 #include "ticketpage.h"
@@ -8,7 +9,6 @@
 #include "stat3months.h"
 #include "stat6months.h"
 #include "userdata.h"
-#include "submanage.h"
 #include "renewsub.h"
 #include "historypage.h"
 #include "searchpage.h"
@@ -18,22 +18,37 @@
 #include"admonmanagemetrooptions.h"
 #include "adminmanagemetroremovestation.h"
 #include"admin.h"
-#include"addsub.h"
-#include "removesub.h"
-#include "ticket.h"
+//#include"addsub.h"
+//#include "removesub.h"
+//#include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
 
 #include <QApplication>
+#include <userclass.h>
+#include <Station.h>
+#include <cstdlib>
+
+void Write_all();
 
 int main(int argc, char *argv[])
 {
+
+    //UserClass::users.push_back(UserClass("hager.com@gmail","hager","3333",User_subscribtion(pub,5,1,"3atba","ain shams"),123,500));
+    //UserClass::users.push_back(UserClass("nour.com@gmail","nour","1111",User_subscribtion(student,1,"cairo","ain shams"),111,1000));
+    //UserClass::users.push_back(UserClass("hagora.com@gmail","hagora","1010",User_subscribtion(student,5,"3atba","ain shams"),000,300));
+    //UserClass::users.push_back(UserClass("hanan.com@gmail","hanan","2000",User_subscribtion(wallet,300),147,100));
+    UserClass::Read_File();
+    UserTicket::Read_History();
+    UserClass::Read_User_Signed();
+    Station::Read_Staion();
     QApplication a(argc, argv);
     SubscriptionList spl = *new SubscriptionList("student", "120", "3");
     SubscriptionList::Stations.push_back(spl);
 
     LoginPage lp;
     SignupPage sp;
+    types_sub ts;
     MainPage mp;
     TicketPage tp;
     Subscription s;
@@ -41,7 +56,6 @@ int main(int argc, char *argv[])
     stat3months s3;
     stat6months s6;
     UserData ud;
-    SubManage sm;
     RenewSub rs;
     HistoryPage hs;
     SearchPage sh;
@@ -51,9 +65,9 @@ int main(int argc, char *argv[])
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
     admin admin;
-    addsub addsub;
+    /*addsub addsub;
     removesub removesub;
-    Ticket ticket;
+    Ticket ticket;*/
     AdminStations AdminStation;
     AdminDataPage adp;
 
@@ -131,16 +145,20 @@ int main(int argc, char *argv[])
         AdminStation.show();
         sub.hide();
     });
+    //addsub.show();
+    
+    
+    lp.show();
 
     QObject::connect(&adp, &AdminDataPage::SwitchToLogin, [&](){
         lp.show();
         adp.hide();
     });
 
-    QObject::connect(&adp, &AdminDataPage::SwitchToHome, [&](){
-        admin.show();
-        adp.hide();
-    });
+    // QObject::connect(&adp, &AdminDataPage::SwitchToHome, [&](){
+    //     admin.show();
+    //     adp.hide();
+    // });
 
     QObject::connect(&adp, &AdminDataPage::SwitchToMangeMetro, [&](){
         admm.show();
@@ -173,39 +191,26 @@ int main(int argc, char *argv[])
         adreStation.hide();
     });
 
-    QObject::connect(&admin, &admin::switchtouserhistory, [&](){
-        adp.show();
-        admin.hide();
-    });
-
-
-    //connection between admin
-     QObject::connect(&admin, &admin::switchtomanage, [&]() {
-         admm.show();
-         admin.hide();
-         });
-
      QObject::connect(&admin, &admin::switchtoticket, [&]() {
          ticket.DataOfTicketToDisplay();
          ticket.show();
          admin.hide();
          });
 
-     QObject::connect(&admin, &admin::switchtologin, [&]() {
-         lp.show();
-         admin.hide();
-         });
+    // QObject::connect(&admin, &admin::switchtologin, [&]() {
+    //     lp.show();
+    //     admin.hide();
+    //     });
 
      QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
          sub.show();
          admin.hide();
          });
      
-     QObject::connect(&admin, &admin::switchtostation, [&]() {
-        AdminStation.show();
-         admin.hide();
-         });
-
+     // QObject::connect(&admin, &admin::switchtostation, [&]() {
+     //    AdminStation.show();
+     //     admin.hide();
+     //     });
     
 
      //final
@@ -238,10 +243,10 @@ int main(int argc, char *argv[])
         adreStation.show();
         admm.hide();
         });
-    QObject::connect(&admm, &AdminManageMetroOtions::SwitchToAdminHome, [&]() {
+   /* QObject::connect(&admm, &AdminManageMetroOtions::SwitchToAdminHome, [&]() {
         admin.show();
         admm.hide();
-        });
+        });*/
 
     QObject::connect(&admm, &AdminManageMetroOtions::SwitchToStation, [&]() {
         AdminStation.show();
@@ -303,7 +308,20 @@ int main(int argc, char *argv[])
     QObject::connect(&sp, &SignupPage::SwitchToLogin, [&](){
         lp.show();
         sp.hide();
+        ts.hide();
     });
+
+    QObject::connect(&sp, &SignupPage::SwitchTotypes_sub, [&](){
+        ts.show();
+        sp.hide();
+    });
+
+    //types of subscribtion
+    QObject::connect(&ts, &types_sub::SwitchToSignup, [&](){
+        sp.show();
+        ts.hide();
+    });
+
 
     // home page
     QObject::connect(&mp, &MainPage::SwitchToLogin, [&](){
@@ -342,7 +360,17 @@ int main(int argc, char *argv[])
         sh.hide();
     });
 
+    QObject::connect(&sh, &SearchPage::SwitchToTicket, [&]() {
+        tp.show();
+        sh.hide();
+        });
+
     // ticket page
+    QObject::connect(&tp, &TicketPage::SwitchToSearch, [&]() {
+        sh.show();
+        tp.hide();
+    });
+
     QObject::connect(&tp, &TicketPage::SwitchToLogin, [&](){
         lp.show();
         tp.hide();
@@ -384,6 +412,16 @@ int main(int argc, char *argv[])
         s.hide();
     });
 
+    QObject::connect(&s, &Subscription::SwitchToSearch, [&]() {
+        sh.show();
+        s.hide();
+    });
+
+    QObject::connect(&s, &Subscription::SwitchToHome, [&]() {
+        mp.show();
+        s.hide();
+    });
+
     QObject::connect(&s, &Subscription::SwitchToLogin, [&](){
         lp.show();
         s.hide();
@@ -399,9 +437,45 @@ int main(int argc, char *argv[])
         s.hide();
     });
 
-    QObject::connect(&s, &Subscription::SwitchToVerf, [&](){
-        v.show();
+    QObject::connect(&s, &Subscription::SwitchToRenew, [&]() {
+        rs.show();
         s.hide();
+    });
+
+    // renew subscription page
+    QObject::connect(&rs, &RenewSub::SwitchToSearch, [&]() {
+        sh.show();
+        rs.hide();
+    });
+
+    QObject::connect(&rs, &RenewSub::SwitchToHome, [&]() {
+        mp.show();
+        rs.hide();
+    });
+
+    QObject::connect(&rs, &RenewSub::SwitchToTicket, [&]() {
+        tp.show();
+        rs.hide();
+    });
+
+    QObject::connect(&rs, &RenewSub::SwitchToLogin, [&]() {
+        lp.show();
+        rs.hide();
+        });
+
+    QObject::connect(&rs, &RenewSub::SwitchToState, [&]() {
+        s1.show();
+        rs.hide();
+    });
+
+    QObject::connect(&rs, &RenewSub::SwitchToUser, [&]() {
+        ud.show();
+        rs.hide();
+    });
+
+    QObject::connect(&rs, &RenewSub::SwitchToSub, [&]() {
+        s.show();
+        rs.hide();
     });
 
     // verfication page
@@ -411,6 +485,11 @@ int main(int argc, char *argv[])
     });
 
     // statistics pages (1,3,6)
+    QObject::connect(&s1, &stat1month::SwitchToSearch, [&]() {
+        sh.show();
+        s1.hide();
+    });
+
     QObject::connect(&s1, &stat1month::SwitchToHome, [&](){
         mp.show();
         s1.hide();
@@ -446,6 +525,11 @@ int main(int argc, char *argv[])
         s1.hide();
     });
 
+    QObject::connect(&s3, &stat3months::SwitchToSearch, [&]() {
+        sh.show();
+        s3.hide();
+    });
+
     QObject::connect(&s3, &stat3months::SwitchToHome, [&](){
         mp.show();
         s3.hide();
@@ -479,6 +563,11 @@ int main(int argc, char *argv[])
     QObject::connect(&s3, &stat3months::SwitchTo6Months, [&](){
         s6.show();
         s3.hide();
+    });
+
+    QObject::connect(&s6, &stat6months::SwitchToSearch, [&]() {
+        sh.show();
+        s6.hide();
     });
 
     QObject::connect(&s6, &stat6months::SwitchToHome, [&](){
@@ -532,82 +621,11 @@ int main(int argc, char *argv[])
         ud.hide();
     });
 
-    QObject::connect(&ud, &UserData::SwitchToSubMange, [&](){
-        sm.show();
-        ud.hide();
-    });
-
-    // manage subscription page
-    QObject::connect(&sm, &SubManage::SwitchToHome, [&](){
-        mp.show();
-        sm.hide();
-    });
-
-    QObject::connect(&sm, &SubManage::SwitchToHistory, [&](){
-        hs.show();
-        sm.hide();
-    });
-
-    QObject::connect(&sm, &SubManage::SwitchToLogin, [&](){
-        lp.show();
-        sm.hide();
-    });
-
-    QObject::connect(&sm, &SubManage::SwitchToRenew, [&](){
-        rs.show();
-        sm.hide();
-    });
-
-    QObject::connect(&sm, &SubManage::SwitchToUserData, [&](){
-        ud.show();
-        sm.hide();
-    });
-
-    // renew subscription page
-    QObject::connect(&rs, &RenewSub::SwitchToHome, [&](){
-        mp.show();
-        rs.hide();
-    });
-
-    QObject::connect(&rs, &RenewSub::SwitchToHistory, [&](){
-        hs.show();
-        rs.hide();
-    });
-
-    QObject::connect(&rs, &RenewSub::SwitchToLogin, [&](){
-        lp.show();
-        rs.hide();
-    });
-
-    QObject::connect(&rs, &RenewSub::SwitchToSubMange, [&](){
-        sm.show();
-        rs.hide();
-    });
-
-    QObject::connect(&hs, &HistoryPage::SwitchToHome, [&](){
-        mp.show();
-        hs.hide();
-    });
-
-    QObject::connect(&hs, &HistoryPage::SwitchToUserData, [&](){
-        ud.show();
-        hs.hide();
-    });
-
     // history page
     QObject::connect(&hs, &HistoryPage::SwitchToLogin, [&](){
         lp.show();
         hs.hide();
     });
-//
-//<<<<<<< HEAD
-    //lp.show();
-//=======
-    // adminStation
-    QObject::connect(&AdminStation, &AdminStations::SwitchToHomePage, [&]() {
-        admin.show();
-        AdminStation.hide();
-        });
 
     QObject::connect(&AdminStation, &AdminStations::SwitchToMangeMetro, [&]() {
         admm.show();
@@ -672,10 +690,29 @@ int main(int argc, char *argv[])
     QObject::connect(&addsub, &addsub::SwitchToLogin, [&]() {
         lp.show();
         addsub.hide();
+
+    });
+    
+    QObject::connect(&hs, &HistoryPage::SwitchToHome, [&]() {
+        mp.show();
+        hs.hide();
     });
 
-   
-//>>>>>>> main
+    QObject::connect(&hs, &HistoryPage::SwitchToUserData, [&]() {
+        ud.show();
+        hs.hide();
+    });
+
+   atexit(Write_all);
 
     return a.exec();
+
+}
+void Write_all(){
+
+    UserClass::Write_users();
+    UserClass::Write_users_Signed();
+    Station::Write_Staion();
+    UserTicket::Write_History();
+
 }

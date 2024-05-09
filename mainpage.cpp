@@ -30,7 +30,6 @@ MainPage::MainPage(QWidget *parent)
 
     QPixmap m(":/images/img/download.png");
     ui->metro->setPixmap(m.scaled(ui->metro->width(), ui->metro->height(),Qt::KeepAspectRatio));
-
 }
 
 MainPage::~MainPage()

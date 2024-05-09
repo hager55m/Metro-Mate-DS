@@ -16,40 +16,6 @@
   <property name="styleSheet">
    <string notr="true">background-color: #BDBDBD;</string>
   </property>
-  <widget class="QLabel" name="receipt">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>0</y>
-     <width>631</width>
-     <height>701</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="total">
-   <property name="geometry">
-    <rect>
-     <x>920</x>
-     <y>390</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
-   </property>
-   <property name="text">
-    <string>total $</string>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
@@ -62,46 +28,6 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QLineEdit" name="search">
-    <property name="geometry">
-     <rect>
-      <x>22</x>
-      <y>41</y>
-      <width>401</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Baskerville Old Face</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;
-border-radius: 12;
-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Search.....</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="searchicon">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>40</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
@@ -290,7 +216,7 @@ border-radius: 12;
       <string notr="true">background-color: #D9D9D9;</string>
      </property>
      <property name="text">
-      <string>Buy Subscription</string>
+      <string>Subscription</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -560,40 +486,46 @@ color: black;</string>
      <string>Egypt Metro</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QLineEdit" name="code">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>430</y>
-     <width>61</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>BAXAUTRIAL</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 5;</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="end">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>290</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 10;</string>
-   </property>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #D9D9D9;
+border-radius: 12;
+color: black;
+text-align: left;</string>
+    </property>
+    <property name="text">
+     <string> Search......</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="searchicon">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>40</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #D9D9D9;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -614,27 +546,127 @@ border-radius: 10;</string>
     <string>Home Page</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="start">
+  <widget class="QLabel" name="label_19">
    <property name="geometry">
     <rect>
-     <x>768</x>
-     <y>240</y>
-     <width>231</width>
-     <height>31</height>
+     <x>640</x>
+     <y>30</y>
+     <width>361</width>
+     <height>71</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 10;</string>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>42</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Subscription</string>
    </property>
   </widget>
-  <widget class="QLabel" name="date">
+  <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>730</x>
-     <y>180</y>
+     <x>530</x>
+     <y>140</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Start Date</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>220</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>End Date</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>300</y>
      <width>251</width>
-     <height>21</height>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Start Station</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>380</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>End Staion</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>460</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Remainig Rides</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="startdate">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>150</y>
+     <width>291</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -643,10 +675,194 @@ border-radius: 10;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="enddate">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>230</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="startstation">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>310</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="endstation">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>390</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="rides">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>470</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="change">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>630</y>
+     <width>311</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
    </property>
    <property name="text">
-    <string>Date and time</string>
+    <string>Change</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="renew">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>630</y>
+     <width>281</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FFC200;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="text">
+    <string>Renew</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>540</y>
+     <width>331</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>BAXAUTRIAL</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Remainig Balance</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="balance">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>550</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 12;
+color: black;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
