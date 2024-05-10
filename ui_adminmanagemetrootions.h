@@ -50,6 +50,8 @@ public:
     QPushButton *pushButton_12;
     QTextBrowser *textBrowser;
     QPushButton *pushButton_13;
+    QTextBrowser *textBrowser1;
+    QPushButton *pushButton_14;
 
     void setupUi(QDialog *AdminManageMetroOtions)
     {
@@ -204,6 +206,18 @@ public:
         pushButton_13->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
+        textBrowser1 = new QTextBrowser(groupBox_2);
+        textBrowser1->setObjectName("textBrowser1");
+        textBrowser1->setGeometry(QRect(30, 90, 641, 461));
+        textBrowser1->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
+        pushButton_14 = new QPushButton(groupBox_2);
+        pushButton_14->setObjectName("pushButton_14");
+        pushButton_14->setGeometry(QRect(270, 640, 251, 41));
+        pushButton_14->setFont(font1);
+        pushButton_14->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         pushButton_21->raise();
         ManageMetro->raise();
         pushButton_10->raise();
@@ -263,6 +277,7 @@ public:
         label_21->setText(QCoreApplication::translate("AdminManageMetroOtions", "Stations :", nullptr));
         pushButton_12->setText(QCoreApplication::translate("AdminManageMetroOtions", "Add Station", nullptr));
         pushButton_13->setText(QCoreApplication::translate("AdminManageMetroOtions", "Remove Station", nullptr));
+        pushButton_14->setText(QCoreApplication::translate("AdminManageMetroOtions", "Add Adge", nullptr));
     } // retranslateUi
 
 };

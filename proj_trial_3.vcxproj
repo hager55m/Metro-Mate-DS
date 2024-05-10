@@ -11,11 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}</ProjectGuid>
+    <ProjectGuid>{677399AB-FD66-3500-AABE-2BA45FFB1C12}</ProjectGuid>
     <RootNamespace>proj_trial_3</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.22621.0</WindowsTargetPlatformMinVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -118,7 +117,7 @@
     </ResourceCompile>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
-      <Include>C:/Users/Hager ElSherif/OneDrive/Desktop/metro-Mate/New folder/Metro-Mate-DS/$(Configuration)/moc_predefs.h</Include>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <DynamicSource>output</DynamicSource>
       <QtMocDir>$(Configuration)</QtMocDir>
@@ -181,7 +180,7 @@
     </ResourceCompile>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
-      <Include>C:/Users/Hager ElSherif/OneDrive/Desktop/metro-Mate/New folder/Metro-Mate-DS/$(Configuration)/moc_predefs.h</Include>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <DynamicSource>output</DynamicSource>
       <QtMocDir>$(Configuration)</QtMocDir>
@@ -213,6 +212,7 @@
     <ClCompile Include="adminmanagemetroremovestation.cpp" />
     <ClCompile Include="adminstations.cpp" />
     <ClCompile Include="admonmanagemetrooptions.cpp" />
+    <ClCompile Include="datetime.cpp" />
     <ClCompile Include="historypage.cpp" />
     <ClCompile Include="loginpage.cpp" />
     <ClCompile Include="main.cpp" />
@@ -227,9 +227,14 @@
     <ClCompile Include="stat6months.cpp" />
     <ClCompile Include="submanage.cpp" />
     <ClCompile Include="subscription.cpp" />
+    <ClCompile Include="subscriptionlist.cpp" />
     <ClCompile Include="ticket.cpp" />
     <ClCompile Include="ticketpage.cpp" />
+    <ClCompile Include="types_sub.cpp" />
+    <ClCompile Include="user_subscribtion.cpp" />
+    <ClCompile Include="userclass.cpp" />
     <ClCompile Include="userdata.cpp" />
+    <ClCompile Include="userticket.cpp" />
     <ClCompile Include="verfication.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +249,7 @@
     <QtMoc Include="adminmanagemetroremovestation.h" />
     <QtMoc Include="adminstations.h" />
     <QtMoc Include="admonmanagemetrooptions.h" />
+    <ClInclude Include="datetime.h" />
     <QtMoc Include="historypage.h" />
     <QtMoc Include="loginpage.h" />
     <QtMoc Include="mainpage.h" />
@@ -255,28 +261,35 @@
     <QtMoc Include="stat1month.h" />
     <QtMoc Include="stat3months.h" />
     <QtMoc Include="stat6months.h" />
-    <QtMoc Include="submanage.h" />
+    <ClInclude Include="submanage.h" />
     <QtMoc Include="subscription.h" />
+    <ClInclude Include="subscriptionlist.h" />
     <QtMoc Include="ticket.h" />
     <QtMoc Include="ticketpage.h" />
+    <QtMoc Include="types_sub.h" />
     <ClInclude Include="ui_AdminHomeBage.h" />
+    <ClInclude Include="user_subscribtion.h" />
+    <ClInclude Include="userclass.h" />
     <QtMoc Include="userdata.h" />
+    <ClInclude Include="userticket.h" />
     <QtMoc Include="verfication.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_predefs.h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <FileType>Document</FileType>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +317,7 @@
     <QtUic Include="subscription.ui" />
     <QtUic Include="ticket.ui" />
     <QtUic Include="ticketpage.ui" />
+    <QtUic Include="types_sub.ui" />
     <QtUic Include="userdata.ui" />
     <QtUic Include="verfication.ui" />
   </ItemGroup>
@@ -313,6 +327,9 @@
     <None Include="img\20221220_CairoMetroMap2.png" />
     <None Include="img\422833-PE4141-817 (2).png" />
     <None Include="img\files\Sub.txt" />
+    <None Include="img\files\User_history.txt" />
+    <None Include="img\files\data_History.txt" />
+    <None Include="img\files\data_staion.txt" />
     <None Include="img\default_qrcode.png" />
     <None Include="img\down.png" />
     <None Include="img\download.png" />
@@ -328,7 +345,10 @@
     <None Include="img\reject.png" />
     <QtRcc Include="res.qrc" />
     <None Include="img\six.png" />
+    <None Include="img\stations_name.txt" />
     <None Include="img\subway.png" />
+    <None Include="img\files\testing.txt" />
+    <None Include="img\files\testing_signed.txt" />
     <None Include="img\three.png" />
     <None Include="img\ticket.png" />
     <None Include="img\train.png" />

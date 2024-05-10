@@ -8,12 +8,12 @@ static void readstations();
 class Station
 {
     public:
-	std::string name;
-	int lines;
+	//std::string name;
+	int lines_;
 
 
 
-public:
+
 	std::string name;
 	std::vector<int >lines;
 	Station();

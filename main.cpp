@@ -18,9 +18,9 @@
 #include"admonmanagemetrooptions.h"
 #include "adminmanagemetroremovestation.h"
 #include"admin.h"
-//#include"addsub.h"
-//#include "removesub.h"
-//#include "ticket.h"
+#include"addsub.h"
+#include "removesub.h"
+#include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
 
@@ -28,6 +28,7 @@
 #include <userclass.h>
 #include <Station.h>
 #include <cstdlib>
+
 
 void Write_all();
 
@@ -65,16 +66,16 @@ int main(int argc, char *argv[])
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
     admin admin;
-    /*addsub addsub;
+    addsub addsub;
     removesub removesub;
-    Ticket ticket;*/
+    Ticket ticket;
     AdminStations AdminStation;
     AdminDataPage adp;
 
     //ticket.show();
  // admin.show();
 //=======
-    sub.show();
+    //sub.show();
 
     //lp.show();
     ticket.DataOfTicketToDisplay();
@@ -197,16 +198,31 @@ int main(int argc, char *argv[])
          admin.hide();
          });
 
-    // QObject::connect(&admin, &admin::switchtologin, [&]() {
-    //     lp.show();
-    //     admin.hide();
-    //     });
+     QObject::connect(&admin, &admin::switchtologin, [&]() {
+         lp.show();
+         admin.hide();
+         });
 
      QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
          sub.show();
          admin.hide();
          });
+
+     QObject::connect(&admin, &admin::switchtoapptoval, [&]() {
+         
+         });
      
+     QObject::connect(&admin, &admin::switchtonext_signed, [&]() {
+
+         });   
+     QObject::connect(&admin, &admin::switchtonext_login, [&]() {
+
+             });
+     QObject::connect(&admin, &admin::switchtouserhistory, [&]() {
+         ud.show();
+         admin.hide();
+         });
+
      // QObject::connect(&admin, &admin::switchtostation, [&]() {
      //    AdminStation.show();
      //     admin.hide();

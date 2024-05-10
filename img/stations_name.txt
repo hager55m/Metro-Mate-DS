@@ -1,176 +1,176 @@
-Helwan,1
-Ain Helwan,1
-Helwan University,1
-Wadi Hof,1
-Hadayek Helwan,1
-El-Maasara,1
-Tora El-Asmant,1
-Kozzika,1
-Tora El-Balad,1
-Sakanat El-Maadi,1
-Maadi,1
-Hadayek El-Maadi,1
-Dar El-Salam,1
-El-Zahraa',1
-Mar Girgis,1
-El-Malek El-Saleh,1
-Al-Sayeda Zeinab,1
-Saad Zaghloul,1
-El-Sadat,1
-Nasser,1
-Orabi,1
-El-Shohada,1
-Ghamra,1
-El-Demerdash,1
-Manshiet El-Sadr,1
-Kobri El-Qobba,1
-Hammamat El-Qobba,1
-Saray El-Qobba,1
-Hadayeq El-Zaitoun,1
-Helmeyet El-Zaitoun,1
-El-Matareyya,1
-Ain Shams,1
-Ezbet El-Nakhl,1
-El-Marg,1
-New El-Marg,1
-El-Mounib,2
-Sakiat Mekky,2
-Omm El-Masryeen,2
-Giza,2
-Faisal,2
-Cairo University,2
-El Bohoth,2
-Dokki,2
-Opera,2
-El-Sadat,2
-Mohamed Naguib,2
-Attaba,2
-El-Shohada,2
-Masarra,2
-Rod El-Farag,2
-St. Teresa,2
-Khalafawy,2
-Mezallat,2
-Kolleyyet El-Zeraa,2
-Shubra El-Kheima,2
-Adly Mansour,3
-El Haykestep,3
-Omar Ibn El-Khattab,3
-Qobaa,3
-Hesham Barakat,3
-El-Nozha,3
-Nadi El-Shams,3
-Alf Maskan,3
-Heliopolis,3
-Haroun,3
-Al-Ahram,3
-Koleyet El-Banat,3
-Stadium,3
-Fair Zone,3
-Abbassiya,3
-Abdou Pasha,3
-El-Geish,3
-Bab El-Shaaria,3
-Attaba,3
-Nasser,3
-Maspero,3
-Safaa Hegazy,3
-Kit Kat,3
-Sudan,3
-Imbaba,3
-El-Bohy,3
-El-Qawmia,3
-Ring Road,3
-Rod El-Farag Corridor,3
-Tawfikia,3
-Wadi El-Nile,3
-Gamet El-Dowel,3
-Boulak El-Dakrour,3
-Helwan,1
-Ain Helwan,1
-Helwan University,1
-Wadi Hof,1
-Hadayek Helwan,1
-El-Maasara,1
-Tora El-Asmant,1
-Kozzika,1
-Tora El-Balad,1
-Sakanat El-Maadi,1
-Maadi,1
-Hadayek El-Maadi,1
-Dar El-Salam,1
-El-Zahraa',1
-Mar Girgis,1
-El-Malek El-Saleh,1
-Al-Sayeda Zeinab,1
-Saad Zaghloul,1
-El-Sadat,1
-Nasser,1
-Orabi,1
-El-Shohada,1
-Ghamra,1
-El-Demerdash,1
-Manshiet El-Sadr,1
-Kobri El-Qobba,1
-Hammamat El-Qobba,1
-Saray El-Qobba,1
-Hadayeq El-Zaitoun,1
-Helmeyet El-Zaitoun,1
-El-Matareyya,1
-Ain Shams,1
-Ezbet El-Nakhl,1
-El-Marg,1
-New El-Marg,1
-El-Mounib,2
-Sakiat Mekky,2
-Omm El-Masryeen,2
-Giza,2
-Faisal,2
-Cairo University,2
-El Bohoth,2
-Dokki,2
-Opera,2
-El-Sadat,2
-Mohamed Naguib,2
-Attaba,2
-El-Shohada,2
-Masarra,2
-Rod El-Farag,2
-St. Teresa,2
-Khalafawy,2
-Mezallat,2
-Kolleyyet El-Zeraa,2
-Shubra El-Kheima,2
-Adly Mansour,3
-El Haykestep,3
-Omar Ibn El-Khattab,3
-Qobaa,3
-Hesham Barakat,3
-El-Nozha,3
-Nadi El-Shams,3
-Alf Maskan,3
-Heliopolis,3
-Haroun,3
-Al-Ahram,3
-Koleyet El-Banat,3
-Stadium,3
-Fair Zone,3
-Abbassiya,3
-Abdou Pasha,3
-El-Geish,3
-Bab El-Shaaria,3
-Attaba,3
-Nasser,3
-Maspero,3
-Safaa Hegazy,3
-Kit Kat,3
-Sudan,3
-Imbaba,3
-El-Bohy,3
-El-Qawmia,3
-Ring Road,3
-Rod El-Farag Corridor,3
-Tawfikia,3
-Wadi El-Nile,3
-Gamet El-Dowel,3
-Boulak El-Dakrour,3
+Helwan,15
+Ain Helwan,15
+Helwan University,15
+Wadi Hof,15
+Hadayek Helwan,15
+El-Maasara,15
+Tora El-Asmant,15
+Kozzika,15
+Tora El-Balad,15
+Sakanat El-Maadi,15
+Maadi,15
+Hadayek El-Maadi,15
+Dar El-Salam,15
+El-Zahraa',15
+Mar Girgis,15
+El-Malek El-Saleh,15
+Al-Sayeda Zeinab,15
+Saad Zaghloul,15
+El-Sadat,15
+Nasser,15
+Orabi,15
+El-Shohada,15
+Ghamra,15
+El-Demerdash,15
+Manshiet El-Sadr,15
+Kobri El-Qobba,15
+Hammamat El-Qobba,15
+Saray El-Qobba,15
+Hadayeq El-Zaitoun,15
+Helmeyet El-Zaitoun,15
+El-Matareyya,15
+Ain Shams,15
+Ezbet El-Nakhl,15
+El-Marg,15
+New El-Marg,15
+El-Mounib,15
+Sakiat Mekky,15
+Omm El-Masryeen,15
+Giza,15
+Faisal,15
+Cairo University,15
+El Bohoth,15
+Dokki,15
+Opera,15
+El-Sadat,15
+Mohamed Naguib,15
+Attaba,15
+El-Shohada,15
+Masarra,15
+Rod El-Farag,15
+St. Teresa,15
+Khalafawy,15
+Mezallat,15
+Kolleyyet El-Zeraa,15
+Shubra El-Kheima,15
+Adly Mansour,15
+El Haykestep,15
+Omar Ibn El-Khattab,15
+Qobaa,15
+Hesham Barakat,15
+El-Nozha,15
+Nadi El-Shams,15
+Alf Maskan,15
+Heliopolis,15
+Haroun,15
+Al-Ahram,15
+Koleyet El-Banat,15
+Stadium,15
+Fair Zone,15
+Abbassiya,15
+Abdou Pasha,15
+El-Geish,15
+Bab El-Shaaria,15
+Attaba,15
+Nasser,15
+Maspero,15
+Safaa Hegazy,15
+Kit Kat,15
+Sudan,15
+Imbaba,15
+El-Bohy,15
+El-Qawmia,15
+Ring Road,15
+Rod El-Farag Corridor,15
+Tawfikia,15
+Wadi El-Nile,15
+Gamet El-Dowel,15
+Boulak El-Dakrour,15
+Helwan,15
+Ain Helwan,15
+Helwan University,15
+Wadi Hof,15
+Hadayek Helwan,15
+El-Maasara,15
+Tora El-Asmant,15
+Kozzika,15
+Tora El-Balad,15
+Sakanat El-Maadi,15
+Maadi,15
+Hadayek El-Maadi,15
+Dar El-Salam,15
+El-Zahraa',15
+Mar Girgis,15
+El-Malek El-Saleh,15
+Al-Sayeda Zeinab,15
+Saad Zaghloul,15
+El-Sadat,15
+Nasser,15
+Orabi,15
+El-Shohada,15
+Ghamra,15
+El-Demerdash,15
+Manshiet El-Sadr,15
+Kobri El-Qobba,15
+Hammamat El-Qobba,15
+Saray El-Qobba,15
+Hadayeq El-Zaitoun,15
+Helmeyet El-Zaitoun,15
+El-Matareyya,15
+Ain Shams,15
+Ezbet El-Nakhl,15
+El-Marg,15
+New El-Marg,15
+El-Mounib,15
+Sakiat Mekky,15
+Omm El-Masryeen,15
+Giza,15
+Faisal,15
+Cairo University,15
+El Bohoth,15
+Dokki,15
+Opera,15
+El-Sadat,15
+Mohamed Naguib,15
+Attaba,15
+El-Shohada,15
+Masarra,15
+Rod El-Farag,15
+St. Teresa,15
+Khalafawy,15
+Mezallat,15
+Kolleyyet El-Zeraa,15
+Shubra El-Kheima,15
+Adly Mansour,15
+El Haykestep,15
+Omar Ibn El-Khattab,15
+Qobaa,15
+Hesham Barakat,15
+El-Nozha,15
+Nadi El-Shams,15
+Alf Maskan,15
+Heliopolis,15
+Haroun,15
+Al-Ahram,15
+Koleyet El-Banat,15
+Stadium,15
+Fair Zone,15
+Abbassiya,15
+Abdou Pasha,15
+El-Geish,15
+Bab El-Shaaria,15
+Attaba,15
+Nasser,15
+Maspero,15
+Safaa Hegazy,15
+Kit Kat,15
+Sudan,15
+Imbaba,15
+El-Bohy,15
+El-Qawmia,15
+Ring Road,15
+Rod El-Farag Corridor,15
+Tawfikia,15
+Wadi El-Nile,15
+Gamet El-Dowel,15
+Boulak El-Dakrour,15

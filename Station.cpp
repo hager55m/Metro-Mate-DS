@@ -11,7 +11,7 @@ using namespace std;
 QVector<Station> Station::stations;
 Station::Station()
 {
-    lines = 0;
+    //lines = 0;
 }
 
 Station::Station(std::string name, int line)
@@ -20,13 +20,13 @@ Station::Station(std::string name, int line)
 int Station::getLines()
 {
 
-    return lines;
+    return lines_;
 }
 
-void Station::setName(std::string Nname)
-{
-	name = Nname;
-}
+//void Station::setName(std::string Nname)
+//{
+//   // name = Nname;
+//}
 
 std::string Station::getName()const
 {
@@ -35,7 +35,7 @@ std::string Station::getName()const
 
 void Station::Read_Staion()
 {
-    ifstream file ("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
+    ifstream file ("E:/All_project/Metro-Mate-DS/img/stations_name.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -54,7 +54,7 @@ void Station::Read_Staion()
 
 void Station::Write_Staion()
 {
-    ofstream outFile("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
+    ofstream outFile("E:/All_project/Metro-Mate-DS/img/stations_name.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -63,7 +63,7 @@ void Station::Write_Staion()
     }
     for(const auto& it :stations){
 
-        outFile<<it.name<<','<<it.lines<<endl;
+        outFile<<it.name<<','<<it.lines_<<endl;
     }
 outFile.close();
 }
@@ -93,7 +93,7 @@ void Station::readstations(){
     file.close();
 
     for(const auto& path : stations){
-        Graph::addStation(path.name, path.lines);
+        //Graph::addStation(path.name, path.lines);
     }
     for (int i = 0; i < stations.size() -1; ++i) {
         if(Station::stations[i].lines == Station::stations[i+1].lines)

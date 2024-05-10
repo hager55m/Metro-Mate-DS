@@ -23,6 +23,11 @@ signals:
     void switchtostation();
     void switchtouserhistory();
     void switchtologin();
+    void switchtoapptoval();
+    void switchtonext_signed();
+    void switchtonext_login();
+
+   // void switchto();
 private slots:
     void on_pushButton_4_clicked();
     void on_pushButton1_clicked();
@@ -32,8 +37,15 @@ private slots:
     void on_pushButton_2_clicked();
     void on_userhistorybutton_clicked();
 
+    void on_pushButton_12_clicked();
+    void on_pushButton_13_clicked();
+    void on_pushButton_14_clicked();
+    void on_pushButton_15_clicked();
+
 private:
     Ui::admin *ui;
+    int currentIndex_sign;
+    int currentIndex_log;
 };
 
 #endif // ADMIN_H

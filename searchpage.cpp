@@ -43,15 +43,15 @@ void SearchPage::on_buy_2_clicked()
     vector<vector<string>> bfs;
     bool found = false;
     for (int i = 0; i < Station::stations.size(); i++) {
-        Graph::addStation(Station::stations[i].getName(), i);
+        //Graph::addStation(Station::stations[i].getName(), i);
     }
     for(int i = 0; i < Station::stations.size(); i++) {
         if(ui->start->currentText() == QString::fromStdString(Station::stations[i].getName())) {
             for(int j = 0; j < Station::stations.size(); j++) {
                 if(ui->end->currentText() == QString::fromStdString(Station::stations[j].getName())) {
-                    bfs = Graph::allPossiblePathsFunctionality(Station::stations[i].getName(), Station::stations[j].getName());
-                   QString sz = QString::number(bfs.size());
-                    ui->data->insertPlainText("Paths: " + sz);
+                   // bfs = Graph::allPossiblePathsFunctionality(Station::stations[i].getName(), Station::stations[j].getName());
+                   //QString sz = QString::number(bfs.size());
+                   // ui->data->insertPlainText("Paths: " + sz);
                     ui->data->insertPlainText("\n");
                     found = true;
                     break;
