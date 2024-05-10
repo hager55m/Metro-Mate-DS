@@ -30,7 +30,7 @@ std::string Station::getName()const
 
 void Station::Read_Staion()
 {
-    ifstream file ("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
+    ifstream file ("E:/All_user_final/Metro-Mate-DS/img/stations_name.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -49,7 +49,7 @@ void Station::Read_Staion()
 
 void Station::Write_Staion()
 {
-    ofstream outFile("D:/QT/8-5/Metro-Mate-DS/img/stations_name.txt");
+    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/stations_name.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {

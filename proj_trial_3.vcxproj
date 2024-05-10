@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Release|x64">
@@ -13,12 +13,12 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}</ProjectGuid>
     <RootNamespace>proj_trial_3</RootNamespace>
-    <Keyword>Qt4VSv1.0</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.22621.0</WindowsTargetPlatformMinVersion>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <PlatformToolset>v143</PlatformToolset>
     <OutputDirectory>release\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
@@ -27,7 +27,7 @@
     <IntermediateDirectory>release\</IntermediateDirectory>
     <PrimaryOutput>proj_trial_3</PrimaryOutput>
   </PropertyGroup>
-  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <PlatformToolset>v143</PlatformToolset>
     <OutputDirectory>debug\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
@@ -37,28 +37,42 @@
     <PrimaryOutput>proj_trial_3</PrimaryOutput>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>6.6.3_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>6.6.3_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
   <ImportGroup Label="ExtensionSettings" />
-  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
   </ImportGroup>
-  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\</OutDir>
-    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\</IntDir>
-    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">proj_trial_3</TargetName>
-    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</IgnoreImportLibrary>
-    <LinkIncremental Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">false</LinkIncremental>
-    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\</OutDir>
-    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\</IntDir>
-    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">proj_trial_3</TargetName>
-    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</IgnoreImportLibrary>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">proj_trial_3</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">proj_trial_3</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;C:\QT\6.6.3\MSVC2019_64\include;C:\QT\6.6.3\MSVC2019_64\include\QtWidgets;C:\QT\6.6.3\MSVC2019_64\include\QtGui;C:\QT\6.6.3\MSVC2019_64\include\QtCore;release;.;/include;C:\QT\6.6.3\MSVC2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -68,19 +82,21 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>release\</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>C:\QT\6.6.3\MSVC2019_64\lib\Qt6Widgets.lib;C:\QT\6.6.3\MSVC2019_64\lib\Qt6Gui.lib;C:\QT\6.6.3\MSVC2019_64\lib\Qt6Core.lib;C:\QT\6.6.3\MSVC2019_64\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -98,12 +114,33 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>res</InitFuncName>
+      <Compression>default</Compression>
+      <NoZstd>true</NoZstd>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;C:\QT\6.6.3\MSVC2019_64\include;C:\QT\6.6.3\MSVC2019_64\include\QtWidgets;C:\QT\6.6.3\MSVC2019_64\include\QtGui;C:\QT\6.6.3\MSVC2019_64\include\QtCore;debug;.;/include;C:\QT\6.6.3\MSVC2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -113,18 +150,19 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>debug\</ObjectFileName>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>C:\QT\6.6.3\MSVC2019_64\lib\Qt6Widgetsd.lib;C:\QT\6.6.3\MSVC2019_64\lib\Qt6Guid.lib;C:\QT\6.6.3\MSVC2019_64\lib\Qt6Cored.lib;C:\QT\6.6.3\MSVC2019_64\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -139,8 +177,29 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>res</InitFuncName>
+      <Compression>default</Compression>
+      <NoZstd>true</NoZstd>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Graph.cpp" />
@@ -172,791 +231,94 @@
     <ClCompile Include="ticket.cpp" />
     <ClCompile Include="ticketpage.cpp" />
     <ClCompile Include="types_sub.cpp" />
+    <ClCompile Include="user_subscribtion.cpp" />
     <ClCompile Include="userclass.cpp" />
     <ClCompile Include="userdata.cpp" />
+    <ClCompile Include="userticket.cpp" />
     <ClCompile Include="verfication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Station.h" />
     <ClInclude Include="StationClass.h" />
-    <CustomBuild Include="addsub.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">addsub.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; addsub.h -o release\moc_addsub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC addsub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_addsub.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">addsub.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; addsub.h -o debug\moc_addsub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC addsub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_addsub.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="admin.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">admin.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; admin.h -o release\moc_admin.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC admin.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_admin.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">admin.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; admin.h -o debug\moc_admin.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC admin.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_admin.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="admindatapage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">admindatapage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; admindatapage.h -o release\moc_admindatapage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC admindatapage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_admindatapage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">admindatapage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; admindatapage.h -o debug\moc_admindatapage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC admindatapage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_admindatapage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminmanagemetroaddstation.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminmanagemetroaddstation.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminmanagemetroaddstation.h -o release\moc_adminmanagemetroaddstation.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC adminmanagemetroaddstation.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_adminmanagemetroaddstation.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminmanagemetroaddstation.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminmanagemetroaddstation.h -o debug\moc_adminmanagemetroaddstation.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC adminmanagemetroaddstation.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_adminmanagemetroaddstation.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminmanagemetrootions.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminmanagemetrootions.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminmanagemetrootions.h -o release\moc_adminmanagemetrootions.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC adminmanagemetrootions.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_adminmanagemetrootions.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminmanagemetrootions.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminmanagemetrootions.h -o debug\moc_adminmanagemetrootions.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC adminmanagemetrootions.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_adminmanagemetrootions.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminmanagemetroremovestation.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminmanagemetroremovestation.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminmanagemetroremovestation.h -o release\moc_adminmanagemetroremovestation.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC adminmanagemetroremovestation.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_adminmanagemetroremovestation.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminmanagemetroremovestation.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminmanagemetroremovestation.h -o debug\moc_adminmanagemetroremovestation.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC adminmanagemetroremovestation.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_adminmanagemetroremovestation.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminstations.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminstations.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminstations.h -o release\moc_adminstations.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC adminstations.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_adminstations.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminstations.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; adminstations.h -o debug\moc_adminstations.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC adminstations.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_adminstations.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="admonmanagemetrooptions.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">admonmanagemetrooptions.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; admonmanagemetrooptions.h -o release\moc_admonmanagemetrooptions.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC admonmanagemetrooptions.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_admonmanagemetrooptions.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">admonmanagemetrooptions.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; admonmanagemetrooptions.h -o debug\moc_admonmanagemetrooptions.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC admonmanagemetrooptions.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_admonmanagemetrooptions.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
+    <QtMoc Include="addsub.h" />
+    <QtMoc Include="admin.h" />
+    <QtMoc Include="admindatapage.h" />
+    <QtMoc Include="adminmanagemetroaddstation.h" />
+    <QtMoc Include="adminmanagemetrootions.h" />
+    <QtMoc Include="adminmanagemetroremovestation.h" />
+    <QtMoc Include="adminstations.h" />
+    <QtMoc Include="admonmanagemetrooptions.h" />
     <ClInclude Include="datetime.h" />
-    <CustomBuild Include="historypage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">historypage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; historypage.h -o release\moc_historypage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC historypage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_historypage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">historypage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; historypage.h -o debug\moc_historypage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC historypage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_historypage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="loginpage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">loginpage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; loginpage.h -o release\moc_loginpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC loginpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_loginpage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">loginpage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; loginpage.h -o debug\moc_loginpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC loginpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_loginpage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="mainpage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">mainpage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; mainpage.h -o release\moc_mainpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC mainpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_mainpage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">mainpage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; mainpage.h -o debug\moc_mainpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC mainpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_mainpage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="manage_metro.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">manage_metro.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; manage_metro.h -o release\moc_manage_metro.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC manage_metro.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_manage_metro.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">manage_metro.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; manage_metro.h -o debug\moc_manage_metro.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC manage_metro.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_manage_metro.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="removesub.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">removesub.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; removesub.h -o release\moc_removesub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC removesub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_removesub.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">removesub.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; removesub.h -o debug\moc_removesub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC removesub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_removesub.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="renewsub.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">renewsub.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; renewsub.h -o release\moc_renewsub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC renewsub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_renewsub.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">renewsub.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; renewsub.h -o debug\moc_renewsub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC renewsub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_renewsub.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="searchpage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">searchpage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; searchpage.h -o release\moc_searchpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC searchpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_searchpage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">searchpage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; searchpage.h -o debug\moc_searchpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC searchpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_searchpage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="signuppage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">signuppage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; signuppage.h -o release\moc_signuppage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC signuppage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_signuppage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">signuppage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; signuppage.h -o debug\moc_signuppage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC signuppage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_signuppage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="stat1month.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">stat1month.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; stat1month.h -o release\moc_stat1month.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC stat1month.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_stat1month.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">stat1month.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; stat1month.h -o debug\moc_stat1month.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC stat1month.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_stat1month.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="stat3months.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">stat3months.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; stat3months.h -o release\moc_stat3months.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC stat3months.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_stat3months.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">stat3months.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; stat3months.h -o debug\moc_stat3months.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC stat3months.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_stat3months.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="stat6months.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">stat6months.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; stat6months.h -o release\moc_stat6months.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC stat6months.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_stat6months.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">stat6months.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; stat6months.h -o debug\moc_stat6months.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC stat6months.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_stat6months.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
+    <QtMoc Include="historypage.h" />
+    <QtMoc Include="loginpage.h" />
+    <QtMoc Include="mainpage.h" />
+    <QtMoc Include="manage_metro.h" />
+    <QtMoc Include="removesub.h" />
+    <QtMoc Include="renewsub.h" />
+    <QtMoc Include="searchpage.h" />
+    <QtMoc Include="signuppage.h" />
+    <QtMoc Include="stat1month.h" />
+    <QtMoc Include="stat3months.h" />
+    <QtMoc Include="stat6months.h" />
     <ClInclude Include="submanage.h" />
-    <CustomBuild Include="subscription.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">subscription.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; subscription.h -o release\moc_subscription.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC subscription.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_subscription.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">subscription.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; subscription.h -o debug\moc_subscription.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC subscription.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_subscription.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="ticket.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ticket.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; ticket.h -o release\moc_ticket.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC ticket.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_ticket.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ticket.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; ticket.h -o debug\moc_ticket.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC ticket.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_ticket.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="ticketpage.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ticketpage.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; ticketpage.h -o release\moc_ticketpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC ticketpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_ticketpage.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ticketpage.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; ticketpage.h -o debug\moc_ticketpage.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC ticketpage.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_ticketpage.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="types_sub.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">types_sub.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; types_sub.h -o release\moc_types_sub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC types_sub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_types_sub.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">types_sub.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; types_sub.h -o debug\moc_types_sub.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC types_sub.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_types_sub.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
+    <QtMoc Include="subscription.h" />
+    <QtMoc Include="ticket.h" />
+    <QtMoc Include="ticketpage.h" />
+    <QtMoc Include="types_sub.h" />
     <ClInclude Include="ui_AdminHomeBage.h" />
-    <ClInclude Include="ui_DialogButtonBottom.h" />
-    <ClInclude Include="ui_addsub.h" />
-    <ClInclude Include="ui_admin.h" />
-    <ClInclude Include="ui_adminmanagemetroaddstation.h" />
-    <ClInclude Include="ui_adminmanagemetrootions.h" />
-    <ClInclude Include="ui_adminmanagemetroremovestation.h" />
-    <ClInclude Include="ui_adminstations.h" />
-    <ClInclude Include="ui_historypage.h" />
-    <ClInclude Include="ui_loginpage.h" />
-    <ClInclude Include="ui_mainpage.h" />
-    <ClInclude Include="ui_removesub.h" />
-    <ClInclude Include="ui_renewsub.h" />
-    <ClInclude Include="ui_searchpage.h" />
-    <ClInclude Include="ui_signuppage.h" />
-    <ClInclude Include="ui_stat1month.h" />
-    <ClInclude Include="ui_stat3months.h" />
-    <ClInclude Include="ui_stat6months.h" />
-    <ClInclude Include="ui_submanage.h" />
-    <ClInclude Include="ui_subscription.h" />
-    <ClInclude Include="ui_ticket.h" />
-    <ClInclude Include="ui_ticketpage.h" />
-    <ClInclude Include="ui_userdata.h" />
-    <ClInclude Include="ui_verfication.h" />
+    <ClInclude Include="user_subscribtion.h" />
     <ClInclude Include="userclass.h" />
-    <CustomBuild Include="userdata.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">userdata.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; userdata.h -o release\moc_userdata.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC userdata.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_userdata.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">userdata.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; userdata.h -o debug\moc_userdata.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC userdata.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_userdata.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="verfication.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">verfication.h;release\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/release/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; verfication.h -o release\moc_verfication.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">MOC verfication.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_verfication.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">verfication.h;debug\moc_predefs.h;C:\QT\6.6.3\MSVC2019_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/QT/project/Metro-Mate-DS/debug/moc_predefs.h -IC:/QT/6.6.3/MSVC2019_64/mkspecs/win32-msvc -ID:/QT/project/Metro-Mate-DS -IC:/QT/6.6.3/MSVC2019_64/include -IC:/QT/6.6.3/MSVC2019_64/include/QtWidgets -IC:/QT/6.6.3/MSVC2019_64/include/QtGui -IC:/QT/6.6.3/MSVC2019_64/include/QtCore -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include&quot; -I&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; verfication.h -o debug\moc_verfication.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">MOC verfication.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_verfication.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
+    <QtMoc Include="userdata.h" />
+    <ClInclude Include="userticket.h" />
+    <QtMoc Include="verfication.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="debug\moc_addsub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_addsub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_admin.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_admin.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_admindatapage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_admindatapage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_adminmanagemetroaddstation.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_adminmanagemetroaddstation.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_adminmanagemetrootions.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_adminmanagemetrootions.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_adminmanagemetroremovestation.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_adminmanagemetroremovestation.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_adminstations.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_adminstations.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_admonmanagemetrooptions.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_admonmanagemetrooptions.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_historypage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_historypage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_loginpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_loginpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_mainpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_mainpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_manage_metro.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_manage_metro.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
       <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">cl -Bx&quot;$(QTDIR)\bin\qmake.exe&quot; -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\QT\6.6.3\MSVC2019_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">Generate moc_predefs.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_predefs.h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">cl -Bx&quot;$(QTDIR)\bin\qmake.exe&quot; -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\QT\6.6.3\MSVC2019_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">Generate moc_predefs.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\moc_predefs.h;%(Outputs)</Outputs>
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </CustomBuild>
-    <ClCompile Include="debug\moc_removesub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_removesub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_renewsub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_renewsub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_searchpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_searchpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_signuppage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_signuppage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_stat1month.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_stat1month.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_stat3months.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_stat3months.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_stat6months.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_stat6months.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_subscription.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_subscription.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_ticket.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_ticket.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_ticketpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_ticketpage.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_types_sub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_types_sub.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_userdata.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_userdata.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\moc_verfication.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\moc_verfication.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="debug\qrc_res.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="release\qrc_res.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClInclude Include="ui_DialogButtonBottom.h" />
-    <ClInclude Include="ui_addsub.h" />
-    <ClInclude Include="ui_admin.h" />
-    <ClInclude Include="ui_admindatapage.h" />
-    <ClInclude Include="ui_adminmanagemetroaddstation.h" />
-    <ClInclude Include="ui_adminmanagemetrootions.h" />
-    <ClInclude Include="ui_adminmanagemetroremovestation.h" />
-    <ClInclude Include="ui_adminstations.h" />
-    <ClInclude Include="ui_admonmanagemetrooptions.h" />
-    <ClInclude Include="ui_historypage.h" />
-    <ClInclude Include="ui_loginpage.h" />
-    <ClInclude Include="ui_mainpage.h" />
-    <ClInclude Include="ui_manage_metro.h" />
-    <ClInclude Include="ui_removesub.h" />
-    <ClInclude Include="ui_renewsub.h" />
-    <ClInclude Include="ui_searchpage.h" />
-    <ClInclude Include="ui_signuppage.h" />
-    <ClInclude Include="ui_stat1month.h" />
-    <ClInclude Include="ui_stat3months.h" />
-    <ClInclude Include="ui_stat6months.h" />
-    <ClInclude Include="ui_submanage.h" />
-    <ClInclude Include="ui_subscription.h" />
-    <ClInclude Include="ui_ticket.h" />
-    <ClInclude Include="ui_ticketpage.h" />
-    <ClInclude Include="ui_types_sub.h" />
-    <ClInclude Include="ui_userdata.h" />
-    <ClInclude Include="ui_verfication.h" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="DialogButtonBottom.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">DialogButtonBottom.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe DialogButtonBottom.ui -o ui_DialogButtonBottom.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC DialogButtonBottom.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_DialogButtonBottom.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">DialogButtonBottom.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe DialogButtonBottom.ui -o ui_DialogButtonBottom.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC DialogButtonBottom.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_DialogButtonBottom.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="addsub.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">addsub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe addsub.ui -o ui_addsub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC addsub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_addsub.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">addsub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe addsub.ui -o ui_addsub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC addsub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_addsub.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="admin.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">admin.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe admin.ui -o ui_admin.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC admin.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_admin.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">admin.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe admin.ui -o ui_admin.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC admin.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_admin.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="admindatapage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">admindatapage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe admindatapage.ui -o ui_admindatapage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC admindatapage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_admindatapage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">admindatapage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe admindatapage.ui -o ui_admindatapage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC admindatapage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_admindatapage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminmanagemetroaddstation.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminmanagemetroaddstation.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminmanagemetroaddstation.ui -o ui_adminmanagemetroaddstation.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC adminmanagemetroaddstation.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_adminmanagemetroaddstation.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminmanagemetroaddstation.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminmanagemetroaddstation.ui -o ui_adminmanagemetroaddstation.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC adminmanagemetroaddstation.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_adminmanagemetroaddstation.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminmanagemetrootions.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminmanagemetrootions.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminmanagemetrootions.ui -o ui_adminmanagemetrootions.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC adminmanagemetrootions.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_adminmanagemetrootions.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminmanagemetrootions.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminmanagemetrootions.ui -o ui_adminmanagemetrootions.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC adminmanagemetrootions.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_adminmanagemetrootions.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminmanagemetroremovestation.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminmanagemetroremovestation.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminmanagemetroremovestation.ui -o ui_adminmanagemetroremovestation.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC adminmanagemetroremovestation.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_adminmanagemetroremovestation.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminmanagemetroremovestation.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminmanagemetroremovestation.ui -o ui_adminmanagemetroremovestation.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC adminmanagemetroremovestation.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_adminmanagemetroremovestation.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="adminstations.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">adminstations.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminstations.ui -o ui_adminstations.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC adminstations.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_adminstations.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">adminstations.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe adminstations.ui -o ui_adminstations.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC adminstations.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_adminstations.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="admonmanagemetrooptions.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">admonmanagemetrooptions.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe admonmanagemetrooptions.ui -o ui_admonmanagemetrooptions.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC admonmanagemetrooptions.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_admonmanagemetrooptions.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">admonmanagemetrooptions.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe admonmanagemetrooptions.ui -o ui_admonmanagemetrooptions.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC admonmanagemetrooptions.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_admonmanagemetrooptions.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="historypage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">historypage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe historypage.ui -o ui_historypage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC historypage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_historypage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">historypage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe historypage.ui -o ui_historypage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC historypage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_historypage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="loginpage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">loginpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe loginpage.ui -o ui_loginpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC loginpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_loginpage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">loginpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe loginpage.ui -o ui_loginpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC loginpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_loginpage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="mainpage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">mainpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe mainpage.ui -o ui_mainpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC mainpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_mainpage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">mainpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe mainpage.ui -o ui_mainpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC mainpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_mainpage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="manage_metro.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">manage_metro.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe manage_metro.ui -o ui_manage_metro.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC manage_metro.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_manage_metro.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">manage_metro.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe manage_metro.ui -o ui_manage_metro.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC manage_metro.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_manage_metro.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="removesub.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">removesub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe removesub.ui -o ui_removesub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC removesub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_removesub.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">removesub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe removesub.ui -o ui_removesub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC removesub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_removesub.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="renewsub.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">renewsub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe renewsub.ui -o ui_renewsub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC renewsub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_renewsub.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">renewsub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe renewsub.ui -o ui_renewsub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC renewsub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_renewsub.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="searchpage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">searchpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe searchpage.ui -o ui_searchpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC searchpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_searchpage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">searchpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe searchpage.ui -o ui_searchpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC searchpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_searchpage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="signuppage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">signuppage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe signuppage.ui -o ui_signuppage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC signuppage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_signuppage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">signuppage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe signuppage.ui -o ui_signuppage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC signuppage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_signuppage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="stat1month.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">stat1month.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe stat1month.ui -o ui_stat1month.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC stat1month.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_stat1month.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">stat1month.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe stat1month.ui -o ui_stat1month.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC stat1month.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_stat1month.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="stat3months.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">stat3months.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe stat3months.ui -o ui_stat3months.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC stat3months.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_stat3months.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">stat3months.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe stat3months.ui -o ui_stat3months.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC stat3months.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_stat3months.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="stat6months.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">stat6months.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe stat6months.ui -o ui_stat6months.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC stat6months.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_stat6months.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">stat6months.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe stat6months.ui -o ui_stat6months.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC stat6months.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_stat6months.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="submanage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">submanage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe submanage.ui -o ui_submanage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC submanage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_submanage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">submanage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe submanage.ui -o ui_submanage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC submanage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_submanage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="subscription.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">subscription.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe subscription.ui -o ui_subscription.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC subscription.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_subscription.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">subscription.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe subscription.ui -o ui_subscription.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC subscription.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_subscription.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="ticket.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ticket.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe ticket.ui -o ui_ticket.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC ticket.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_ticket.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ticket.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe ticket.ui -o ui_ticket.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC ticket.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_ticket.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="ticketpage.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ticketpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe ticketpage.ui -o ui_ticketpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC ticketpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_ticketpage.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ticketpage.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe ticketpage.ui -o ui_ticketpage.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC ticketpage.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_ticketpage.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="types_sub.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">types_sub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe types_sub.ui -o ui_types_sub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC types_sub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_types_sub.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">types_sub.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe types_sub.ui -o ui_types_sub.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC types_sub.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_types_sub.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="userdata.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">userdata.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe userdata.ui -o ui_userdata.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC userdata.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_userdata.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">userdata.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe userdata.ui -o ui_userdata.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC userdata.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_userdata.h;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="verfication.ui">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">verfication.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe verfication.ui -o ui_verfication.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">UIC verfication.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">ui_verfication.h;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">verfication.ui;C:\QT\6.6.3\MSVC2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\uic.exe verfication.ui -o ui_verfication.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">UIC verfication.ui</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">ui_verfication.h;%(Outputs)</Outputs>
-    </CustomBuild>
+    <QtUic Include="DialogButtonBottom.ui" />
+    <QtUic Include="addsub.ui" />
+    <QtUic Include="admin.ui" />
+    <QtUic Include="admindatapage.ui" />
+    <QtUic Include="adminmanagemetroaddstation.ui" />
+    <QtUic Include="adminmanagemetrootions.ui" />
+    <QtUic Include="adminmanagemetroremovestation.ui" />
+    <QtUic Include="adminstations.ui" />
+    <QtUic Include="admonmanagemetrooptions.ui" />
+    <QtUic Include="historypage.ui" />
+    <QtUic Include="loginpage.ui" />
+    <QtUic Include="mainpage.ui" />
+    <QtUic Include="manage_metro.ui" />
+    <QtUic Include="removesub.ui" />
+    <QtUic Include="renewsub.ui" />
+    <QtUic Include="searchpage.ui" />
+    <QtUic Include="signuppage.ui" />
+    <QtUic Include="stat1month.ui" />
+    <QtUic Include="stat3months.ui" />
+    <QtUic Include="stat6months.ui" />
+    <QtUic Include="submanage.ui" />
+    <QtUic Include="subscription.ui" />
+    <QtUic Include="ticket.ui" />
+    <QtUic Include="ticketpage.ui" />
+    <QtUic Include="types_sub.ui" />
+    <QtUic Include="userdata.ui" />
+    <QtUic Include="verfication.ui" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\149071.png" />
@@ -964,6 +326,9 @@
     <None Include="img\20221220_CairoMetroMap2.png" />
     <None Include="img\422833-PE4141-817 (2).png" />
     <None Include="img\files\Sub.txt" />
+    <None Include="img\files\User_history.txt" />
+    <None Include="img\files\data_History.txt" />
+    <None Include="img\files\data_staion.txt" />
     <None Include="img\default_qrcode.png" />
     <None Include="img\down.png" />
     <None Include="img\download.png" />
@@ -977,20 +342,12 @@
     <None Include="img\map-point.png" />
     <None Include="img\one.png" />
     <None Include="img\reject.png" />
-    <CustomBuild Include="res.qrc">
-      <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">res.qrc;C:\QT\6.6.3\MSVC2019_64\bin\rcc.exe;img\149071.png;img\man.png;img\left-arrow.png;img\entrance.png;img\16041_tn_eg-cairo-metro-line3-train-impression-hyundairotem.jpg;img\stations_name.txt;img\reject.png;img\subway.png;img\location.png;img\six.png;img\20221220_CairoMetroMap2.png;img\one.png;img\down.png;img\infographic.png;img\three.png;img\default_qrcode.png;img\download.png;img\map-point.png;img\ticket.png;img\422833-PE4141-817 (2).png;img\train.png;img\health-report.png;img\home (1).png;img\files\Sub.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\rcc.exe -name res --no-zstd res.qrc -o release\qrc_res.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">RCC res.qrc</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">release\qrc_res.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">res.qrc;C:\QT\6.6.3\MSVC2019_64\bin\rcc.exe;img\149071.png;img\man.png;img\left-arrow.png;img\entrance.png;img\16041_tn_eg-cairo-metro-line3-train-impression-hyundairotem.jpg;img\stations_name.txt;img\reject.png;img\subway.png;img\location.png;img\six.png;img\20221220_CairoMetroMap2.png;img\one.png;img\down.png;img\infographic.png;img\three.png;img\default_qrcode.png;img\download.png;img\map-point.png;img\ticket.png;img\422833-PE4141-817 (2).png;img\train.png;img\health-report.png;img\home (1).png;img\files\Sub.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\QT\6.6.3\MSVC2019_64\bin\rcc.exe -name res --no-zstd res.qrc -o debug\qrc_res.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">RCC res.qrc</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">debug\qrc_res.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
+    <QtRcc Include="res.qrc" />
     <None Include="img\six.png" />
     <None Include="img\stations_name.txt" />
     <None Include="img\subway.png" />
+    <None Include="img\files\testing.txt" />
+    <None Include="img\files\testing_signed.txt" />
     <None Include="img\three.png" />
     <None Include="img\ticket.png" />
     <None Include="img\train.png" />
@@ -1012,5 +369,6 @@
     <None Include="img\stations_name.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>

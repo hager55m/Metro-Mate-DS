@@ -18,7 +18,7 @@ UserTicket::UserTicket( float c, QString start, QString end)
 
 void UserTicket::Read_History()
 {
-    ifstream file ("C:/Users/user/Downloads/data_History.txt");
+    ifstream file ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -43,7 +43,7 @@ void UserTicket::Read_History()
                 break;
             }
         }
-
+        
 
     }
     file.close();
@@ -51,7 +51,7 @@ void UserTicket::Read_History()
 
 void UserTicket::Write_History()
 {
-    ofstream outFile("C:/Users/user/Downloads/data_History.txt");
+    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -64,5 +64,5 @@ void UserTicket::Write_History()
         }
 
     }
-//outFile.close();
+outFile.close();
 }

@@ -39,7 +39,7 @@ void UserClass::set_this_user(UserClass s1)
     thisuser=s1;
 }
 void UserClass::Read_User_Signed(){
-    ifstream file("C:/Users/user/Downloads/testing_signed.txt");
+    ifstream file("E:/All_user_final/Metro-Mate-DS/img/files/testing_signed.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -94,7 +94,12 @@ void UserClass::Read_User_Signed(){
             s1.Start_of_sub.month=month_int;
             s1.Start_of_sub.year=year_int;
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
+
+
+
+
             users_sign_up.push_back(user);
+
 
 
         }
@@ -129,6 +134,9 @@ void UserClass::Read_User_Signed(){
             s2.Start_of_sub.month=month_int;
             s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
+
+
+
             users_sign_up.push_back(user2);
         }
         else{
@@ -139,6 +147,8 @@ void UserClass::Read_User_Signed(){
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
             //qDebug()<<" wallet mony"<<user3.UserSub.wallet;
+
+
             users_sign_up.push_back(user3);
 
         }
@@ -151,7 +161,7 @@ void UserClass::Read_User_Signed(){
 
 void UserClass::Write_users()
 {
-    ofstream outFile("C:/Users/user/Downloads/testing.txt");
+    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/files/testing.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -165,17 +175,67 @@ void UserClass::Write_users()
             //qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                     <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
+            ofstream outFile_log("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+            {
+            // Check if the file opened successfully
+            if (!outFile_log.is_open()) {
+                std::cerr << "Error opening file for writing!" << std::endl;
+                //return 1; // Return an error code
+            }
+            //for(const auto& it :UserClass::users){
+            if(it.user_tickets.size()!=0){
+                for(const auto& i:it.user_tickets){
+                    outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+                }
+            }
+
+            outFile_log.close();
+            }
         }
         else if(it.UserSub.type_of_sub==pub){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                 <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
 
+             ofstream outFile_log("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+
+            {
+                // Check if the file opened successfully
+                if (!outFile_log.is_open()) {
+                    std::cerr << "Error opening file for writing!" << std::endl;
+                    //return 1; // Return an error code
+                }
+                //for(const auto& it :UserClass::users){
+                if(it.user_tickets.size()!=0){
+                    for(const auto& i:it.user_tickets){
+                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+                    }
+                }
+
+                outFile_log.close();
+            }
+
+
         }
         else{
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.wallet<<endl;
+            ofstream outFile_log("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+            {
+                // Check if the file opened successfully
+                if (!outFile_log.is_open()) {
+                    std::cerr << "Error opening file for writing!" << std::endl;
+                    //return 1; // Return an error code
+                }
+                //for(const auto& it :UserClass::users){
+                if(it.user_tickets.size()!=0){
+                    for(const auto& i:it.user_tickets){
+                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+                    }
+                }
 
+                outFile_log.close();
+            }
         }
     }
     outFile.close();
@@ -183,7 +243,7 @@ void UserClass::Write_users()
 
 void UserClass::Write_users_Signed()
 {
-    ofstream outFile("C:/Users/user/Downloads/testing_signed.txt");
+    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/files/testing_signed.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -219,7 +279,7 @@ void UserClass::Write_users_Signed()
 
  void UserClass::Read_File()
 {
-    ifstream file("C:/Users/user/Downloads/testing.txt");
+    ifstream file("E:/All_user_final/Metro-Mate-DS/img/files/testing.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -287,6 +347,39 @@ void UserClass::Write_users_Signed()
 
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
             //qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
+            {
+                ifstream file_tickets ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+                if (!file_tickets.is_open()){
+                    qDebug()<<"error the file is open";
+                }
+
+                string line_ti;
+                while (getline(file_tickets, line_ti)) {
+                    stringstream ss(line_ti);
+                    string Username,cost,start_str,end_srt;
+                    getline(ss, Username, ',');
+                    getline(ss, cost, ',');
+                    getline(ss, start_str, ',');
+                    getline(ss, end_srt, ',');
+                    QString qusername = QString::fromStdString(Username);
+                    QString qstart = QString::fromStdString(start_str);
+                    QString qend = QString::fromStdString(end_srt);
+                    float cast_f = std::stof(cost);
+                    //for(auto& it:UserClass::users){
+
+                    if(user.Username==qusername){
+                        user.user_tickets.push_back(UserTicket(cast_f,qstart,qend));
+
+                        // break;
+                    }
+                    else
+                        break;
+
+
+
+                }
+                file_tickets.close();
+            }
             users.push_back(user);
 
         }
@@ -329,6 +422,40 @@ void UserClass::Write_users_Signed()
             s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
             //qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
+            {
+                ifstream file_tickets ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+                if (!file_tickets.is_open()){
+                    qDebug()<<"error the file is open";
+                }
+
+                string line_ti;
+                while (getline(file_tickets, line_ti)) {
+                    stringstream ss(line_ti);
+                    string Username,cost,start_str,end_srt;
+                    getline(ss, Username, ',');
+                    getline(ss, cost, ',');
+                    getline(ss, start_str, ',');
+                    getline(ss, end_srt, ',');
+                    QString qusername = QString::fromStdString(Username);
+                    QString qstart = QString::fromStdString(start_str);
+                    QString qend = QString::fromStdString(end_srt);
+                    float cast_f = std::stof(cost);
+                    //for(auto& it:UserClass::users){
+
+                    if(user2.Username==qusername){
+                        user2.user_tickets.push_back(UserTicket(cast_f,qstart,qend));
+
+                        // break;
+                    }
+                    else
+                        break;
+
+
+
+                }
+                file_tickets.close();
+            }
+
             users.push_back(user2);
         }
         else{
@@ -345,6 +472,39 @@ void UserClass::Write_users_Signed()
             int mouny = stoi(mouny_str);
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
+            {
+                ifstream file_tickets ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+                if (!file_tickets.is_open()){
+                    qDebug()<<"error the file is open";
+                }
+
+                string line_ti;
+                while (getline(file_tickets, line_ti)) {
+                    stringstream ss(line_ti);
+                    string Username,cost,start_str,end_srt;
+                    getline(ss, Username, ',');
+                    getline(ss, cost, ',');
+                    getline(ss, start_str, ',');
+                    getline(ss, end_srt, ',');
+                    QString qusername = QString::fromStdString(Username);
+                    QString qstart = QString::fromStdString(start_str);
+                    QString qend = QString::fromStdString(end_srt);
+                    float cast_f = std::stof(cost);
+                    //for(auto& it:UserClass::users){
+
+                    if(user3.Username==qusername){
+                        user3.user_tickets.push_back(UserTicket(cast_f,qstart,qend));
+
+                        // break;
+                    }
+                    else
+                        break;
+
+
+
+                }
+                file_tickets.close();
+            }
             users.push_back(user3);
 
         }

@@ -16,6 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextBrowser>
 
 QT_BEGIN_NAMESPACE
 
@@ -42,16 +43,15 @@ public:
     QLabel *userdata;
     QLabel *label_15;
     QLineEdit *lineEdit;
-    QLabel *label_8;
-    QLabel *label_5;
-    QLabel *label_6;
-    QLabel *label_7;
+    QTextBrowser *textBrowser;
+    QLabel *label;
+    QPushButton *pushButton_10;
 
     void setupUi(QDialog *HistoryPage)
     {
         if (HistoryPage->objectName().isEmpty())
             HistoryPage->setObjectName("HistoryPage");
-        HistoryPage->resize(1200, 700);
+        HistoryPage->resize(1201, 701);
         HistoryPage->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;"));
         groupBox = new QGroupBox(HistoryPage);
         groupBox->setObjectName("groupBox");
@@ -122,7 +122,7 @@ public:
         username->setFont(font);
         userpic = new QLabel(groupBox);
         userpic->setObjectName("userpic");
-        userpic->setGeometry(QRect(150, 50, 151, 141));
+        userpic->setGeometry(QRect(160, 60, 151, 141));
         userpic->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
         label_16 = new QLabel(groupBox);
@@ -154,22 +154,25 @@ public:
         lineEdit->setObjectName("lineEdit");
         lineEdit->setGeometry(QRect(450, 0, 751, 701));
         lineEdit->setReadOnly(true);
-        label_8 = new QLabel(HistoryPage);
-        label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(700, 40, 101, 31));
-        label_8->setFont(font);
-        label_5 = new QLabel(HistoryPage);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(510, 40, 141, 31));
-        label_5->setFont(font);
-        label_6 = new QLabel(HistoryPage);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(1000, 40, 101, 31));
-        label_6->setFont(font);
-        label_7 = new QLabel(HistoryPage);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(840, 40, 101, 31));
-        label_7->setFont(font);
+        textBrowser = new QTextBrowser(HistoryPage);
+        textBrowser->setObjectName("textBrowser");
+        textBrowser->setGeometry(QRect(550, 80, 571, 361));
+        textBrowser->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 50px;\n"
+""));
+        label = new QLabel(HistoryPage);
+        label->setObjectName("label");
+        label->setGeometry(QRect(720, 20, 291, 41));
+        QFont font3;
+        font3.setPointSize(20);
+        label->setFont(font3);
+        pushButton_10 = new QPushButton(HistoryPage);
+        pushButton_10->setObjectName("pushButton_10");
+        pushButton_10->setGeometry(QRect(530, 520, 571, 61));
+        pushButton_10->setFont(font2);
+        pushButton_10->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
 
         retranslateUi(HistoryPage);
 
@@ -198,11 +201,9 @@ public:
         label_13->setText(QString());
         userdata->setText(QString());
         label_15->setText(QCoreApplication::translate("HistoryPage", "History", nullptr));
-        lineEdit->setText(QCoreApplication::translate("HistoryPage", "Hi ana marvel ", nullptr));
-        label_8->setText(QCoreApplication::translate("HistoryPage", "End To", nullptr));
-        label_5->setText(QCoreApplication::translate("HistoryPage", "Start From", nullptr));
-        label_6->setText(QCoreApplication::translate("HistoryPage", "Cost", nullptr));
-        label_7->setText(QCoreApplication::translate("HistoryPage", "Date", nullptr));
+        lineEdit->setText(QString());
+        label->setText(QCoreApplication::translate("HistoryPage", "RIDES", nullptr));
+        pushButton_10->setText(QCoreApplication::translate("HistoryPage", "click me :)", nullptr));
     } // retranslateUi
 
 };

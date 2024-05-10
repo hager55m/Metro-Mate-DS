@@ -71,3 +71,4 @@ void MainPage::on_pushButton_6_clicked() // search
     emit SwitchToSearch();
 }
 
+

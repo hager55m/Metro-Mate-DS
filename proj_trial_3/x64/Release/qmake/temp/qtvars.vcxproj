@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Temp\u1o2h3hy.mjr;C:\Qt\6.6.3\msvc2019_64\include;C:\Qt\6.6.3\msvc2019_64\include\QtWidgets;C:\Qt\6.6.3\msvc2019_64\include\QtGui;C:\Qt\6.6.3\msvc2019_64\include\QtCore;C:\Temp\u1o2h3hy.mjr;/include;C:\Qt\6.6.3\msvc2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Hager1\AppData\Local\Temp\uoyzielm.rlu;C:\Qt\6.6.3\msvc2019_64\include;C:\Qt\6.6.3\msvc2019_64\include\QtWidgets;C:\Qt\6.6.3\msvc2019_64\include\QtGui;C:\Qt\6.6.3\msvc2019_64\include\QtCore;C:\Users\Hager1\AppData\Local\Temp\uoyzielm.rlu;/include;C:\Qt\6.6.3\msvc2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>

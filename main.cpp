@@ -19,7 +19,7 @@
 #include"admin.h"
 //#include"addsub.h"
 //#include "removesub.h"
-//#include "ticket.h"
+#include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
 #include <QApplication>
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     //UserClass::users.push_back(UserClass("hagora.com@gmail","hagora","1010",User_subscribtion(student,5,"3atba","ain shams"),000,300));
     //UserClass::users.push_back(UserClass("hanan.com@gmail","hanan","2000",User_subscribtion(wallet,300),147,100));
     UserClass::Read_File();
-    UserTicket::Read_History();
+    //UserTicket::Read_History();
     UserClass::Read_User_Signed();
     Station::Read_Staion();
     QApplication a(argc, argv);
@@ -316,9 +316,12 @@ int main(int argc, char *argv[])
     });
 
     QObject::connect(&mp, &MainPage::SwitchToUser, [&](){
+
         ud.show();
+        ud.dispaly_data();
         mp.hide();
     });
+
 
     QObject::connect(&mp, &MainPage::SwitchToSearch, [&](){
         sh.show();
@@ -578,12 +581,14 @@ int main(int argc, char *argv[])
 
     // user data page
     QObject::connect(&ud, &UserData::SwitchToHome, [&](){
+       // qDebug() << UserClass::thisuser.Username;
         mp.show();
         ud.hide();
     });
 
     QObject::connect(&ud, &UserData::SwitchToHistory, [&](){
         hs.show();
+        hs.display_history();
         ud.hide();
     });
 
@@ -592,11 +597,15 @@ int main(int argc, char *argv[])
         ud.hide();
     });
 
+
     // history page
     QObject::connect(&hs, &HistoryPage::SwitchToLogin, [&](){
         lp.show();
         hs.hide();
     });
+    QObject::connect(&hs, &HistoryPage::SwitchTohappy, [&]() {
+        
+        });
 
     QObject::connect(&hs, &HistoryPage::SwitchToHome, [&]() {
         mp.show();
@@ -617,7 +626,7 @@ void Write_all(){
 
     UserClass::Write_users();
     UserClass::Write_users_Signed();
-    Station::Write_Staion();
+   // Station::Write_Staion();
     UserTicket::Write_History();
 
 }

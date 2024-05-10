@@ -14,12 +14,14 @@ class UserData : public QDialog
 public:
     explicit UserData(QWidget *parent = nullptr);
     ~UserData();
+    void dispaly_data();
 
 signals:
     void SwitchToHome();
     void SwitchToHistory();
     void SwitchToLogin();
     void SwitchToSubMange();
+    void SwitchTodisply();
 
 private slots:
     void on_pushButton_7_clicked();
