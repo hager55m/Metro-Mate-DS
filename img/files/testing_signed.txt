@@ -1,3 +1,1 @@
 example1@gmail.com,User1,1234,student,5678,500,2,London,UK,1,5,6,9,3,2024
-sample2@yahoo.com,User2,password123,pub,9876,300,3,0,New York,USA,1,5,6,9,4,2024
-test3@hotmail.com,User3,pass456,wallet,5432,200,100

@@ -55,13 +55,17 @@ void HistoryPage::display_history()
     qDebug()<<"the log in user "<< UserClass::thisuser.Username;
 
     for (const auto& it : UserClass::thisuser.user_tickets) {
+
+        QString dateString = QString::number(it.date.day) + "/" +
+                             QString::number(it.date.month) + "/" +
+                             QString::number(it.date.year);
+
+        ui->textBrowser->insertPlainText("date of ticket "+QString::number(i)+" is : "+dateString+"\n");
         ui->textBrowser->insertPlainText("start staion of ticket "+QString::number(i)+" is : "+it.Start_station+"\n");
         ui->textBrowser->insertPlainText("end staion of ticket  "+QString::number(i)+" is : "+it.End_station+"\n");
         QString costString = QString::number(it.Cost);
         ui->textBrowser->insertPlainText("the cost of the ticker "+QString::number(i)+" is : "+costString+"\n");
-        ui->textBrowser->insertPlainText("\n"); // Insert a newline after the cost
-        //QString costString = QString::(it.date);
-        //ui->textBrowser->insertPlainText(it.date);
+        ui->textBrowser->insertPlainText("\n");
         ++i;
     }
     }

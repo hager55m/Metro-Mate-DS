@@ -161,7 +161,7 @@ void UserClass::Read_User_Signed(){
 
 void UserClass::Write_users()
 {
-    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/files/testing.txt");
+    ofstream outFile("E:\\data.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -185,7 +185,9 @@ void UserClass::Write_users()
             //for(const auto& it :UserClass::users){
             if(it.user_tickets.size()!=0){
                 for(const auto& i:it.user_tickets){
-                    outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+                    outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                                <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
                 }
             }
 
@@ -208,7 +210,9 @@ void UserClass::Write_users()
                 //for(const auto& it :UserClass::users){
                 if(it.user_tickets.size()!=0){
                     for(const auto& i:it.user_tickets){
-                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                                    <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
                     }
                 }
 
@@ -230,7 +234,9 @@ void UserClass::Write_users()
                 //for(const auto& it :UserClass::users){
                 if(it.user_tickets.size()!=0){
                     for(const auto& i:it.user_tickets){
-                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                                    <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
                     }
                 }
 
@@ -356,19 +362,41 @@ void UserClass::Write_users_Signed()
                 string line_ti;
                 while (getline(file_tickets, line_ti)) {
                     stringstream ss(line_ti);
-                    string Username,cost,start_str,end_srt;
+                    string Username,cost,start_str,end_srt,sac_str,min_str,hou_str,day_str,month_str,year_str;;
                     getline(ss, Username, ',');
                     getline(ss, cost, ',');
                     getline(ss, start_str, ',');
                     getline(ss, end_srt, ',');
+
+                    getline(ss, sac_str, ',');
+                    getline(ss, min_str, ',');
+                    getline(ss, hou_str, ',');
+                    getline(ss, day_str, ',');
+                    getline(ss, month_str, ',');
+                    getline(ss, year_str, ',');
                     QString qusername = QString::fromStdString(Username);
                     QString qstart = QString::fromStdString(start_str);
                     QString qend = QString::fromStdString(end_srt);
                     float cast_f = std::stof(cost);
+
+                    int sac_int = std::stoi(sac_str);
+                    int min_int = std::stoi(min_str);
+                    int hou_int = std::stoi(hou_str);
+                    int day_int = std::stoi(day_str);
+                    int month_int = std::stoi(month_str);
+                    int year_int = std::stoi(year_str);
+
+                    UserTicket t1 =UserTicket(cast_f,qstart,qend);
+                    t1.date.second=sac_int;
+                    t1.date.minute=min_int;
+                    t1.date.hour=hou_int;
+                    t1.date.day=day_int;
+                    t1.date.month=month_int;
+                    t1.date.year=year_int;
                     //for(auto& it:UserClass::users){
 
                     if(user.Username==qusername){
-                        user.user_tickets.push_back(UserTicket(cast_f,qstart,qend));
+                        user.user_tickets.push_back(t1);
 
                         // break;
                     }
@@ -431,19 +459,41 @@ void UserClass::Write_users_Signed()
                 string line_ti;
                 while (getline(file_tickets, line_ti)) {
                     stringstream ss(line_ti);
-                    string Username,cost,start_str,end_srt;
+                    string Username,cost,start_str,end_srt,sac_str,min_str,hou_str,day_str,month_str,year_str;;
                     getline(ss, Username, ',');
                     getline(ss, cost, ',');
                     getline(ss, start_str, ',');
                     getline(ss, end_srt, ',');
+
+                    getline(ss, sac_str, ',');
+                    getline(ss, min_str, ',');
+                    getline(ss, hou_str, ',');
+                    getline(ss, day_str, ',');
+                    getline(ss, month_str, ',');
+                    getline(ss, year_str, ',');
                     QString qusername = QString::fromStdString(Username);
                     QString qstart = QString::fromStdString(start_str);
                     QString qend = QString::fromStdString(end_srt);
                     float cast_f = std::stof(cost);
+
+                    int sac_int = std::stoi(sac_str);
+                    int min_int = std::stoi(min_str);
+                    int hou_int = std::stoi(hou_str);
+                    int day_int = std::stoi(day_str);
+                    int month_int = std::stoi(month_str);
+                    int year_int = std::stoi(year_str);
+
+                    UserTicket t1 =UserTicket(cast_f,qstart,qend);
+                    t1.date.second=sac_int;
+                    t1.date.minute=min_int;
+                    t1.date.hour=hou_int;
+                    t1.date.day=day_int;
+                    t1.date.month=month_int;
+                    t1.date.year=year_int;
                     //for(auto& it:UserClass::users){
 
                     if(user2.Username==qusername){
-                        user2.user_tickets.push_back(UserTicket(cast_f,qstart,qend));
+                        user2.user_tickets.push_back(t1);
 
                         // break;
                     }
@@ -481,19 +531,40 @@ void UserClass::Write_users_Signed()
                 string line_ti;
                 while (getline(file_tickets, line_ti)) {
                     stringstream ss(line_ti);
-                    string Username,cost,start_str,end_srt;
+                    string Username,cost,start_str,end_srt,sac_str,min_str,hou_str,day_str,month_str,year_str;;
                     getline(ss, Username, ',');
                     getline(ss, cost, ',');
                     getline(ss, start_str, ',');
                     getline(ss, end_srt, ',');
+
+                    getline(ss, sac_str, ',');
+                    getline(ss, min_str, ',');
+                    getline(ss, hou_str, ',');
+                    getline(ss, day_str, ',');
+                    getline(ss, month_str, ',');
+                    getline(ss, year_str, ',');
                     QString qusername = QString::fromStdString(Username);
                     QString qstart = QString::fromStdString(start_str);
                     QString qend = QString::fromStdString(end_srt);
                     float cast_f = std::stof(cost);
+
+                    int sac_int = std::stoi(sac_str);
+                    int min_int = std::stoi(min_str);
+                    int hou_int = std::stoi(hou_str);
+                    int day_int = std::stoi(day_str);
+                    int month_int = std::stoi(month_str);
+                    int year_int = std::stoi(year_str);
                     //for(auto& it:UserClass::users){
 
+                    UserTicket t1 =UserTicket(cast_f,qstart,qend);
+                    t1.date.second=sac_int;
+                    t1.date.minute=min_int;
+                    t1.date.hour=hou_int;
+                    t1.date.day=day_int;
+                    t1.date.month=month_int;
+                    t1.date.year=year_int;
                     if(user3.Username==qusername){
-                        user3.user_tickets.push_back(UserTicket(cast_f,qstart,qend));
+                        user3.user_tickets.push_back(t1);
 
                         // break;
                     }

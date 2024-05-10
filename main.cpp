@@ -279,7 +279,7 @@ int main(int argc, char *argv[])
     QObject::connect(&sp, &SignupPage::SwitchToLogin, [&](){
         lp.show();
         sp.hide();
-        ts.hide();
+        //ts.hide();
     });
 
     QObject::connect(&sp, &SignupPage::SwitchTotypes_sub, [&](){
@@ -367,6 +367,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(&tp, &TicketPage::SwitchToUser, [&](){
         ud.show();
+        ud.dispaly_data();
         tp.hide();
     });
 
@@ -408,6 +409,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(&s, &Subscription::SwitchToUser, [&](){
         ud.show();
+        ud.dispaly_data();
         s.hide();
     });
 
@@ -444,6 +446,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(&rs, &RenewSub::SwitchToUser, [&]() {
         ud.show();
+        ud.dispaly_data();
         rs.hide();
     });
 

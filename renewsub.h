@@ -13,6 +13,7 @@ class RenewSub : public QDialog
 
 public:
     explicit RenewSub(QWidget *parent = nullptr);
+     static QList <QString> stations;
     ~RenewSub();
 
 signals:
