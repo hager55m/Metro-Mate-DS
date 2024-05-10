@@ -22,12 +22,12 @@ int Station::getLines()
 
     return lines;
 }
-
+/*
 void Station::setName(std::string Nname)
 {
 	name = Nname;
 }
-
+*/
 std::string Station::getName()const
 {
     return name;

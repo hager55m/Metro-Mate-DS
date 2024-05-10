@@ -18,9 +18,9 @@
 #include"admonmanagemetrooptions.h"
 #include "adminmanagemetroremovestation.h"
 #include"admin.h"
-//#include"addsub.h"
-//#include "removesub.h"
-//#include "ticket.h"
+#include"addsub.h"
+#include "removesub.h"
+#include "ticket.h"
 #include "adminstations.h"
 #include "admindatapage.h"
 
@@ -65,9 +65,9 @@ int main(int argc, char *argv[])
     AdminManageMetroAddStation adStation;
     AdminManageMetroRemoveStation adreStation;
     admin admin;
-    /*addsub addsub;
+    addsub addsub;
     removesub removesub;
-    Ticket ticket;*/
+    Ticket ticket;
     AdminStations AdminStation;
     AdminDataPage adp;
 

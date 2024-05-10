@@ -3,19 +3,12 @@
 #include<string>
 #include<QVector>
 
-static void readstations();
-
 class Station
 {
-    public:
-	std::string name;
-	int lines;
-
-
-
 public:
 	std::string name;
-	std::vector<int >lines;
+    int lines;
+    int line;
 	Station();
 	Station(std::string name, int lines);
     static QVector<Station> stations;
