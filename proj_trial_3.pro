@@ -45,10 +45,12 @@ SOURCES += \
     verfication.cpp
 
 HEADERS += \
+    AdminManageMetroOptions.h \
     Graph.h \
     Station.h \
     StationClass.h \
     addsub.h \
+    admin.cpp.autosave \
     admin.h \
     admindatapage.h \
     adminmanagemetroaddstation.h \
@@ -63,6 +65,7 @@ HEADERS += \
     manage_metro.h \
     removesub.h \
     renewsub.h \
+    resource.h \
     searchpage.h \
     signuppage.h \
     stat1month.h \
@@ -77,13 +80,16 @@ HEADERS += \
     ui_DialogButtonBottom.h \
     ui_addsub.h \
     ui_admin.h \
+    ui_admindatapage.h \
     ui_adminmanagemetroaddstation.h \
     ui_adminmanagemetrootions.h \
     ui_adminmanagemetroremovestation.h \
     ui_adminstations.h \
+    ui_admonmanagemetrooptions.h \
     ui_historypage.h \
     ui_loginpage.h \
     ui_mainpage.h \
+    ui_manage_metro.h \
     ui_removesub.h \
     ui_renewsub.h \
     ui_searchpage.h \
@@ -95,6 +101,7 @@ HEADERS += \
     ui_subscription.h \
     ui_ticket.h \
     ui_ticketpage.h \
+    ui_types_sub.h \
     ui_userdata.h \
     ui_verfication.h \
     user_subscribtion.h \
@@ -105,6 +112,7 @@ HEADERS += \
 
 
 FORMS += \
+    AdminManageMetroOptions.ui \
     DialogButtonBottom.ui \
     addsub.ui \
     admin.ui \
@@ -139,17 +147,26 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    hhhh.qrc \
+    res.qrc \
+    res.qrc \
     res.qrc
 
 DISTFILES += \
     img/files/Sub.txt \
     img/stations_name.txt \
     proj_trial_3 - Backup.vcxproj.user \
+    proj_trial_3 - Backup.vcxproj.user \
+    proj_trial_3 - Backup.vcxproj.user \
     proj_trial_3.pro.user \
     proj_trial_3.pro.user.271141c \
+    proj_trial_3.pro.user.27d3f99 \
     proj_trial_3.pro.user.2ff5dd2 \
     proj_trial_3.pro.user.4474141 \
+    proj_trial_3.pro.user.5c1fe26 \
     proj_trial_3.pro.user.b9763a2 \
+    proj_trial_3.qtvscr \
+    proj_trial_3.rc \
     proj_trial_3.sln \
     proj_trial_3.vcxproj \
     proj_trial_3.vcxproj.filters \

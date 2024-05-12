@@ -1,4 +1,5 @@
 #include "ticketpage.h"
+#include "searchpage.h"
 #include "ui_ticketpage.h"
 #include "datetime.h"
 #include "userclass.h"
@@ -6,6 +7,7 @@
 #include <QTextStream>
 #include "userticket.h"
 #include "Station.h"
+
 //QList <QString> TicketPage::stations;
 
 UserTicket ticket= UserTicket();
@@ -62,13 +64,18 @@ TicketPage::TicketPage(QWidget *parent)
     }
     file.close();
 */
-    for (const auto& st : Station::stations) {
-        ui->start->addItem(QString::fromStdString(st.getName()));
-        ui->end->addItem(QString::fromStdString(st.getName()));
+    if(from_search){
+        ui->start->setCurrentText(UserTicket::starting);
+        ui->end->setCurrentText(UserTicket::ending);
     }
-    ui->start->setCurrentText(QString::fromStdString(Station::stations.front().getName()));
-    ui->end->setCurrentText(QString::fromStdString(Station::stations.front().getName()));
-
+    else{
+        for (const auto& st : Station::stations) {
+            ui->start->addItem(QString::fromStdString(st.getName()));
+            ui->end->addItem(QString::fromStdString(st.getName()));
+        }
+        ui->start->setCurrentText(QString::fromStdString(Station::stations.front().getName()));
+        ui->end->setCurrentText(QString::fromStdString(Station::stations.front().getName()));
+    }
 }
 
 TicketPage::~TicketPage()
@@ -145,5 +152,11 @@ void TicketPage::on_end_currentTextChanged(const QString &arg1)
 {
    ticket.End_station= ui->end->currentText();
     //qDebug()<<"end station"<<ui->end->currentText();
+}
+
+
+void TicketPage::on_pushButton_3_clicked()
+{
+    ui->total->setText(QString::number(UserClass::Calc_cost(ui->start->currentText(), ui->end->currentText())));
 }
 

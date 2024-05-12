@@ -7,7 +7,8 @@
 
 using namespace std;
 UserTicket::UserTicket() {}
-
+QString UserTicket::starting;
+QString UserTicket::ending;
 UserTicket::UserTicket( float c, QString start, QString end)
 {
     date=DateTime();
@@ -18,7 +19,7 @@ UserTicket::UserTicket( float c, QString start, QString end)
 
 void UserTicket::Read_History()
 {
-    ifstream file ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+    ifstream file ("C:/Users/user/Downloads/data_History.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -51,7 +52,7 @@ void UserTicket::Read_History()
 
 void UserTicket::Write_History()
 {
-    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+    ofstream outFile("C:/Users/user/Downloads/data_History.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {

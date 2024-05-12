@@ -23,7 +23,7 @@ public:
     static vector<vector<string>> AllPossiblePaths(Station starPoint, Station endPoint, map<Station, bool>& visited, vector<string>& path);
     void printGraph();
     static vector<vector<string>> allPossiblePathsFunctionality(string starPoint, string endPoint); // Modify function signature
-    std::stack<Station> ShortestPathBFS(Station start, Station end);
+    static std::stack<Station> ShortestPathBFS(Station start, Station end);
     bool isInSubscriptionArea(string startSub, string endSub, Station startRide, Station endRide);
 
 };

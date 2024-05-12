@@ -5,7 +5,7 @@
 #include <QString>
 #include <userclass.h>
 
-
+static bool from_search;
 
 SignupPage::SignupPage(QWidget *parent)
     : QDialog(parent)

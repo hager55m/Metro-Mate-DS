@@ -30,7 +30,7 @@ public:
     static User_subscribtion thissub;
     static void set_this_user(UserClass);
     QList<UserTicket> user_tickets;
-    float Calc_cost(QString,QString);
+    static float Calc_cost(QString,QString);
     bool Check_No_Of_Rides_left();
     bool  Check_Of_Duration_Of_Subscription();
    int Add_Ticket(float c,UserTicket t );

@@ -1,5 +1,8 @@
 #include "userclass.h"
+#include "Station.h"
 #include "ticketpage.h"
+#include <stack>
+#include <Graph.h>
 
 QVector<UserClass> UserClass::users;
 QVector<UserClass> UserClass::users_sign_up;
@@ -39,7 +42,7 @@ void UserClass::set_this_user(UserClass s1)
     thisuser=s1;
 }
 void UserClass::Read_User_Signed(){
-    ifstream file("E:/All_user_final/Metro-Mate-DS/img/files/testing_signed.txt");
+    ifstream file("C:/Users/user/Downloads/testing_signed.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -161,7 +164,7 @@ void UserClass::Read_User_Signed(){
 
 void UserClass::Write_users()
 {
-    ofstream outFile("E:\\data.txt");
+    ofstream outFile("C:/Users/user/Downloadsdata.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -175,7 +178,7 @@ void UserClass::Write_users()
             //qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                     <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
-            ofstream outFile_log("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+            ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
             {
             // Check if the file opened successfully
             if (!outFile_log.is_open()) {
@@ -199,7 +202,7 @@ void UserClass::Write_users()
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                 <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
 
-             ofstream outFile_log("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+             ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
 
             {
                 // Check if the file opened successfully
@@ -224,7 +227,7 @@ void UserClass::Write_users()
         else{
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.wallet<<endl;
-            ofstream outFile_log("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+            ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
             {
                 // Check if the file opened successfully
                 if (!outFile_log.is_open()) {
@@ -249,7 +252,7 @@ void UserClass::Write_users()
 
 void UserClass::Write_users_Signed()
 {
-    ofstream outFile("E:/All_user_final/Metro-Mate-DS/img/files/testing_signed.txt");
+    ofstream outFile("C:/Users/user/Downloads/testing_signed.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -285,7 +288,7 @@ void UserClass::Write_users_Signed()
 
  void UserClass::Read_File()
 {
-    ifstream file("E:/All_user_final/Metro-Mate-DS/img/files/testing.txt");
+    ifstream file("C:/Users/user/Downloads/testing.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -354,7 +357,7 @@ void UserClass::Write_users_Signed()
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
             //qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
             {
-                ifstream file_tickets ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
                 if (!file_tickets.is_open()){
                     qDebug()<<"error the file is open";
                 }
@@ -451,7 +454,7 @@ void UserClass::Write_users_Signed()
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
             //qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
             {
-                ifstream file_tickets ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
                 if (!file_tickets.is_open()){
                     qDebug()<<"error the file is open";
                 }
@@ -523,7 +526,7 @@ void UserClass::Write_users_Signed()
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
             {
-                ifstream file_tickets ("E:/All_user_final/Metro-Mate-DS/img/files/data_History.txt");
+                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
                 if (!file_tickets.is_open()){
                     qDebug()<<"error the file is open";
                 }
@@ -584,8 +587,25 @@ void UserClass::Write_users_Signed()
 }
 
 
-float UserClass:: Calc_cost(QString,QString){
-    return 11;
+float UserClass:: Calc_cost(QString st, QString en){
+    Station starter;
+    Station ender;
+
+    for (int i = 0; i < Station::stations.size(); ++i) {
+        if (st == QString::fromStdString(Station::stations[i].name)){
+            starter = Station::stations[i];
+        }
+        if (en == QString::fromStdString(Station::stations[i].name)){
+            ender = Station::stations[i];
+        }
+    }
+    stack <Station> bfs = Graph::ShortestPathBFS(starter, ender);
+    if (bfs.size() >= 1 && bfs.size() <= 9) {return 6;}
+    else if (bfs.size() >= 10 && bfs.size() <= 16) {return 8;}
+    else if (bfs.size() >= 17 && bfs.size() <= 23) {return 12;}
+    else if (bfs.size() <= 23) {return 15;}
+    else {return 0;}
+    return 0;
 }
 
 bool  UserClass:: Check_No_Of_Rides_left(){

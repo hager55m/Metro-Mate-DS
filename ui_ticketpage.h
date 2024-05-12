@@ -57,10 +57,12 @@ public:
     QLabel *label_2;
     QLabel *receipt;
     QLabel *date;
-    QLabel *total;
     QComboBox *start;
     QComboBox *end;
     QLineEdit *code;
+    QPushButton *pushButton_3;
+    QLabel *total_2;
+    QLabel *total;
 
     void setupUi(QDialog *TicketPage)
     {
@@ -228,11 +230,6 @@ public:
         font4.setPointSize(18);
         date->setFont(font4);
         date->setStyleSheet(QString::fromUtf8("background-color: white;"));
-        total = new QLabel(TicketPage);
-        total->setObjectName("total");
-        total->setGeometry(QRect(920, 390, 71, 21));
-        total->setFont(font4);
-        total->setStyleSheet(QString::fromUtf8("background-color: white;"));
         start = new QComboBox(TicketPage);
         start->setObjectName("start");
         start->setGeometry(QRect(768, 240, 231, 31));
@@ -249,6 +246,23 @@ public:
         code->setFont(font1);
         code->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 5;"));
+        pushButton_3 = new QPushButton(TicketPage);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setGeometry(QRect(600, 380, 181, 41));
+        pushButton_3->setFont(font1);
+        pushButton_3->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        total_2 = new QLabel(TicketPage);
+        total_2->setObjectName("total_2");
+        total_2->setGeometry(QRect(960, 390, 31, 21));
+        total_2->setFont(font4);
+        total_2->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        total = new QLabel(TicketPage);
+        total->setObjectName("total");
+        total->setGeometry(QRect(920, 390, 41, 21));
+        total->setFont(font4);
+        total->setStyleSheet(QString::fromUtf8("background-color: white;"));
 
         retranslateUi(TicketPage);
 
@@ -290,7 +304,9 @@ public:
         label_2->setText(QCoreApplication::translate("TicketPage", "Home Page", nullptr));
         receipt->setText(QString());
         date->setText(QCoreApplication::translate("TicketPage", "Date and time", nullptr));
-        total->setText(QCoreApplication::translate("TicketPage", "total $", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("TicketPage", "Calculate Total", nullptr));
+        total_2->setText(QCoreApplication::translate("TicketPage", "E\302\243", nullptr));
+        total->setText(QCoreApplication::translate("TicketPage", "total", nullptr));
     } // retranslateUi
 
 };
