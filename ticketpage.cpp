@@ -2,6 +2,7 @@
 #include "ui_ticketpage.h"
 #include "datetime.h"
 #include "userclass.h"
+#include "subscription.h"
 #include <QFile>
 #include <QTextStream>
 #include "userticket.h"

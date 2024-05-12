@@ -378,6 +378,8 @@ int main(int argc, char *argv[])
     });
 
     // subscription page
+
+
     QObject::connect(&s, &Subscription::SwitchToTicket, [&](){
         tp.show();
         s.hide();

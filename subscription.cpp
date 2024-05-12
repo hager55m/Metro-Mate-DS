@@ -1,6 +1,10 @@
 #include "subscription.h"
 #include "ui_subscription.h"
+#include "userclass.h"
+#include "QString"
+#include "QDebug"
 #include <QFile>
+#include <QMessageBox>
 #include <QTextStream>
 
 Subscription::Subscription(QWidget *parent)
@@ -10,7 +14,6 @@ Subscription::Subscription(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Metro");
     setWindowIcon(QIcon(":/images/img/download.png"));
-
 
     // adding pics
     QPixmap i(":/images/img/map-point.png");
@@ -34,7 +37,12 @@ Subscription::Subscription(QWidget *parent)
     QPixmap m(":/images/img/download.png");
     ui->metro->setPixmap(m.scaled(ui->metro->width(), ui->metro->height(), Qt::KeepAspectRatio));
 
-    
+
+   // ui->balance->setText(QString::number(UserClass::thisuser.balance));
+   // ui->type->settext(QString::number(UserClass::thisuser.UserSub.type_of_sub));
+    //QString t =QString::number(UserClass::thisuser.UserSub.Start_of_sub.day)+"/"+;
+   // ui->startstation->setText(UserClass::thisuser.UserSub.sub_start_station);
+
 }
 
 Subscription::~Subscription()
@@ -81,4 +89,31 @@ void Subscription::on_pushButton_7_clicked() // search
     emit SwitchToSearch();
 }
 
+void Subscription::on_renew_clicked()
+{
+    if (UserClass::thisuser.balance == 500)
+    {
+
+        QMessageBox::information(this, "Renew", "Can't Renew Check Your Balance");
+        emit SwitchToUser();
+
+    }
+
+    else
+    {
+        QMessageBox::information(this, "Renew", "Your Subscription is Renew");
+
+
+    }
+}
+
+void Subscription::on_display_clicked()
+{
+    ui->balance->setText(QString::number(UserClass::thisuser.balance));
+    ui->type->setText(QString::number(UserClass::thisuser.UserSub.type_of_sub));
+    ui->startstation->setText(UserClass::thisuser.UserSub.sub_start_station);
+    ui->endstation->setText(UserClass::thisuser.UserSub.sub_end_station);
+    QString t =QString::number(UserClass::thisuser.UserSub.Start_of_sub.day)+"/"+QString::number(UserClass::thisuser.UserSub.Start_of_sub.month)+"/"+QString::number(UserClass::thisuser.UserSub.Start_of_sub.year);
+    ui->startdate->setText(t);
+}
 

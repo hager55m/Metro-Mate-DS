@@ -39,7 +39,7 @@ void UserClass::set_this_user(UserClass s1)
     thisuser=s1;
 }
 void UserClass::Read_User_Signed(){
-    ifstream file("C:/Users/user/Downloads/testing_signed.txt");
+    ifstream file("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing_signed.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -151,7 +151,7 @@ void UserClass::Read_User_Signed(){
 
 void UserClass::Write_users()
 {
-    ofstream outFile("C:/Users/user/Downloads/testing.txt");
+    ofstream outFile("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -183,7 +183,7 @@ void UserClass::Write_users()
 
 void UserClass::Write_users_Signed()
 {
-    ofstream outFile("C:/Users/user/Downloads/testing_signed.txt");
+    ofstream outFile("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing_signed.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -219,7 +219,7 @@ void UserClass::Write_users_Signed()
 
  void UserClass::Read_File()
 {
-    ifstream file("C:/Users/user/Downloads/testing.txt");
+    ifstream file("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }

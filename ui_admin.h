@@ -48,6 +48,7 @@ public:
     QLabel *label_4;
     QGroupBox *groupBox_4;
     QPushButton *userhistorybutton;
+    QLabel *label_6;
 
     void setupUi(QDockWidget *admin)
     {
@@ -177,6 +178,9 @@ public:
         userhistorybutton = new QPushButton(groupBox_4);
         userhistorybutton->setObjectName("userhistorybutton");
         userhistorybutton->setGeometry(QRect(130, 10, 461, 211));
+        label_6 = new QLabel(dockWidgetContents);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(560, 20, 111, 41));
         admin->setWidget(dockWidgetContents);
 
         retranslateUi(admin);
@@ -212,6 +216,7 @@ public:
         label_4->setText(QCoreApplication::translate("admin", "User Accounts", nullptr));
         groupBox_4->setTitle(QString());
         userhistorybutton->setText(QString());
+        label_6->setText(QCoreApplication::translate("admin", "hallo allllll", nullptr));
     } // retranslateUi
 
 };

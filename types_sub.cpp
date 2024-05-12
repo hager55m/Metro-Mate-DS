@@ -19,10 +19,7 @@ types_sub::types_sub(QWidget *parent)
     setWindowIcon(QIcon(":/images/img/download.png"));
     
     //read from file
-    /*ui->start->addItem("Start");
-    ui->end->addItem("end");
-    ui->start->addItem("marvel");
-    ui->end->addItem("marvel");*/
+
     //adding stations to combomoxes
     QFile file(":/images/img/stations_name.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {

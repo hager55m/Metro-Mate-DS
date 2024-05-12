@@ -1,5 +1,8 @@
 #include "renewsub.h"
 #include "ui_renewsub.h"
+#include "user_subscribtion.h"
+#include "userclass.h""
+#include "QDebug"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
@@ -40,6 +43,7 @@ RenewSub::RenewSub(QWidget* parent)
 
     QPixmap m(":/images/img/download.png");
     ui->metro->setPixmap(m.scaled(ui->metro->width(), ui->metro->height(), Qt::KeepAspectRatio));
+
 }
     
 RenewSub::~RenewSub()
@@ -63,6 +67,9 @@ void RenewSub::on_change_clicked() // change
     {
         if (ui->start->currentIndex() != 0 && ui->end->currentIndex() != 0 && ui->month3->isChecked() && ui->money->text().isEmpty())
         {
+            User_subscribtion stud = User_subscribtion(student,0,ui->start->currentText(),ui->end->currentText());
+            UserClass::thisuser.UserSub=stud;
+            qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
             emit SwitchToSub();
         }
         else
@@ -75,8 +82,18 @@ void RenewSub::on_change_clicked() // change
     {
              if (ui->start->currentIndex() != 0 && ui->end->currentIndex() != 0 && ui->money->text().isEmpty())
              {
-                 if (ui->month1->isChecked() || ui->year->isChecked())
+                if (ui->month1->isChecked())
                  {
+                     User_subscribtion pub_month = User_subscribtion(pub,0,1,ui->start->currentText(),ui->end->currentText());
+                    UserClass::thisuser.UserSub=pub_month;
+                    qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
+                    emit SwitchToSub();
+                 }
+                 else if( ui->year->isChecked())
+                 {
+                    User_subscribtion pub_year = User_subscribtion(pub,0,0,ui->start->currentText(),ui->end->currentText());
+                     UserClass::thisuser.UserSub=pub_year;
+                     qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
                      emit SwitchToSub();
                  }
                  else
@@ -99,11 +116,23 @@ void RenewSub::on_change_clicked() // change
 
             if (ui->money->text() == "50" || ui->money->text() == "60" || ui->money->text() == "70" || ui->money->text() == "80" || ui->money->text() == "90")
             {
+
+                QString str = ui->money->text();
+                int mon = str.toInt();
+                User_subscribtion Wallet = User_subscribtion(wallet,mon);
+                UserClass::thisuser.UserSub=Wallet;
+                qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
                 emit SwitchToSub();
             }
 
             else if (ui->money->text() <= "400" && rem % 10 == 0)
             {
+
+                QString str = ui->money->text();
+                int mon = str.toInt();
+                User_subscribtion Wallet = User_subscribtion(wallet,mon);
+                UserClass::thisuser.UserSub=Wallet;
+                qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
                 emit SwitchToSub();
             }
             else

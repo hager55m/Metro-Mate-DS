@@ -11,6 +11,7 @@ class Subscription : public QDialog
 {
     Q_OBJECT
 
+
 public:
     explicit Subscription(QWidget *parent = nullptr);
     ~Subscription();
@@ -23,6 +24,7 @@ signals:
     void SwitchToLogin();
     void SwitchToRenew();
     void SwitchToSearch();
+
     
 
 private slots:
@@ -39,6 +41,11 @@ private slots:
     void on_pushButton_7_clicked();
 
     void on_change_clicked();
+
+    void on_renew_clicked();
+
+
+    void on_display_clicked();
 
 private:
     Ui::Subscription *ui;

@@ -44,11 +44,15 @@ void SearchPage::on_buy_2_clicked()
     bool found = false;
     for (int i = 0; i < Station::stations.size(); i++) {
         Graph::addStation(Station::stations[i].getName(), i);
+        qDebug("addstation loop");
     }
     for(int i = 0; i < Station::stations.size(); i++) {
+        qDebug("loop 2");
         if(ui->start->currentText() == QString::fromStdString(Station::stations[i].getName())) {
             for(int j = 0; j < Station::stations.size(); j++) {
+                qDebug("loop 3");
                 if(ui->end->currentText() == QString::fromStdString(Station::stations[j].getName())) {
+                    qDebug("if");
                     bfs = Graph::allPossiblePathsFunctionality(Station::stations[i].getName(), Station::stations[j].getName());
                    QString sz = QString::number(bfs.size());
                     ui->data->insertPlainText("Paths: " + sz);

@@ -18,6 +18,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
+
 QT_BEGIN_NAMESPACE
 
 class Ui_Subscription
@@ -69,6 +70,9 @@ public:
     QPushButton *renew;
     QLabel *label_17;
     QLineEdit *balance;
+    QLabel *label_18;
+    QLineEdit *type;
+    QPushButton *display;
 
     void setupUi(QDialog *Subscription)
     {
@@ -237,30 +241,30 @@ public:
         label_19->setFont(font4);
         label_11 = new QLabel(Subscription);
         label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(530, 140, 211, 51));
+        label_11->setGeometry(QRect(520, 230, 211, 51));
         QFont font5;
         font5.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font5.setPointSize(30);
         label_11->setFont(font5);
         label_13 = new QLabel(Subscription);
         label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(530, 220, 211, 51));
+        label_13->setGeometry(QRect(520, 300, 211, 51));
         label_13->setFont(font5);
         label_14 = new QLabel(Subscription);
         label_14->setObjectName("label_14");
-        label_14->setGeometry(QRect(530, 300, 251, 51));
+        label_14->setGeometry(QRect(520, 370, 251, 51));
         label_14->setFont(font5);
         label_15 = new QLabel(Subscription);
         label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(530, 380, 231, 51));
+        label_15->setGeometry(QRect(520, 440, 231, 51));
         label_15->setFont(font5);
         label_16 = new QLabel(Subscription);
         label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(530, 460, 291, 51));
+        label_16->setGeometry(QRect(520, 500, 291, 51));
         label_16->setFont(font5);
         startdate = new QLineEdit(Subscription);
         startdate->setObjectName("startdate");
-        startdate->setGeometry(QRect(870, 150, 291, 41));
+        startdate->setGeometry(QRect(870, 250, 291, 41));
         QFont font6;
         font6.setPointSize(18);
         startdate->setFont(font6);
@@ -270,7 +274,7 @@ public:
         startdate->setReadOnly(true);
         enddate = new QLineEdit(Subscription);
         enddate->setObjectName("enddate");
-        enddate->setGeometry(QRect(870, 230, 291, 41));
+        enddate->setGeometry(QRect(870, 320, 291, 41));
         enddate->setFont(font6);
         enddate->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
@@ -278,7 +282,7 @@ public:
         enddate->setReadOnly(true);
         startstation = new QLineEdit(Subscription);
         startstation->setObjectName("startstation");
-        startstation->setGeometry(QRect(870, 310, 291, 41));
+        startstation->setGeometry(QRect(870, 390, 291, 41));
         startstation->setFont(font6);
         startstation->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
@@ -286,7 +290,7 @@ public:
         startstation->setReadOnly(true);
         endstation = new QLineEdit(Subscription);
         endstation->setObjectName("endstation");
-        endstation->setGeometry(QRect(870, 390, 291, 41));
+        endstation->setGeometry(QRect(870, 450, 291, 41));
         endstation->setFont(font6);
         endstation->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
@@ -294,7 +298,7 @@ public:
         endstation->setReadOnly(true);
         rides = new QLineEdit(Subscription);
         rides->setObjectName("rides");
-        rides->setGeometry(QRect(870, 470, 291, 41));
+        rides->setGeometry(QRect(870, 510, 291, 41));
         rides->setFont(font6);
         rides->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
@@ -302,7 +306,7 @@ public:
         rides->setReadOnly(true);
         change = new QPushButton(Subscription);
         change->setObjectName("change");
-        change->setGeometry(QRect(480, 630, 311, 51));
+        change->setGeometry(QRect(510, 640, 211, 51));
         QFont font7;
         font7.setFamilies({QString::fromUtf8("BAXAUTRIAL")});
         font7.setPointSize(26);
@@ -312,23 +316,42 @@ public:
 "color: black;"));
         renew = new QPushButton(Subscription);
         renew->setObjectName("renew");
-        renew->setGeometry(QRect(890, 630, 281, 51));
+        renew->setGeometry(QRect(970, 640, 191, 51));
         renew->setFont(font7);
         renew->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
 "border-radius: 12;\n"
 "color: black;"));
         label_17 = new QLabel(Subscription);
         label_17->setObjectName("label_17");
-        label_17->setGeometry(QRect(530, 540, 331, 51));
+        label_17->setGeometry(QRect(520, 570, 331, 51));
         label_17->setFont(font5);
         balance = new QLineEdit(Subscription);
         balance->setObjectName("balance");
-        balance->setGeometry(QRect(870, 550, 291, 41));
+        balance->setGeometry(QRect(870, 580, 291, 41));
         balance->setFont(font6);
         balance->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 12;\n"
 "color: black;"));
         balance->setReadOnly(true);
+        label_18 = new QLabel(Subscription);
+        label_18->setObjectName("label_18");
+        label_18->setGeometry(QRect(520, 160, 321, 51));
+        label_18->setFont(font7);
+        type = new QLineEdit(Subscription);
+        type->setObjectName("type");
+        type->setGeometry(QRect(870, 170, 291, 41));
+        type->setFont(font6);
+        type->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        type->setReadOnly(true);
+        display = new QPushButton(Subscription);
+        display->setObjectName("display");
+        display->setGeometry(QRect(750, 640, 191, 51));
+        display->setFont(font7);
+        display->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
 
         retranslateUi(Subscription);
 
@@ -377,6 +400,8 @@ public:
         change->setText(QCoreApplication::translate("Subscription", "Change", nullptr));
         renew->setText(QCoreApplication::translate("Subscription", "Renew", nullptr));
         label_17->setText(QCoreApplication::translate("Subscription", "Remainig Balance", nullptr));
+        label_18->setText(QCoreApplication::translate("Subscription", "Type oF Subscription", nullptr));
+        display->setText(QCoreApplication::translate("Subscription", "Display", nullptr));
     } // retranslateUi
 
 };
