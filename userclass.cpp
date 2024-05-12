@@ -1,5 +1,8 @@
 #include "userclass.h"
+#include "Station.h"
 #include "ticketpage.h"
+#include <stack>
+#include <Graph.h>
 
 QVector<UserClass> UserClass::users;
 QVector<UserClass> UserClass::users_sign_up;
@@ -94,7 +97,12 @@ void UserClass::Read_User_Signed(){
             s1.Start_of_sub.month=month_int;
             s1.Start_of_sub.year=year_int;
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
+
+
+
+
             users_sign_up.push_back(user);
+
 
 
         }
@@ -129,6 +137,9 @@ void UserClass::Read_User_Signed(){
             s2.Start_of_sub.month=month_int;
             s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
+
+
+
             users_sign_up.push_back(user2);
         }
         else{
@@ -139,6 +150,8 @@ void UserClass::Read_User_Signed(){
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
             //qDebug()<<" wallet mony"<<user3.UserSub.wallet;
+
+
             users_sign_up.push_back(user3);
 
         }
@@ -151,7 +164,7 @@ void UserClass::Read_User_Signed(){
 
 void UserClass::Write_users()
 {
-    ofstream outFile("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing.txt");
+    ofstream outFile("C:/Users/user/Downloadsdata.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -165,17 +178,73 @@ void UserClass::Write_users()
             //qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                     <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
+            ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
+            {
+            // Check if the file opened successfully
+            if (!outFile_log.is_open()) {
+                std::cerr << "Error opening file for writing!" << std::endl;
+                //return 1; // Return an error code
+            }
+            //for(const auto& it :UserClass::users){
+            if(it.user_tickets.size()!=0){
+                for(const auto& i:it.user_tickets){
+                    outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                                <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
+                }
+            }
+
+            outFile_log.close();
+            }
         }
         else if(it.UserSub.type_of_sub==pub){
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                 <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
 
+             ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
+
+            {
+                // Check if the file opened successfully
+                if (!outFile_log.is_open()) {
+                    std::cerr << "Error opening file for writing!" << std::endl;
+                    //return 1; // Return an error code
+                }
+                //for(const auto& it :UserClass::users){
+                if(it.user_tickets.size()!=0){
+                    for(const auto& i:it.user_tickets){
+                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                                    <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
+                    }
+                }
+
+                outFile_log.close();
+            }
+
+
         }
         else{
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.wallet<<endl;
+            ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
+            {
+                // Check if the file opened successfully
+                if (!outFile_log.is_open()) {
+                    std::cerr << "Error opening file for writing!" << std::endl;
+                    //return 1; // Return an error code
+                }
+                //for(const auto& it :UserClass::users){
+                if(it.user_tickets.size()!=0){
+                    for(const auto& i:it.user_tickets){
+                        outFile_log<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                                    <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
 
+                    }
+                }
+
+                outFile_log.close();
+            }
         }
     }
     outFile.close();
@@ -287,6 +356,61 @@ void UserClass::Write_users_Signed()
 
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
             //qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
+            {
+                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
+                if (!file_tickets.is_open()){
+                    qDebug()<<"error the file is open";
+                }
+
+                string line_ti;
+                while (getline(file_tickets, line_ti)) {
+                    stringstream ss(line_ti);
+                    string Username,cost,start_str,end_srt,sac_str,min_str,hou_str,day_str,month_str,year_str;;
+                    getline(ss, Username, ',');
+                    getline(ss, cost, ',');
+                    getline(ss, start_str, ',');
+                    getline(ss, end_srt, ',');
+
+                    getline(ss, sac_str, ',');
+                    getline(ss, min_str, ',');
+                    getline(ss, hou_str, ',');
+                    getline(ss, day_str, ',');
+                    getline(ss, month_str, ',');
+                    getline(ss, year_str, ',');
+                    QString qusername = QString::fromStdString(Username);
+                    QString qstart = QString::fromStdString(start_str);
+                    QString qend = QString::fromStdString(end_srt);
+                    float cast_f = std::stof(cost);
+
+                    int sac_int = std::stoi(sac_str);
+                    int min_int = std::stoi(min_str);
+                    int hou_int = std::stoi(hou_str);
+                    int day_int = std::stoi(day_str);
+                    int month_int = std::stoi(month_str);
+                    int year_int = std::stoi(year_str);
+
+                    UserTicket t1 =UserTicket(cast_f,qstart,qend);
+                    t1.date.second=sac_int;
+                    t1.date.minute=min_int;
+                    t1.date.hour=hou_int;
+                    t1.date.day=day_int;
+                    t1.date.month=month_int;
+                    t1.date.year=year_int;
+                    //for(auto& it:UserClass::users){
+
+                    if(user.Username==qusername){
+                        user.user_tickets.push_back(t1);
+
+                        // break;
+                    }
+                    else
+                        break;
+
+
+
+                }
+                file_tickets.close();
+            }
             users.push_back(user);
 
         }
@@ -329,6 +453,62 @@ void UserClass::Write_users_Signed()
             s2.Start_of_sub.year=year_int;
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
             //qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
+            {
+                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
+                if (!file_tickets.is_open()){
+                    qDebug()<<"error the file is open";
+                }
+
+                string line_ti;
+                while (getline(file_tickets, line_ti)) {
+                    stringstream ss(line_ti);
+                    string Username,cost,start_str,end_srt,sac_str,min_str,hou_str,day_str,month_str,year_str;;
+                    getline(ss, Username, ',');
+                    getline(ss, cost, ',');
+                    getline(ss, start_str, ',');
+                    getline(ss, end_srt, ',');
+
+                    getline(ss, sac_str, ',');
+                    getline(ss, min_str, ',');
+                    getline(ss, hou_str, ',');
+                    getline(ss, day_str, ',');
+                    getline(ss, month_str, ',');
+                    getline(ss, year_str, ',');
+                    QString qusername = QString::fromStdString(Username);
+                    QString qstart = QString::fromStdString(start_str);
+                    QString qend = QString::fromStdString(end_srt);
+                    float cast_f = std::stof(cost);
+
+                    int sac_int = std::stoi(sac_str);
+                    int min_int = std::stoi(min_str);
+                    int hou_int = std::stoi(hou_str);
+                    int day_int = std::stoi(day_str);
+                    int month_int = std::stoi(month_str);
+                    int year_int = std::stoi(year_str);
+
+                    UserTicket t1 =UserTicket(cast_f,qstart,qend);
+                    t1.date.second=sac_int;
+                    t1.date.minute=min_int;
+                    t1.date.hour=hou_int;
+                    t1.date.day=day_int;
+                    t1.date.month=month_int;
+                    t1.date.year=year_int;
+                    //for(auto& it:UserClass::users){
+
+                    if(user2.Username==qusername){
+                        user2.user_tickets.push_back(t1);
+
+                        // break;
+                    }
+                    else
+                        break;
+
+
+
+                }
+                file_tickets.close();
+            }
+
             users.push_back(user2);
         }
         else{
@@ -345,6 +525,60 @@ void UserClass::Write_users_Signed()
             int mouny = stoi(mouny_str);
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
+            {
+                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
+                if (!file_tickets.is_open()){
+                    qDebug()<<"error the file is open";
+                }
+
+                string line_ti;
+                while (getline(file_tickets, line_ti)) {
+                    stringstream ss(line_ti);
+                    string Username,cost,start_str,end_srt,sac_str,min_str,hou_str,day_str,month_str,year_str;;
+                    getline(ss, Username, ',');
+                    getline(ss, cost, ',');
+                    getline(ss, start_str, ',');
+                    getline(ss, end_srt, ',');
+
+                    getline(ss, sac_str, ',');
+                    getline(ss, min_str, ',');
+                    getline(ss, hou_str, ',');
+                    getline(ss, day_str, ',');
+                    getline(ss, month_str, ',');
+                    getline(ss, year_str, ',');
+                    QString qusername = QString::fromStdString(Username);
+                    QString qstart = QString::fromStdString(start_str);
+                    QString qend = QString::fromStdString(end_srt);
+                    float cast_f = std::stof(cost);
+
+                    int sac_int = std::stoi(sac_str);
+                    int min_int = std::stoi(min_str);
+                    int hou_int = std::stoi(hou_str);
+                    int day_int = std::stoi(day_str);
+                    int month_int = std::stoi(month_str);
+                    int year_int = std::stoi(year_str);
+                    //for(auto& it:UserClass::users){
+
+                    UserTicket t1 =UserTicket(cast_f,qstart,qend);
+                    t1.date.second=sac_int;
+                    t1.date.minute=min_int;
+                    t1.date.hour=hou_int;
+                    t1.date.day=day_int;
+                    t1.date.month=month_int;
+                    t1.date.year=year_int;
+                    if(user3.Username==qusername){
+                        user3.user_tickets.push_back(t1);
+
+                        // break;
+                    }
+                    else
+                        break;
+
+
+
+                }
+                file_tickets.close();
+            }
             users.push_back(user3);
 
         }
@@ -353,8 +587,25 @@ void UserClass::Write_users_Signed()
 }
 
 
-float UserClass:: Calc_cost(QString,QString){
-    return 11;
+float UserClass:: Calc_cost(QString st, QString en){
+    Station starter;
+    Station ender;
+
+    for (int i = 0; i < Station::stations.size(); ++i) {
+        if (st == QString::fromStdString(Station::stations[i].name)){
+            starter = Station::stations[i];
+        }
+        if (en == QString::fromStdString(Station::stations[i].name)){
+            ender = Station::stations[i];
+        }
+    }
+    stack <Station> bfs = Graph::ShortestPathBFS(starter, ender);
+    if (bfs.size() >= 1 && bfs.size() <= 9) {return 6;}
+    else if (bfs.size() >= 10 && bfs.size() <= 16) {return 8;}
+    else if (bfs.size() >= 17 && bfs.size() <= 23) {return 12;}
+    else if (bfs.size() <= 23) {return 15;}
+    else {return 0;}
+    return 0;
 }
 
 bool  UserClass:: Check_No_Of_Rides_left(){

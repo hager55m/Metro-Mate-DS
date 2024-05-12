@@ -7,7 +7,8 @@
 
 using namespace std;
 UserTicket::UserTicket() {}
-
+QString UserTicket::starting;
+QString UserTicket::ending;
 UserTicket::UserTicket( float c, QString start, QString end)
 {
     date=DateTime();
@@ -43,7 +44,7 @@ void UserTicket::Read_History()
                 break;
             }
         }
-
+        
 
     }
     file.close();
@@ -64,5 +65,5 @@ void UserTicket::Write_History()
         }
 
     }
-//outFile.close();
+outFile.close();
 }

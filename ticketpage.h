@@ -42,13 +42,12 @@ private slots:
     void on_code_editingFinished();
 
     void on_pushButton_7_clicked();
-    //void on_start_currentTextChanged(const QString &arg1);
-
-    //void on_start_editTextChanged(const QString &arg1);
 
     void on_start_currentIndexChanged(int index);
 
     void on_end_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::TicketPage *ui;

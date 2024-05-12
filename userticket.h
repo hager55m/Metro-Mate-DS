@@ -2,9 +2,6 @@
 #define USERTICKET_H
 #include"datetime.h"
 #include"QString"
-#include <iostream>
-#include <fstream>
-#include <sstream>
 class UserTicket
 {
 public:
@@ -14,7 +11,8 @@ public:
     QString End_station;
     //  type_subscribtion sub;
     //int Code;
-
+    static QString starting;
+    static QString ending;
     UserTicket();
     UserTicket( float, QString, QString);
     static void Read_History();

@@ -11,7 +11,8 @@
 #include <QMessageBox>
 #include <QIntValidator>
 #include <QString>
-
+#include"Station.h"
+QList <QString> RenewSub::stations;
 
 RenewSub::RenewSub(QWidget* parent)
     : QDialog(parent)
@@ -46,6 +47,25 @@ RenewSub::RenewSub(QWidget* parent)
 
     QPixmap m(":/images/img/download.png");
     ui->metro->setPixmap(m.scaled(ui->metro->width(), ui->metro->height(), Qt::KeepAspectRatio));
+
+
+    QFile file(":/images/img/stations_name.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open the file:" << file.errorString();
+    }
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString station = in.readLine();
+        stations.push_back(station);
+    }
+    file.close();
+    foreach (QString station, stations) {
+        ui->start->addItem(station);
+        ui->end->addItem(station);
+    }
+    ui->start->setCurrentText(stations.front());
+    ui->end->setCurrentText(stations.front());
+
 
 }
     

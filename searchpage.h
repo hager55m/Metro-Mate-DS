@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+static bool from_search;
 namespace Ui {
 class SearchPage;
 }

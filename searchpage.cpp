@@ -4,6 +4,7 @@
 #include "Station.h"
 #include <QFile>
 #include <QTextStream>
+#include "userticket.h"
 
 SearchPage::SearchPage(QWidget *parent)
     : QDialog(parent)
@@ -34,6 +35,9 @@ void SearchPage::on_m1_clicked()
 
 void SearchPage::on_buy_clicked()
 {
+    from_search = true;
+    UserTicket::starting = ui->start->currentText();
+    UserTicket::ending = ui->end->currentText();
     emit SwitchToTicket();
 }
 

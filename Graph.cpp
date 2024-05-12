@@ -102,16 +102,10 @@ bool Graph::isInSubscriptionArea(string startSub, string endSub, Station startRi
     // If no path contains both startRide and endRide, return false
     return false;
 }
- std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
 
 
-    if (start == end)
-    {
-        std::cout << "Start and end stations are the same." << std::endl;
-        return {};
-    }
-
-
+std::stack<Station> Graph::ShortestPathBFS(Station start, Station end)
+{
     unordered_set<Station, StationHash>vis;
     unordered_map<Station, pair<Station, int>, StationHash> path;
     queue<Station>q;
@@ -143,8 +137,5 @@ bool Graph::isInSubscriptionArea(string startSub, string endSub, Station startRi
         s.push(path[end].first);
         end = path[end].first;
     }
-    /*path.pop_back();
-    visited[starPoint] = false;
-
-    return allPaths;*/
+    return s;
 }

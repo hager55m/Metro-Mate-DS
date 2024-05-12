@@ -14,8 +14,12 @@
     <ProjectGuid>{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}</ProjectGuid>
     <RootNamespace>proj_trial_3</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
+<<<<<<< HEAD
     <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.22000.0</WindowsTargetPlatformMinVersion>
+=======
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+>>>>>>> waitingsub
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

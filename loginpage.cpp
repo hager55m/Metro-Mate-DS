@@ -54,7 +54,7 @@ void LoginPage::on_login_clicked()
                 //qDebug()<<"///////////////////////"<<index_user; // index start from 1
                 it->index_in_vector=index_user;
                 UserClass::thisuser=*it;
-                //qDebug()<<"/////////////////////// in user"<<it->index_in_vector;
+                qDebug()<<"/////////////////////// in user"<<UserClass::thisuser.Username;
                 QMessageBox::information(this, "Login", "Login Successfully");
                 emit SwitchToMainPage();
                 break;

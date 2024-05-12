@@ -2,9 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+<<<<<<< HEAD
     <QtLastBackgroundBuild>2024-05-10T22:35:28.7157784Z</QtLastBackgroundBuild>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtLastBackgroundBuild>2024-05-10T22:35:30.5177103Z</QtLastBackgroundBuild>
+=======
+    <QtLastBackgroundBuild>2024-05-12T13:22:34.4777121Z</QtLastBackgroundBuild>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtLastBackgroundBuild>2024-05-12T13:22:34.7895397Z</QtLastBackgroundBuild>
+>>>>>>> waitingsub
   </PropertyGroup>
 </Project>
