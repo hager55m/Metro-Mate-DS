@@ -1,8 +1,11 @@
 #include "renewsub.h"
 #include "ui_renewsub.h"
 #include "user_subscribtion.h"
-#include "userclass.h""
+#include "userclass.h"
+#include "subscription.h"
 #include "QDebug"
+#include "Graph.h"
+#include "Station.h"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
@@ -63,14 +66,35 @@ void RenewSub::on_pushButton_4_clicked() // ticket
 
 void RenewSub::on_change_clicked() // change
 {
+    int type_sub = UserClass::thisuser.UserSub.type_of_sub;
+    Station starter;
+    Station ender;
+
+    for (int i = 0; i < Station::stations.size(); ++i) {
+        if (UserClass::thisuser.UserSub.sub_start_station == QString::fromStdString(Station::stations[i].name)){
+            starter = Station::stations[i];
+        }
+        if (UserClass::thisuser.UserSub.sub_end_station == QString::fromStdString(Station::stations[i].name)){
+            ender = Station::stations[i];
+        }
+    }
+    stack <Station> bfs = Graph::ShortestPathBFS(starter, ender);
+
     if (ui->type->currentIndex() == 1) 
     {
         if (ui->start->currentIndex() != 0 && ui->end->currentIndex() != 0 && ui->month3->isChecked() && ui->money->text().isEmpty())
         {
+            if (UserClass::thisuser.balance >= Subscription::price(bfs.size()))
+            {
             User_subscribtion stud = User_subscribtion(student,0,ui->start->currentText(),ui->end->currentText());
             UserClass::thisuser.UserSub=stud;
-            qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
             emit SwitchToSub();
+            }
+            else
+            {
+                QMessageBox::information(this, "Change", "Can't Change Check Your Balance");
+                emit SwitchToUser();
+            }
         }
         else
         {
@@ -84,17 +108,32 @@ void RenewSub::on_change_clicked() // change
              {
                 if (ui->month1->isChecked())
                  {
-                     User_subscribtion pub_month = User_subscribtion(pub,0,1,ui->start->currentText(),ui->end->currentText());
-                    UserClass::thisuser.UserSub=pub_month;
-                    qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
-                    emit SwitchToSub();
+                     if (UserClass::thisuser.balance >= Subscription::price(bfs.size()))
+                    {
+                         User_subscribtion pub_month = User_subscribtion(pub,0,1,ui->start->currentText(),ui->end->currentText());
+                         UserClass::thisuser.UserSub=pub_month;
+                         emit SwitchToSub();
+                     }
+                     else
+                     {
+                         QMessageBox::information(this, "Change", "Can't Change Check Your Balance");
+                         emit SwitchToUser();
+                     }
                  }
                  else if( ui->year->isChecked())
                  {
-                    User_subscribtion pub_year = User_subscribtion(pub,0,0,ui->start->currentText(),ui->end->currentText());
-                     UserClass::thisuser.UserSub=pub_year;
-                     qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
-                     emit SwitchToSub();
+                    if (UserClass::thisuser.balance >= Subscription::price(bfs.size()))
+                     {
+                        User_subscribtion pub_year = User_subscribtion(pub,0,0,ui->start->currentText(),ui->end->currentText());
+                        UserClass::thisuser.UserSub=pub_year;
+                        qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
+                        emit SwitchToSub();
+                    }
+                    else
+                    {
+                        QMessageBox::information(this, "Change", "Can't Change Check Your Balance");
+                        emit SwitchToUser();
+                    }
                  }
                  else
                  {
@@ -121,7 +160,6 @@ void RenewSub::on_change_clicked() // change
                 int mon = str.toInt();
                 User_subscribtion Wallet = User_subscribtion(wallet,mon);
                 UserClass::thisuser.UserSub=Wallet;
-                qDebug() << "type" << UserClass::thisuser.UserSub.type_of_sub;
                 emit SwitchToSub();
             }
 

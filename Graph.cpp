@@ -1,6 +1,9 @@
 #include "Graph.h"
 #include "Station.h"
 #include <algorithm>
+#include <iostream>
+#include <queue>
+
 using namespace std;
 
 static Graph graph;
@@ -98,4 +101,50 @@ bool Graph::isInSubscriptionArea(string startSub, string endSub, Station startRi
 
     // If no path contains both startRide and endRide, return false
     return false;
+}
+ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
+
+
+    if (start == end)
+    {
+        std::cout << "Start and end stations are the same." << std::endl;
+        return {};
+    }
+
+
+    unordered_set<Station, StationHash>vis;
+    unordered_map<Station, pair<Station, int>, StationHash> path;
+    queue<Station>q;
+
+    q.push(start);
+    path[q.front()] = make_pair(start, 0);
+    vis.insert(start);
+
+    while (!q.empty())
+    {
+        Station temp = q.front();
+        q.pop();
+        if (temp == end)
+            break;
+        for (auto& child : adjStation.at(temp)) {
+
+            if (vis.find(child) == vis.end()) {
+                vis.insert(child);
+                q.push(child);
+                path[child] = make_pair(temp, path[temp].second + 1);
+            }
+        }
+    }
+
+    stack<Station>s{};
+    s.push(end);
+    while (end.getName() != start.getName())
+    {
+        s.push(path[end].first);
+        end = path[end].first;
+    }
+    /*path.pop_back();
+    visited[starPoint] = false;
+
+    return allPaths;*/
 }

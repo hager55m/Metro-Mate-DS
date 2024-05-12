@@ -44,8 +44,9 @@ private slots:
 
     void on_renew_clicked();
 
-
     void on_display_clicked();
+public slots:
+   static int price(int);
 
 private:
     Ui::Subscription *ui;
