@@ -8,9 +8,10 @@ class Station
 public:
 	std::string name;
     int lines;
-    int line;
+    std::vector <int> line;
 	Station();
 	Station(std::string name, int lines);
+    Station(std::string name, std::vector <int> lines);
     static QVector<Station> stations;
 	int getLines();
 	std::string getName() const;
