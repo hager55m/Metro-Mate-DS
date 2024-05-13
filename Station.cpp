@@ -11,18 +11,30 @@ using namespace std;
 QVector<Station> Station::stations;
 Station::Station()
 {
-    lines = 0;
+    //lines = 0;
 }
 
 Station::Station(std::string name, int line)
     : name(name), lines(line) {}
 
+Station::Station(std::string name, std::vector<int> lines){
+    this->name = name;
+    for (int i = 0; i < stations.size(); ++i) {
+        lines.emplace_back(stations[i].lines);
+    }
+    this->line = lines;
+}
 int Station::getLines()
 {
 
     return lines;
 }
-
+/*
+void Station::setName(std::string Nname)
+{
+	name = Nname;
+}
+*/
 std::string Station::getName()const
 {
     return name;
@@ -30,7 +42,7 @@ std::string Station::getName()const
 
 void Station::Read_Staion()
 {
-    ifstream file ("D:/QT/New folder (2)/Metro-Mate-DS/img/stations_name.txt");
+    ifstream file ("D:/QT/New folder (3)/Metro-Mate-DS/img/stations_name.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -49,7 +61,7 @@ void Station::Read_Staion()
 
 void Station::Write_Staion()
 {
-    ofstream outFile("D:/QT/New folder (2)/Metro-Mate-DS/img/stations_name.txt");
+    ofstream outFile("D:/QT/New folder (3)/Metro-Mate-DS/img/stations_name.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
@@ -64,7 +76,7 @@ outFile.close();
 }
 
 void Station::readstations(){
-    QFile file("D:/QT/New folder (2)/Metro-Mate-DS/img/stations_name.txt");
+    QFile file("D:/QT/New folder (3)/Metro-Mate-DS/img/stations_name.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open the file:" << file.errorString();
         return;
@@ -88,7 +100,7 @@ void Station::readstations(){
     file.close();
 
     for(const auto& path : stations){
-        Graph::addStation(path.name, path.lines);
+        //Graph::addStation(path.name, path.lines);
     }
     for (int i = 0; i < stations.size() -1; ++i) {
         if(Station::stations[i].lines == Station::stations[i+1].lines)

@@ -58,7 +58,7 @@ void SearchPage::on_buy_2_clicked()
                 if(ui->end->currentText() == QString::fromStdString(Station::stations[j].getName())) {
                     qDebug("if");
                     bfs = Graph::allPossiblePathsFunctionality(Station::stations[i].getName(), Station::stations[j].getName());
-                   QString sz = QString::number(bfs.size());
+                    QString sz = QString::number(bfs.size());
                     ui->data->insertPlainText("Paths: " + sz);
                     ui->data->insertPlainText("\n");
                     found = true;

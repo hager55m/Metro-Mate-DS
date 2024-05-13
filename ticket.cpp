@@ -1,6 +1,8 @@
 #include "ticket.h"
 #include "ui_ticket.h"
 
+std::vector<float> Ticket::Costs = { 6, 8, 12, 15 };
+
 Ticket::Ticket(QWidget *parent)
     : QDockWidget(parent)
     , ui(new Ui::Ticket)
@@ -40,6 +42,19 @@ Ticket::~Ticket()
     delete ui;
 }
 
+void Ticket::DataOfTicketToDisplay()
+{
+    
+        QString s = QString::number(Costs[0]);
+        ui->mail->setText(s);
+        s = QString::number(Costs[1]);
+        ui->mail_2->setText(s);
+        s = QString::number(Costs[2]);
+        ui->mail_3->setText(s);
+        s = QString::number(Costs[3]);
+        ui->mail_5->setText(s);
+}
+
 void Ticket::on_pushButton1_clicked(){
     emit switshtoadmin();
 }
@@ -54,6 +69,21 @@ void Ticket::on_pushButton_5_clicked(){
 void Ticket::on_station_2_clicked()
 {
     emit switshtostation();
+}
+
+void Ticket::on_pushButton_6_clicked()
+{
+    std::vector<QString>tempForCosts;
+    tempForCosts.push_back(ui->mail->text());
+    tempForCosts.push_back(ui->mail_2->text());
+    tempForCosts.push_back(ui->mail_3->text());
+    tempForCosts.push_back(ui->mail_5->text());
+    for (int i = 0; i < 4; i++)
+    {
+        if (tempForCosts[i].toFloat()!=0)
+        Costs[i] = tempForCosts[i].toFloat();
+        qDebug() << Costs[i];
+    }
 }
 
 void Ticket::on_logout_clicked()

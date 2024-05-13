@@ -16,9 +16,30 @@ public:
     ~removesub();
 
 signals:
-    void switchtoSub();
+    void addsubscription();
+    void SwitchToHomePAGE();
+    void SwitchToMangeMetro();
+    void SwitchToTickets();
+    void SwitchTosubscription();
+    void SwitchToStation();
+    void SwitchToLogin();
+    void listUpdated();
+
 private slots:
     void on_m1_clicked();
+    void on_pushButton_clicked();
+
+    void on_pushButton1_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_logout_clicked();
+    void updateSubscriptions();
+
 private:
     Ui::removesub *ui;
 };

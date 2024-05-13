@@ -15,6 +15,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -43,12 +44,17 @@ public:
     QLabel *label_9;
     QPushButton *pushButton_2;
     QLabel *label_11;
-    QGroupBox *groupBox_3;
     QLabel *label_2;
     QLabel *label_4;
     QGroupBox *groupBox_4;
     QPushButton *userhistorybutton;
     QLabel *label_6;
+    QTextBrowser *textBrowser;
+    QTextBrowser *textBrowser_2;
+    QPushButton *pushButton_12;
+    QPushButton *pushButton_13;
+    QPushButton *pushButton_14;
+    QPushButton *pushButton_15;
 
     void setupUi(QDockWidget *admin)
     {
@@ -157,18 +163,13 @@ public:
         label_11->setGeometry(QRect(10, 530, 61, 61));
         label_11->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
 "border-radius: 12;"));
-        groupBox_3 = new QGroupBox(dockWidgetContents);
-        groupBox_3->setObjectName("groupBox_3");
-        groupBox_3->setGeometry(QRect(480, 90, 691, 271));
-        groupBox_3->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
-"border-radius: 25;"));
         label_2 = new QLabel(dockWidgetContents);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(740, 30, 211, 41));
         label_2->setFont(font2);
         label_4 = new QLabel(dockWidgetContents);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(760, 370, 161, 41));
+        label_4->setGeometry(QRect(760, 340, 161, 41));
         label_4->setFont(font2);
         groupBox_4 = new QGroupBox(dockWidgetContents);
         groupBox_4->setObjectName("groupBox_4");
@@ -181,6 +182,44 @@ public:
         label_6 = new QLabel(dockWidgetContents);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(560, 20, 111, 41));
+        textBrowser = new QTextBrowser(dockWidgetContents);
+        textBrowser->setObjectName("textBrowser");
+        textBrowser->setGeometry(QRect(510, 110, 651, 101));
+        textBrowser->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
+        textBrowser_2 = new QTextBrowser(dockWidgetContents);
+        textBrowser_2->setObjectName("textBrowser_2");
+        textBrowser_2->setGeometry(QRect(510, 400, 651, 101));
+        textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9;\n"
+"border-radius: 12;"));
+        pushButton_12 = new QPushButton(dockWidgetContents);
+        pushButton_12->setObjectName("pushButton_12");
+        pushButton_12->setGeometry(QRect(540, 230, 191, 41));
+        pushButton_12->setFont(font3);
+        pushButton_12->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        pushButton_13 = new QPushButton(dockWidgetContents);
+        pushButton_13->setObjectName("pushButton_13");
+        pushButton_13->setGeometry(QRect(930, 230, 191, 41));
+        pushButton_13->setFont(font3);
+        pushButton_13->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        pushButton_14 = new QPushButton(dockWidgetContents);
+        pushButton_14->setObjectName("pushButton_14");
+        pushButton_14->setGeometry(QRect(540, 520, 191, 41));
+        pushButton_14->setFont(font3);
+        pushButton_14->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
+        pushButton_15 = new QPushButton(dockWidgetContents);
+        pushButton_15->setObjectName("pushButton_15");
+        pushButton_15->setGeometry(QRect(930, 520, 191, 41));
+        pushButton_15->setFont(font3);
+        pushButton_15->setStyleSheet(QString::fromUtf8("background-color: #FFC200;\n"
+"border-radius: 12;\n"
+"color: black;"));
         admin->setWidget(dockWidgetContents);
 
         retranslateUi(admin);
@@ -211,12 +250,15 @@ public:
         label_9->setText(QString());
         pushButton_2->setText(QCoreApplication::translate("admin", "Station", nullptr));
         label_11->setText(QString());
-        groupBox_3->setTitle(QString());
         label_2->setText(QCoreApplication::translate("admin", "Sign up Requests", nullptr));
         label_4->setText(QCoreApplication::translate("admin", "User Accounts", nullptr));
         groupBox_4->setTitle(QString());
         userhistorybutton->setText(QString());
         label_6->setText(QCoreApplication::translate("admin", "hallo allllll", nullptr));
+        pushButton_12->setText(QCoreApplication::translate("admin", "approved", nullptr));
+        pushButton_13->setText(QCoreApplication::translate("admin", "next", nullptr));
+        pushButton_14->setText(QCoreApplication::translate("admin", "view history", nullptr));
+        pushButton_15->setText(QCoreApplication::translate("admin", "next", nullptr));
     } // retranslateUi
 
 };

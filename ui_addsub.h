@@ -53,6 +53,7 @@ public:
     QLineEdit *month;
     QLabel *label_8;
     QLabel *label_10;
+    QPushButton *m1;
 
     void setupUi(QDockWidget *addsub)
     {
@@ -221,6 +222,14 @@ public:
         label_10->setObjectName("label_10");
         label_10->setGeometry(QRect(980, 380, 131, 41));
         label_10->setFont(font3);
+        m1 = new QPushButton(dockWidgetContents);
+        m1->setObjectName("m1");
+        m1->setGeometry(QRect(540, 50, 75, 71));
+        m1->setStyleSheet(QString::fromUtf8("background-color: #BDBDBD;\n"
+"border-radius: 5;\n"
+"border-image: url(:/images/img/left-arrow.png) 0 0 0 0 stretch stretch;\n"
+"width: 50px;\n"
+"height: 50px;"));
         addsub->setWidget(dockWidgetContents);
 
         retranslateUi(addsub);
@@ -260,6 +269,7 @@ public:
         month->setText(QString());
         label_8->setText(QCoreApplication::translate("addsub", "Duration:", nullptr));
         label_10->setText(QCoreApplication::translate("addsub", "Month(s)", nullptr));
+        m1->setText(QString());
     } // retranslateUi
 
 };

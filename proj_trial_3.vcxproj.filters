@@ -135,6 +135,9 @@
     <ClCompile Include="subscription.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="subscriptionlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -236,6 +239,9 @@
     <QtMoc Include="subscription.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="subscriptionlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <QtMoc Include="ticket.h">
       <Filter>Header Files</Filter>
     </QtMoc>

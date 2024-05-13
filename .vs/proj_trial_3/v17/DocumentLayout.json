@@ -1,66 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\",
+  "WorkspaceRootPath": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\ticketpage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:ticketpage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\userticket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:userticket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\ticket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|solutionrelative:ticket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\loginpage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:loginpage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\ticket.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|solutionrelative:ticket.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\userdata.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:userdata.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\historypage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:historypage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\admin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:admin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\historypage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:historypage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\userclass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:userclass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\Station.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:Station.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\All_user_final\\Metro-Mate-DS\\debug\\moc_ticketpage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|D:\\QT\\New folder (2)\\Metro-Mate-DS\\searchpage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}|proj_trial_3.vcxproj|solutionrelative:searchpage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\QT\\New folder (2)\\Metro-Mate-DS\\ui_admin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ui_admin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Qt\\6.6.3\\msvc2019_64\\include\\QtCore\\qlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8A8B1DD8-9D70-361B-A050-FDDD4B37BF9B}|proj_trial_3.vcxproj|solutionrelative:Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,32 +26,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAEsCAAAAAAAAAAASwFoCAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T12:39:43.52Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ticketpage.h",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\ticketpage.h",
-              "RelativeDocumentMoniker": "ticketpage.h",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\ticketpage.h",
-              "RelativeToolTip": "ticketpage.h",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACsAAAAjAAAA",
+              "DocumentIndex": 3,
+              "Title": "Graph.h",
+              "DocumentMoniker": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\Graph.h",
+              "RelativeDocumentMoniker": "Graph.h",
+              "ToolTip": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\Graph.h",
+              "RelativeToolTip": "Graph.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T13:24:41.065Z",
+              "WhenOpened": "2024-04-26T19:14:54.914Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -103,174 +47,43 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ticket.cpp",
+              "DocumentMoniker": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\ticket.cpp",
+              "RelativeDocumentMoniker": "ticket.cpp",
+              "ToolTip": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\ticket.cpp",
+              "RelativeToolTip": "ticket.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-26T23:17:37.294Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "loginpage.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\loginpage.cpp",
-              "RelativeDocumentMoniker": "loginpage.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\loginpage.cpp",
-              "RelativeToolTip": "loginpage.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAC0AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T19:54:47.272Z",
+              "Title": "ticket.h",
+              "DocumentMoniker": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\ticket.h",
+              "RelativeDocumentMoniker": "ticket.h",
+              "ToolTip": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\ticket.h",
+              "RelativeToolTip": "ticket.h",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAlwBIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-26T23:17:24.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "userdata.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\userdata.cpp",
-              "RelativeDocumentMoniker": "userdata.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\userdata.cpp",
-              "RelativeToolTip": "userdata.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Hager ElSherif\\OneDrive\\Desktop\\metro-Mate\\New folder\\Metro-Mate-DS\\main.cpp*",
+              "RelativeToolTip": "main.cpp*",
+              "ViewState": "AQIAAEACAAAAAAAAAAAAAFcCAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T18:09:49.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "admin.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\admin.cpp",
-              "RelativeDocumentMoniker": "admin.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\admin.cpp",
-              "RelativeToolTip": "admin.cpp",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T18:06:53.441Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "historypage.h",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\historypage.h",
-              "RelativeDocumentMoniker": "historypage.h",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\historypage.h",
-              "RelativeToolTip": "historypage.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-10T15:51:14.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "historypage.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\historypage.cpp",
-              "RelativeDocumentMoniker": "historypage.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\historypage.cpp",
-              "RelativeToolTip": "historypage.cpp",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T12:31:49.122Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "userclass.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\userclass.cpp",
-              "RelativeDocumentMoniker": "userclass.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\userclass.cpp",
-              "RelativeToolTip": "userclass.cpp",
-              "ViewState": "AQIAAOsBAAAAAAAAAAAAAOcAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T12:23:30.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "userticket.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\userticket.cpp",
-              "RelativeDocumentMoniker": "userticket.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\userticket.cpp",
-              "RelativeToolTip": "userticket.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T12:22:49.586Z",
+              "WhenOpened": "2024-04-26T17:11:42.142Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Station.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\Station.cpp",
-              "RelativeDocumentMoniker": "Station.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\Station.cpp",
-              "RelativeToolTip": "Station.cpp",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAADoAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T12:22:02.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "qlist.h",
-              "DocumentMoniker": "C:\\Qt\\6.6.3\\msvc2019_64\\include\\QtCore\\qlist.h",
-              "ToolTip": "C:\\Qt\\6.6.3\\msvc2019_64\\include\\QtCore\\qlist.h",
-              "ViewState": "AQIAAGgCAAAAAAAAAAArwHECAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-10T12:21:48.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "moc_ticketpage.cpp",
-              "DocumentMoniker": "E:\\All_user_final\\Metro-Mate-DS\\debug\\moc_ticketpage.cpp",
-              "ToolTip": "E:\\All_user_final\\Metro-Mate-DS\\debug\\moc_ticketpage.cpp",
-              "ViewState": "AQIAAAgBAAAAAAAAAAAAABUBAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-10T12:21:00.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "searchpage.cpp",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\searchpage.cpp",
-              "RelativeDocumentMoniker": "searchpage.cpp",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\searchpage.cpp",
-              "RelativeToolTip": "searchpage.cpp",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T19:36:57.641Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdminHomeBage.h",
-              "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.h",
-              "RelativeDocumentMoniker": "..\\..\\project\\Metro-Mate-DS\\AdminHomeBage.h",
-              "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.h",
-              "RelativeToolTip": "..\\..\\project\\Metro-Mate-DS\\AdminHomeBage.h",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBwAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-26T10:39:24.021Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ui_admin.h",
-              "DocumentMoniker": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\ui_admin.h",
-              "RelativeDocumentMoniker": "ui_admin.h",
-              "ToolTip": "D:\\QT\\New folder (2)\\Metro-Mate-DS\\ui_admin.h",
-              "RelativeToolTip": "ui_admin.h",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAQwHcAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-26T10:37:56.417Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminHomeBage.cpp",
-              "DocumentMoniker": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.cpp",
-              "RelativeDocumentMoniker": "..\\..\\project\\Metro-Mate-DS\\AdminHomeBage.cpp",
-              "ToolTip": "D:\\QT\\project\\Metro-Mate-DS\\AdminHomeBage.cpp",
-              "RelativeToolTip": "..\\..\\project\\Metro-Mate-DS\\AdminHomeBage.cpp",
-              "ViewState": "AQIAABsAAAAAAAAAAAAQwDIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-26T10:35:46.621Z"
             }
           ]
         }

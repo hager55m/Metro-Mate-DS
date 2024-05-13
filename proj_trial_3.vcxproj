@@ -11,15 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BCA086D4-669D-3DC2-AE95-8AE0F6E4FB0C}</ProjectGuid>
+    <ProjectGuid>{677399AB-FD66-3500-AABE-2BA45FFB1C12}</ProjectGuid>
     <RootNamespace>proj_trial_3</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
-<<<<<<< HEAD
-    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.22000.0</WindowsTargetPlatformMinVersion>
-=======
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
->>>>>>> waitingsub
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -89,8 +84,7 @@
       <Optimization>MaxSpeed</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <ProgramDataBaseFileName>
-      </ProgramDataBaseFileName>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -233,6 +227,7 @@
     <ClCompile Include="stat6months.cpp" />
     <ClCompile Include="submanage.cpp" />
     <ClCompile Include="subscription.cpp" />
+    <ClCompile Include="subscriptionlist.cpp" />
     <ClCompile Include="ticket.cpp" />
     <ClCompile Include="ticketpage.cpp" />
     <ClCompile Include="types_sub.cpp" />
@@ -268,6 +263,7 @@
     <QtMoc Include="stat6months.h" />
     <ClInclude Include="submanage.h" />
     <QtMoc Include="subscription.h" />
+    <ClInclude Include="subscriptionlist.h" />
     <QtMoc Include="ticket.h" />
     <QtMoc Include="ticketpage.h" />
     <QtMoc Include="types_sub.h" />
