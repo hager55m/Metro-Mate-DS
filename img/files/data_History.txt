@@ -1,3 +1,0 @@
-John,9,cairo,giza
-John,6,cairo,tanta
-John,12,fayom,sharm

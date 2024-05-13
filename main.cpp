@@ -29,6 +29,7 @@
 #include <Station.h>
 #include <cstdlib>
 
+
 void Write_all();
 
 int main(int argc, char *argv[])
@@ -74,7 +75,7 @@ int main(int argc, char *argv[])
     //ticket.show();
  // admin.show();
 //=======
-    sub.show();
+    //sub.show();
 
     //lp.show();
     ticket.DataOfTicketToDisplay();
@@ -197,16 +198,31 @@ int main(int argc, char *argv[])
          admin.hide();
          });
 
-    // QObject::connect(&admin, &admin::switchtologin, [&]() {
-    //     lp.show();
-    //     admin.hide();
-    //     });
+     QObject::connect(&admin, &admin::switchtologin, [&]() {
+         lp.show();
+         admin.hide();
+         });
 
      QObject::connect(&admin, &admin::switchtosubsctiption, [&]() {
          sub.show();
          admin.hide();
          });
+
+     QObject::connect(&admin, &admin::switchtoapptoval, [&]() {
+         
+         });
      
+     QObject::connect(&admin, &admin::switchtonext_signed, [&]() {
+
+         });   
+     QObject::connect(&admin, &admin::switchtonext_login, [&]() {
+
+             });
+     QObject::connect(&admin, &admin::switchtouserhistory, [&]() {
+         ud.show();
+         admin.hide();
+         });
+
      // QObject::connect(&admin, &admin::switchtostation, [&]() {
      //    AdminStation.show();
      //     admin.hide();

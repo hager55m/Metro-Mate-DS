@@ -11,7 +11,7 @@ using namespace std;
 QVector<Station> Station::stations;
 Station::Station()
 {
-    lines = 0;
+    //lines = 0;
 }
 
 Station::Station(std::string name, int line)
@@ -27,7 +27,7 @@ Station::Station(std::string name, std::vector<int> lines){
 int Station::getLines()
 {
 
-    return lines;
+    return lines_;
 }
 /*
 void Station::setName(std::string Nname)
@@ -70,7 +70,7 @@ void Station::Write_Staion()
     }
     for(const auto& it :stations){
 
-        outFile<<it.name<<','<<it.lines<<endl;
+        outFile<<it.name<<','<<it.lines_<<endl;
     }
 outFile.close();
 }
@@ -100,7 +100,7 @@ void Station::readstations(){
     file.close();
 
     for(const auto& path : stations){
-        Graph::addStation(path.name, path.lines);
+        //Graph::addStation(path.name, path.lines);
     }
     for (int i = 0; i < stations.size() -1; ++i) {
         if(Station::stations[i].lines == Station::stations[i+1].lines)

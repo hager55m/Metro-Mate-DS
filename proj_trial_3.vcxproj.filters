@@ -90,6 +90,9 @@
     <ClCompile Include="admonmanagemetrooptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="datetime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="historypage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -132,13 +135,28 @@
     <ClCompile Include="subscription.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="subscriptionlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ticketpage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="types_sub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="user_subscribtion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="userdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userticket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="verfication.cpp">
@@ -179,6 +197,9 @@
     <QtMoc Include="admonmanagemetrooptions.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="datetime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <QtMoc Include="historypage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -212,24 +233,39 @@
     <QtMoc Include="stat6months.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="submanage.h">
+    <ClInclude Include="submanage.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </ClInclude>
     <QtMoc Include="subscription.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="subscriptionlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <QtMoc Include="ticket.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ticketpage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="types_sub.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <ClInclude Include="ui_AdminHomeBage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="user_subscribtion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <QtMoc Include="userdata.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="userticket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <QtMoc Include="verfication.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -315,6 +351,9 @@
     <QtUic Include="ticketpage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="types_sub.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
     <QtUic Include="userdata.ui">
       <Filter>Form Files</Filter>
     </QtUic>
@@ -336,6 +375,15 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\files\Sub.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\files\User_history.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\files\data_History.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\files\data_staion.txt">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\default_qrcode.png">
@@ -383,7 +431,16 @@
     <None Include="img\six.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="img\stations_name.txt">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="img\subway.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\files\testing.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\files\testing_signed.txt">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\three.png">

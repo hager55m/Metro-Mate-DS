@@ -87,12 +87,12 @@ void AdminManageMetroAddStation::on_pushButton_14_clicked()
     }
     std::vector<int>lines;
     lines.emplace_back(line);
-    Station newStation(stationName.toStdString(),lines);
+   // Station newStation(stationName.toStdString(),lines);
    // newStation.lines.emplace_back(line);
-    stationAdded[newStation.getName()]++;
+    /*stationAdded[newStation.getName()]++;
     Graph::graph.stations.insert(newStation);
     QMessageBox::information(this, "Station Added", "Station added successfully!"); 
-    qDebug() << "Saved Station:" << QString::fromStdString(newStation.getName()) << "Lines:" << line;
+    qDebug() << "Saved Station:" << QString::fromStdString(newStation.getName()) << "Lines:" << line;*/
 }
 
 AdminManageMetroAddStation::~AdminManageMetroAddStation()
