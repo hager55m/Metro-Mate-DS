@@ -26,23 +26,37 @@ types_sub::types_sub(QWidget *parent)
         qDebug() << "Failed to open the file:" << file.errorString();
     }
     QTextStream in(&file);
+    // while (!in.atEnd()) {
+    //     QString station = in.readLine();
+    //     stations.push_back(station);
+    // }
+
     while (!in.atEnd()) {
-        QString station = in.readLine();
-        stations.push_back(station);
+        QString line = in.readLine();
+        // Split the line based on the separator
+        QStringList parts = line.split(",");
+        if (parts.size() >= 1) { // Ensure there's at least one part (station name)
+            QString station = parts.at(0).trimmed(); // Extract the station name
+            stations.push_back(station);
+        }
     }
+
     file.close();
+
     foreach (QString station, stations) {
         ui->start->addItem(station);
         ui->end->addItem(station);
     }
-    ui->start->setCurrentText(stations.front());
-    ui->end->setCurrentText(stations.front());
+    ui->start->setCurrentText("Start");
+    ui->end->setCurrentText("end");
+    //ui->start->setCurrentText(stations.front());
+    //ui->end->setCurrentText(stations.front());
 
    
     QIntValidator* validatorr = new QIntValidator(ui->money);
     ui->money->setValidator(validatorr);
     
-   
+
     // add metro pic
     QPixmap pix(":/images/img/16041_tn_eg-cairo-metro-line3-train-impression-hyundairotem.jpg");
     ui->pic->setPixmap(pix.scaled(ui->pic->width(), ui->pic->height(),Qt::KeepAspectRatio));
@@ -139,3 +153,4 @@ void types_sub::on_ok_clicked()
         }
     }
 }
+

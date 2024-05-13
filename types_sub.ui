@@ -75,6 +75,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="currentText">
+     <string/>
+    </property>
    </widget>
    <widget class="QComboBox" name="end">
     <property name="geometry">
@@ -84,6 +87,9 @@
       <width>91</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="currentText">
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">

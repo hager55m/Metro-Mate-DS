@@ -8,6 +8,7 @@
 #include <QTextStream>
 #include "userticket.h"
 #include "Station.h"
+#include <QMessageBox>
 
 //QList <QString> TicketPage::stations;
 
@@ -121,21 +122,33 @@ void TicketPage::on_code_editingFinished()
 {
     if(ui->code->text() == "123")
     {
+       // UserClass::thisuser.UserSub.no_of_trips=0;
         float c = UserClass::thisuser.Calc_cost(ticket.Start_station,ticket.End_station);
-        bool ticket_can_be_add=  UserClass::thisuser.Add_Ticket(c,ticket);
+        int ticket_can_be_add= UserClass::thisuser.Add_Ticket(c,ticket);
+
         if(ticket_can_be_add==1){
-        UserTicket t= UserClass::thisuser.user_tickets.back();
-         qDebug()<<"cost:"<< t.Cost<<t.Start_station;
+            UserTicket t= UserClass::thisuser.user_tickets.back();
+            qDebug()<<"the ticket staion"<<t.Start_station;
+            for(auto& it1:UserClass::users){
+                if(it1.Username==UserClass::thisuser.Username){
+                    it1.Add_Ticket(c,ticket);
+                }
+            }
+            emit SwitchToVerf();
         }else if(ticket_can_be_add==2){
             //message that no of trips has ended
+            QMessageBox::information(this, "WARNING", "No of Trips Ended");
+            emit SwitchToSub();
         }
         else if (ticket_can_be_add==3){
             // message that subs has ended
+            QMessageBox::information(this, "WARNING", "Subscribtion has Ended");
+            emit SwitchToSub();
         }else if(ticket_can_be_add==4){
             //message that wallet is zero
+            QMessageBox::information(this, "WARNING", "Wallet has Ended");
+            emit SwitchToSub();
         }
-       //is going to be editted after finshing sign up--> needs index of user in vector
-        emit SwitchToVerf();
     }
 }
 

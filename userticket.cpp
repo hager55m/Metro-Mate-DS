@@ -6,7 +6,9 @@
 #include <QDebug>
 
 using namespace std;
-UserTicket::UserTicket() {}
+UserTicket::UserTicket() {
+
+}
 QString UserTicket::starting;
 QString UserTicket::ending;
 UserTicket::UserTicket( float c, QString start, QString end)
@@ -59,9 +61,15 @@ void UserTicket::Write_History()
         std::cerr << "Error opening file for writing!" << std::endl;
         //return 1; // Return an error code
     }
+
     for(const auto& it :UserClass::users){
+        if(it.user_tickets.size()!=0){
         for(const auto& i:it.user_tickets){
-            outFile<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+            outFile<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                    <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
+        }
+
         }
 
     }
