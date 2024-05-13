@@ -27,7 +27,7 @@ Station::Station(std::string name, std::vector<int> lines){
 int Station::getLines()
 {
 
-    return lines_;
+    return lines;
 }
 /*
 void Station::setName(std::string Nname)
@@ -70,7 +70,7 @@ void Station::Write_Staion()
     }
     for(const auto& it :stations){
 
-        outFile<<it.name<<','<<it.lines_<<endl;
+        outFile<<it.name<<','<<it.lines<<endl;
     }
 outFile.close();
 }

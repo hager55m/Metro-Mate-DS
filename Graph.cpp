@@ -165,7 +165,7 @@ void Graph::deleteStation(Station certainStation)
             adjStation[stl.front()].erase(certainStation);
             adjStation[stl.back()].erase(certainStation);
             stl.clear();
-        }*/
+        }
         Graph::graph.stations.erase(certainStation);
         adjStation[certainStation].clear();
     }
@@ -283,7 +283,7 @@ std::stack<Station> Graph::ShortestPathBFS(Station start, Station end) {
     /*path.pop_back();
     visited[starPoint] = false;
 
-    return allPaths;*/
+    return allPaths;
 }
 
 bool Graph::isInSubscriptionArea(string startSub, string endSub, Station startRide, Station endRide)
