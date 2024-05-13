@@ -42,7 +42,7 @@ void UserClass::set_this_user(UserClass s1)
     thisuser=s1;
 }
 void UserClass::Read_User_Signed(){
-    ifstream file("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing_signed.txt");
+    ifstream file("E:/brachmodefidDub/Metro-Mate-DS/img/files/testing_signed.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -90,12 +90,14 @@ void UserClass::Read_User_Signed(){
             int month_int = stoi(month_str);
             int year_int = stoi(year_str);
             User_subscribtion s1(type,stage,qstart,qend);
+
             s1.Start_of_sub.second=sac_int;
             s1.Start_of_sub.minute=min_int;
             s1.Start_of_sub.hour=hou_int;
             s1.Start_of_sub.day=day_int;
             s1.Start_of_sub.month=month_int;
             s1.Start_of_sub.year=year_int;
+            s1.end_of_sub=DateTime::end_time(0,s1.Start_of_sub,0);
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
 
 
@@ -136,6 +138,7 @@ void UserClass::Read_User_Signed(){
             s2.Start_of_sub.day=day_int;
             s2.Start_of_sub.month=month_int;
             s2.Start_of_sub.year=year_int;
+            s2.end_of_sub=DateTime::end_time(1,s2.Start_of_sub,boolean_is_mounth);
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
 
 
@@ -164,11 +167,11 @@ void UserClass::Read_User_Signed(){
 
 void UserClass::Write_users()
 {
-    ofstream outFile("C:/Users/user/Downloadsdata.txt");
+    ofstream outFile("E:/brachmodefidDub/Metro-Mate-DS/img/files/testing.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
-        std::cerr << "Error opening file for writing!" << std::endl;
+        std::cerr << "Error opening file for writing testing !" << std::endl;
         //return 1; // Return an error code
     }
 
@@ -178,11 +181,13 @@ void UserClass::Write_users()
             //qDebug()<<"user is srars and end "<<it.UserSub.sub_start_station<<" and "<<it.UserSub.sub_end_station;
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                     <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
-            ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
+            //ofstream outFile_log("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt");
+           ofstream outFile_log("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt",std::ios::app);
+
             {
             // Check if the file opened successfully
             if (!outFile_log.is_open()) {
-                std::cerr << "Error opening file for writing!" << std::endl;
+                std::cerr << "Error opening file for writing his!" << std::endl;
                 //return 1; // Return an error code
             }
             //for(const auto& it :UserClass::users){
@@ -202,12 +207,13 @@ void UserClass::Write_users()
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.stage<<','<<it.UserSub.dur_in_pub<<','<<it.UserSub.sub_start_station.toStdString()<<','<<it.UserSub.sub_end_station.toStdString()
                 <<','<<it.UserSub.Start_of_sub.second<<','<<it.UserSub.Start_of_sub.minute<<','<<it.UserSub.Start_of_sub.hour<<','<<it.UserSub.Start_of_sub.day<<','<<it.UserSub.Start_of_sub.month<<','<<it.UserSub.Start_of_sub.year<<endl;
 
-             ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
+             //ofstream outFile_log("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt");
+            ofstream outFile_log("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt",std::ios::app);
 
             {
                 // Check if the file opened successfully
                 if (!outFile_log.is_open()) {
-                    std::cerr << "Error opening file for writing!" << std::endl;
+                    std::cerr << "Error opening file for writing his!" << std::endl;
                     //return 1; // Return an error code
                 }
                 //for(const auto& it :UserClass::users){
@@ -227,11 +233,13 @@ void UserClass::Write_users()
         else{
             string sub=User_subscribtion::enumToString(it.UserSub.type_of_sub);
             outFile<<it.Email.toStdString()<<','<<it.Username.toStdString()<<','<<it.Password.toStdString()<<','<<sub<<','<<it.Credit<<','<<it.balance<<','<<it.UserSub.wallet<<endl;
-            ofstream outFile_log("C:/Users/user/Downloads/data_History.txt");
+            //ofstream outFile_log("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt");
+           ofstream outFile_log("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt",std::ios::app);
+
             {
                 // Check if the file opened successfully
                 if (!outFile_log.is_open()) {
-                    std::cerr << "Error opening file for writing!" << std::endl;
+                    std::cerr << "Error opening file for writing his!" << std::endl;
                     //return 1; // Return an error code
                 }
                 //for(const auto& it :UserClass::users){
@@ -247,16 +255,20 @@ void UserClass::Write_users()
             }
         }
     }
+
+
+   // outFile_log.close();
     outFile.close();
+    //UserTicket::Write_History();
 }
 
 void UserClass::Write_users_Signed()
 {
-    ofstream outFile("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing_signed.txt");
+    ofstream outFile("E:/brachmodefidDub/Metro-Mate-DS/img/files/testing_signed.txt");
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
-        std::cerr << "Error opening file for writing!" << std::endl;
+        std::cerr << "Error opening file for writing testing signed !" << std::endl;
         //return 1; // Return an error code
     }
 
@@ -288,7 +300,7 @@ void UserClass::Write_users_Signed()
 
  void UserClass::Read_File()
 {
-    ifstream file("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/testing.txt");
+    ifstream file("E:/brachmodefidDub/Metro-Mate-DS/img/files/testing.txt");
     if (!file.is_open()){
         qDebug()<<"error the file is open";
     }
@@ -352,12 +364,13 @@ void UserClass::Write_users_Signed()
             s1.Start_of_sub.day=day_int;
             s1.Start_of_sub.month=month_int;
             s1.Start_of_sub.year=year_int;
+            s1.end_of_sub=DateTime::end_time(0,s1.Start_of_sub,0);
 
 
             UserClass user(qEmail, qName, qPassword, s1, card_number, balance);
             //qDebug()<<"staion start student"<<user.UserSub.sub_start_station<<"and "<<user.UserSub.sub_end_station;
             {
-                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
+                ifstream file_tickets ("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt");
                 if (!file_tickets.is_open()){
                     qDebug()<<"error the file is open";
                 }
@@ -451,10 +464,12 @@ void UserClass::Write_users_Signed()
             s2.Start_of_sub.day=day_int;
             s2.Start_of_sub.month=month_int;
             s2.Start_of_sub.year=year_int;
+            s2.end_of_sub=DateTime::end_time(1,s2.Start_of_sub,boolean_is_mounth);
+
             UserClass user2(qEmail, qName, qPassword, s2, card_number, balance);
             //qDebug()<<"staion start pub"<<user2.UserSub.sub_start_station<<"and "<<user2.UserSub.sub_end_station;
             {
-                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
+                ifstream file_tickets ("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt");
                 if (!file_tickets.is_open()){
                     qDebug()<<"error the file is open";
                 }
@@ -526,7 +541,7 @@ void UserClass::Write_users_Signed()
             User_subscribtion s3(type,mouny);
             UserClass user3(qEmail, qName, qPassword, s3, card_number, balance);
             {
-                ifstream file_tickets ("C:/Users/user/Downloads/data_History.txt");
+                ifstream file_tickets ("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt");
                 if (!file_tickets.is_open()){
                     qDebug()<<"error the file is open";
                 }
@@ -622,23 +637,22 @@ bool UserClass:: Check_Of_Duration_Of_Subscription()
 
     DateTime currentDateTime;
     if (UserSub.type_of_sub == 0 || UserSub.type_of_sub == 1) {
-        if (UserSub.end_of_sub.compare(currentDateTime)<=0) {
+        if (UserSub.end_of_sub.compare(currentDateTime)>=0) {
             return 1;
         }
         else {
-            return -1;
+            return 0;
         }
     }
     else {
         return 1;
     }
-    return 1;
 }
 // 1 = done 2 = no of rides are 0 3= subscribtion ended 4 = wallet is not enough
 int  UserClass:: Add_Ticket(float c,UserTicket t ){
     t.Cost=c;
 
-     bool  flag_Of_Rides=Check_No_Of_Rides_left();
+   bool  flag_Of_Rides=Check_No_Of_Rides_left();
    bool flag_sub= Check_Of_Duration_Of_Subscription();
     // check 3la type el sub
 

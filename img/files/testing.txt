@@ -1,6 +1,3 @@
-hhanan.com@gmail,hanan,2000,wallet,147,500,300
+hanan.com@gmail,hanan,2000,wallet,147,500,300
 nour.com@gmail,nour,1111,student,111,1000,1,giza,cairo,1,5,6,9,5,2024
-hager.com@gmail,hager,3333,pub,123,500,5,1,giza,cairo,1,5,6,9,1,2024
-hagora.com@gmail,hagora,1010,student,0,300,5,giza,cairo,1,5,6,9,10,2024
-heba.com@gmail,heba,2005,wallet,147,100,500
-user1.com,John,password123,student,1234,1000,1,giza,cairo,1,5,6,9,2,2024
+hager.com@gmail,hager,2004,student,123,237,0,Wadi Hof,Tora El-Asmant,51,20,18,13,5,2024

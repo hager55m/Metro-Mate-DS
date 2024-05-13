@@ -631,7 +631,7 @@ void Write_all(){
 
     UserClass::Write_users();
     UserClass::Write_users_Signed();
-   // Station::Write_Staion();
-    UserTicket::Write_History();
+    Station::Write_Staion();
+   // UserTicket::Write_History();
 
 }

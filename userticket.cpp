@@ -6,7 +6,9 @@
 #include <QDebug>
 
 using namespace std;
-UserTicket::UserTicket() {}
+UserTicket::UserTicket() {
+
+}
 QString UserTicket::starting;
 QString UserTicket::ending;
 UserTicket::UserTicket( float c, QString start, QString end)
@@ -52,16 +54,22 @@ void UserTicket::Read_History()
 
 void UserTicket::Write_History()
 {
-    ofstream outFile("C:/Users/DELL/Desktop/DS/Metro-Mate-DS/img/files/data_History.txt");
+    ofstream outFile("E:/brachmodefidDub/Metro-Mate-DS/img/files/data_History.txt",std::ios::trunc);
 
     // Check if the file opened successfully
     if (!outFile.is_open()) {
         std::cerr << "Error opening file for writing!" << std::endl;
         //return 1; // Return an error code
     }
+
     for(const auto& it :UserClass::users){
+        if(it.user_tickets.size()!=0){
         for(const auto& i:it.user_tickets){
-            outFile<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()<<endl;
+            outFile<<it.Username.toStdString()<<','<<i.Cost<<','<<i.Start_station.toStdString()<<','<<i.End_station.toStdString()
+                    <<','<<i.date.second<<','<<i.date.minute<<','<<i.date.hour<<','<<i.date.day<<','<<i.date.month<<','<<i.date.year<<endl;
+
+        }
+
         }
 
     }

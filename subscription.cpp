@@ -93,18 +93,22 @@ void Subscription::on_pushButton_7_clicked() // search
 
 void Subscription::on_renew_clicked()
 {
-    int type_sub = UserClass::thisuser.UserSub.type_of_sub;
+int type_sub = UserClass::thisuser.UserSub.type_of_sub;
     Station starter;
     Station ender;
 
-    for (int i = 0; i < Station::stations.size(); ++i) {
-        if (UserClass::thisuser.UserSub.sub_start_station == QString::fromStdString(Station::stations[i].name)){
+    for (int i = 0; i < Station::stations.size(); ++i)
+    {
+        if (UserClass::thisuser.UserSub.sub_start_station == QString::fromStdString(Station::stations[i].name))
+        {
             starter = Station::stations[i];
         }
-        if (UserClass::thisuser.UserSub.sub_end_station == QString::fromStdString(Station::stations[i].name)){
+        if (UserClass::thisuser.UserSub.sub_end_station == QString::fromStdString(Station::stations[i].name))
+        {
             ender = Station::stations[i];
         }
     }
+
     stack <Station> bfs = Graph::ShortestPathBFS(starter, ender);
 
 
@@ -112,9 +116,19 @@ void Subscription::on_renew_clicked()
     {
         QMessageBox::information(this, "Renew", "Your Subscription is Renew");
         UserClass::thisuser.balance -=400;
-        qDebug()<<"balance"<<UserClass::thisuser.balance;
+        UserClass::thisuser.UserSub.wallet = 400;
         User_subscribtion Wallet = User_subscribtion(wallet,400);
         UserClass::thisuser.UserSub=Wallet;
+
+        for( auto& it:UserClass::users)
+        {
+            if(it.Username==UserClass::thisuser.Username)
+            {
+                it.UserSub.wallet = 400;
+                it.balance -=400;
+                it.UserSub = Wallet;
+            }
+        }
     }
 
     else if (UserClass::thisuser.balance >= price(bfs.size()))
@@ -122,21 +136,53 @@ void Subscription::on_renew_clicked()
         UserClass::thisuser.balance -=price(bfs.size());
         if (type_sub == 0)
         {
+            QMessageBox::information(this, "Renew", "Your Subscription is Renew");
             User_subscribtion stud = User_subscribtion(student,0,UserClass::thisuser.UserSub.sub_start_station,UserClass::thisuser.UserSub.sub_end_station);
             UserClass::thisuser.UserSub=stud;
-            QMessageBox::information(this, "Renew", "Your Subscription is Renew");
+
+            for( auto& it:UserClass::users)
+            {
+                if(it.Username==UserClass::thisuser.Username)
+                {
+                    it.balance -=price(bfs.size());
+                    it.UserSub = stud;
+                }
+            }
         }
-        else if (type_sub == 0 && UserClass::thisuser.UserSub.dur_in_pub == 1)
+
+        else if (type_sub == 1 && UserClass::thisuser.UserSub.dur_in_pub == 1)
         {
+            QMessageBox::information(this, "Renew", "Your Subscription is Renew");
             User_subscribtion pub_month = User_subscribtion(pub,0,1,UserClass::thisuser.UserSub.sub_start_station,UserClass::thisuser.UserSub.sub_end_station);
             UserClass::thisuser.UserSub=pub_month;
-            QMessageBox::information(this, "Renew", "Your Subscription is Renew");
+
+            for( auto& it:UserClass::users)
+            {
+
+                if(it.Username==UserClass::thisuser.Username)
+                {
+                    it.balance -=price(bfs.size());
+                    it.UserSub = pub_month;
+                }
+                qDebug()<< "user name "<<it.balance;
+            }
         }
-        else if (type_sub == 0 && UserClass::thisuser.UserSub.dur_in_pub == 0)
+
+        else if (type_sub == 1 && UserClass::thisuser.UserSub.dur_in_pub == 0)
         {
+            QMessageBox::information(this, "Renew", "Your Subscription is Renew");
             User_subscribtion pub_year = User_subscribtion(pub,0,0,UserClass::thisuser.UserSub.sub_start_station,UserClass::thisuser.UserSub.sub_end_station);
             UserClass::thisuser.UserSub=pub_year;
-            QMessageBox::information(this, "Renew", "Your Subscription is Renew");
+
+            for( auto& it:UserClass::users)
+            {
+                if(it.Username==UserClass::thisuser.Username)
+                {
+                    it.balance -=price(bfs.size());
+                    it.UserSub = pub_year;
+                }
+            }
+
         }
     }
 
@@ -152,6 +198,9 @@ void Subscription::on_display_clicked()
     bool dur = false;
     QString type_sub;
     int sub_type = UserClass::thisuser.UserSub.type_of_sub;
+    int num_trips = UserClass::thisuser.UserSub.no_of_trips;
+    int num_rides = UserClass::thisuser.user_tickets.size();
+    int rimaning = num_trips - num_rides;
     if(UserClass::thisuser.UserSub.dur_in_pub == 1 && UserClass::thisuser.UserSub.type_of_sub == 1 )
     {
         dur = true;
@@ -173,6 +222,10 @@ void Subscription::on_display_clicked()
     ui->endstation->setText(UserClass::thisuser.UserSub.sub_end_station);
     ui->startdate->setText(starter);
     ui->enddate->setText(ender);
+    if (UserClass::thisuser.UserSub.type_of_sub == 2)
+        ui->rides->setText(" ");
+    else
+        ui->rides->setText(QString::number(rimaning));
     //ui->rides->setText(QString::number(UserClass::thisuser.UserSub.no_of_trips - UserClass.thisuser.user_tickets.size()));
 }
 
